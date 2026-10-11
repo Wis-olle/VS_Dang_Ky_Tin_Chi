@@ -1,32 +1,4 @@
-﻿/*
-CHUCNANG.SQL - DATABASE VÀ BACKEND ĐĂNG KÝ HỌC THEO TÍN CHỈ
-
-1. SQL Server 2019 trở lên. Mở bằng SSMS và chạy toàn bộ file một lần.
-2. Tạo database DangKyTinChi và 13 bảng với đúng 95 cột trong file quy ước.
-   Tên bảng, cột, khóa và thủ tục dùng tên không kèm tiền tố schema.
-3. Đây là script khởi tạo, không phải migration database đã có dữ liệu.
-   Nếu một trong các bảng đích đã tồn tại, script dừng phần cài đặt.
-4. Giữ cách xác thực của bản mẫu: ten_dang_nhap ánh xạ ORIGINAL_LOGIN().
-   Sau khi có dữ liệu danh mục/sinh viên, quản trị viên tạo SQL/Windows user,
-   gán role app_dang_ky và thêm tài khoản tương ứng vào TAI_KHOAN.
-   Script không tự tạo tài khoản hoặc dữ liệu sinh viên mẫu.
-5. Thời gian lưu theo giờ Việt Nam (UTC+7). Khoảng thời gian hợp lệ:
-   - Đăng ký: tg_bat_dau <= giờ máy chủ < tg_ket_thuc, học kỳ DANG_MO.
-   - Hủy: tg_bat_dau <= giờ máy chủ < han_huy_dk, học kỳ DANG_MO.
-6. Không thêm cột giới hạn tổng tín chỉ vào HOC_KY. Hai cột tin_chi_min,
-   tin_chi_max thuộc HOC_PHAN theo đúng tài liệu; không tự diễn giải chúng
-   thành giới hạn tổng tín chỉ của sinh viên trong học kỳ.
-7. Các giá trị trạng thái, kiểu dữ liệu và ràng buộc dưới đây là quy ước
-   triển khai vì tài liệu gốc chỉ liệt kê tên bảng/cột.
-8. Chạy ứng dụng bằng user chỉ có role app_dang_ky. Không cấp quyền sửa
-   bảng trực tiếp. Lịch, học phần và học kỳ của lớp đã có đăng ký chỉ được
-   đổi qua quy trình kiểm tra ảnh hưởng của phân hệ quản lý tương ứng.
-*/
-
-USE master;
-GO
-IF DB_ID(N'DangKyTinChi') IS NULL
-    EXEC(N'CREATE DATABASE DangKyTinChi');
+﻿CREATE DATABASE DangKyTinChi
 GO
 USE DangKyTinChi;
 GO
