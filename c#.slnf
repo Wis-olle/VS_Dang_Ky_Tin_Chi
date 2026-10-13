@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "..\\..\\source\\repos\\WinFormsApp3\\WinFormsApp3.slnx",
+    "projects": [
+      "WinFormsApp3\\WinFormsApp3.csproj"
+    ]
+  }
+}
