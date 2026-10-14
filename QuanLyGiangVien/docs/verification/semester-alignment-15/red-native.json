@@ -1,0 +1,1 @@
+{"passed":false,"checks":["Student profile opens its portal automatically","Tabs use the actual SQL student identity","Student form has exactly two tabs","Registration is the first tab"],"error":"Both launch profiles select the current semester before any manual selection"}

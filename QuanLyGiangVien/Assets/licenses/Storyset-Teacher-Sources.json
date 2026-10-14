@@ -1,0 +1,37 @@
+{
+  "title": "Teacher",
+  "style": "bro",
+  "provider": "Storyset / Freepik Company",
+  "local_file": "Assets/illustrations/teacher.svg",
+  "source_page": "https://storyset.com/illustration/teacher/bro",
+  "download_url": "https://stories.freepiklabs.com/storage/15839/Teacher-01.svg",
+  "license": "https://storyset.com/terms",
+  "license_section": "6. Licence Agreement for Storyset Content",
+  "verified_on": "2026-10-10",
+  "sha256": "b3394e706c13a540df1449ed88a25669bb29d920f5f1b93ae6957340cedf0dea",
+  "view_box": "0 0 500 500",
+  "attribution_required": true,
+  "suggested_credit": "Education illustrations by Storyset",
+  "attribution_link": "https://storyset.com/",
+  "notes": [
+    "Original SVG retained without recoloring or copying Dribbble artwork.",
+    "Professor, blackboard and globe replace the previous library scene.",
+    "Original pale-green background-simple layer is retained.",
+    "SVG has no scripts, foreignObject, embedded data images or external network references."
+  ],
+  "derived_formats": [
+    {
+      "local_file": "Assets/illustrations/teacher.png",
+      "format": "PNG RGBA",
+      "dimensions": [
+        981,
+        903
+      ],
+      "transparent_background": true,
+      "source": "Assets/illustrations/teacher.svg",
+      "sha256": "91e61465950e118dd525af9de0457043322fdbbac348561373d2a751bffd85bb",
+      "conversion": "Sharp / librsvg: rasterize to 1024 x 1024, trim transparent margins, add 20 px transparent padding on each side; source colors preserved.",
+      "reason": "Native PNG preserves SVG CSS fills and makes the artwork legible in the dashboard banner."
+    }
+  ]
+}

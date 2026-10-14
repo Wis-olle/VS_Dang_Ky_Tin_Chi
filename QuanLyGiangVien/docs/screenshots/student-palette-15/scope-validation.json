@@ -1,0 +1,172 @@
+{
+  "Layout": [
+    {
+      "Snapshot": "01-student-timetable",
+      "Controls": 50,
+      "Identical": true
+    },
+    {
+      "Snapshot": "02-empty-semester",
+      "Controls": 44,
+      "Identical": true
+    },
+    {
+      "Snapshot": "03-compact",
+      "Controls": 50,
+      "Identical": true
+    },
+    {
+      "Snapshot": "05-compact-scrolled",
+      "Controls": 50,
+      "Identical": true
+    }
+  ],
+  "Untouched": [
+    {
+      "Path": "QuanLyGiangVien/MainForm.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Ui/AppTheme.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Domain/StudentTimetable.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Data/StudentTimetableDemo.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Domain/Scheduling\\TeachingCatalog.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Domain/Scheduling\\SchedulingQuery.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Domain/Scheduling\\SchedulingModels.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Domain/Scheduling\\SchedulingLecturerGuard.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Domain/Scheduling\\ScheduleStore.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Domain/Scheduling\\ScheduleRules.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\WeeklySchedulePaintCheck.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\WeeklySchedule.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingVisualUiCheck.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingVisualCatalog.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingUiCheck.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingTheme.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingTabs.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingStat.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingServiceUiCheck.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingServiceArtwork.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingRows.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingResourceCover.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingPreview.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingPage.Layout.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingPage.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingPage.Actions.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingMetricsUiCheck.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingIcon.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingEditorBase.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingDetail.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingAssetsUiCheck.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\SchedulingArtwork.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\ScheduleAnalytics.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\RoomEditor.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\MeetingEditor.cs",
+      "Identical": true
+    },
+    {
+      "Path": "QuanLyGiangVien/Features/Scheduling\\CourseClassEditor.cs",
+      "Identical": true
+    }
+  ],
+  "UiPassed": true,
+  "UiChecks": 28
+}

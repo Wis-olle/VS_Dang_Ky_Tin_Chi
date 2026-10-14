@@ -1,0 +1,92 @@
+{
+  "reviewedDate": "2026-10-10",
+  "purpose": "Offline provenance snapshots for native C# adaptation; TSX source is documentation only and is not executed by the application.",
+  "libraries": [
+    {
+      "localLicense": "Assets/licenses/Motion-Primitives-MIT.txt",
+      "copyright": "Copyright (c) 2024 ibelick",
+      "commit": "120f64f6ca60348e251f929e9c81f11ccbe45eda",
+      "licenseSha256": "f668f5ef3635eb906f10b1eea9a32e449eb6e1a183ab6879ef6d56c0980dd2f3",
+      "name": "Motion Primitives",
+      "repository": "https://github.com/ibelick/motion-primitives",
+      "licenseRawUrl": "https://raw.githubusercontent.com/ibelick/motion-primitives/120f64f6ca60348e251f929e9c81f11ccbe45eda/LICENCE.md",
+      "license": "MIT"
+    },
+    {
+      "localLicense": "Assets/licenses/Magic-UI-MIT.txt",
+      "copyright": "Copyright (c) Magic UI",
+      "commit": "cdb348cb4c72a9b54b554d8617801e479fbc8714",
+      "licenseSha256": "0147b84235ed916b8b4e89c1f80655351c5afe7d211b629be61f553a227b34ba",
+      "name": "Magic UI",
+      "repository": "https://github.com/magicuidesign/magicui",
+      "licenseRawUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/cdb348cb4c72a9b54b554d8617801e479fbc8714/LICENSE.md",
+      "license": "MIT"
+    }
+  ],
+  "sources": [
+    {
+      "component": "Animated Group",
+      "library": "Motion Primitives",
+      "page": "https://21st.dev/@ibelick/components/animated-group",
+      "pinnedCommit": "120f64f6ca60348e251f929e9c81f11ccbe45eda",
+      "rawUrl": "https://raw.githubusercontent.com/ibelick/motion-primitives/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/animated-group.tsx",
+      "localSource": "Assets/licenses/PageMotion-ReferenceSource/animated-group.tsx",
+      "sha256": "0c162bbdd3c332e7aa113cd7ddfa7ac36de3184866cb82ad9140525561e08c35",
+      "bytes": 3110,
+      "adaptation": "Seven-region native entrance, 360ms each, 60ms stagger"
+    },
+    {
+      "component": "Animated Background",
+      "library": "Motion Primitives",
+      "page": "https://21st.dev/@ibelick/components/animated-background",
+      "pinnedCommit": "120f64f6ca60348e251f929e9c81f11ccbe45eda",
+      "rawUrl": "https://raw.githubusercontent.com/ibelick/motion-primitives/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/animated-background.tsx",
+      "localSource": "Assets/licenses/PageMotion-ReferenceSource/animated-background.tsx",
+      "sha256": "fa592713c408eaf58b21976c20737d84239c42a0b7e47cf9e7843121b1c0852c",
+      "bytes": 2190,
+      "adaptation": "Native hover tint, 160ms; unchanged interactive bounds"
+    },
+    {
+      "component": "Transition Panel",
+      "library": "Motion Primitives",
+      "page": "https://21st.dev/@ibelick/components/transition-panel",
+      "pinnedCommit": "120f64f6ca60348e251f929e9c81f11ccbe45eda",
+      "rawUrl": "https://raw.githubusercontent.com/ibelick/motion-primitives/120f64f6ca60348e251f929e9c81f11ccbe45eda/components/core/transition-panel.tsx",
+      "localSource": "Assets/licenses/PageMotion-ReferenceSource/transition-panel.tsx",
+      "sha256": "1b3c67058a09a560a034b7fe52ad1c205b589a63ed80055900e8a66830db0be2",
+      "bytes": 1015,
+      "adaptation": "Profile crossfade 220ms; grid/table and filter transition 160ms"
+    },
+    {
+      "component": "Number Ticker",
+      "library": "Magic UI",
+      "page": "https://21st.dev/@dillionverma/components/number-ticker",
+      "pinnedCommit": "cdb348cb4c72a9b54b554d8617801e479fbc8714",
+      "rawUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/cdb348cb4c72a9b54b554d8617801e479fbc8714/apps/www/registry/magicui/number-ticker.tsx",
+      "localSource": "Assets/licenses/PageMotion-ReferenceSource/number-ticker.tsx",
+      "sha256": "0f7dcbc6a1962615a877590304e846f33d390002a51f2226f544938577c220f4",
+      "bytes": 1799,
+      "adaptation": "Native actual-data counters and donut sweep, 650ms"
+    },
+    {
+      "component": "Shimmer Button",
+      "library": "Magic UI",
+      "page": "https://21st.dev/@dillionverma/components/shimmer-button",
+      "pinnedCommit": "cdb348cb4c72a9b54b554d8617801e479fbc8714",
+      "rawUrl": "https://raw.githubusercontent.com/magicuidesign/magicui/cdb348cb4c72a9b54b554d8617801e479fbc8714/apps/www/registry/magicui/shimmer-button.tsx",
+      "localSource": "Assets/licenses/PageMotion-ReferenceSource/shimmer-button.tsx",
+      "sha256": "c85ffda63ba086d2078a8dacffdfc25f0b106e1566362fa251888a214ee3c010",
+      "bytes": 2846,
+      "adaptation": "One-shot native primary shine, 600ms on hover/focus"
+    }
+  ],
+  "visualReferences": [
+    {
+      "component": "Aurora Background",
+      "page": "https://21st.dev/@manuarora700/components/aurora-background",
+      "upstreamPage": "https://ui.aceternity.com/components/aurora-background",
+      "use": "Visual reference only; no source copied. Independently implemented 9s pastel blend, 6s artwork float."
+    }
+  ],
+  "runtime": "Native C# WinForms / GDI+ / AntdUI; no React, WebView or runtime network requests."
+}

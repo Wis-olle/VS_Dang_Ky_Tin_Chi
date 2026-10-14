@@ -1,0 +1,22 @@
+Unsplash stock portrait license source record
+Verified on: 2026-10-10
+Official license: https://unsplash.com/license
+
+This file summarizes the official license; it is not a substitute for the
+source document. The twelve stock photographs listed in
+Unsplash-Avatar-Sources.json were selected from free-download photo pages,
+not Unsplash+ paid content.
+
+The Unsplash License allows free downloading, copying, modification,
+distribution and use of images, including commercial and non-commercial
+use. Attribution is appreciated and the app preserves photographer credits
+in docs/ASSET_SOURCES.md and Unsplash-Avatar-Sources.json.
+
+The license does not permit selling images without significant modification
+or compiling Unsplash images to reproduce a similar or competing service.
+The app downloads images directly from the public image CDN without using
+an Unsplash API integration. The images are bundled locally and serve only
+as stock illustrations for fictional lecturer records.
+
+All photographer names, original photo-page URLs, CDN crop URLs, dimensions
+and verification dates are recorded in Unsplash-Avatar-Sources.json.

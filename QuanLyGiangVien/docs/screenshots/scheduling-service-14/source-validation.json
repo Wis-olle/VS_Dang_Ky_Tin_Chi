@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "file": "3dicons-CC0.txt",
+      "valid": true
+    },
+    {
+      "file": "courses-metadata.md",
+      "valid": true
+    },
+    {
+      "file": "courses-original.png",
+      "valid": true
+    },
+    {
+      "file": "courses.png",
+      "valid": true
+    },
+    {
+      "file": "enrollment-metadata.md",
+      "valid": true
+    },
+    {
+      "file": "enrollment-original.png",
+      "valid": true
+    },
+    {
+      "file": "enrollment.png",
+      "valid": true
+    },
+    {
+      "file": "rooms-metadata.md",
+      "valid": true
+    },
+    {
+      "file": "rooms-original.png",
+      "valid": true
+    },
+    {
+      "file": "rooms.png",
+      "valid": true
+    },
+    {
+      "file": "schedule-metadata.md",
+      "valid": true
+    },
+    {
+      "file": "schedule-original.png",
+      "valid": true
+    },
+    {
+      "file": "schedule.png",
+      "valid": true
+    },
+    {
+      "file": "ServiceCard-user-reference.txt",
+      "valid": true
+    }
+  ]
+}

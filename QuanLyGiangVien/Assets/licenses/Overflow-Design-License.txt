@@ -1,0 +1,31 @@
+Overflow Design — license summary for On The Laptop
+
+Asset: On The Laptop (regular), Office Club — marked Free on the official pack page.
+Source: https://www.overflow.design/notion-illustrations/office-club/
+License: https://www.overflow.design/license/
+License page updated: 29 September 2026
+Checked: 10 October 2026
+
+This is a paraphrased project record. The provider's linked license governs use.
+
+Permitted use
+- Non-exclusive use in unlimited personal and commercial end products, including
+  applications, websites, client projects, presentations and marketing material.
+- Free items may be integrated into open-source software. Repository inclusion
+  must support the project's own interface or documentation; the art retains
+  Overflow's license and is not relicensed under the project's software license.
+- Acquisition through the provider's MCP and use by coding agents follow the
+  same license terms as other downloads.
+- Attribution is optional; no visible credit is required.
+
+Limits
+- Copyright and ownership remain with Overflow Design.
+- Do not redistribute standalone source assets or package them as an asset
+  collection, library, generator or competing illustration service.
+- Do not claim that the artwork is your own.
+
+Local files
+- Assets/illustrations/on-the-laptop.svg preserves the downloaded source bytes.
+- Assets/illustrations/on-the-laptop.png is a transparent raster conversion for
+  the WinForms banner. It is trimmed and padded; source colors are unchanged.
+- Assets/licenses/Overflow-OfficeClub-Sources.json records provenance and hashes.

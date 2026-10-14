@@ -1,0 +1,167 @@
+{
+  "provider": "lucide-animated / Lucide",
+  "animation_commit": "cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232",
+  "static_commit": "70562c1ee1c4fdcf736fe97bc893fb8511927934",
+  "animation_license": "MIT",
+  "static_license": "ISC (with MIT notices for Feather-derived icons)",
+  "verified_on": "2026-10-10",
+  "assets": [
+    {
+      "name": "users",
+      "animation_source": "https://raw.githubusercontent.com/pqoqubbw/icons/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/icons/users.tsx",
+      "animation_sha256": "a9d4fd9a4c8b4c6e8aef1f727699281ec32388d5749f9de1c7c0cdce1c684ac7",
+      "static_source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/users.svg",
+      "static_sha256": "eeed488a1ec95ba730dd69996536fb65061d6ea273afb2429ae47e65eebf401c"
+    },
+    {
+      "name": "graduation-cap",
+      "animation_source": "https://raw.githubusercontent.com/pqoqubbw/icons/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/icons/graduation-cap.tsx",
+      "animation_sha256": "9b42578b1d73185f67fa2f0ceed373db3cfd2f574a04d19eef5424ce9253d418",
+      "static_source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/graduation-cap.svg",
+      "static_sha256": "326b4a1c18429509a697cbc0c49fdfcf9316da34bcf581569c2fc73cc772b86f"
+    },
+    {
+      "name": "book-text",
+      "animation_source": "https://raw.githubusercontent.com/pqoqubbw/icons/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/icons/book-text.tsx",
+      "animation_sha256": "15fb7dbe80b967b0e4e3105011e84ad0c15c475159e771c4a3324af0961b003c",
+      "static_source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/book-text.svg",
+      "static_sha256": "a731200c1b22332967c6c9b5b25307cc8c130ad38a063a568ddaae6ba016b8c8"
+    },
+    {
+      "name": "chart-column-increasing",
+      "animation_source": "https://raw.githubusercontent.com/pqoqubbw/icons/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/icons/chart-column-increasing.tsx",
+      "animation_sha256": "8a81031522eb71bd043cb1689adefb805746d4f068bddefa6dbc72efec7c7f3d",
+      "static_source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/chart-column-increasing.svg",
+      "static_sha256": "3c20178ab3fd13fa06176f1e391b50d68bdca07f8116913eb7918fb8d028d524"
+    },
+    {
+      "name": "languages",
+      "animation_source": "https://raw.githubusercontent.com/pqoqubbw/icons/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/icons/languages.tsx",
+      "animation_sha256": "80cf43f4bd1f9d5cd97793ce42e392de9a9cdbe2fff03ff270a2ff239bd62b8f",
+      "static_source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/languages.svg",
+      "static_sha256": "ae9048feb2c7b19855da9a8f5414f68125573039777a89b9c253cceed5dc5075"
+    },
+    {
+      "name": "cog",
+      "animation_source": "https://raw.githubusercontent.com/pqoqubbw/icons/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/icons/cog.tsx",
+      "animation_sha256": "f9dc90ebf518d24a23d33d89ca3a6fb25ebb77e6a2fc1cab321c9b4a2af3ed35",
+      "static_source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/cog.svg",
+      "static_sha256": "8b00c44388d173ca490d4bfde8ed28f58c23902fd84b8da9e5052578bfe633cf"
+    },
+    {
+      "name": "folder-code",
+      "animation_source": "https://raw.githubusercontent.com/pqoqubbw/icons/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/icons/folder-code.tsx",
+      "animation_sha256": "57c0ee4ffc784296e5e6d5debde8b196755fd356e7a67ee53b130c43ce537fd4",
+      "static_source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/folder-code.svg",
+      "static_sha256": "09903380d416c9bb1ebe4e8ce6c7a4dd0884f26d2da7d359cfa04ddaa6e418e9"
+    }
+  ],
+  "source_page": "https://lucide-animated.com/",
+  "animation_license_url": "https://github.com/pqoqubbw/icons/blob/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/LICENSE",
+  "static_license_url": "https://github.com/lucide-icons/lucide/blob/70562c1ee1c4fdcf736fe97bc893fb8511927934/LICENSE",
+  "downloaded_sources_directory": "Assets/animated-icons/sources",
+  "runtime": "Offline RGBA horizontal PNG sprite sheets; no browser or network at application runtime.",
+  "conversion": {
+    "renderer": "Sharp / librsvg",
+    "frame_size": 128,
+    "view_box": "-2 -2 28 28",
+    "stroke": "#211A1C",
+    "fps": 30,
+    "geometry": "Native retained TSX SVG shapes; idle also uses TSX geometry. Official static Lucide SVG retained for provenance comparison.",
+    "sampling": "Original keyframes and Motion easing/spring generators; cell0..N-1 sampled animation, cellN dedicated static idle. No speed-up.",
+    "spring_duration": "Motion.calcGeneratorDuration gives users spring500ms and cog1200ms; original user delay100ms retained."
+  },
+  "generator": {
+    "name": "Motion",
+    "version": "13.1.1",
+    "source": "https://registry.npmjs.org/motion/13.1.1",
+    "bundle": "Assets/animated-icons/vendor/motion-13.1.1.cjs",
+    "sha256": "8ca036de8163626db7afa27456b673e9046edde935dcfe296240131ebebc27a5",
+    "license": "MIT",
+    "license_file": "Assets/licenses/Motion-MIT.txt",
+    "use": "Asset export only; not loaded by the C# application."
+  },
+  "licenses": [
+    "Assets/licenses/Lucide-Animated-MIT.txt",
+    "Assets/licenses/Lucide-ISC-MIT.txt",
+    "Assets/licenses/Motion-MIT.txt"
+  ],
+  "notes": [
+    "Keep the copyright and permission notices with distributed source/assets.",
+    "Animations are based on lucide-animated source components, not animations invented for this application.",
+    "graduation-cap represents faculty/education; this pack does not contain an animated school/building component.",
+    "Whole-SVG/shape origins converted to SVG transform groups. Normalized pathLength/pathOffset converted to physical dash lengths for librsvg."
+  ],
+  "derived_sprites": [
+    {
+      "id": "users",
+      "source_sha256": "a9d4fd9a4c8b4c6e8aef1f727699281ec32388d5749f9de1c7c0cdce1c684ac7",
+      "sheet_sha256": "c3cb8185f168dbb4bf5384b3ab049d2934dbfd214f0549f5c28215e95bc49716",
+      "frameSize": 128,
+      "frameCount": 19,
+      "durationMilliseconds": 600,
+      "idleFrame": 18,
+      "sheet": "users.png"
+    },
+    {
+      "id": "graduation-cap",
+      "source_sha256": "9b42578b1d73185f67fa2f0ceed373db3cfd2f574a04d19eef5424ce9253d418",
+      "sheet_sha256": "ed58e47a4e2f072e68a9fbe43667535dd26797560d267ad76863aa57d4e29c36",
+      "frameSize": 128,
+      "frameCount": 28,
+      "durationMilliseconds": 900,
+      "idleFrame": 27,
+      "sheet": "graduation-cap.png"
+    },
+    {
+      "id": "book-text",
+      "source_sha256": "15fb7dbe80b967b0e4e3105011e84ad0c15c475159e771c4a3324af0961b003c",
+      "sheet_sha256": "195534178650133d9eead5468f6e5dddab973f3a15bbcd949e3a008a4b37a927",
+      "frameSize": 128,
+      "frameCount": 19,
+      "durationMilliseconds": 600,
+      "idleFrame": 18,
+      "sheet": "book-text.png"
+    },
+    {
+      "id": "folder-code",
+      "source_sha256": "57c0ee4ffc784296e5e6d5debde8b196755fd356e7a67ee53b130c43ce537fd4",
+      "sheet_sha256": "cecdf2892b26fae7495fa1ec9e08d8df18e080a3bcf7a865367278c3c16a5338",
+      "frameSize": 128,
+      "frameCount": 16,
+      "durationMilliseconds": 500,
+      "idleFrame": 15,
+      "sheet": "folder-code.png"
+    },
+    {
+      "id": "chart-column-increasing",
+      "source_sha256": "8a81031522eb71bd043cb1689adefb805746d4f068bddefa6dbc72efec7c7f3d",
+      "sheet_sha256": "1ccf3db6375ce9b98c9c223e9ca62bf623f821eeb0dd0344d75e817ee5174c12",
+      "frameSize": 128,
+      "frameCount": 31,
+      "durationMilliseconds": 1000,
+      "idleFrame": 30,
+      "sheet": "chart-column-increasing.png"
+    },
+    {
+      "id": "languages",
+      "source_sha256": "80cf43f4bd1f9d5cd97793ce42e392de9a9cdbe2fff03ff270a2ff239bd62b8f",
+      "sheet_sha256": "dfcc4dc553b9d16ce0edf122a5f0575f1aa974f9843ff07bc0700463059fbdeb",
+      "frameSize": 128,
+      "frameCount": 25,
+      "durationMilliseconds": 800,
+      "idleFrame": 24,
+      "sheet": "languages.png"
+    },
+    {
+      "id": "cog",
+      "source_sha256": "f9dc90ebf518d24a23d33d89ca3a6fb25ebb77e6a2fc1cab321c9b4a2af3ed35",
+      "sheet_sha256": "a4a7fbebfbb6a2f9fe91debc7aa74a29442f4248a7c1aa1d8c199a70fcad9241",
+      "frameSize": 128,
+      "frameCount": 37,
+      "durationMilliseconds": 1200,
+      "idleFrame": 36,
+      "sheet": "cog.png"
+    }
+  ]
+}

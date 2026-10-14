@@ -1,0 +1,25 @@
+{
+  "passed": 18,
+  "dpi": 96,
+  "checks": [
+    "Initial populated datasets retain blank clean editors",
+    "Clean CanLeave permits navigation",
+    "Two source Phong tabs mounted",
+    "Courses SQL grid loaded",
+    "Semesters SQL grid loaded",
+    "Pending SQL operation blocks shell departure",
+    "Pending operation blocks sibling tab selection",
+    "Completed operation releases navigation guard",
+    "Credit input constrained to Minh maximum12",
+    "Course name input constrained to Hue150",
+    "Selecting seeded course with nullable bounds stays clean",
+    "Existing course code is fixed",
+    "Course edit flags unsaved state",
+    "Reset clears dirty state",
+    "Selecting semester maintains normalized second/date values",
+    "Teaching dates bound separately",
+    "Exactly one open close state action available",
+    "New semester default second values remain clean"
+  ],
+  "capture_method": "WinForms DrawToBitmap on the harness form; not desktop screenshots or performance evidence"
+}

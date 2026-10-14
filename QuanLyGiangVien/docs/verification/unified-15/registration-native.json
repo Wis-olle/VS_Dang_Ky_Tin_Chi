@@ -1,0 +1,24 @@
+{
+  "Passed": 19,
+  "Checks": [
+    "Management reports initialize through original SQL identity",
+    "Management sees original result and statistics tabs",
+    "Async page operation completes without reentrant busy state",
+    "Statistics loads SQL rows",
+    "Async page operation completes without reentrant busy state",
+    "Original roster action loads typed SQL data",
+    "Deadline polling stops while page is hidden",
+    "Deadline clock resumes only when visible",
+    "Completed management page can leave without unsaved changes",
+    "Actual SQL mapping identifies student without client impersonation",
+    "Async page operation completes without reentrant busy state",
+    "Student registration initializes and refreshes term",
+    "Open classes share Minh course class records",
+    "Registration button follows server Vietnam deadline and available seats",
+    "Async page operation completes without reentrant busy state",
+    "Student result identity is readonly from actual SQL account",
+    "Seed student\u0027s four registrations appear through Hue results procedure",
+    "Cancel button follows server cancellation deadline",
+    "Monotonic server clock disables cancellation after exclusive boundary"
+  ]
+}

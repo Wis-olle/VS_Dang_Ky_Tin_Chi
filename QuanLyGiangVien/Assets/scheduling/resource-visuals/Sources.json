@@ -1,0 +1,311 @@
+{
+  "checkedDate": "2026-10-13",
+  "provider": "unDraw",
+  "license": {
+    "page": "https://undraw.co/license",
+    "snapshot": {
+      "file": "unDraw-LICENSE.txt",
+      "bytes": 1953,
+      "sha256": "fe46855206e9f0853f50b662576bc2f04a884d0269e6723fdac5c4f0499d1a1b"
+    },
+    "summary": "Free use and modification in personal/commercial end products without attribution; no illustration packs, competing services or AI/ML training."
+  },
+  "runtime": "Offline transparent PNGs for course/room thumbnails, inspector covers and weekly cards. Illustrations describe a category, not a photograph of an actual room or teacher.",
+  "assets": [
+    {
+      "key": "coding",
+      "name": "Programming",
+      "sourcePage": "https://undraw.co/search/programming",
+      "downloadUrl": "https://cdn.undraw.co/illustration/programming_j1zw.svg?type=svg",
+      "visualVerification": "Observed in the official gallery/modal before packaging; Books retained from the previously verified source.",
+      "original": {
+        "file": "coding-original.svg",
+        "bytes": 14380,
+        "sha256": "9e6585f30ccff2fee6ef34a9139a53b9eef2487a3b2472be29edb7000479ec3c"
+      },
+      "derivative": {
+        "file": "coding-pastel.svg",
+        "bytes": 14491,
+        "sha256": "47a6def573550cb5b07d04fcf5685f01abdf3967ea8e40d5a938eac1eec1abde"
+      },
+      "raster": {
+        "file": "coding.png",
+        "bytes": 18376,
+        "sha256": "eb8b80ac748fa39e777569f77afb1fc8ed836a7bcafe4196d720480364336c6c"
+      },
+      "observedColors": [
+        "#e6e6e6",
+        "#f2f2f2",
+        "#3f3d56",
+        "#6c63ff",
+        "#2f2e41",
+        "#fff",
+        "#d6d6e3",
+        "#ed9da0",
+        "#090814"
+      ],
+      "colorMappings": {
+        "#e6e6e6": "#EEDADD",
+        "#f2f2f2": "#F6EDFE",
+        "#3f3d56": "#6E6267",
+        "#6c63ff": "#D44423",
+        "#2f2e41": "#211A1C",
+        "#fff": "#FFFFFF",
+        "#d6d6e3": "#d6d6e3",
+        "#ed9da0": "#ed9da0",
+        "#090814": "#211A1C"
+      },
+      "transformation": "Only palette substitutions and transparent PNG rasterization with bundled sharp/libvips; geometry unchanged."
+    },
+    {
+      "key": "finance",
+      "name": "Finance",
+      "sourcePage": "https://undraw.co/search/finance",
+      "downloadUrl": "https://cdn.undraw.co/illustration/finance_m6vw.svg?type=svg",
+      "visualVerification": "Observed in the official gallery/modal before packaging; Books retained from the previously verified source.",
+      "original": {
+        "file": "finance-original.svg",
+        "bytes": 9466,
+        "sha256": "f10a7d11787ee9d78dc19e2dacde1bee0dd98c03283bee1cb94c05783863b349"
+      },
+      "derivative": {
+        "file": "finance-pastel.svg",
+        "bytes": 9475,
+        "sha256": "ea61924b33240410057d02cddd6094284c242a39b4da88dafb03ca8e71098eac"
+      },
+      "raster": {
+        "file": "finance.png",
+        "bytes": 15543,
+        "sha256": "36e4293a15fcb93105477c13cd2f557047ac4117054925f6d1013c8bee2a1fe1"
+      },
+      "observedColors": [
+        "#ccc",
+        "#d6d6e3",
+        "#b6b3c5",
+        "#090814",
+        "#fff",
+        "#3f3d56",
+        "#6c63ff",
+        "#ffb9b9"
+      ],
+      "colorMappings": {
+        "#ccc": "#EEDADD",
+        "#d6d6e3": "#d6d6e3",
+        "#b6b3c5": "#b6b3c5",
+        "#090814": "#211A1C",
+        "#fff": "#FFFFFF",
+        "#3f3d56": "#6E6267",
+        "#6c63ff": "#D44423",
+        "#ffb9b9": "#ffb9b9"
+      },
+      "transformation": "Only palette substitutions and transparent PNG rasterization with bundled sharp/libvips; geometry unchanged."
+    },
+    {
+      "key": "language",
+      "name": "Books",
+      "sourcePage": "https://undraw.co/search/study",
+      "downloadUrl": "https://cdn.undraw.co/illustration/books_wxzz.svg?type=svg",
+      "visualVerification": "Observed in the official gallery/modal before packaging; Books retained from the previously verified source.",
+      "original": {
+        "file": "language-original.svg",
+        "bytes": 2604,
+        "sha256": "f5a739c0da9dc2615d10fe562ce2d5d8f78f86ceb76d1eb4e0e925b9e3ec8748"
+      },
+      "derivative": {
+        "file": "language-pastel.svg",
+        "bytes": 2628,
+        "sha256": "30f0c579b0b38f0d386b26bc1bb14cb92b43e2c765167e180a6b3fed3c06d2c5"
+      },
+      "raster": {
+        "file": "language.png",
+        "bytes": 10709,
+        "sha256": "f0a775158aa3cdee9cbee48d636d5b4947d5c28c0dedbe944c251c26c49d701e"
+      },
+      "observedColors": [
+        "#f2f2f2",
+        "#6c63ff",
+        "#ccc",
+        "#090814"
+      ],
+      "colorMappings": {
+        "#f2f2f2": "#F6EDFE",
+        "#6c63ff": "#D44423",
+        "#ccc": "#EEDADD",
+        "#090814": "#211A1C"
+      },
+      "transformation": "Only palette substitutions and transparent PNG rasterization with bundled sharp/libvips; geometry unchanged."
+    },
+    {
+      "key": "engineering",
+      "name": "Electricity",
+      "sourcePage": "https://undraw.co/search/science",
+      "downloadUrl": "https://cdn.undraw.co/illustration/electricity_7985.svg?type=svg",
+      "visualVerification": "Observed in the official gallery/modal before packaging; Books retained from the previously verified source.",
+      "original": {
+        "file": "engineering-original.svg",
+        "bytes": 6167,
+        "sha256": "ce5f90e443bcf80d0706c2d4420e60ff8b084c2e818779bcf6316488c6a4ec88"
+      },
+      "derivative": {
+        "file": "engineering-pastel.svg",
+        "bytes": 6167,
+        "sha256": "54e05ecb79bd0fa01f61ed5f7bf7333d20b63964c6871cedc7883bdbdb97c54d"
+      },
+      "raster": {
+        "file": "engineering.png",
+        "bytes": 33646,
+        "sha256": "e8a0672a07444ec4eca38c5e936bfe8af8c4d4f075f40c0f68b99b2b1c18a722"
+      },
+      "observedColors": [
+        "#ed9da0",
+        "#e6e6e6",
+        "#3f3d56",
+        "#090814",
+        "#6c63ff",
+        "#2f2e41"
+      ],
+      "colorMappings": {
+        "#ed9da0": "#ed9da0",
+        "#e6e6e6": "#EEDADD",
+        "#3f3d56": "#6E6267",
+        "#090814": "#211A1C",
+        "#6c63ff": "#D44423",
+        "#2f2e41": "#211A1C"
+      },
+      "transformation": "Only palette substitutions and transparent PNG rasterization with bundled sharp/libvips; geometry unchanged."
+    },
+    {
+      "key": "classroom",
+      "name": "Teaching",
+      "sourcePage": "https://undraw.co/search/science",
+      "downloadUrl": "https://cdn.undraw.co/illustrations/teaching_58yg.svg?type=svg",
+      "visualVerification": "Observed in the official gallery/modal before packaging; Books retained from the previously verified source.",
+      "original": {
+        "file": "classroom-original.svg",
+        "bytes": 14953,
+        "sha256": "b774d81cc518d4cd9ece82c0c7056b70fdb4b4d61af4f9ffeda3af9035ab6f79"
+      },
+      "derivative": {
+        "file": "classroom-pastel.svg",
+        "bytes": 14968,
+        "sha256": "b70252672fac2c0e5b8d7ea1bb51a91aea3d77171fb3aa724465d4b65eb62689"
+      },
+      "raster": {
+        "file": "classroom.png",
+        "bytes": 19916,
+        "sha256": "dc102546c1c2043d25836d69fa94b6993a435b95249d3054aebbf19d0a5e8b0b"
+      },
+      "observedColors": [
+        "#e6e6e6",
+        "#fff",
+        "#f2f2f2",
+        "#ffb8b8",
+        "#ffb6b6",
+        "#2f2e41",
+        "#3f3d56",
+        "#cacaca",
+        "#6c63ff",
+        "#d1d3d4"
+      ],
+      "colorMappings": {
+        "#e6e6e6": "#EEDADD",
+        "#fff": "#FFFFFF",
+        "#f2f2f2": "#F6EDFE",
+        "#ffb8b8": "#FCCAC1",
+        "#ffb6b6": "#FCCAC1",
+        "#2f2e41": "#211A1C",
+        "#3f3d56": "#6E6267",
+        "#cacaca": "#EEDADD",
+        "#6c63ff": "#D44423",
+        "#d1d3d4": "#d1d3d4"
+      },
+      "transformation": "Only palette substitutions and transparent PNG rasterization with bundled sharp/libvips; geometry unchanged."
+    },
+    {
+      "key": "lab",
+      "name": "Server",
+      "sourcePage": "https://undraw.co/search/server",
+      "downloadUrl": "https://cdn.undraw.co/illustrations/server_9eix.svg?type=svg",
+      "visualVerification": "Observed in the official gallery/modal before packaging; Books retained from the previously verified source.",
+      "original": {
+        "file": "lab-original.svg",
+        "bytes": 6347,
+        "sha256": "9735db89e43e0a81dad2a568c212dcc6659150f2efca3002731ed87ba23324b7"
+      },
+      "derivative": {
+        "file": "lab-pastel.svg",
+        "bytes": 6362,
+        "sha256": "5dcfa4402091b97ecc2d35105bc1f328ef0a5d804d4eda946def7ba0604a117c"
+      },
+      "raster": {
+        "file": "lab.png",
+        "bytes": 11877,
+        "sha256": "0fb6dc547abdf38336660a6bc4d7e9c871903a7e594c223895f122ac9abef805"
+      },
+      "observedColors": [
+        "#9f616a",
+        "#2f2e41",
+        "#f1f1f1",
+        "#cbcbcb",
+        "#3f3d56",
+        "#fff",
+        "#6c63ff",
+        "#ccc"
+      ],
+      "colorMappings": {
+        "#9f616a": "#9f616a",
+        "#2f2e41": "#211A1C",
+        "#f1f1f1": "#f1f1f1",
+        "#cbcbcb": "#cbcbcb",
+        "#3f3d56": "#6E6267",
+        "#fff": "#FFFFFF",
+        "#6c63ff": "#D44423",
+        "#ccc": "#EEDADD"
+      },
+      "transformation": "Only palette substitutions and transparent PNG rasterization with bundled sharp/libvips; geometry unchanged."
+    },
+    {
+      "key": "hall",
+      "name": "Lecture",
+      "sourcePage": "https://undraw.co/search/presentation",
+      "downloadUrl": "https://cdn.undraw.co/illustration/lecture_hul3.svg?type=svg",
+      "visualVerification": "Observed in the official gallery/modal before packaging; Books retained from the previously verified source.",
+      "original": {
+        "file": "hall-original.svg",
+        "bytes": 4003,
+        "sha256": "5aff7a2a6a514a3d67827d4c7c713ff2af42f2c504110252dc92e82081e4be77"
+      },
+      "derivative": {
+        "file": "hall-pastel.svg",
+        "bytes": 4006,
+        "sha256": "2372441d44b133957fc627eb3ed4a5452f1b33c371780ca6b6ab15a6c245a8f4"
+      },
+      "raster": {
+        "file": "hall.png",
+        "bytes": 13017,
+        "sha256": "dee0c9a8d52b485c8a2921ee145af206d639ea3663ed888c1878529e7eaad0b8"
+      },
+      "observedColors": [
+        "#e6e6e6",
+        "#fff",
+        "#f2f2f2",
+        "#6c63ff",
+        "#ed9da0",
+        "#575a89",
+        "#2f2e41",
+        "#090814"
+      ],
+      "colorMappings": {
+        "#e6e6e6": "#EEDADD",
+        "#fff": "#FFFFFF",
+        "#f2f2f2": "#F6EDFE",
+        "#6c63ff": "#D44423",
+        "#ed9da0": "#ed9da0",
+        "#575a89": "#575a89",
+        "#2f2e41": "#211A1C",
+        "#090814": "#211A1C"
+      },
+      "transformation": "Only palette substitutions and transparent PNG rasterization with bundled sharp/libvips; geometry unchanged."
+    }
+  ]
+}

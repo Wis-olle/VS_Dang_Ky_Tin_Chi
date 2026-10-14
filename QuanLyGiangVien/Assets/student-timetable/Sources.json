@@ -1,0 +1,143 @@
+{
+  "checkedDate": "2026-10-14",
+  "design": "https://dribbble.com/shots/8097669-Student-Dashboard",
+  "lucideCommit": "70562c1ee1c4fdcf736fe97bc893fb8511927934",
+  "motionManifest": "../licenses/Page-Motion-Sources.json",
+  "runtime": "Offline native C#; no runtime network dependency",
+  "files": [
+    {
+      "file": "book-open.png",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/book-open.svg",
+      "sha256": "c46195cca3a78aba8753ca2be126e5cb7c53b7c75f3777b7ca5634785ff77410",
+      "bytes": 989,
+      "transformation": "SVG currentColor resolved to #8E7BEA, rasterized 64x64 with Sharp"
+    },
+    {
+      "file": "book-open.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/book-open.svg",
+      "sha256": "9b9bed0ff057283d5c5c5a1c71f8d3e927db26a56639603a92fdf7b25961510e",
+      "bytes": 387,
+      "transformation": "Original source or license snapshot"
+    },
+    {
+      "file": "calendar-days.png",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/calendar-days.svg",
+      "sha256": "f839ffa0efc5b21fef0da826c101f3bc29c456a373343312429a6c9768d552b3",
+      "bytes": 969,
+      "transformation": "SVG currentColor resolved to #8E7BEA, rasterized 64x64 with Sharp"
+    },
+    {
+      "file": "calendar-days.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/calendar-days.svg",
+      "sha256": "9330eb8d7c4989e97b6361314abbf02953243c602874725c9e58ceca00da3bd7",
+      "bytes": 483,
+      "transformation": "Original source or license snapshot"
+    },
+    {
+      "file": "chevron-left.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/chevron-left.svg",
+      "sha256": "83b0681aa38bf55e9d52a1e4b4cced624abe1fe7678ecafda133a574f1161d93",
+      "bytes": 238,
+      "transformation": "Original source or license snapshot"
+    },
+    {
+      "file": "chevron-right.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/chevron-right.svg",
+      "sha256": "2758143d7b2434e4aa7307dfd34405c87909ff4052f21b5f3f40d45224b4f19b",
+      "bytes": 237,
+      "transformation": "Original source or license snapshot"
+    },
+    {
+      "file": "clock.png",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/clock.svg",
+      "sha256": "a44f62980d4e4ef729ad76b8f7ca5571949becfb743ccd794d741d6815e2a7b2",
+      "bytes": 1660,
+      "transformation": "SVG currentColor resolved to #8E7BEA, rasterized 64x64 with Sharp"
+    },
+    {
+      "file": "clock.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/clock.svg",
+      "sha256": "e9d3e3acf4d1c280fcf8092293439dc0a4756a908ceb859de144b12451cd1cb9",
+      "bytes": 271,
+      "transformation": "Original source or license snapshot"
+    },
+    {
+      "file": "graduation-cap.png",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/graduation-cap.svg",
+      "sha256": "92f2842372ea448b9d0503c46174978da0cb0fc75eb543c3f5c930bc5c393369",
+      "bytes": 1414,
+      "transformation": "SVG currentColor resolved to #8E7BEA, rasterized 64x64 with Sharp"
+    },
+    {
+      "file": "graduation-cap.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/graduation-cap.svg",
+      "sha256": "326b4a1c18429509a697cbc0c49fdfcf9316da34bcf581569c2fc73cc772b86f",
+      "bytes": 412,
+      "transformation": "Original source or license snapshot"
+    },
+    {
+      "file": "Lucide-LICENSE.txt",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/LICENSE",
+      "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57",
+      "bytes": 3208,
+      "transformation": "Original source or license snapshot"
+    },
+    {
+      "file": "map-pin.png",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/map-pin.svg",
+      "sha256": "858913597e429d8e1b590815b72c3175f5cd1eb6e6fa13b0b45a1854c88a7c4f",
+      "bytes": 1857,
+      "transformation": "SVG currentColor resolved to #8E7BEA, rasterized 64x64 with Sharp"
+    },
+    {
+      "file": "map-pin.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/map-pin.svg",
+      "sha256": "16f1042a62f1bda20ebab8bfc1cb79c0be285c980dea6c2c733a17902631405b",
+      "bytes": 359,
+      "transformation": "Original source or license snapshot"
+    },
+    {
+      "file": "programming.png",
+      "source": "https://cdn.undraw.co/illustration/programming_j1zw.svg?type=svg",
+      "sha256": "54d1e300ec36ea2c670c0196a955661aa1344b78db277d40bfa99bc1e42c7eda",
+      "bytes": 9966,
+      "transformation": "SVG rasterized with Sharp, fit inside 320x220, original colors"
+    },
+    {
+      "file": "programming.svg",
+      "source": "https://cdn.undraw.co/illustration/programming_j1zw.svg?type=svg",
+      "sha256": "9e6585f30ccff2fee6ef34a9139a53b9eef2487a3b2472be29edb7000479ec3c",
+      "bytes": 14380,
+      "transformation": "Original source or license snapshot"
+    },
+    {
+      "file": "unDraw-LICENSE.txt",
+      "source": "https://undraw.co/license",
+      "sha256": "fe46855206e9f0853f50b662576bc2f04a884d0269e6723fdac5c4f0499d1a1b",
+      "bytes": 1953,
+      "transformation": "Original source or license snapshot"
+    },
+    {
+      "file": "user-round.png",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/user-round.svg",
+      "sha256": "78b55c810a9af981655bc6fedfe92b3d25ffc47cb941310cea4257fc5c41d4f1",
+      "bytes": 1370,
+      "transformation": "SVG currentColor resolved to #8E7BEA, rasterized 64x64 with Sharp"
+    },
+    {
+      "file": "user-round.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/user-round.svg",
+      "sha256": "84870f26f3faf8da45da84174517519e81b9e8f00319c78954fcbb74f50038a1",
+      "bytes": 279,
+      "transformation": "Original source or license snapshot"
+    }
+  ],
+  "paletteUpdatedDate": "2026-10-15",
+  "runtimeAssets": {
+    "headerIcon": "graduation-cap.svg, rasterized once at 64x64 in AppTheme.Primary; original geometry",
+    "introArtwork": "../scheduling/resource-visuals/coding.png",
+    "artworkProvenance": "../scheduling/resource-visuals/Sources.json",
+    "previousRasters": "Retained as source references; not used by header/intro slots",
+    "navigationIcon": "calendar-days.svg; verified again against pinned upstream on 2026-10-15; outlined 14px current-page pill, source SVG unchanged"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "file": "Blocks-MIT.txt",
+      "valid": true
+    },
+    {
+      "file": "stats-07.tsx",
+      "valid": true
+    },
+    {
+      "file": "stats-13.tsx",
+      "valid": true
+    }
+  ]
+}

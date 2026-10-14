@@ -1,0 +1,23 @@
+# Local verification output and the independent team repository
+/.tmp/
+/VS_Dang_Ky_Tin_Chi/
+
+# Build output and user-specific IDE state
+**/bin/
+**/obj/
+**/.vs/
+**/TestResults/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+**/__pycache__/
+*.pyc
+
+# Local credentials and environment configuration
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pfx
+*.p12

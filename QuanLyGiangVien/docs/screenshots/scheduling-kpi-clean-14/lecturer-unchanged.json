@@ -1,0 +1,201 @@
+{
+  "checkedFiles": 39,
+  "allUnchanged": true,
+  "files": [
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Dialogs\\LecturerEditor.cs",
+      "sha256": "f7d96afe818bdda2d86fb9c1b477bc6c37bf6b7c0307083950b0144f03306b5c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\MainForm.cs",
+      "sha256": "6d1123d591ee53c636309c261c942cf2ab3f2b1820a3540e58c3356ea93ad6cb",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Panels\\LecturerProfile.cs",
+      "sha256": "3efb4af7583838739f49c24302b7e0cd2c55e6fee41e188844b64ec4d134ceac",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AnimatedDashboardIcon.cs",
+      "sha256": "758074903ebf9c8a9e05675bcdd80851771da4d33ee0a9b9ad152193194ee6a0",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AnimatedSelect.cs",
+      "sha256": "3389fcf64c44b264809db94805f8015c7540db53a93d8dbd34d50050fee66002",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AppTheme.cs",
+      "sha256": "4f01d91a47b83b0c138ed64f556cb1aa10f3e7c4befda15f192f9a2c1de68c1a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthCardMotion.cs",
+      "sha256": "f7f10e3f49253288e6fc366ac88a8bad054de91a6f6e87ca89ce264f15ce4679",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthCardUiCheck.cs",
+      "sha256": "abf75fce1de4b0ffb8f81cbfd0d3a26b1ab7edcb30e3e08971bb673dccc7b6f1",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthCornerUiCheck.cs",
+      "sha256": "d0e14d7f63b9e776d816db424c6ce725af6f184b55bdc641a244340c767ae205",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthMotionMath.cs",
+      "sha256": "4a0155fdc0c0cc6481b98c3179a3d7690b281a772b57509ef8724478f3ae9c61",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthTextUiCheck.cs",
+      "sha256": "952c427554461dcb737a96146b6212644cf3b5e8d5bec168389cf34c0cbaa3cf",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardFaculty.cs",
+      "sha256": "cd5a98da466a5aba9fe42836f809c7e436e179a70b0456f37cf8c627147f37c9",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardHero.cs",
+      "sha256": "241a1f535b1421a85b8a10eeb7c44da808dae9b0c9fbc87961c6ff5cb8086640",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardOverview.cs",
+      "sha256": "47e35c467785434d1971570dbc0a6fcf7a44ac8af9c72d752c695cca3ca027fc",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardStats.cs",
+      "sha256": "38a89e640eb854bd7bcaf37d1342accc97eaa2ed50f6e226735baa799cae2ab4",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\FacultySpreadUiCheck.cs",
+      "sha256": "0131876000eb53daefbbf762c8aad12de40394b181c80086ed18255e00250f33",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\FloatingArtwork.cs",
+      "sha256": "a69f19b78a3f818355aafbcc9648c3fc4874504b3977d1e062fc88c1948c498b",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\HeroMotionBenchmark.cs",
+      "sha256": "faa7d472492115f24685a19ed4b1a32e98caac8cbaa5d981ca56a94c334027f4",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\IconPlayback.cs",
+      "sha256": "4664b29dd23831cf4a985fd9e64203463642d91d10b31edb1ec9f0fa1362e47d",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\IconSprite.cs",
+      "sha256": "beaa4b5ae8739a97edca04917e072cb6ed3f4cf09786db5d5c64aa64a077d13f",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\LecturerCard.cs",
+      "sha256": "ff3086acbaebc070665f9f4db25dbab052a91d316b9213e4161c2466fd582278",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\LecturerGrid.cs",
+      "sha256": "42ff7a2817faa135f8df13d7dd759bd0170cc6a78ea756e9c3fff99d7f0275c7",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\LecturerRow.cs",
+      "sha256": "34fe810b672f6527bf5771b5822fcee7b63313419e8f855a68ea3767627205b3",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\ListHoverUiCheck.cs",
+      "sha256": "5b41dc81b65f0e0df1b29bad3cb6e9ae7944f38fce6aefbb656221c07536241c",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\Motion.cs",
+      "sha256": "559d3bca712e5674dec21da818f62679434a83a891406c59dd4c467a16e661ea",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\MotionButton.cs",
+      "sha256": "6e60ab5e60c11d9b1c91ee3a49de8899701e83fd0d641c7ae608cc8e17ada9c2",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\MotionMath.cs",
+      "sha256": "b5a9eaad7387e14c09aa7b0e08f68d8d4c75c943c2a6ea72064638b487f02ff1",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\MotionPaintBenchmark.cs",
+      "sha256": "6d5a5bfe00c4542ea81b41983fc5fbc3a4e0444054e0bfcaa0ae2a2a24ecf611",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\OverviewMotionMath.cs",
+      "sha256": "dfbe68f22de97aea467705364d73aef1b6f4606e956891d2ac32355e6d52fe15",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\PageMotionCoordinator.cs",
+      "sha256": "d6a9527997e144e5c6f1f6050534ae0c6503b27a4ff5fa8f5deb783b9e088cbe",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\Portraits.cs",
+      "sha256": "8e7ce0f4b11e2d44e41b89e475761d07c8fb5c44f49f5432abc0b23107170982",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SelectMotionMath.cs",
+      "sha256": "a6f91c25511e4deceae0ad1e964b5774f055a249100eb2ef0b7f2b46280d8a8a",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SelectPopup.cs",
+      "sha256": "b946a9d9f9e1b53ace15e8880fed6657aaf71ab3bb076648ee221d2c5601f589",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SelectUiCheck.cs",
+      "sha256": "d56c6e4fce5f8c71ecc6113ba8421095a3e2234e4d5ee2face7e6620c6aedafa",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SurfaceHover.cs",
+      "sha256": "36051e0991d15f9380c8cfed634381ed5e00758395f04245f9b1b75938a3b8f7",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SurfaceTransition.cs",
+      "sha256": "385832f44d943b5c954933173b0b1d80249a03d9e89b1354dffbc2c53f21af5f",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\UiCapture.cs",
+      "sha256": "822b18c76de8b24b2a592093dd55aa1d21d6093917a885acba49ddae423f1bda",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\UiCheck.cs",
+      "sha256": "c1b2e3c984a644a3b10218597f2baf7d41a67240b80e06f43e199efa397730da",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\VietLocalization.cs",
+      "sha256": "baabd9a6099676494bc0107a6ca7a9a3adc53c824e6b2aca6c0cfa1c74320d87",
+      "unchanged": true
+    }
+  ]
+}

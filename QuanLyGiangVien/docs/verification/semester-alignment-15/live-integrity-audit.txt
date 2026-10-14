@@ -1,0 +1,19 @@
+﻿canonical_table_count
+---------------------
+13
+disabled_or_untrusted_foreign_keys
+----------------------------------
+0
+enrollment_count_mismatches
+---------------------------
+0
+active_registrations_on_canceled_classes
+----------------------------------------
+0
+duplicate_active_course_registrations
+-------------------------------------
+0
+ma_hk active_student_classes student_credits
+----- ---------------------- ---------------
+HK1-2627 4 12
+HK2-2627 0 0

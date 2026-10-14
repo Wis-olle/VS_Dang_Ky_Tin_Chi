@@ -1,0 +1,61 @@
+{
+  "checkedOn": "2026-10-11",
+  "project": "lucide-icons/lucide",
+  "commit": "70562c1ee1c4fdcf736fe97bc893fb8511927934",
+  "licensePage": "https://lucide.dev/license",
+  "licenseFile": "Lucide-LICENSE.txt",
+  "licenseSource": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/LICENSE",
+  "licenseSha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57",
+  "files": [
+    {
+      "file": "book-open.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/book-open.svg",
+      "sha256": "9b9bed0ff057283d5c5c5a1c71f8d3e927db26a56639603a92fdf7b25961510e",
+      "bytes": 387,
+      "license": "ISC; repository includes Feather MIT notice",
+      "viewport": "0 0 24 24",
+      "stroke": "currentColor",
+      "strokeWidth": 2
+    },
+    {
+      "file": "door-open.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/door-open.svg",
+      "sha256": "1bddb273d0893f65778e2a58aa1af66c8129d8d7634a3552d95be66191ea7526",
+      "bytes": 415,
+      "license": "ISC; repository includes Feather MIT notice",
+      "viewport": "0 0 24 24",
+      "stroke": "currentColor",
+      "strokeWidth": 2
+    },
+    {
+      "file": "calendar-days.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/calendar-days.svg",
+      "sha256": "9330eb8d7c4989e97b6361314abbf02953243c602874725c9e58ceca00da3bd7",
+      "bytes": 483,
+      "license": "ISC; repository includes Feather MIT notice",
+      "viewport": "0 0 24 24",
+      "stroke": "currentColor",
+      "strokeWidth": 2
+    },
+    {
+      "file": "users-round.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/users-round.svg",
+      "sha256": "8b41ee3ada1609e25a410d64056aa333952cf27d770f0c379a100065270de7f7",
+      "bytes": 336,
+      "license": "ISC; repository includes Feather MIT notice",
+      "viewport": "0 0 24 24",
+      "stroke": "currentColor",
+      "strokeWidth": 2
+    },
+    {
+      "file": "layout-dashboard.svg",
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/70562c1ee1c4fdcf736fe97bc893fb8511927934/icons/layout-dashboard.svg",
+      "sha256": "281ab865b4c04dab32a04023473e448f58be6a7ad90769450ac3349d79dc4aed",
+      "bytes": 416,
+      "license": "ISC; repository includes Feather MIT notice",
+      "viewport": "0 0 24 24",
+      "stroke": "currentColor",
+      "strokeWidth": 2
+    }
+  ]
+}

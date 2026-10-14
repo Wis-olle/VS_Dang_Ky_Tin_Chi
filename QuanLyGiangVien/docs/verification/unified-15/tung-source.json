@@ -1,0 +1,14 @@
+{
+  "folder": "E:\\AI Agents\\Dangkytinchi\\Quanly_tinchi (2)\\Quanly_tinchi",
+  "files": [
+    "c#.slnf",
+    "QL_DANGKY_TINCHI.sql"
+  ],
+  "sqlSha256": "5DD026354D1BDBCAA971F42BC9E21BA851D2B49C278B06871B0B61C84FD9F3EA",
+  "referencedSolution": "E:\\AI Agents\\Dangkytinchi\\source\\repos\\WinFormsApp3\\WinFormsApp3.slnx",
+  "solutionExists": false,
+  "referencedProjects": [
+    "WinFormsApp3\\WinFormsApp3.csproj"
+  ],
+  "formSourceFiles": []
+}

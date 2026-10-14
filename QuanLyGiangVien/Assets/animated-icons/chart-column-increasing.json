@@ -1,0 +1,8 @@
+{
+  "id": "chart-column-increasing",
+  "frameSize": 128,
+  "frameCount": 31,
+  "durationMilliseconds": 1000,
+  "idleFrame": 30,
+  "sheet": "chart-column-increasing.png"
+}

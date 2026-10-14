@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "file": "Corsair-UI-MIT.txt",
+      "bytesMatch": true,
+      "sha256Match": true
+    },
+    {
+      "file": "bar-chart.tsx",
+      "bytesMatch": true,
+      "sha256Match": true
+    }
+  ]
+}

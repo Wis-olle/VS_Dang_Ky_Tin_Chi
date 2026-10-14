@@ -1,0 +1,17 @@
+{
+  "reference": "User attachment codex-clipboard-dfa9aa18-ba8d-4cfc-995b-bb3b30b6edbf.png",
+  "actual": "27-service-hover-wide.png",
+  "dimensions": [
+    1363,
+    188
+  ],
+  "identicalRgbPixels": false,
+  "artworkRegionRgbIdentical": true,
+  "differenceBoundingBox": [
+    21,
+    21,
+    1071,
+    42
+  ],
+  "note": "Pixel differences are limited to the heading icon animation region; artwork region below y45 is identical."
+}

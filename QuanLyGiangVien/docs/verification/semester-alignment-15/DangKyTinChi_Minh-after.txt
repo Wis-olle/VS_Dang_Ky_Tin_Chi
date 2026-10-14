@@ -1,0 +1,9 @@
+giang_vien phong hoc_phan hoc_ky lop dang_ky
+---------- ----- -------- ------ --- -------
+12 8 8 2 10 5
+semester_data_hash registration_data_hash
+------------------ ----------------------
+6D9128BBC0175A89E4A6CDC206DC6C10FF34A42105EF7F35BFAD73FD65C156C3 E8AAE61E767ED7DDC347E88568693C593CA6C148DA9A782E052451AB75176427
+vai_tro ma_sv
+------- -----
+DAO_TAO NULL

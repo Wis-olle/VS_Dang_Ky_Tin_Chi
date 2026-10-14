@@ -1,0 +1,42 @@
+{
+  "profiles": {
+    "QuanLyGiangVien": {
+      "commandName": "Project",
+      "commandLineArgs": "--database"
+    },
+    "LopVaPhongSQL": {
+      "commandName": "Project",
+      "commandLineArgs": "--database --scheduling"
+    },
+    "GiangVienDemo": {
+      "commandName": "Project",
+      "commandLineArgs": "--demo"
+    },
+    "ThoiKhoaBieuSinhVien": {
+      "commandName": "Project",
+      "commandLineArgs": "--student-portal --database --student-timetable",
+      "environmentVariables": {
+        "MINH_DB_CONNECTION": "Server=localhost;Database=DangKyTinChi_Minh_Test_StudentPreview;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5"
+      }
+    },
+    "ThoiKhoaBieuDemo": {
+      "commandName": "Project",
+      "commandLineArgs": "--student-timetable --demo"
+    },
+    "ThoiKhoaBieuSQL": {
+      "commandName": "Project",
+      "commandLineArgs": "--student-timetable --database"
+    },
+    "DangKyHocPhanSinhVien": {
+      "commandName": "Project",
+      "commandLineArgs": "--student-portal --database",
+      "environmentVariables": {
+        "MINH_DB_CONNECTION": "Server=localhost;Database=DangKyTinChi_Minh_Test_StudentPreview;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5"
+      }
+    },
+    "GiangVienSQLDocLap": {
+      "commandName": "Project",
+      "commandLineArgs": "--database --standalone"
+    }
+  }
+}

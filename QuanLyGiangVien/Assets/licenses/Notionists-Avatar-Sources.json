@@ -1,0 +1,578 @@
+[
+  {
+    "file": "Assets/avatars/portrait-01.png",
+    "svg_file": "Assets/avatars/portrait-01.svg",
+    "original_svg_file": "Assets/avatars/portrait-01-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-01&size=512&backgroundColor=fff3ee&inkColor=1d2428&paperColor=ffffff&hairVariant=variant38&clothesVariant=variant13&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=0&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-01",
+      "size": "512",
+      "backgroundColor": "fff3ee",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant38",
+      "clothesVariant": "variant13",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "0",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nam",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#b9e5de",
+      "background": "#fff3ee"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "e1fd541ffa62fc657ad7d6b090a8bb0986b9f24253f8b77fab40ffb9688380de",
+    "svg_sha256": "d4635755069133a6cf5967d55a78018879782f2ed68efb0f886765a0d78cf511",
+    "png_sha256": "7aa1ebc8ef6a0c93d89da8ec27673f4b92bcd275df7979251451b24e20267124"
+  },
+  {
+    "file": "Assets/avatars/portrait-02.png",
+    "svg_file": "Assets/avatars/portrait-02.svg",
+    "original_svg_file": "Assets/avatars/portrait-02-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-02&size=512&backgroundColor=fff3ee&inkColor=1d2428&paperColor=ffffff&hairVariant=variant28&clothesVariant=variant13&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=0&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-02",
+      "size": "512",
+      "backgroundColor": "fff3ee",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant28",
+      "clothesVariant": "variant13",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "0",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nu",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#c6e8ed",
+      "background": "#fff3ee"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "273cf90342cef6ee81c2c7a21670aa362147c10af48b1e6f9aeb23f1034c84a4",
+    "svg_sha256": "f5b8223facb29f2ebc71a76e123051810d712aeabc693f053ada6e0e7c5fa67b",
+    "png_sha256": "c9619b0b931e925dfc89ec2f8944b61953667dab033760b24269493b63840e1c"
+  },
+  {
+    "file": "Assets/avatars/portrait-03.png",
+    "svg_file": "Assets/avatars/portrait-03.svg",
+    "original_svg_file": "Assets/avatars/portrait-03-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-03&size=512&backgroundColor=e9f6f3&inkColor=1d2428&paperColor=ffffff&hairVariant=variant13&clothesVariant=variant19&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=0&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-03",
+      "size": "512",
+      "backgroundColor": "e9f6f3",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant13",
+      "clothesVariant": "variant19",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "0",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nam",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#b9e5de",
+      "background": "#e9f6f3"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "af15c678c782bbd99f2fd3ef8b3a960f2a576b7b60cf261477a18afcb655addb",
+    "svg_sha256": "e9b29ce7476734298d8e8eca8f2282c5f333d23c27e1935b03bc3e3b3a81ae60",
+    "png_sha256": "6efa365574ae0b8f935dcb19073b9e4906dfe0d2ace502f254eec5994b46adc2"
+  },
+  {
+    "file": "Assets/avatars/portrait-04.png",
+    "svg_file": "Assets/avatars/portrait-04.svg",
+    "original_svg_file": "Assets/avatars/portrait-04-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-04&size=512&backgroundColor=f3eefd&inkColor=1d2428&paperColor=ffffff&hairVariant=variant02&clothesVariant=variant13&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=0&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-04",
+      "size": "512",
+      "backgroundColor": "f3eefd",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant02",
+      "clothesVariant": "variant13",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "0",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nu",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#b9e5de",
+      "background": "#f3eefd"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "5a9790b0196346f001aa5da1deceade91b2ecd31313bfa08a5b218ba5143d832",
+    "svg_sha256": "49c476c17c239891db34177dc1312c373b4c828e9722fc5cd05aac402563e3f6",
+    "png_sha256": "e88624adc8ab855fd526b4018a779cd3fe07bed939e9a1b2c381af84e7f682a5"
+  },
+  {
+    "file": "Assets/avatars/portrait-05.png",
+    "svg_file": "Assets/avatars/portrait-05.svg",
+    "original_svg_file": "Assets/avatars/portrait-05-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-05&size=512&backgroundColor=fff3ee&inkColor=1d2428&paperColor=ffffff&hairVariant=variant07&clothesVariant=variant13&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=0&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-05",
+      "size": "512",
+      "backgroundColor": "fff3ee",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant07",
+      "clothesVariant": "variant13",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "0",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nam",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#c6e8ed",
+      "background": "#fff3ee"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "b9efcab4eb679b152213cd5cc61a34ac0b8db8d51bbb344d59d5700a99f8ade4",
+    "svg_sha256": "601c6e926d485566fc53f9439072563377226a33a4ecd51ac6acdceaf7ea728f",
+    "png_sha256": "11643bbaa9b6b3c14ec2232eea344d3e8fa033a6f5d0585b1da09ecb9cc4e48a"
+  },
+  {
+    "file": "Assets/avatars/portrait-06.png",
+    "svg_file": "Assets/avatars/portrait-06.svg",
+    "original_svg_file": "Assets/avatars/portrait-06-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-06&size=512&backgroundColor=fff3ee&inkColor=1d2428&paperColor=ffffff&hairVariant=variant41&clothesVariant=variant13&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=0&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-06",
+      "size": "512",
+      "backgroundColor": "fff3ee",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant41",
+      "clothesVariant": "variant13",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "0",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nu",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#b9e5de",
+      "background": "#fff3ee"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "5f15433f20b0bc29bc06e1616eb6604a8c835d1d217e055fd4c3d2e080c761a5",
+    "svg_sha256": "4aed6c1fc3bbf78a7c5a8e2b9eb3cc44516fb3697341baf9acdf8cdbe7efa41f",
+    "png_sha256": "c488ff03c4ec8261eb470c06fb3920527e8fe88ffd33ec9ec97f6fe946af3511"
+  },
+  {
+    "file": "Assets/avatars/portrait-07.png",
+    "svg_file": "Assets/avatars/portrait-07.svg",
+    "original_svg_file": "Assets/avatars/portrait-07-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-07&size=512&backgroundColor=f3eefd&inkColor=1d2428&paperColor=ffffff&hairVariant=variant16&clothesVariant=variant13&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=100&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-07",
+      "size": "512",
+      "backgroundColor": "f3eefd",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant16",
+      "clothesVariant": "variant13",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "100",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nam",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#b9e5de",
+      "background": "#f3eefd"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "a496778bd3c896cb9afb9126e029f5d4544450795ac41319fe90e45f9c24684b",
+    "svg_sha256": "c52f67960100574aeefd853ffdf2312c335d64a97b6f5fd7622818d87cf4edc7",
+    "png_sha256": "0db63064ca5bb8dc4c215cb37dbdc75e7ae52f4c6738bd09ab012628b188fe27"
+  },
+  {
+    "file": "Assets/avatars/portrait-08.png",
+    "svg_file": "Assets/avatars/portrait-08.svg",
+    "original_svg_file": "Assets/avatars/portrait-08-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-08&size=512&backgroundColor=fff3ee&inkColor=1d2428&paperColor=ffffff&hairVariant=variant46&clothesVariant=variant13&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=0&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-08",
+      "size": "512",
+      "backgroundColor": "fff3ee",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant46",
+      "clothesVariant": "variant13",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "0",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nu",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#c6e8ed",
+      "background": "#fff3ee"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "431d06c140dd1d354b17909d2db21da7876ae741d53dbcbca8604b88c3f0ba1b",
+    "svg_sha256": "45f4e4010ffae109b4c9df058cecf9502dde54211d796dea481b181e8e8b6603",
+    "png_sha256": "acd948e29e5157fba948d92c9c91d40025a230e63b6d119fbcd90e22dd54d5f6"
+  },
+  {
+    "file": "Assets/avatars/portrait-09.png",
+    "svg_file": "Assets/avatars/portrait-09.svg",
+    "original_svg_file": "Assets/avatars/portrait-09-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-09&size=512&backgroundColor=fff3ee&inkColor=1d2428&paperColor=ffffff&hairVariant=variant21&clothesVariant=variant19&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=0&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-09",
+      "size": "512",
+      "backgroundColor": "fff3ee",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant21",
+      "clothesVariant": "variant19",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "0",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nam",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#b9e5de",
+      "background": "#fff3ee"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "758be1e17e2500dcb20cb0a70384228c009b03699462ee25f9e7f8300fc75226",
+    "svg_sha256": "e62b3caa0a7c09f352bd350c210ddb617886a12a2e4b01e2b96c9818ac8bc992",
+    "png_sha256": "1c931d6e7a4a4ee17df5f0f433de9be37d94609773675c8e30c60802fbfc1ae6"
+  },
+  {
+    "file": "Assets/avatars/portrait-10.png",
+    "svg_file": "Assets/avatars/portrait-10.svg",
+    "original_svg_file": "Assets/avatars/portrait-10-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-10&size=512&backgroundColor=e9f6f3&inkColor=1d2428&paperColor=ffffff&hairVariant=variant28&clothesVariant=variant13&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=100&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-10",
+      "size": "512",
+      "backgroundColor": "e9f6f3",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant28",
+      "clothesVariant": "variant13",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "100",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nu",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#b9e5de",
+      "background": "#e9f6f3"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "fb5283f8c18a2a7b526c4f7b8d530faf6bc387cbdb195dde785a9ecac3634df3",
+    "svg_sha256": "664002ddf975fc042bf1ee9ce92097f5dc8c0fed9ffaf97c4d738dfc05c4e9b2",
+    "png_sha256": "365bab4bbbbfaaccf00033fb30bdc0caf19c190f0e28d52deb92f57de0ab91c7"
+  },
+  {
+    "file": "Assets/avatars/portrait-11.png",
+    "svg_file": "Assets/avatars/portrait-11.svg",
+    "original_svg_file": "Assets/avatars/portrait-11-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-11&size=512&backgroundColor=fff3ee&inkColor=1d2428&paperColor=ffffff&hairVariant=variant56&clothesVariant=variant13&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=0&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-11",
+      "size": "512",
+      "backgroundColor": "fff3ee",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant56",
+      "clothesVariant": "variant13",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "0",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nam",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#c6e8ed",
+      "background": "#fff3ee"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "c425518e2e60d2e361cf56043e6d9153e2b20fb6a4f047bedbc5c6eea8004165",
+    "svg_sha256": "a2334a89fe0a029e215a11f4675c83765df039bb8ba8a9245474c54f1f002bc8",
+    "png_sha256": "de8ca8dda19376c05922aebcf72ed23c87bd47bcb924d2641ed9167ab8b1449d"
+  },
+  {
+    "file": "Assets/avatars/portrait-12.png",
+    "svg_file": "Assets/avatars/portrait-12.svg",
+    "original_svg_file": "Assets/avatars/portrait-12-source.svg",
+    "author": "Zoish",
+    "style": "Notionists / DiceBear remix",
+    "style_page": "https://www.dicebear.com/styles/notionists/",
+    "original_source": "https://heyzoish.gumroad.com/l/notionists",
+    "download_url": "https://api.dicebear.com/10.x/notionists/svg?seed=campus-lecturer-12&size=512&backgroundColor=fff3ee&inkColor=1d2428&paperColor=ffffff&hairVariant=variant41&clothesVariant=variant13&mouthVariant=variant03&eyesVariant=variant01&eyebrowsVariant=variant01&noseVariant=variant01&gestureProbability=0&beardProbability=0&clothesGraphicProbability=0&glassesProbability=100&glassesVariant=variant03",
+    "options": {
+      "seed": "campus-lecturer-12",
+      "size": "512",
+      "backgroundColor": "fff3ee",
+      "inkColor": "1d2428",
+      "paperColor": "ffffff",
+      "hairVariant": "variant41",
+      "clothesVariant": "variant13",
+      "mouthVariant": "variant03",
+      "eyesVariant": "variant01",
+      "eyebrowsVariant": "variant01",
+      "noseVariant": "variant01",
+      "gestureProbability": "0",
+      "beardProbability": "0",
+      "clothesGraphicProbability": "0",
+      "glassesProbability": "100",
+      "glassesVariant": "variant03"
+    },
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "data_record_gender": "Nu",
+    "palette": {
+      "ink": "#1d2428",
+      "paper": "#ffffff",
+      "clothing": "#c6e8ed",
+      "background": "#fff3ee"
+    },
+    "modifications": [
+      "Recolored paper fills only inside the clothes component",
+      "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+    ],
+    "source_sha256": "adbcd920a78e66b8452b8a2da2bdc9d5caf01ca2fcbf7bb4ab24773fd31c8317",
+    "svg_sha256": "ec406436201b2219d694d0dfc8151f86d3b933d5037996b85a9adfd793a37e01",
+    "png_sha256": "6dae86ccf2e9439437fdbd0de9000a96b074de6019ed0b8c5bfd46dd8dd6791d"
+  }
+]

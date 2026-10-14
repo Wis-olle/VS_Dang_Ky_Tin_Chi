@@ -1,0 +1,8 @@
+{
+  "id": "users",
+  "frameSize": 128,
+  "frameCount": 19,
+  "durationMilliseconds": 600,
+  "idleFrame": 18,
+  "sheet": "users.png"
+}

@@ -1,0 +1,95 @@
+{
+  "checkedOn": "2026-10-13",
+  "website": "https://lucide-animated.com/",
+  "project": "pqoqubbw/icons",
+  "commit": "cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232",
+  "licenseFile": "LucideAnimated-MIT-LICENSE.txt",
+  "licenseSource": "https://raw.githubusercontent.com/pqoqubbw/icons/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/LICENSE",
+  "licenseSha256": "b77c01c81935b05f8f5ec43652cd6a29675e1b1b7505ac66cd9ac1f4ef4ac3ef",
+  "sourceFiles": [
+    {
+      "file": "source/book-text.tsx",
+      "source": "https://raw.githubusercontent.com/pqoqubbw/icons/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/icons/book-text.tsx",
+      "license": "MIT",
+      "sha256": "15fb7dbe80b967b0e4e3105011e84ad0c15c475159e771c4a3324af0961b003c",
+      "bytes": 2630
+    },
+    {
+      "file": "source/calendar-days.tsx",
+      "source": "https://raw.githubusercontent.com/pqoqubbw/icons/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/icons/calendar-days.tsx",
+      "license": "MIT",
+      "sha256": "bff536d87f818512cbcc670e457f6334797df514fffe78d919e03f1a92577c0c",
+      "bytes": 2981
+    },
+    {
+      "file": "source/users-round.tsx",
+      "source": "https://raw.githubusercontent.com/pqoqubbw/icons/cf847c1f6ba0e1f0695e2ded6bf6d86df0a09232/icons/users-round.tsx",
+      "license": "MIT",
+      "sha256": "a3a6146b6204a106f62711fb36d3c8eb6d03a4ce15dfae6f594f875d86eed095",
+      "bytes": 2630
+    }
+  ],
+  "derivatives": [
+    {
+      "file": "calendar-body.svg",
+      "license": "MIT",
+      "sha256": "64bb17bf63094e74ea65ca3100b225a22ab68ac4367f0cb73b82868837a199ec"
+    },
+    {
+      "file": "calendar-dots.svg",
+      "license": "MIT",
+      "sha256": "a47e237561deacbae7fad15e65a791edfbd2f5aa45fb1bf9f28c103d7638f136"
+    },
+    {
+      "file": "users-body.svg",
+      "license": "MIT",
+      "sha256": "00c7725e5a1fa5a02a22e45adf39ccd04a8c6f28d7214e6572f11dff30d85c58"
+    },
+    {
+      "file": "users-companion.svg",
+      "license": "MIT",
+      "sha256": "c07f75771d54123e4825b8868b43e69c849edf2c7ae4aeb3a5b8f51c3de7e3e1"
+    }
+  ],
+  "nativeAdaptations": [
+    {
+      "key": "book-open",
+      "geometry": "../book-open.svg",
+      "geometryLicense": "ISC; see ../Lucide-LICENSE.txt and ../Sources.json",
+      "motionSource": "source/book-text.tsx",
+      "durationMilliseconds": 600,
+      "adaptation": "Open-book static Lucide geometry uses the source whole-glyph book-text rotate [0,-8,8,-8,0] at [0,.2,.5,.8,1], scale [1,1.04,1] and y [0,-2,0]. Three-value channels use uniformly spaced native knots. This is a native adaptation, not a book-open animation distributed by the source."
+    },
+    {
+      "key": "door-open",
+      "geometry": "../door-open.svg",
+      "geometryLicense": "ISC; see ../Lucide-LICENSE.txt and ../Sources.json",
+      "motionSource": "source/book-text.tsx",
+      "durationMilliseconds": 600,
+      "adaptation": "Door static Lucide geometry uses the same documented whole-glyph book-text keyframes. This is a native adaptation, not a hinge/door-open animation distributed by the source."
+    },
+    {
+      "key": "calendar-days",
+      "geometry": [
+        "calendar-body.svg",
+        "calendar-dots.svg"
+      ],
+      "geometryLicense": "MIT",
+      "motionSource": "source/calendar-days.tsx",
+      "durationMilliseconds": 900,
+      "adaptation": "Preserves source calendar geometry and six dot centers. Each opacity [1,.3,1] pulse takes 400 ms, with index*100 ms stagger. Native cubic easeInOut interpolation is explicit."
+    },
+    {
+      "key": "users-round",
+      "geometry": [
+        "users-body.svg",
+        "users-companion.svg"
+      ],
+      "geometryLicense": "MIT",
+      "motionSource": "source/users-round.tsx",
+      "durationMilliseconds": 1100,
+      "adaptation": "Only companion path translates -4 to 0 and fades 0 to 1 after 100 ms delay. Native mass=1 spring uses source stiffness=200 and damping=13; capped after 1000 ms of spring time, then settles to exact idle."
+    }
+  ],
+  "renderer": "WinForms Control; shared Ui.Motion; raster each SVG layer once per geometry/scale/DPI. No runtime network, React, web view, independent timer or per-frame rasterization."
+}

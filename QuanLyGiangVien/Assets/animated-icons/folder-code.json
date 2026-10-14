@@ -1,0 +1,8 @@
+{
+  "id": "folder-code",
+  "frameSize": 128,
+  "frameCount": 16,
+  "durationMilliseconds": 500,
+  "idleFrame": 15,
+  "sheet": "folder-code.png"
+}

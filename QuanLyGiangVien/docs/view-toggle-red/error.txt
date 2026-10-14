@@ -1,0 +1,5 @@
+System.InvalidOperationException: UI check failed: View toggle has no visible caption row below its icons
+   at QuanLyGiangVien.Ui.UiCheck.<>c__DisplayClass1_0.<Run>g__Expect|0(Boolean condition, String name) in E:\AI Agents\visual\QuanLyGiangVien\Ui\UiCheck.cs:line 54
+   at QuanLyGiangVien.Ui.UiCheck.CheckIconOnlyView(MainForm form, String folder, Action`2 expect) in E:\AI Agents\visual\QuanLyGiangVien\Ui\UiCheck.cs:line 321
+   at QuanLyGiangVien.Ui.UiCheck.Run(MainForm form, String folder, List`1 checks) in E:\AI Agents\visual\QuanLyGiangVien\Ui\UiCheck.cs:line 86
+   at QuanLyGiangVien.Ui.UiCheck.<>c__DisplayClass0_0.<<Attach>b__0>d.MoveNext() in E:\AI Agents\visual\QuanLyGiangVien\Ui\UiCheck.cs:line 38

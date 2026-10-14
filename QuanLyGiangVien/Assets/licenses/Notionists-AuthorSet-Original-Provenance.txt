@@ -1,0 +1,8 @@
+# Bộ avatar mẫu (48 ảnh)
+
+- **Nguồn:** DiceBear, style **notionists** — https://www.dicebear.com/styles/notionists/ (thiết kế gốc: Zoish, https://heyzoish.gumroad.com/l/notionists)
+- **Giấy phép:** CC0 1.0 (dùng tự do, không cần ghi công)
+- **Cách tạo:** `https://api.dicebear.com/9.x/notionists/png?seed=TG0001&size=128&backgroundColor=fef3c7` — seed `TG0001`..`TG0048`, 5 màu nền pastel `fef3c7` `e3f1fa` `ede9fe` `fce7f3` `dcfce7` (mỗi file dùng đúng màu đã dùng trong app, xem `tools/Get-Avatars.ps1`)
+- **Tải lại / đổi kích cỡ:** `powershell -ExecutionPolicy Bypass -File tools\Get-Avatars.ps1 -Size 128`
+- **Dùng ở đâu:** `Ui/AvatarLibrary.cs` đọc mọi `*.png` trong thư mục này → dữ liệu mẫu (`Data/SampleData.cs`) và popover "Chọn mẫu" trong form Thêm / Sửa tác giả.
+- **Không thuộc bộ này:** `Assets/avatar-quangminh.png` (seed `QuangMinh`) là avatar riêng của quản trị viên, chỉ tài khoản đăng nhập dùng.

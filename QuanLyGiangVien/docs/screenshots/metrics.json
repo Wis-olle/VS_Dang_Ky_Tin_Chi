@@ -1,0 +1,2061 @@
+{
+  "DeviceDpi": 120,
+  "GraphicsDpi": 96,
+  "K": 1.25,
+  "labels": [
+    {
+      "Text": "campus.",
+      "FontSize": 27.5,
+      "FontHeight": 47,
+      "Width": 212,
+      "Height": 50,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "PH\u00D2NG \u0110\u00C0O T\u1EA0O",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 231,
+      "Height": 22,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Minh",
+      "FontSize": 12.5,
+      "FontHeight": 21,
+      "Width": 85,
+      "Height": 38,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "KH\u00D4NG GIAN \u0110\u00C0O T\u1EA0O",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 674,
+      "Height": 22,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "\u0110\u1ED9i ng\u0169 gi\u1EA3ng vi\u00EAn",
+      "FontSize": 28.75,
+      "FontHeight": 49,
+      "Width": 674,
+      "Height": 55,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "H\u1ED3 s\u01A1 r\u00F5 r\u00E0ng, k\u1EBFt n\u1ED1i vi\u1EC7c gi\u1EA3ng d\u1EA1y\nv\u00E0 ph\u00E2n c\u00F4ng trong m\u1ED9t kh\u00F4ng gian.",
+      "FontSize": 11.25,
+      "FontHeight": 19,
+      "Width": 674,
+      "Height": 45,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "T\u00ECnh h\u00ECnh gi\u1EA3ng d\u1EA1y",
+      "FontSize": 13.75,
+      "FontHeight": 24,
+      "Width": 502,
+      "Height": 31,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Tr\u1EA1ng th\u00E1i h\u1ED3 s\u01A1 hi\u1EC7n t\u1EA1i",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 502,
+      "Height": 25,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "10 \u0111ang gi\u1EA3ng d\u1EA1y",
+      "FontSize": 11.25,
+      "FontHeight": 19,
+      "Width": 365,
+      "Height": 40,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "2 t\u1EA1m ngh\u1EC9",
+      "FontSize": 11.25,
+      "FontHeight": 19,
+      "Width": 365,
+      "Height": 35,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "T\u1ED5ng gi\u1EA3ng vi\u00EAn",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 258,
+      "Height": 29,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "12",
+      "FontSize": 23.75,
+      "FontHeight": 40,
+      "Width": 258,
+      "Height": 40,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Khoa c\u00F3 gi\u1EA3ng vi\u00EAn",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 258,
+      "Height": 29,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "4",
+      "FontSize": 23.75,
+      "FontHeight": 40,
+      "Width": 258,
+      "Height": 40,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "L\u01B0\u1EE3t ph\u00E2n c\u00F4ng l\u1EDBp",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 260,
+      "Height": 29,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "27",
+      "FontSize": 23.75,
+      "FontHeight": 40,
+      "Width": 260,
+      "Height": 40,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Theo khoa",
+      "FontSize": 13.75,
+      "FontHeight": 24,
+      "Width": 514,
+      "Height": 31,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "CNTT",
+      "FontSize": 9.375,
+      "FontHeight": 16,
+      "Width": 121,
+      "Height": 25,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "4",
+      "FontSize": 13.75,
+      "FontHeight": 24,
+      "Width": 25,
+      "Height": 35,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Kinh t\u1EBF",
+      "FontSize": 9.375,
+      "FontHeight": 16,
+      "Width": 121,
+      "Height": 25,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "3",
+      "FontSize": 13.75,
+      "FontHeight": 24,
+      "Width": 25,
+      "Height": 35,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Ngo\u1EA1i ng\u1EEF",
+      "FontSize": 9.375,
+      "FontHeight": 16,
+      "Width": 121,
+      "Height": 25,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "3",
+      "FontSize": 13.75,
+      "FontHeight": 24,
+      "Width": 25,
+      "Height": 35,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "K\u1EF9 thu\u1EADt",
+      "FontSize": 9.375,
+      "FontHeight": 16,
+      "Width": 121,
+      "Height": 25,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "2",
+      "FontSize": 13.75,
+      "FontHeight": 24,
+      "Width": 25,
+      "Height": 35,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Danh s\u00E1ch gi\u1EA3ng vi\u00EAn",
+      "FontSize": 18.75,
+      "FontHeight": 32,
+      "Width": 318,
+      "Height": 45,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Kh\u00F4ng t\u00ECm th\u1EA5y gi\u1EA3ng vi\u00EAn",
+      "FontSize": 20,
+      "FontHeight": 34,
+      "Width": 1066,
+      "Height": 50,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Th\u1EED t\u00EAn, m\u00E3 gi\u1EA3ng vi\u00EAn kh\u00E1c ho\u1EB7c \u0111\u1EB7t l\u1EA1i b\u1ED9 l\u1ECDc.",
+      "FontSize": 12.5,
+      "FontHeight": 21,
+      "Width": 1066,
+      "Height": 35,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "H\u1ED2 S\u01A0 GI\u1EA2NG VI\u00CAN",
+      "FontSize": 9.375,
+      "FontHeight": 16,
+      "Width": 301,
+      "Height": 25,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Nguy\u1EC5n Ho\u00E0ng Minh",
+      "FontSize": 15.625,
+      "FontHeight": 27,
+      "Width": 371,
+      "Height": 34,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "GV0001  \u00B7  C\u00F4ng ngh\u1EC7 th\u00F4ng tin",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 371,
+      "Height": 22,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "L\u1EDAP \u0110\u01AF\u1EE2C PH\u00C2N C\u00D4NG \u00B7 3",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 456,
+      "Height": 28,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "L\u1EADp tr\u00ECnh h\u01B0\u1EDBng \u0111\u1ED1i t\u01B0\u1EE3ng",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 431,
+      "Height": 22,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Th\u1EE9 2 \u00B7 Ti\u1EBFt 1\u20133  \u00B7  A201",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 431,
+      "Height": 18,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "C\u01A1 s\u1EDF d\u1EEF li\u1EC7u",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 431,
+      "Height": 22,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Th\u1EE9 3 \u00B7 Ti\u1EBFt 4\u20136  \u00B7  A202",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 431,
+      "Height": 18,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "C\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 431,
+      "Height": 22,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Th\u1EE9 4 \u00B7 Ti\u1EBFt 1\u20133  \u00B7  A203",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 431,
+      "Height": 18,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Ng\u00E0y sinh",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 217,
+      "Height": 18,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "12/04/1986",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 217,
+      "Height": 26,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Gi\u1EDBi t\u00EDnh",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 217,
+      "Height": 18,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Nam",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 217,
+      "Height": 26,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Email",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 456,
+      "Height": 18,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "minh.nh@campus.edu.vn",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 456,
+      "Height": 26,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "\u0110i\u1EC7n tho\u1EA1i",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 217,
+      "Height": 18,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "0901234567",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 217,
+      "Height": 26,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "H\u1ECDc v\u1ECB",
+      "FontSize": 10,
+      "FontHeight": 17,
+      "Width": 217,
+      "Height": 18,
+      "FontName": "Plus Jakarta Sans"
+    },
+    {
+      "Text": "Ti\u1EBFn s\u0129",
+      "FontSize": 10.625,
+      "FontHeight": 18,
+      "Width": 217,
+      "Height": 26,
+      "FontName": "Plus Jakarta Sans"
+    }
+  ],
+  "scrolling": [
+    {
+      "Type": "Panel",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 40,
+          "Y": 150
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1720,
+          "Height": 869
+        },
+        "X": 40,
+        "Y": 150,
+        "Width": 1720,
+        "Height": 869,
+        "Left": 40,
+        "Top": 150,
+        "Right": 1760,
+        "Bottom": 1019,
+        "IsEmpty": false
+      },
+      "ClientSize": {
+        "IsEmpty": false,
+        "Width": 1699,
+        "Height": 869
+      },
+      "DisplayRectangle": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1699,
+          "Height": 930
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 1699,
+        "Height": 930,
+        "Left": 0,
+        "Top": 0,
+        "Right": 1699,
+        "Bottom": 930,
+        "IsEmpty": false
+      },
+      "AutoScrollPosition": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "AutoScrollMinSize": {
+        "IsEmpty": false,
+        "Width": 0,
+        "Height": 930
+      },
+      "AutoScrollMargin": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "Padding": {
+        "All": 0,
+        "Bottom": 0,
+        "Left": 0,
+        "Right": 0,
+        "Top": 0,
+        "Horizontal": 0,
+        "Vertical": 0,
+        "Size": {
+          "IsEmpty": true,
+          "Width": 0,
+          "Height": 0
+        }
+      },
+      "Horizontal": false,
+      "Vertical": true,
+      "Children": [
+        {
+          "Type": "DashboardHero",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 1116,
+              "Height": 262
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 1116,
+            "Height": 262,
+            "Left": 0,
+            "Top": 0,
+            "Right": 1116,
+            "Bottom": 262,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "DashboardOverview",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 1141,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 558,
+              "Height": 262
+            },
+            "X": 1141,
+            "Y": 0,
+            "Width": 558,
+            "Height": 262,
+            "Left": 1141,
+            "Top": 0,
+            "Right": 1699,
+            "Bottom": 262,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "DashboardStats",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 282
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 1116,
+              "Height": 135
+            },
+            "X": 0,
+            "Y": 282,
+            "Width": 1116,
+            "Height": 135,
+            "Left": 0,
+            "Top": 282,
+            "Right": 1116,
+            "Bottom": 417,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "DashboardFaculty",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 1141,
+              "Y": 282
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 558,
+              "Height": 135
+            },
+            "X": 1141,
+            "Y": 282,
+            "Width": 558,
+            "Height": 135,
+            "Left": 1141,
+            "Top": 282,
+            "Right": 1699,
+            "Bottom": 417,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Panel",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 442
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 1116,
+              "Height": 488
+            },
+            "X": 0,
+            "Y": 442,
+            "Width": 1116,
+            "Height": 488,
+            "Left": 0,
+            "Top": 442,
+            "Right": 1116,
+            "Bottom": 930,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerProfile",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 1141,
+              "Y": 442
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 558,
+              "Height": 488
+            },
+            "X": 1141,
+            "Y": 442,
+            "Width": 558,
+            "Height": 488,
+            "Left": 1141,
+            "Top": 442,
+            "Right": 1699,
+            "Bottom": 930,
+            "IsEmpty": false
+          },
+          "Visible": true
+        }
+      ]
+    },
+    {
+      "Type": "DashboardStats",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 0,
+          "Y": 282
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1116,
+          "Height": 135
+        },
+        "X": 0,
+        "Y": 282,
+        "Width": 1116,
+        "Height": 135,
+        "Left": 0,
+        "Top": 282,
+        "Right": 1116,
+        "Bottom": 417,
+        "IsEmpty": false
+      },
+      "ClientSize": {
+        "IsEmpty": false,
+        "Width": 1116,
+        "Height": 135
+      },
+      "DisplayRectangle": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1116,
+          "Height": 135
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 1116,
+        "Height": 135,
+        "Left": 0,
+        "Top": 0,
+        "Right": 1116,
+        "Bottom": 135,
+        "IsEmpty": false
+      },
+      "AutoScrollPosition": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "AutoScrollMinSize": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "AutoScrollMargin": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "Padding": {
+        "All": 0,
+        "Bottom": 0,
+        "Left": 0,
+        "Right": 0,
+        "Top": 0,
+        "Horizontal": 0,
+        "Vertical": 0,
+        "Size": {
+          "IsEmpty": true,
+          "Width": 0,
+          "Height": 0
+        }
+      },
+      "Horizontal": false,
+      "Vertical": false,
+      "Children": [
+        {
+          "Type": "DashboardStatCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 358,
+              "Height": 135
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 358,
+            "Height": 135,
+            "Left": 0,
+            "Top": 0,
+            "Right": 358,
+            "Bottom": 135,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "DashboardStatCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 378,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 358,
+              "Height": 135
+            },
+            "X": 378,
+            "Y": 0,
+            "Width": 358,
+            "Height": 135,
+            "Left": 378,
+            "Top": 0,
+            "Right": 736,
+            "Bottom": 135,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "DashboardStatCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 756,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 360,
+              "Height": 135
+            },
+            "X": 756,
+            "Y": 0,
+            "Width": 360,
+            "Height": 135,
+            "Left": 756,
+            "Top": 0,
+            "Right": 1116,
+            "Bottom": 135,
+            "IsEmpty": false
+          },
+          "Visible": true
+        }
+      ]
+    },
+    {
+      "Type": "Panel",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 22,
+          "Y": 52
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 514,
+          "Height": 74
+        },
+        "X": 22,
+        "Y": 52,
+        "Width": 514,
+        "Height": 74,
+        "Left": 22,
+        "Top": 52,
+        "Right": 536,
+        "Bottom": 126,
+        "IsEmpty": false
+      },
+      "ClientSize": {
+        "IsEmpty": false,
+        "Width": 514,
+        "Height": 74
+      },
+      "DisplayRectangle": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 514,
+          "Height": 74
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 514,
+        "Height": 74,
+        "Left": 0,
+        "Top": 0,
+        "Right": 514,
+        "Bottom": 74,
+        "IsEmpty": false
+      },
+      "AutoScrollPosition": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "AutoScrollMinSize": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "AutoScrollMargin": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "Padding": {
+        "All": 0,
+        "Bottom": 0,
+        "Left": 0,
+        "Right": 0,
+        "Top": 0,
+        "Horizontal": 0,
+        "Vertical": 0,
+        "Size": {
+          "IsEmpty": true,
+          "Width": 0,
+          "Height": 0
+        }
+      },
+      "Horizontal": false,
+      "Vertical": false,
+      "Children": [
+        {
+          "Type": "Panel",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 121,
+              "Height": 74
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 121,
+            "Height": 74,
+            "Left": 0,
+            "Top": 0,
+            "Right": 121,
+            "Bottom": 74,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Panel",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 131,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 121,
+              "Height": 74
+            },
+            "X": 131,
+            "Y": 0,
+            "Width": 121,
+            "Height": 74,
+            "Left": 131,
+            "Top": 0,
+            "Right": 252,
+            "Bottom": 74,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Panel",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 262,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 121,
+              "Height": 74
+            },
+            "X": 262,
+            "Y": 0,
+            "Width": 121,
+            "Height": 74,
+            "Left": 262,
+            "Top": 0,
+            "Right": 383,
+            "Bottom": 74,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Panel",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 393,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 121,
+              "Height": 74
+            },
+            "X": 393,
+            "Y": 0,
+            "Width": 121,
+            "Height": 74,
+            "Left": 393,
+            "Top": 0,
+            "Right": 514,
+            "Bottom": 74,
+            "IsEmpty": false
+          },
+          "Visible": true
+        }
+      ]
+    },
+    {
+      "Type": "LecturerGrid",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 25,
+          "Y": 142
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1066,
+          "Height": 331
+        },
+        "X": 25,
+        "Y": 142,
+        "Width": 1066,
+        "Height": 331,
+        "Left": 25,
+        "Top": 142,
+        "Right": 1091,
+        "Bottom": 473,
+        "IsEmpty": false
+      },
+      "ClientSize": {
+        "IsEmpty": false,
+        "Width": 1045,
+        "Height": 331
+      },
+      "DisplayRectangle": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 1045,
+          "Height": 1154
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 1045,
+        "Height": 1154,
+        "Left": 0,
+        "Top": 0,
+        "Right": 1045,
+        "Bottom": 1154,
+        "IsEmpty": false
+      },
+      "AutoScrollPosition": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "AutoScrollMinSize": {
+        "IsEmpty": false,
+        "Width": 0,
+        "Height": 1154
+      },
+      "AutoScrollMargin": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "Padding": {
+        "All": 0,
+        "Bottom": 0,
+        "Left": 0,
+        "Right": 0,
+        "Top": 0,
+        "Horizontal": 0,
+        "Vertical": 0,
+        "Size": {
+          "IsEmpty": true,
+          "Width": 0,
+          "Height": 0
+        }
+      },
+      "Horizontal": false,
+      "Vertical": true,
+      "Children": [
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 334,
+            "Height": 275,
+            "Left": 0,
+            "Top": 0,
+            "Right": 334,
+            "Bottom": 275,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 352,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 352,
+            "Y": 0,
+            "Width": 334,
+            "Height": 275,
+            "Left": 352,
+            "Top": 0,
+            "Right": 686,
+            "Bottom": 275,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 704,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 704,
+            "Y": 0,
+            "Width": 334,
+            "Height": 275,
+            "Left": 704,
+            "Top": 0,
+            "Right": 1038,
+            "Bottom": 275,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 293
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 0,
+            "Y": 293,
+            "Width": 334,
+            "Height": 275,
+            "Left": 0,
+            "Top": 293,
+            "Right": 334,
+            "Bottom": 568,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 352,
+              "Y": 293
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 352,
+            "Y": 293,
+            "Width": 334,
+            "Height": 275,
+            "Left": 352,
+            "Top": 293,
+            "Right": 686,
+            "Bottom": 568,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 704,
+              "Y": 293
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 704,
+            "Y": 293,
+            "Width": 334,
+            "Height": 275,
+            "Left": 704,
+            "Top": 293,
+            "Right": 1038,
+            "Bottom": 568,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 586
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 0,
+            "Y": 586,
+            "Width": 334,
+            "Height": 275,
+            "Left": 0,
+            "Top": 586,
+            "Right": 334,
+            "Bottom": 861,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 352,
+              "Y": 586
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 352,
+            "Y": 586,
+            "Width": 334,
+            "Height": 275,
+            "Left": 352,
+            "Top": 586,
+            "Right": 686,
+            "Bottom": 861,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 704,
+              "Y": 586
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 704,
+            "Y": 586,
+            "Width": 334,
+            "Height": 275,
+            "Left": 704,
+            "Top": 586,
+            "Right": 1038,
+            "Bottom": 861,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 879
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 0,
+            "Y": 879,
+            "Width": 334,
+            "Height": 275,
+            "Left": 0,
+            "Top": 879,
+            "Right": 334,
+            "Bottom": 1154,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 352,
+              "Y": 879
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 352,
+            "Y": 879,
+            "Width": 334,
+            "Height": 275,
+            "Left": 352,
+            "Top": 879,
+            "Right": 686,
+            "Bottom": 1154,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "LecturerCard",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 704,
+              "Y": 879
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 334,
+              "Height": 275
+            },
+            "X": 704,
+            "Y": 879,
+            "Width": 334,
+            "Height": 275,
+            "Left": 704,
+            "Top": 879,
+            "Right": 1038,
+            "Bottom": 1154,
+            "IsEmpty": false
+          },
+          "Visible": true
+        }
+      ]
+    },
+    {
+      "Type": "Panel",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 10,
+          "Y": 15
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 538,
+          "Height": 390
+        },
+        "X": 10,
+        "Y": 15,
+        "Width": 538,
+        "Height": 390,
+        "Left": 10,
+        "Top": 15,
+        "Right": 548,
+        "Bottom": 405,
+        "IsEmpty": false
+      },
+      "ClientSize": {
+        "IsEmpty": false,
+        "Width": 517,
+        "Height": 390
+      },
+      "DisplayRectangle": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 517,
+          "Height": 506
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 517,
+        "Height": 506,
+        "Left": 0,
+        "Top": 0,
+        "Right": 517,
+        "Bottom": 506,
+        "IsEmpty": false
+      },
+      "AutoScrollPosition": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "AutoScrollMinSize": {
+        "IsEmpty": false,
+        "Width": 0,
+        "Height": 506
+      },
+      "AutoScrollMargin": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "Padding": {
+        "All": 0,
+        "Bottom": 0,
+        "Left": 0,
+        "Right": 0,
+        "Top": 0,
+        "Horizontal": 0,
+        "Vertical": 0,
+        "Size": {
+          "IsEmpty": true,
+          "Width": 0,
+          "Height": 0
+        }
+      },
+      "Horizontal": false,
+      "Vertical": true,
+      "Children": [
+        {
+          "Type": "Label",
+          "Text": "H\u1ED2 S\u01A0 GI\u1EA2NG VI\u00CAN",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 22,
+              "Y": 12
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 301,
+              "Height": 25
+            },
+            "X": 22,
+            "Y": 12,
+            "Width": 301,
+            "Height": 25,
+            "Left": 22,
+            "Top": 12,
+            "Right": 323,
+            "Bottom": 37,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Avatar",
+          "Text": null,
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 22,
+              "Y": 48
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 70,
+              "Height": 70
+            },
+            "X": 22,
+            "Y": 48,
+            "Width": 70,
+            "Height": 70,
+            "Left": 22,
+            "Top": 48,
+            "Right": 92,
+            "Bottom": 118,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "Nguy\u1EC5n Ho\u00E0ng Minh",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 107,
+              "Y": 49
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 371,
+              "Height": 34
+            },
+            "X": 107,
+            "Y": 49,
+            "Width": 371,
+            "Height": 34,
+            "Left": 107,
+            "Top": 49,
+            "Right": 478,
+            "Bottom": 83,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "GV0001  \u00B7  C\u00F4ng ngh\u1EC7 th\u00F4ng tin",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 107,
+              "Y": 88
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 371,
+              "Height": 22
+            },
+            "X": 107,
+            "Y": 88,
+            "Width": 371,
+            "Height": 22,
+            "Left": 107,
+            "Top": 88,
+            "Right": 478,
+            "Bottom": 110,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Tag",
+          "Text": "\u0110ang gi\u1EA3ng d\u1EA1y",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 338,
+              "Y": 10
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 140,
+              "Height": 28
+            },
+            "X": 338,
+            "Y": 10,
+            "Width": 140,
+            "Height": 28,
+            "Left": 338,
+            "Top": 10,
+            "Right": 478,
+            "Bottom": 38,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "L\u1EDAP \u0110\u01AF\u1EE2C PH\u00C2N C\u00D4NG \u00B7 3",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 22,
+              "Y": 268
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 456,
+              "Height": 28
+            },
+            "X": 22,
+            "Y": 268,
+            "Width": 456,
+            "Height": 28,
+            "Left": 22,
+            "Top": 268,
+            "Right": 478,
+            "Bottom": 296,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "FlowLayoutPanel",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 22,
+              "Y": 300
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 456,
+              "Height": 186
+            },
+            "X": 22,
+            "Y": 300,
+            "Width": 456,
+            "Height": 186,
+            "Left": 22,
+            "Top": 300,
+            "Right": 478,
+            "Bottom": 486,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "Ng\u00E0y sinh",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 22,
+              "Y": 124
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 217,
+              "Height": 18
+            },
+            "X": 22,
+            "Y": 124,
+            "Width": 217,
+            "Height": 18,
+            "Left": 22,
+            "Top": 124,
+            "Right": 239,
+            "Bottom": 142,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "12/04/1986",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 22,
+              "Y": 140
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 217,
+              "Height": 26
+            },
+            "X": 22,
+            "Y": 140,
+            "Width": 217,
+            "Height": 26,
+            "Left": 22,
+            "Top": 140,
+            "Right": 239,
+            "Bottom": 166,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "Gi\u1EDBi t\u00EDnh",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 261,
+              "Y": 124
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 217,
+              "Height": 18
+            },
+            "X": 261,
+            "Y": 124,
+            "Width": 217,
+            "Height": 18,
+            "Left": 261,
+            "Top": 124,
+            "Right": 478,
+            "Bottom": 142,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "Nam",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 261,
+              "Y": 140
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 217,
+              "Height": 26
+            },
+            "X": 261,
+            "Y": 140,
+            "Width": 217,
+            "Height": 26,
+            "Left": 261,
+            "Top": 140,
+            "Right": 478,
+            "Bottom": 166,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "Email",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 22,
+              "Y": 170
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 456,
+              "Height": 18
+            },
+            "X": 22,
+            "Y": 170,
+            "Width": 456,
+            "Height": 18,
+            "Left": 22,
+            "Top": 170,
+            "Right": 478,
+            "Bottom": 188,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "minh.nh@campus.edu.vn",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 22,
+              "Y": 186
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 456,
+              "Height": 26
+            },
+            "X": 22,
+            "Y": 186,
+            "Width": 456,
+            "Height": 26,
+            "Left": 22,
+            "Top": 186,
+            "Right": 478,
+            "Bottom": 212,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "\u0110i\u1EC7n tho\u1EA1i",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 22,
+              "Y": 216
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 217,
+              "Height": 18
+            },
+            "X": 22,
+            "Y": 216,
+            "Width": 217,
+            "Height": 18,
+            "Left": 22,
+            "Top": 216,
+            "Right": 239,
+            "Bottom": 234,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "0901234567",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 22,
+              "Y": 232
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 217,
+              "Height": 26
+            },
+            "X": 22,
+            "Y": 232,
+            "Width": 217,
+            "Height": 26,
+            "Left": 22,
+            "Top": 232,
+            "Right": 239,
+            "Bottom": 258,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "H\u1ECDc v\u1ECB",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 261,
+              "Y": 216
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 217,
+              "Height": 18
+            },
+            "X": 261,
+            "Y": 216,
+            "Width": 217,
+            "Height": 18,
+            "Left": 261,
+            "Top": 216,
+            "Right": 478,
+            "Bottom": 234,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Label",
+          "Text": "Ti\u1EBFn s\u0129",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 261,
+              "Y": 232
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 217,
+              "Height": 26
+            },
+            "X": 261,
+            "Y": 232,
+            "Width": 217,
+            "Height": 26,
+            "Left": 261,
+            "Top": 232,
+            "Right": 478,
+            "Bottom": 258,
+            "IsEmpty": false
+          },
+          "Visible": true
+        }
+      ]
+    },
+    {
+      "Type": "FlowLayoutPanel",
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 22,
+          "Y": 300
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 456,
+          "Height": 186
+        },
+        "X": 22,
+        "Y": 300,
+        "Width": 456,
+        "Height": 186,
+        "Left": 22,
+        "Top": 300,
+        "Right": 478,
+        "Bottom": 486,
+        "IsEmpty": false
+      },
+      "ClientSize": {
+        "IsEmpty": false,
+        "Width": 456,
+        "Height": 186
+      },
+      "DisplayRectangle": {
+        "Location": {
+          "IsEmpty": true,
+          "X": 0,
+          "Y": 0
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 456,
+          "Height": 186
+        },
+        "X": 0,
+        "Y": 0,
+        "Width": 456,
+        "Height": 186,
+        "Left": 0,
+        "Top": 0,
+        "Right": 456,
+        "Bottom": 186,
+        "IsEmpty": false
+      },
+      "AutoScrollPosition": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "AutoScrollMinSize": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "AutoScrollMargin": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "Padding": {
+        "All": 0,
+        "Bottom": 0,
+        "Left": 0,
+        "Right": 0,
+        "Top": 0,
+        "Horizontal": 0,
+        "Vertical": 0,
+        "Size": {
+          "IsEmpty": true,
+          "Width": 0,
+          "Height": 0
+        }
+      },
+      "Horizontal": false,
+      "Vertical": false,
+      "Children": [
+        {
+          "Type": "Panel",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": true,
+              "X": 0,
+              "Y": 0
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 456,
+              "Height": 44
+            },
+            "X": 0,
+            "Y": 0,
+            "Width": 456,
+            "Height": 44,
+            "Left": 0,
+            "Top": 0,
+            "Right": 456,
+            "Bottom": 44,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Panel",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 50
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 456,
+              "Height": 44
+            },
+            "X": 0,
+            "Y": 50,
+            "Width": 456,
+            "Height": 44,
+            "Left": 0,
+            "Top": 50,
+            "Right": 456,
+            "Bottom": 94,
+            "IsEmpty": false
+          },
+          "Visible": true
+        },
+        {
+          "Type": "Panel",
+          "Text": "",
+          "Bounds": {
+            "Location": {
+              "IsEmpty": false,
+              "X": 0,
+              "Y": 100
+            },
+            "Size": {
+              "IsEmpty": false,
+              "Width": 456,
+              "Height": 44
+            },
+            "X": 0,
+            "Y": 100,
+            "Width": 456,
+            "Height": 44,
+            "Left": 0,
+            "Top": 100,
+            "Right": 456,
+            "Bottom": 144,
+            "IsEmpty": false
+          },
+          "Visible": true
+        }
+      ]
+    }
+  ]
+}

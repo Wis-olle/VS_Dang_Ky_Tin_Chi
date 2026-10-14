@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "checkedDate": "2026-10-13",
+  "license": {
+    "name": "unDraw License",
+    "sourceUrl": "https://undraw.co/license",
+    "copyright": "2026 Katerina Limpitsouni",
+    "textSnapshot": {
+      "file": "unDraw-LICENSE.txt",
+      "bytes": 1953,
+      "sha256": "fe46855206e9f0853f50b662576bc2f04a884d0269e6723fdac5c4f0499d1a1b"
+    },
+    "htmlSnapshot": {
+      "file": "unDraw-License.html",
+      "bytes": 15801,
+      "sha256": "75df47ad9f8809e8f3a292d74c1789b95243e54b203569043e15c727f539d75c"
+    },
+    "summary": "Free download, copying, modification and distribution for personal/noncommercial/commercial end products without attribution. No competing service or redistribution as asset packs; no AI/ML training, fine-tuning, model development or datasets."
+  },
+  "assets": [
+    {
+      "name": "Books",
+      "sourcePage": "https://undraw.co/search/study",
+      "downloadUrl": "https://cdn.undraw.co/illustration/books_wxzz.svg?type=svg",
+      "visuallyVerifiedInOfficialPage": true,
+      "viewBox": "0 0 731.836 490.096",
+      "width": 731.836,
+      "height": 490.096,
+      "original": {
+        "file": "books-original.svg",
+        "bytes": 2604,
+        "sha256": "f5a739c0da9dc2615d10fe562ce2d5d8f78f86ceb76d1eb4e0e925b9e3ec8748"
+      },
+      "derived": {
+        "file": "books-pastel.svg",
+        "bytes": 2628,
+        "sha256": "30f0c579b0b38f0d386b26bc1bb14cb92b43e2c765167e180a6b3fed3c06d2c5",
+        "transformation": "Color values only; path geometry, viewBox and transparent background unchanged.",
+        "colorMappings": {
+          "#6c63ff": "#D44423",
+          "#090814": "#211A1C",
+          "#f2f2f2": "#F6EDFE",
+          "#ccc": "#EEDADD"
+        },
+        "colors": [
+          "#211A1C",
+          "#D44423",
+          "#EEDADD",
+          "#F6EDFE"
+        ]
+      },
+      "recommendedUse": "Agenda header at 54x38 logical px or class empty state at 112x76 logical px.",
+      "raster": {
+        "file": "books-pastel.png",
+        "bytes": 18401,
+        "sha256": "b5100d3c35656d4f19fa2fd10f4ec5f9f92ffd063fb096dd8ba33c6201000972",
+        "conversion": "Derived pastel SVG rasterized to 768px-wide transparent PNG with bundled sharp/libvips for reliable offline WinForms rendering."
+      }
+    },
+    {
+      "name": "Date Picker",
+      "sourcePage": "https://undraw.co/search/calendar",
+      "downloadUrl": "https://cdn.undraw.co/illustration/date-picker_8qys.svg?type=svg",
+      "visuallyVerifiedInOfficialPage": true,
+      "viewBox": "0 0 799.468 552.327",
+      "width": 799.468,
+      "height": 552.327,
+      "original": {
+        "file": "date-picker-original.svg",
+        "bytes": 6562,
+        "sha256": "9f6282c5425f7a4d7337ae3692720fb8f501d17733bdfc325c4c03ac844abc5a"
+      },
+      "derived": {
+        "file": "date-picker-pastel.svg",
+        "bytes": 6571,
+        "sha256": "ecf688585dc5cb74609b656825995d218c67df18ae9db87e1be33d1abf506122",
+        "transformation": "Color values only; path geometry, viewBox and transparent background unchanged.",
+        "colorMappings": {
+          "#6c63ff": "#D44423",
+          "#090814": "#211A1C",
+          "#3f3d56": "#6E6267",
+          "#cacaca": "#EEDADD",
+          "#e6e6e6": "#EEDADD",
+          "#fff": "#FFFFFF"
+        },
+        "colors": [
+          "#211A1C",
+          "#6E6267",
+          "#D44423",
+          "#EEDADD",
+          "#FFFFFF"
+        ]
+      },
+      "recommendedUse": "Optional week empty state only, at 112x78 logical px. Pure calendar object; no people.",
+      "raster": {
+        "file": "date-picker-pastel.png",
+        "bytes": 16638,
+        "sha256": "066864c9b17359314b3754ffd5dee9de312fd6d612cbed684e98999f34f553fd",
+        "conversion": "Derived pastel SVG rasterized to 768px-wide transparent PNG with bundled sharp/libvips for reliable offline WinForms rendering."
+      }
+    }
+  ]
+}

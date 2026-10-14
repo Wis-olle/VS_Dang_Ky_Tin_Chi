@@ -1,0 +1,47 @@
+{
+  "retrieved": "2026-10-13",
+  "sourceCommit": "3f759d5171c2391253ec4c772e9e5b3db2bc7c7f",
+  "license": "MIT; Copyright (c) 2025 Ephraim Duncan",
+  "runtime": "C# native WinForms; reference TSX never executed",
+  "files": [
+    {
+      "file": "Blocks-MIT.txt",
+      "url": "https://raw.githubusercontent.com/ephraimduncan/blocks/3f759d5171c2391253ec4c772e9e5b3db2bc7c7f/LICENSE.md",
+      "bytes": 1071,
+      "sha256": "2c3b49c0a1b827fbf29bcceff0a8fe4f456e104ca98da5b20843388bac5956fe"
+    },
+    {
+      "file": "stats-07.tsx",
+      "url": "https://raw.githubusercontent.com/ephraimduncan/blocks/3f759d5171c2391253ec4c772e9e5b3db2bc7c7f/content/components/stats/stats-07.tsx",
+      "bytes": 3687,
+      "sha256": "dd7eea2f9af06b2e0d2df99f6bb52cb76be44c24cba5d3696bbf3799cca4426b"
+    },
+    {
+      "file": "stats-13.tsx",
+      "url": "https://raw.githubusercontent.com/ephraimduncan/blocks/3f759d5171c2391253ec4c772e9e5b3db2bc7c7f/content/components/stats/stats-13.tsx",
+      "bytes": 3185,
+      "sha256": "b031911942889db6a337d76c344c7c901ccc46808e48ac7417bb94c6d17bbad7"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://dribbble.com/shots/15250082-Stat-Cards",
+      "author": "Jon Moore / Innovatemap",
+      "usage": "Icon beside heading, main value and secondary status composition",
+      "license": "Design reference only; no media or source copied"
+    },
+    {
+      "url": "https://dribbble.com/shots/15332259-Stat-Cards",
+      "author": "Jon Moore / Innovatemap",
+      "usage": "White card with separate data visualization area",
+      "license": "Design reference only; no media or source copied"
+    },
+    {
+      "url": "https://blocks.so/stats",
+      "listing": "https://21st.dev/@ephraimduncan/components/stats-cards-with-links/stats-cards-with-circular-progress",
+      "usage": "Native adaptation of compact circular/segmented progress; actual scheduling ratios"
+    }
+  ],
+  "icons": "Existing local Lucide Animated + ISC glyphs; sources retained in ../motion/Sources.json",
+  "semantics": "Eight segments form a continuous 0–100% scale, not eight records. Main values and status notes retain actual store data."
+}

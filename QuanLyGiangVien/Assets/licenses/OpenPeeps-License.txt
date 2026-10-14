@@ -1,0 +1,28 @@
+Open Peeps - curated lecturer avatar assets
+
+Original illustration author: Pablo Stanley
+Original library: https://www.openpeeps.com/
+DiceBear style: https://www.dicebear.com/styles/open-peeps/
+API version: 10.x; definition verified at version 10.6.0
+API option metadata: https://api.dicebear.com/10.x/open-peeps/options.json
+Definition: https://cdn.hopjs.net/npm/@dicebear/styles@10.6.0/dist/open-peeps.min.json
+License: CC0 1.0 Universal
+License deed: https://creativecommons.org/publicdomain/zero/1.0/
+Legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
+Verified on: 2026-10-10
+
+Open Peeps and DiceBear both identify this artwork as CC0. The original
+library permits personal and commercial use, copying, remixing and changing
+colors. The avatars do not depict the fictional lecturers in the demo data.
+Author and source credit are retained as project documentation.
+
+The 12 images are deliberately curated with different head shapes, hair,
+expressions, glasses, and facial hair. Native DiceBear colors produce muted
+mint, cyan, peach, lilac, cream and gray details. Source SVG geometry is
+unchanged; Sharp/librsvg exports the SVG as a local 512 x 512 RGBA PNG.
+The desktop application loads these local files without an internet request.
+
+OpenPeeps-Avatar-Sources.json records the exact API URL, all option values,
+source SVG checksum and exported PNG checksum for each avatar. The matching
+SVG source is stored beside its PNG in Assets/avatars.
+OpenPeeps-Avatar-ContactSheet.jpg is the visual review sheet.

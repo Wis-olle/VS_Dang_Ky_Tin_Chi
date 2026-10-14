@@ -1,0 +1,982 @@
+[
+  {
+    "key": "form",
+    "type": "QuanLyGiangVien.Features.StudentTimetable.StudentTimetableForm",
+    "Name": "",
+    "Text": "Campus \u00B7 Th\u1EDDi kh\u00F3a bi\u1EC3u sinh vi\u00EAn",
+    "bounds": {
+      "Left": 1970,
+      "Top": 0,
+      "Width": 1116,
+      "Height": 859
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 0,
+    "TabStop": true,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/0",
+    "type": "AntdUI.Panel",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 0,
+      "Top": 0,
+      "Width": 1116,
+      "Height": 84
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 0,
+    "TabStop": true,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/0/0",
+    "type": "AntdUI.PageHeader",
+    "Name": "",
+    "Text": " ",
+    "bounds": {
+      "Left": 0,
+      "Top": 0,
+      "Width": 1116,
+      "Height": 30
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 8,
+      "Style": 0
+    },
+    "TabIndex": 0,
+    "TabStop": true,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/0/1",
+    "type": "System.Windows.Forms.PictureBox",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 28,
+      "Top": 40,
+      "Width": 30,
+      "Height": 30
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 1,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/0/2",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "campus.",
+    "bounds": {
+      "Left": 68,
+      "Top": 35,
+      "Width": 130,
+      "Height": 38
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 18,
+      "Style": 1
+    },
+    "TabIndex": 2,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/0/3",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "C\u1ED4NG SINH VI\u00CAN",
+    "bounds": {
+      "Left": 205,
+      "Top": 42,
+      "Width": 150,
+      "Height": 26
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 8,
+      "Style": 1
+    },
+    "TabIndex": 3,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/0/4",
+    "type": "QuanLyGiangVien.Ui.MotionButton",
+    "Name": "studentTimetableNav",
+    "Text": "Th\u1EDDi kh\u00F3a bi\u1EC3u",
+    "bounds": {
+      "Left": 380,
+      "Top": 33,
+      "Width": 180,
+      "Height": 42
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 10,
+      "Style": 1
+    },
+    "TabIndex": 4,
+    "TabStop": true,
+    "AccessibleName": "Th\u1EDDi kh\u00F3a bi\u1EC3u"
+  },
+  {
+    "key": "form/0/5",
+    "type": "System.Windows.Forms.Label",
+    "Name": "headerUser",
+    "Text": "B\u00F9i Quang Minh",
+    "bounds": {
+      "Left": 856,
+      "Top": 39,
+      "Width": 230,
+      "Height": 34
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 1
+    },
+    "TabIndex": 5,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1",
+    "type": "System.Windows.Forms.Panel",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 0,
+      "Top": 84,
+      "Width": 1116,
+      "Height": 775
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 1,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/0",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "Th\u1EDDi kh\u00F3a bi\u1EC3u c\u1EE7a b\u1EA1n",
+    "bounds": {
+      "Left": 28,
+      "Top": 19,
+      "Width": 745,
+      "Height": 38
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 21,
+      "Style": 1
+    },
+    "TabIndex": 0,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/1",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "Theo d\u00F5i l\u1ECBch h\u1ECDc, s\u1EB5n s\u00E0ng cho m\u1ED7i bu\u1ED5i l\u00EAn l\u1EDBp.",
+    "bounds": {
+      "Left": 28,
+      "Top": 61,
+      "Width": 745,
+      "Height": 24
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 1,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/2",
+    "type": "AntdUI.Panel",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 28,
+      "Top": 104,
+      "Width": 417,
+      "Height": 136
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 2,
+    "TabStop": true,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/2/0",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "M\u1ED8T TU\u1EA6N H\u1ECCC T\u1EACP M\u1EDAI",
+    "bounds": {
+      "Left": 22,
+      "Top": 17,
+      "Width": 240,
+      "Height": 24
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 8,
+      "Style": 1
+    },
+    "TabIndex": 0,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/2/1",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "Ch\u00E0o Minh!",
+    "bounds": {
+      "Left": 22,
+      "Top": 45,
+      "Width": 242,
+      "Height": 32
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 16,
+      "Style": 1
+    },
+    "TabIndex": 1,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/2/2",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "L\u1ECBch h\u1ECDc c\u1EE7a c\u00E1c l\u1EDBp b\u1EA1n \u0111\u00E3 \u0111\u0103ng k\u00FD.",
+    "bounds": {
+      "Left": 22,
+      "Top": 83,
+      "Width": 242,
+      "Height": 23
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 2,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/2/3",
+    "type": "System.Windows.Forms.PictureBox",
+    "Name": "introArt",
+    "Text": "",
+    "bounds": {
+      "Left": 267,
+      "Top": 20,
+      "Width": 132,
+      "Height": 96
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 3,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/3",
+    "type": "AntdUI.Panel",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 463,
+      "Top": 104,
+      "Width": 310,
+      "Height": 136
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 3,
+    "TabStop": true,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/3/0",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "L\u1ECACH H\u1ECCC S\u1EAEP T\u1EDAI",
+    "bounds": {
+      "Left": 20,
+      "Top": 17,
+      "Width": 240,
+      "Height": 24
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 8,
+      "Style": 1
+    },
+    "TabIndex": 0,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/3/1",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "L\u1EADp tr\u00ECnh h\u01B0\u1EDBng \u0111\u1ED1i t\u01B0\u1EE3ng",
+    "bounds": {
+      "Left": 20,
+      "Top": 47,
+      "Width": 270,
+      "Height": 27
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 11,
+      "Style": 1
+    },
+    "TabIndex": 1,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/3/2",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "15/10/2026 \u00B7 Ti\u1EBFt 4\u20136\nPh\u00F2ng B101",
+    "bounds": {
+      "Left": 20,
+      "Top": 79,
+      "Width": 270,
+      "Height": 43
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 2,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/4",
+    "type": "AntdUI.Panel",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 793,
+      "Top": 104,
+      "Width": 260,
+      "Height": 294
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 4,
+    "TabStop": true,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/4/0",
+    "type": "AntdUI.Avatar",
+    "Name": "",
+    "Text": null,
+    "bounds": {
+      "Left": 96,
+      "Top": 18,
+      "Width": 68,
+      "Height": 68
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 0,
+    "TabStop": true,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/4/1",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "B\u00F9i Quang Minh",
+    "bounds": {
+      "Left": 16,
+      "Top": 96,
+      "Width": 228,
+      "Height": 29
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 12,
+      "Style": 1
+    },
+    "TabIndex": 1,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/4/2",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "SV2024001",
+    "bounds": {
+      "Left": 16,
+      "Top": 128,
+      "Width": 228,
+      "Height": 24
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 2,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/4/3",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "NG\u00C0NH H\u1ECCC",
+    "bounds": {
+      "Left": 22,
+      "Top": 166,
+      "Width": 216,
+      "Height": 23
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 8,
+      "Style": 1
+    },
+    "TabIndex": 3,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/4/4",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "C\u00F4ng ngh\u1EC7 th\u00F4ng tin",
+    "bounds": {
+      "Left": 22,
+      "Top": 190,
+      "Width": 216,
+      "Height": 25
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 10,
+      "Style": 1
+    },
+    "TabIndex": 4,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/4/5",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "L\u1EDBp CNTT K24 \u00B7 Kh\u00F3a 2024",
+    "bounds": {
+      "Left": 22,
+      "Top": 219,
+      "Width": 216,
+      "Height": 23
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 5,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/4/6",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "\u0110ang theo h\u1ECDc",
+    "bounds": {
+      "Left": 22,
+      "Top": 251,
+      "Width": 216,
+      "Height": 25
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 1
+    },
+    "TabIndex": 6,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/5",
+    "type": "AntdUI.Panel",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 793,
+      "Top": 416,
+      "Width": 260,
+      "Height": 184
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 5,
+    "TabStop": true,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/5/0",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "H\u1ECDc k\u1EF3 c\u1EE7a b\u1EA1n",
+    "bounds": {
+      "Left": 22,
+      "Top": 18,
+      "Width": 216,
+      "Height": 30
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 12,
+      "Style": 1
+    },
+    "TabIndex": 0,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/5/1",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "04  h\u1ECDc ph\u1EA7n\n\n12  t\u00EDn ch\u1EC9\n\n06  bu\u1ED5i h\u1ECDc trong tu\u1EA7n",
+    "bounds": {
+      "Left": 22,
+      "Top": 59,
+      "Width": 216,
+      "Height": 120
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 10,
+      "Style": 0
+    },
+    "TabIndex": 1,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/6",
+    "type": "AntdUI.Panel",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 793,
+      "Top": 618,
+      "Width": 260,
+      "Height": 326
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 6,
+    "TabStop": true,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/6/0",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "CHI TI\u1EBET BU\u1ED4I H\u1ECCC",
+    "bounds": {
+      "Left": 22,
+      "Top": 18,
+      "Width": 216,
+      "Height": 25
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 8,
+      "Style": 1
+    },
+    "TabIndex": 0,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/6/1",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "L\u1EADp tr\u00ECnh h\u01B0\u1EDBng \u0111\u1ED1i t\u01B0\u1EE3ng",
+    "bounds": {
+      "Left": 22,
+      "Top": 57,
+      "Width": 216,
+      "Height": 58
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 12,
+      "Style": 1
+    },
+    "TabIndex": 1,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/6/2",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "LHP0001 \u00B7 3 t\u00EDn ch\u1EC9\n\n12/10/2026\nTi\u1EBFt 1 \u2013 3\n\nPh\u00F2ng A201\n\nNguy\u1EC5n Ho\u00E0ng Minh",
+    "bounds": {
+      "Left": 22,
+      "Top": 110,
+      "Width": 216,
+      "Height": 205
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 2,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/7",
+    "type": "AntdUI.Panel",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 28,
+      "Top": 260,
+      "Width": 745,
+      "Height": 648
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 7,
+    "TabStop": true,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/7/0",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "L\u1ECBch h\u1ECDc trong tu\u1EA7n",
+    "bounds": {
+      "Left": 22,
+      "Top": 16,
+      "Width": 270,
+      "Height": 30
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 13,
+      "Style": 1
+    },
+    "TabIndex": 0,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/7/1",
+    "type": "System.Windows.Forms.Label",
+    "Name": "",
+    "Text": "12/10 \u2013 18/10/2026  \u00B7  6 bu\u1ED5i h\u1ECDc",
+    "bounds": {
+      "Left": 22,
+      "Top": 48,
+      "Width": 350,
+      "Height": 23
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 1,
+    "TabStop": false,
+    "AccessibleName": null
+  },
+  {
+    "key": "form/1/7/2",
+    "type": "System.Windows.Forms.ComboBox",
+    "Name": "",
+    "Text": "H\u1ECDc k\u1EF3 I \u00B7 2026\u20132027",
+    "bounds": {
+      "Left": 467,
+      "Top": 18,
+      "Width": 256,
+      "Height": 28
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 2,
+    "TabStop": true,
+    "AccessibleName": "Ch\u1ECDn h\u1ECDc k\u1EF3"
+  },
+  {
+    "key": "form/1/7/3",
+    "type": "AntdUI.Button",
+    "Name": "",
+    "Text": null,
+    "bounds": {
+      "Left": 527,
+      "Top": 55,
+      "Width": 36,
+      "Height": 32
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 1
+    },
+    "TabIndex": 3,
+    "TabStop": true,
+    "AccessibleName": "Tu\u1EA7n tr\u01B0\u1EDBc"
+  },
+  {
+    "key": "form/1/7/4",
+    "type": "AntdUI.Button",
+    "Name": "",
+    "Text": "Tu\u1EA7n hi\u1EC7n t\u1EA1i",
+    "bounds": {
+      "Left": 571,
+      "Top": 55,
+      "Width": 108,
+      "Height": 32
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 1
+    },
+    "TabIndex": 4,
+    "TabStop": true,
+    "AccessibleName": "Tu\u1EA7n hi\u1EC7n t\u1EA1i"
+  },
+  {
+    "key": "form/1/7/5",
+    "type": "AntdUI.Button",
+    "Name": "",
+    "Text": null,
+    "bounds": {
+      "Left": 687,
+      "Top": 55,
+      "Width": 36,
+      "Height": 32
+    },
+    "font": {
+      "Name": "Plus Jakarta Sans",
+      "Size": 9,
+      "Style": 1
+    },
+    "TabIndex": 5,
+    "TabStop": true,
+    "AccessibleName": "Tu\u1EA7n sau"
+  },
+  {
+    "key": "form/1/7/6",
+    "type": "QuanLyGiangVien.Features.StudentTimetable.StudentWeekCalendar",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 14,
+      "Top": 100,
+      "Width": 717,
+      "Height": 530
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 6,
+    "TabStop": false,
+    "AccessibleName": "Th\u1EDDi kh\u00F3a bi\u1EC3u tu\u1EA7n, t\u1EEB th\u1EE9 hai \u0111\u1EBFn ch\u1EE7 nh\u1EADt"
+  },
+  {
+    "key": "form/1/7/6/0",
+    "type": "QuanLyGiangVien.Features.StudentTimetable.StudentWeekCalendar\u002BSessionCard",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 56,
+      "Top": 68,
+      "Width": 87,
+      "Height": 106
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 0,
+    "TabStop": true,
+    "AccessibleName": "L\u1EADp tr\u00ECnh h\u01B0\u1EDBng \u0111\u1ED1i t\u01B0\u1EE3ng, 12/10/2026, ti\u1EBFt 1 \u0111\u1EBFn 3, ph\u00F2ng A201, Nguy\u1EC5n Ho\u00E0ng Minh"
+  },
+  {
+    "key": "form/1/7/6/1",
+    "type": "QuanLyGiangVien.Features.StudentTimetable.StudentWeekCalendar\u002BSessionCard",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 56,
+      "Top": 182,
+      "Width": 87,
+      "Height": 106
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 1,
+    "TabStop": true,
+    "AccessibleName": "Ti\u1EBFng Anh chuy\u00EAn ng\u00E0nh, 12/10/2026, ti\u1EBFt 4 \u0111\u1EBFn 6, ph\u00F2ng A202, Tr\u1EA7n Ng\u1ECDc Anh"
+  },
+  {
+    "key": "form/1/7/6/2",
+    "type": "QuanLyGiangVien.Features.StudentTimetable.StudentWeekCalendar\u002BSessionCard",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 151,
+      "Top": 68,
+      "Width": 87,
+      "Height": 106
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 2,
+    "TabStop": true,
+    "AccessibleName": "C\u01A1 s\u1EDF d\u1EEF li\u1EC7u, 13/10/2026, ti\u1EBFt 1 \u0111\u1EBFn 3, ph\u00F2ng B102, Ph\u1EA1m Th\u00F9y Linh"
+  },
+  {
+    "key": "form/1/7/6/3",
+    "type": "QuanLyGiangVien.Features.StudentTimetable.StudentWeekCalendar\u002BSessionCard",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 246,
+      "Top": 182,
+      "Width": 87,
+      "Height": 106
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 3,
+    "TabStop": true,
+    "AccessibleName": "C\u00F4ng ngh\u1EC7 ph\u1EA7n m\u1EC1m, 14/10/2026, ti\u1EBFt 4 \u0111\u1EBFn 6, ph\u00F2ng A201, B\u00F9i Tu\u1EA5n Ki\u1EC7t"
+  },
+  {
+    "key": "form/1/7/6/4",
+    "type": "QuanLyGiangVien.Features.StudentTimetable.StudentWeekCalendar\u002BSessionCard",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 341,
+      "Top": 182,
+      "Width": 87,
+      "Height": 106
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 4,
+    "TabStop": true,
+    "AccessibleName": "L\u1EADp tr\u00ECnh h\u01B0\u1EDBng \u0111\u1ED1i t\u01B0\u1EE3ng, 15/10/2026, ti\u1EBFt 4 \u0111\u1EBFn 6, ph\u00F2ng B101, Nguy\u1EC5n Ho\u00E0ng Minh"
+  },
+  {
+    "key": "form/1/7/6/5",
+    "type": "QuanLyGiangVien.Features.StudentTimetable.StudentWeekCalendar\u002BSessionCard",
+    "Name": "",
+    "Text": "",
+    "bounds": {
+      "Left": 436,
+      "Top": 182,
+      "Width": 87,
+      "Height": 106
+    },
+    "font": {
+      "Name": "Segoe UI",
+      "Size": 9,
+      "Style": 0
+    },
+    "TabIndex": 5,
+    "TabStop": true,
+    "AccessibleName": "C\u01A1 s\u1EDF d\u1EEF li\u1EC7u, 16/10/2026, ti\u1EBFt 4 \u0111\u1EBFn 6, ph\u00F2ng A202, Ph\u1EA1m Th\u00F9y Linh"
+  }
+]

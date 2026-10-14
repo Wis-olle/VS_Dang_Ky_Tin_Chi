@@ -1,0 +1,46 @@
+{
+  "title": "On The Laptop",
+  "pack": "Office Club",
+  "style": "regular",
+  "provider": "Overflow Design",
+  "free_item": true,
+  "item_id": "illustration/office-club/on-the-laptop",
+  "local_file": "Assets/illustrations/on-the-laptop.svg",
+  "source_page": "https://www.overflow.design/notion-illustrations/office-club/",
+  "acquisition": {
+    "method": "Official Overflow Design MCP, signed download of the free item",
+    "format": "svg",
+    "look": "colour",
+    "theme": "light",
+    "animated": false,
+    "note": "Temporary signed download URL intentionally omitted."
+  },
+  "license": "https://www.overflow.design/license/",
+  "license_type": "Overflow Design Free license",
+  "license_updated_on": "2026-09-29",
+  "verified_on": "2026-10-10",
+  "source_sha256": "b7510e325ed0eae5aef846beb18fd62934caa480a1be81e560597732f96319b5",
+  "original_svg_bytes": 11603,
+  "attribution_required": false,
+  "notes": [
+    "Official Office Club page identifies On The Laptop as Free.",
+    "Original SVG bytes retained; no recoloring or redrawing.",
+    "SVG has no scripts, event handlers, animation, foreignObject or external resources.",
+    "This licensed asset is integrated into the application banner; it is not an asset pack."
+  ],
+  "derived_formats": [
+    {
+      "local_file": "Assets/illustrations/on-the-laptop.png",
+      "format": "PNG RGBA",
+      "dimensions": [
+        1063,
+        1011
+      ],
+      "transparent_background": true,
+      "source": "Assets/illustrations/on-the-laptop.svg",
+      "sha256": "25ab0798d2c3bd83123b8c9e0cd79de918adb8d4eb305ae24c1a85834c3c6857",
+      "conversion": "Sharp / librsvg: rasterize in a transparent 1024 x 1024 canvas, trim alpha margins, add 20 px transparent padding to every side; source colors preserved.",
+      "reason": "Native PNG preserves source colors and fills in the WinForms banner."
+    }
+  ]
+}

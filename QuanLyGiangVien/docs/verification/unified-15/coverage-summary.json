@@ -1,0 +1,26 @@
+[
+  {
+    "scope": "Domain",
+    "covered": 540,
+    "valid": 546,
+    "percent": 98.9
+  },
+  {
+    "scope": "Data",
+    "covered": 452,
+    "valid": 504,
+    "percent": 89.68
+  },
+  {
+    "scope": "Ui",
+    "covered": 166,
+    "valid": 166,
+    "percent": 100.0
+  },
+  {
+    "scope": "All",
+    "covered": 1158,
+    "valid": 1216,
+    "percent": 95.23
+  }
+]

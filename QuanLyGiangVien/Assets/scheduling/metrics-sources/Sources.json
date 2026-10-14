@@ -1,0 +1,37 @@
+{
+  "retrieved": "2026-10-13",
+  "runtime": "C# WinForms native; reference TSX is never executed",
+  "license": "MIT; Copyright (c) 2026 Kevin Girelli",
+  "files": [
+    {
+      "file": "Corsair-UI-MIT.txt",
+      "url": "https://raw.githubusercontent.com/KevinGirelli/corsair-ui/b21f13922504933eaf6b2bb174cad789d46c3acb/LICENSE",
+      "bytes": 1070,
+      "sha256": "ebd654ef05ace8705aa23477e3d90c628bc6f4b1bb13eb52c18335577eef6e85"
+    },
+    {
+      "file": "bar-chart.tsx",
+      "url": "https://raw.githubusercontent.com/KevinGirelli/corsair-ui/b21f13922504933eaf6b2bb174cad789d46c3acb/registry/default/ui/bar-chart.tsx",
+      "bytes": 17598,
+      "sha256": "fae23d5d4c31365eec78a3e9bb3a5bbf454ff56caf96b69b2ffb2796bc3cb199"
+    }
+  ],
+  "references": [
+    {
+      "url": "https://21st.dev/@kevingirelli/components/bar-chart",
+      "usage": "Native adaptation of hover/focus tooltip, keyboard navigation, finite bar transition; actual scheduling totals"
+    },
+    {
+      "url": "https://21st.dev/@danielpetho/components/basic-number-ticker",
+      "preview": "https://preview.21st.dev/@danielpetho/components/basic-number-ticker/analytics-stats-cards",
+      "usage": "Visual hierarchy and pastel wash reference only; no code or image copied",
+      "license": "Listing identifies MIT"
+    },
+    {
+      "url": "https://dribbble.com/shots/26372938-Statistics-Cards",
+      "usage": "Stat card composition research; no artwork copied",
+      "license": "No asset license assumed"
+    }
+  ],
+  "sourceCommit": "b21f13922504933eaf6b2bb174cad789d46c3acb"
+}

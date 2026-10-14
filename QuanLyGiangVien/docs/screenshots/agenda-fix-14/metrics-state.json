@@ -1,0 +1,1018 @@
+[
+  {
+    "Caption": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 14
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 295,
+        "Height": 23
+      },
+      "X": 18,
+      "Y": 14,
+      "Width": 295,
+      "Height": 23,
+      "Left": 18,
+      "Top": 14,
+      "Right": 313,
+      "Bottom": 37,
+      "IsEmpty": false
+    },
+    "Number": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 52
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 114,
+        "Height": 58
+      },
+      "X": 18,
+      "Y": 52,
+      "Width": 114,
+      "Height": 58,
+      "Left": 18,
+      "Top": 52,
+      "Right": 132,
+      "Bottom": 110,
+      "IsEmpty": false
+    },
+    "Note": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Action": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 150
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 126,
+        "Height": 24
+      },
+      "X": 18,
+      "Y": 150,
+      "Width": 126,
+      "Height": 24,
+      "Left": 18,
+      "Top": 150,
+      "Right": 144,
+      "Bottom": 174,
+      "IsEmpty": false
+    },
+    "Rail": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Ring": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Matrix": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "RatioLabel": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "FooterBand": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Ratio": 0.75,
+    "DisplayedRatio": 0.75,
+    "NumberFontSize": 25.045454,
+    "RatioIsAnimating": false,
+    "Primary": true,
+    "Artwork": {
+      "Ready": true,
+      "SourceAlpha": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 48,
+          "Y": 36
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 297,
+          "Height": 328
+        },
+        "X": 48,
+        "Y": 36,
+        "Width": 297,
+        "Height": 328,
+        "Left": 48,
+        "Top": 36,
+        "Right": 345,
+        "Bottom": 364,
+        "IsEmpty": false
+      },
+      "Raster": {
+        "IsEmpty": false,
+        "Width": 297,
+        "Height": 328
+      },
+      "DrawSize": {
+        "IsEmpty": false,
+        "Width": 103.742226,
+        "Height": 114.57053
+      },
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 181,
+          "Y": 30
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 140,
+          "Height": 140
+        },
+        "X": 181,
+        "Y": 30,
+        "Width": 140,
+        "Height": 140,
+        "Left": 181,
+        "Top": 30,
+        "Right": 321,
+        "Bottom": 170,
+        "IsEmpty": false
+      },
+      "State": {},
+      "CacheBuilds": 5
+    },
+    "Background": -2866141
+  },
+  {
+    "Caption": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 14
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 295,
+        "Height": 23
+      },
+      "X": 18,
+      "Y": 14,
+      "Width": 295,
+      "Height": 23,
+      "Left": 18,
+      "Top": 14,
+      "Right": 313,
+      "Bottom": 37,
+      "IsEmpty": false
+    },
+    "Number": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 52
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 114,
+        "Height": 58
+      },
+      "X": 18,
+      "Y": 52,
+      "Width": 114,
+      "Height": 58,
+      "Left": 18,
+      "Top": 52,
+      "Right": 132,
+      "Bottom": 110,
+      "IsEmpty": false
+    },
+    "Note": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Action": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 150
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 126,
+        "Height": 24
+      },
+      "X": 18,
+      "Y": 150,
+      "Width": 126,
+      "Height": 24,
+      "Left": 18,
+      "Top": 150,
+      "Right": 144,
+      "Bottom": 174,
+      "IsEmpty": false
+    },
+    "Rail": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Ring": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Matrix": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "RatioLabel": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "FooterBand": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Ratio": 0.875,
+    "DisplayedRatio": 0.875,
+    "NumberFontSize": 25.045454,
+    "RatioIsAnimating": false,
+    "Primary": false,
+    "Artwork": {
+      "Ready": true,
+      "SourceAlpha": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 49,
+          "Y": 100
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 297,
+          "Height": 204
+        },
+        "X": 49,
+        "Y": 100,
+        "Width": 297,
+        "Height": 204,
+        "Left": 49,
+        "Top": 100,
+        "Right": 346,
+        "Bottom": 304,
+        "IsEmpty": false
+      },
+      "Raster": {
+        "IsEmpty": false,
+        "Width": 297,
+        "Height": 204
+      },
+      "DrawSize": {
+        "IsEmpty": false,
+        "Width": 107.060486,
+        "Height": 73.53649
+      },
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 181,
+          "Y": 30
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 140,
+          "Height": 140
+        },
+        "X": 181,
+        "Y": 30,
+        "Width": 140,
+        "Height": 140,
+        "Left": 181,
+        "Top": 30,
+        "Right": 321,
+        "Bottom": 170,
+        "IsEmpty": false
+      },
+      "State": {},
+      "CacheBuilds": 5
+    },
+    "Background": -1772041
+  },
+  {
+    "Caption": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 14
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 295,
+        "Height": 23
+      },
+      "X": 18,
+      "Y": 14,
+      "Width": 295,
+      "Height": 23,
+      "Left": 18,
+      "Top": 14,
+      "Right": 313,
+      "Bottom": 37,
+      "IsEmpty": false
+    },
+    "Number": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 52
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 114,
+        "Height": 58
+      },
+      "X": 18,
+      "Y": 52,
+      "Width": 114,
+      "Height": 58,
+      "Left": 18,
+      "Top": 52,
+      "Right": 132,
+      "Bottom": 110,
+      "IsEmpty": false
+    },
+    "Note": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Action": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 150
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 126,
+        "Height": 24
+      },
+      "X": 18,
+      "Y": 150,
+      "Width": 126,
+      "Height": 24,
+      "Left": 18,
+      "Top": 150,
+      "Right": 144,
+      "Bottom": 174,
+      "IsEmpty": false
+    },
+    "Rail": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Ring": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Matrix": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "RatioLabel": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "FooterBand": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Ratio": 0.85714287,
+    "DisplayedRatio": 0.85714287,
+    "NumberFontSize": 25.045454,
+    "RatioIsAnimating": false,
+    "Primary": false,
+    "Artwork": {
+      "Ready": true,
+      "SourceAlpha": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 39,
+          "Y": 28
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 310,
+          "Height": 346
+        },
+        "X": 39,
+        "Y": 28,
+        "Width": 310,
+        "Height": 346,
+        "Left": 39,
+        "Top": 28,
+        "Right": 349,
+        "Bottom": 374,
+        "IsEmpty": false
+      },
+      "Raster": {
+        "IsEmpty": false,
+        "Width": 310,
+        "Height": 346
+      },
+      "DrawSize": {
+        "IsEmpty": false,
+        "Width": 102.69884,
+        "Height": 114.62516
+      },
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 181,
+          "Y": 30
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 140,
+          "Height": 140
+        },
+        "X": 181,
+        "Y": 30,
+        "Width": 140,
+        "Height": 140,
+        "Left": 181,
+        "Top": 30,
+        "Right": 321,
+        "Bottom": 170,
+        "IsEmpty": false
+      },
+      "State": {},
+      "CacheBuilds": 5
+    },
+    "Background": -594434
+  },
+  {
+    "Caption": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 14
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 298,
+        "Height": 23
+      },
+      "X": 18,
+      "Y": 14,
+      "Width": 298,
+      "Height": 23,
+      "Left": 18,
+      "Top": 14,
+      "Right": 316,
+      "Bottom": 37,
+      "IsEmpty": false
+    },
+    "Number": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 52
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 114,
+        "Height": 58
+      },
+      "X": 18,
+      "Y": 52,
+      "Width": 114,
+      "Height": 58,
+      "Left": 18,
+      "Top": 52,
+      "Right": 132,
+      "Bottom": 110,
+      "IsEmpty": false
+    },
+    "Note": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Action": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 150
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 126,
+        "Height": 24
+      },
+      "X": 18,
+      "Y": 150,
+      "Width": 126,
+      "Height": 24,
+      "Left": 18,
+      "Top": 150,
+      "Right": 144,
+      "Bottom": 174,
+      "IsEmpty": false
+    },
+    "Rail": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Ring": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Matrix": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "RatioLabel": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "FooterBand": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Ratio": 0.64285713,
+    "DisplayedRatio": 0.64285713,
+    "NumberFontSize": 25.045454,
+    "RatioIsAnimating": false,
+    "Primary": false,
+    "Artwork": {
+      "Ready": true,
+      "SourceAlpha": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 46,
+          "Y": 30
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 311,
+          "Height": 330
+        },
+        "X": 46,
+        "Y": 30,
+        "Width": 311,
+        "Height": 330,
+        "Left": 46,
+        "Top": 30,
+        "Right": 357,
+        "Bottom": 360,
+        "IsEmpty": false
+      },
+      "Raster": {
+        "IsEmpty": false,
+        "Width": 311,
+        "Height": 330
+      },
+      "DrawSize": {
+        "IsEmpty": false,
+        "Width": 105.07398,
+        "Height": 111.49329
+      },
+      "Bounds": {
+        "Location": {
+          "IsEmpty": false,
+          "X": 184,
+          "Y": 30
+        },
+        "Size": {
+          "IsEmpty": false,
+          "Width": 140,
+          "Height": 140
+        },
+        "X": 184,
+        "Y": 30,
+        "Width": 140,
+        "Height": 140,
+        "Left": 184,
+        "Top": 30,
+        "Right": 324,
+        "Bottom": 170,
+        "IsEmpty": false
+      },
+      "State": {},
+      "CacheBuilds": 5
+    },
+    "Background": -599595
+  }
+]

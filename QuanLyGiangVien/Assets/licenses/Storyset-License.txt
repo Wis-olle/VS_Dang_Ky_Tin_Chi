@@ -1,0 +1,24 @@
+Storyset Teacher / bro: license source record
+Verified on: 2026-10-10
+Asset page: https://storyset.com/illustration/teacher/bro
+Original SVG: https://stories.freepiklabs.com/storage/15839/Teacher-01.svg
+Terms: https://storyset.com/terms
+
+This file summarizes the provider's current Section 6, not a substitute for
+its full terms. The asset page describes use in personal and commercial
+projects and modification/derivative work with attribution.
+
+Free use requires credit to Storyset / Freepik. Keep a visible credit with
+a link to https://storyset.com/ such as: Education illustrations by Storyset.
+The app can include this limited illustration as part of its interface;
+the artwork may not be separately resold, sublicensed or distributed as
+an asset library, stock product or competing collection. Do not imply that
+Storyset / Freepik endorses the application or use the art as its trademark.
+The developer and end user should retain the source record and observe the
+remaining restrictions of the official terms.
+
+No subscription was used, so the attribution requirement remains in force.
+The included SVG is the unmodified original with its simple background.
+The runtime PNG trims transparent margins and adds padding; artwork colors
+and content remain intact. Source, conversion and hashes are recorded in
+Storyset-Teacher-Sources.json. Studying is an unused, historical source.

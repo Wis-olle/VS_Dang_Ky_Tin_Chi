@@ -1,0 +1,26 @@
+{
+  "Layout": [
+    {
+      "Snapshot": "01-student-timetable",
+      "Controls": 50,
+      "Identical": true
+    },
+    {
+      "Snapshot": "02-empty-semester",
+      "Controls": 44,
+      "Identical": true
+    },
+    {
+      "Snapshot": "03-compact",
+      "Controls": 50,
+      "Identical": true
+    },
+    {
+      "Snapshot": "05-compact-scrolled",
+      "Controls": 50,
+      "Identical": true
+    }
+  ],
+  "Passed": true,
+  "Checks": 28
+}

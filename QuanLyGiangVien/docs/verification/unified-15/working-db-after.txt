@@ -1,0 +1,12 @@
+bang so_dong
+---- -------
+GIANG_VIEN 12
+KHOA 4
+PHONG_HOC 8
+HOC_PHAN 8
+HOC_KY 2
+LOP_HOC_PHAN 10
+DANG_KY 5
+vai_tro ma_sv
+------- -----
+DAO_TAO NULL

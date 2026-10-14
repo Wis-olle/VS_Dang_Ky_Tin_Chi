@@ -1,0 +1,37 @@
+Current avatar pack: exact QuanLyTacGia Notionists author set (48 PNGs)
+Verified on: 2026-10-10
+Creator: Zoish
+Original pack: https://heyzoish.gumroad.com/l/notionists
+Style documentation: https://www.dicebear.com/styles/notionists/
+License: CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+
+The current lecturer app includes the same 48 original PNG files used by
+QuanLyTacGia, renamed portrait-01.png through portrait-48.png in the same
+index order. Each PNG is 128 x 128 RGBA. The bytes were copied unchanged:
+no recoloring, resizing, cropping or re-encoding.
+
+QuanLyTacGia's tools/Get-Avatars.ps1 records the original DiceBear 9.x URLs,
+seeds TG0001 through TG0048, and the exact per-index background array.
+The colors are fef3c7, fce7f3, e3f1fa, dcfce7 and ede9fe. The original
+Assets/avatars/README.md is preserved in
+Notionists-AuthorSet-Original-Provenance.txt for provenance.
+
+Notionists-AuthorSet-Sources.json records each local original path, online
+source URL and identical source/destination SHA256. CC0 permits copying,
+modification and distribution without requiring attribution; the app
+nevertheless credits Zoish / DiceBear. No Dribbble artwork is copied.
+
+Rebuild: Python + Pillow, Assets/download_assets.py --avatars-only.
+The default copies the complete sibling QuanLyTacGia set when available.
+--download forces acquisition from the exact documented DiceBear 9.x PNG
+URLs; --source-dir selects another local original checkout. Font rebuild
+behavior is retained when --avatars-only is omitted. Node.js and Sharp
+are no longer required for rebuilding this PNG pack.
+The desktop application loads packaged PNGs offline.
+
+Previous Open Peeps art is historical and preserved in OpenPeeps-Archive.
+Notionists-AuthorSet-Previous-OpenPeeps-Archive.json maps the old manifest's
+former active paths to retained source SVG, SVG and PNG archive paths.
+Older Notionists-Avatar-Sources.json and OpenPeeps-Avatar-Sources.json files
+are historical design records and do not describe the current 48 PNGs.

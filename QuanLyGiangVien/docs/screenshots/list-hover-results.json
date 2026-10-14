@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": [
+    "Hovering table row 0 creates no lecturer preview window",
+    "Hovering table row 1 creates no lecturer preview window",
+    "Hovering table row 2 creates no lecturer preview window",
+    "Settled and repeated table hover leaves no lecturer preview window",
+    "Table hover preserves keyboard focus, selected lecturer and closed profile drawer",
+    "Table hover keeps interactive bounds fixed",
+    "Filtered lecturer rows remain usable without hover previews",
+    "Sorted table rows show the current lecturer without creating a preview",
+    "Scrolling and hovering table rows creates no lecturer preview",
+    "Table header hover creates no lecturer preview",
+    "Clicking a table lecturer still opens the selected profile drawer",
+    "The existing lecturer profile drawer closes normally",
+    "Card hover preserves focus and selection without an information preview",
+    "Card hover preserves interactive card bounds",
+    "Existing card click still selects its lecturer",
+    "Existing card Enter key still selects its lecturer",
+    "Switching back to table view preserves records without restoring hover previews"
+  ]
+}

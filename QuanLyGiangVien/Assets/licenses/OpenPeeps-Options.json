@@ -1,0 +1,354 @@
+{
+  "seed": {
+    "type": "string"
+  },
+  "size": {
+    "type": "number",
+    "min": 1,
+    "max": 4096
+  },
+  "flip": {
+    "type": "enum",
+    "values": [
+      "none",
+      "horizontal",
+      "vertical",
+      "both"
+    ],
+    "list": true
+  },
+  "scale": {
+    "type": "range",
+    "min": 0,
+    "max": 10
+  },
+  "borderRadius": {
+    "type": "range",
+    "min": 0,
+    "max": 50
+  },
+  "rotate": {
+    "type": "range",
+    "min": -360,
+    "max": 360
+  },
+  "translateX": {
+    "type": "range",
+    "min": -1000,
+    "max": 1000
+  },
+  "translateY": {
+    "type": "range",
+    "min": -1000,
+    "max": 1000
+  },
+  "accessoriesVariant": {
+    "type": "enum",
+    "values": [
+      "eyepatch",
+      "glasses",
+      "glasses2",
+      "glasses3",
+      "glasses4",
+      "glasses5",
+      "sunglasses",
+      "sunglasses2"
+    ],
+    "list": true,
+    "weighted": true
+  },
+  "accessoriesProbability": {
+    "type": "number",
+    "min": 0,
+    "max": 100
+  },
+  "expressionVariant": {
+    "type": "enum",
+    "values": [
+      "angryWithFang",
+      "awe",
+      "blank",
+      "calm",
+      "cheeky",
+      "concerned",
+      "concernedFear",
+      "contempt",
+      "cute",
+      "cyclops",
+      "driven",
+      "eatingHappy",
+      "explaining",
+      "eyesClosed",
+      "fear",
+      "hectic",
+      "lovingGrin1",
+      "lovingGrin2",
+      "monster",
+      "old",
+      "rage",
+      "serious",
+      "smile",
+      "smileBig",
+      "smileLOL",
+      "smileTeethGap",
+      "solemn",
+      "suspicious",
+      "tired",
+      "veryAngry"
+    ],
+    "list": true,
+    "weighted": true
+  },
+  "expressionProbability": {
+    "type": "number",
+    "min": 0,
+    "max": 100
+  },
+  "facialHairVariant": {
+    "type": "enum",
+    "values": [
+      "chin",
+      "full",
+      "full2",
+      "full3",
+      "full4",
+      "goatee1",
+      "goatee2",
+      "moustache1",
+      "moustache2",
+      "moustache3",
+      "moustache4",
+      "moustache5",
+      "moustache6",
+      "moustache7",
+      "moustache8",
+      "moustache9"
+    ],
+    "list": true,
+    "weighted": true
+  },
+  "facialHairProbability": {
+    "type": "number",
+    "min": 0,
+    "max": 100
+  },
+  "headVariant": {
+    "type": "enum",
+    "values": [
+      "afro",
+      "bangs",
+      "bangs2",
+      "bantuKnots",
+      "bear",
+      "bun",
+      "bun2",
+      "buns",
+      "cornrows",
+      "cornrows2",
+      "dreads1",
+      "dreads2",
+      "flatTop",
+      "flatTopLong",
+      "grayBun",
+      "grayMedium",
+      "grayShort",
+      "hatBeanie",
+      "hatHip",
+      "hijab",
+      "long",
+      "longAfro",
+      "longBangs",
+      "longCurly",
+      "medium1",
+      "medium2",
+      "medium3",
+      "mediumBangs",
+      "mediumBangs2",
+      "mediumBangs3",
+      "mediumStraight",
+      "mohawk",
+      "mohawk2",
+      "noHair1",
+      "noHair2",
+      "noHair3",
+      "pomp",
+      "shaved1",
+      "shaved2",
+      "shaved3",
+      "short1",
+      "short2",
+      "short3",
+      "short4",
+      "short5",
+      "turban",
+      "twists",
+      "twists2"
+    ],
+    "list": true,
+    "weighted": true
+  },
+  "headProbability": {
+    "type": "number",
+    "min": 0,
+    "max": 100
+  },
+  "maskVariant": {
+    "type": "enum",
+    "values": [
+      "medicalMask",
+      "respirator"
+    ],
+    "list": true,
+    "weighted": true
+  },
+  "maskProbability": {
+    "type": "number",
+    "min": 0,
+    "max": 100
+  },
+  "clothingColor": {
+    "type": "color",
+    "list": true
+  },
+  "clothingColorFill": {
+    "type": "enum",
+    "values": [
+      "solid",
+      "linear",
+      "radial"
+    ],
+    "list": true
+  },
+  "clothingColorFillStops": {
+    "type": "range",
+    "min": 2
+  },
+  "clothingColorAngle": {
+    "type": "range",
+    "min": -360,
+    "max": 360
+  },
+  "clothingColorOrder": {
+    "type": "enum",
+    "values": [
+      "random",
+      "fixed"
+    ]
+  },
+  "headContrastColor": {
+    "type": "color",
+    "list": true
+  },
+  "headContrastColorFill": {
+    "type": "enum",
+    "values": [
+      "solid",
+      "linear",
+      "radial"
+    ],
+    "list": true
+  },
+  "headContrastColorFillStops": {
+    "type": "range",
+    "min": 2
+  },
+  "headContrastColorAngle": {
+    "type": "range",
+    "min": -360,
+    "max": 360
+  },
+  "headContrastColorOrder": {
+    "type": "enum",
+    "values": [
+      "random",
+      "fixed"
+    ]
+  },
+  "inkColor": {
+    "type": "color",
+    "list": true
+  },
+  "inkColorFill": {
+    "type": "enum",
+    "values": [
+      "solid",
+      "linear",
+      "radial"
+    ],
+    "list": true
+  },
+  "inkColorFillStops": {
+    "type": "range",
+    "min": 2
+  },
+  "inkColorAngle": {
+    "type": "range",
+    "min": -360,
+    "max": 360
+  },
+  "inkColorOrder": {
+    "type": "enum",
+    "values": [
+      "random",
+      "fixed"
+    ]
+  },
+  "skinColor": {
+    "type": "color",
+    "list": true
+  },
+  "skinColorFill": {
+    "type": "enum",
+    "values": [
+      "solid",
+      "linear",
+      "radial"
+    ],
+    "list": true
+  },
+  "skinColorFillStops": {
+    "type": "range",
+    "min": 2
+  },
+  "skinColorAngle": {
+    "type": "range",
+    "min": -360,
+    "max": 360
+  },
+  "skinColorOrder": {
+    "type": "enum",
+    "values": [
+      "random",
+      "fixed"
+    ]
+  },
+  "backgroundColor": {
+    "type": "color",
+    "list": true
+  },
+  "backgroundColorFill": {
+    "type": "enum",
+    "values": [
+      "solid",
+      "linear",
+      "radial"
+    ],
+    "list": true
+  },
+  "backgroundColorFillStops": {
+    "type": "range",
+    "min": 2
+  },
+  "backgroundColorAngle": {
+    "type": "range",
+    "min": -360,
+    "max": 360
+  },
+  "backgroundColorOrder": {
+    "type": "enum",
+    "values": [
+      "random",
+      "fixed"
+    ]
+  }
+}

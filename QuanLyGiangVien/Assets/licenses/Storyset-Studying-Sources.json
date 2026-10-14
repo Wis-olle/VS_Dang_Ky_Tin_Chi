@@ -1,0 +1,47 @@
+{
+  "title": "Studying",
+  "style": "bro",
+  "provider": "Storyset / Freepik Company",
+  "local_file": "Assets/illustrations/studying.svg",
+  "source_page": "https://storyset.com/illustration/studying/bro",
+  "download_url": "https://stories.freepiklabs.com/storage/4517/Studying-01.svg",
+  "license": "https://storyset.com/terms",
+  "license_section": "6. Licence Agreement for Storyset Content",
+  "verified_on": "2026-10-10",
+  "sha256": "b5fd615a4dba8b0912b0f089fe0c83fb8ed1dae2c629d0a6e0b2a03b3f6cfb8f",
+  "view_box": "0 0 500 500",
+  "palette": [
+    "#92E3A9",
+    "#263238",
+    "#FFFFFF",
+    "#8C8C8C",
+    "#9C9C9C",
+    "#A8A8A8",
+    "#D4D4D4"
+  ],
+  "attribution_required": true,
+  "suggested_credit": "Education illustrations by Storyset",
+  "attribution_link": "https://storyset.com/",
+  "notes": [
+    "Original SVG, no Dribbble artwork copied.",
+    "Transparent outside the illustration; original pale-green background-simple layer is included.",
+    "Editable source layers: background-simple, Fan, Bookshelves, Coffee, Character, Device.",
+    "The provider allows modification of licensed content with attribution. Do not resell or redistribute as a stock/asset collection.",
+    "SVG contains no scripts, foreignObject, embedded raster images or external network references."
+  ],
+  "derived_formats": [
+    {
+      "local_file": "Assets/illustrations/studying.png",
+      "format": "PNG RGBA",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "transparent_background": true,
+      "source": "Assets/illustrations/studying.svg",
+      "conversion": "Sharp / librsvg: SVG rasterization to 1024 x 1024 PNG with alpha; original source colors preserved",
+      "sha256": "69b92aa2257a690a044726e4e08ec2ed228040cfd39c6ae0007885229e5d4be9",
+      "reason": "PNG fallback for WinForms renderer that does not render source SVG styles accurately"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "count": 39,
+  "allUnchanged": true,
+  "files": [
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Dialogs\\LecturerEditor.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\MainForm.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Panels\\LecturerProfile.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AnimatedDashboardIcon.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AnimatedSelect.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AppTheme.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthCardMotion.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthCardUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthCornerUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthMotionMath.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthTextUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardFaculty.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardHero.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardOverview.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardStats.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\FacultySpreadUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\FloatingArtwork.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\HeroMotionBenchmark.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\IconPlayback.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\IconSprite.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\LecturerCard.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\LecturerGrid.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\LecturerRow.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\ListHoverUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\Motion.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\MotionButton.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\MotionMath.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\MotionPaintBenchmark.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\OverviewMotionMath.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\PageMotionCoordinator.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\Portraits.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SelectMotionMath.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SelectPopup.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SelectUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SurfaceHover.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SurfaceTransition.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\UiCapture.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\UiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\VietLocalization.cs",
+      "unchanged": true
+    }
+  ]
+}

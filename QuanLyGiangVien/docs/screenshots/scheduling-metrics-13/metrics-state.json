@@ -1,0 +1,446 @@
+[
+  {
+    "Caption": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 12
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 184,
+        "Height": 20
+      },
+      "X": 18,
+      "Y": 12,
+      "Width": 184,
+      "Height": 20,
+      "Left": 18,
+      "Top": 12,
+      "Right": 202,
+      "Bottom": 32,
+      "IsEmpty": false
+    },
+    "Number": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 36
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 214,
+        "Height": 47
+      },
+      "X": 18,
+      "Y": 36,
+      "Width": 214,
+      "Height": 47,
+      "Left": 18,
+      "Top": 36,
+      "Right": 232,
+      "Bottom": 83,
+      "IsEmpty": false
+    },
+    "Note": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 86
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 214,
+        "Height": 18
+      },
+      "X": 18,
+      "Y": 86,
+      "Width": 214,
+      "Height": 18,
+      "Left": 18,
+      "Top": 86,
+      "Right": 232,
+      "Bottom": 104,
+      "IsEmpty": false
+    },
+    "Rail": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 106
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 214,
+        "Height": 4
+      },
+      "X": 18,
+      "Y": 106,
+      "Width": 214,
+      "Height": 4,
+      "Left": 18,
+      "Top": 106,
+      "Right": 232,
+      "Bottom": 110,
+      "IsEmpty": false
+    },
+    "Ring": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Ratio": 0.75,
+    "DisplayedRatio": 0.75,
+    "NumberFontSize": 20.60769,
+    "RatioIsAnimating": false
+  },
+  {
+    "Caption": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 12
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 184,
+        "Height": 20
+      },
+      "X": 18,
+      "Y": 12,
+      "Width": 184,
+      "Height": 20,
+      "Left": 18,
+      "Top": 12,
+      "Right": 202,
+      "Bottom": 32,
+      "IsEmpty": false
+    },
+    "Number": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 36
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 214,
+        "Height": 47
+      },
+      "X": 18,
+      "Y": 36,
+      "Width": 214,
+      "Height": 47,
+      "Left": 18,
+      "Top": 36,
+      "Right": 232,
+      "Bottom": 83,
+      "IsEmpty": false
+    },
+    "Note": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 86
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 214,
+        "Height": 18
+      },
+      "X": 18,
+      "Y": 86,
+      "Width": 214,
+      "Height": 18,
+      "Left": 18,
+      "Top": 86,
+      "Right": 232,
+      "Bottom": 104,
+      "IsEmpty": false
+    },
+    "Rail": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 106
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 214,
+        "Height": 4
+      },
+      "X": 18,
+      "Y": 106,
+      "Width": 214,
+      "Height": 4,
+      "Left": 18,
+      "Top": 106,
+      "Right": 232,
+      "Bottom": 110,
+      "IsEmpty": false
+    },
+    "Ring": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Ratio": 0.875,
+    "DisplayedRatio": 0.875,
+    "NumberFontSize": 20.60769,
+    "RatioIsAnimating": false
+  },
+  {
+    "Caption": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 12
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 184,
+        "Height": 20
+      },
+      "X": 18,
+      "Y": 12,
+      "Width": 184,
+      "Height": 20,
+      "Left": 18,
+      "Top": 12,
+      "Right": 202,
+      "Bottom": 32,
+      "IsEmpty": false
+    },
+    "Number": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 36
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 214,
+        "Height": 47
+      },
+      "X": 18,
+      "Y": 36,
+      "Width": 214,
+      "Height": 47,
+      "Left": 18,
+      "Top": 36,
+      "Right": 232,
+      "Bottom": 83,
+      "IsEmpty": false
+    },
+    "Note": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 86
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 214,
+        "Height": 18
+      },
+      "X": 18,
+      "Y": 86,
+      "Width": 214,
+      "Height": 18,
+      "Left": 18,
+      "Top": 86,
+      "Right": 232,
+      "Bottom": 104,
+      "IsEmpty": false
+    },
+    "Rail": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 106
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 214,
+        "Height": 4
+      },
+      "X": 18,
+      "Y": 106,
+      "Width": 214,
+      "Height": 4,
+      "Left": 18,
+      "Top": 106,
+      "Right": 232,
+      "Bottom": 110,
+      "IsEmpty": false
+    },
+    "Ring": {
+      "Location": {
+        "IsEmpty": true,
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "IsEmpty": true,
+        "Width": 0,
+        "Height": 0
+      },
+      "X": 0,
+      "Y": 0,
+      "Width": 0,
+      "Height": 0,
+      "Left": 0,
+      "Top": 0,
+      "Right": 0,
+      "Bottom": 0,
+      "IsEmpty": true
+    },
+    "Ratio": 0.85714287,
+    "DisplayedRatio": 0.85714287,
+    "NumberFontSize": 20.60769,
+    "RatioIsAnimating": false
+  },
+  {
+    "Caption": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 12
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 185,
+        "Height": 20
+      },
+      "X": 18,
+      "Y": 12,
+      "Width": 185,
+      "Height": 20,
+      "Left": 18,
+      "Top": 12,
+      "Right": 203,
+      "Bottom": 32,
+      "IsEmpty": false
+    },
+    "Number": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 36
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 165,
+        "Height": 46
+      },
+      "X": 18,
+      "Y": 36,
+      "Width": 165,
+      "Height": 46,
+      "Left": 18,
+      "Top": 36,
+      "Right": 183,
+      "Bottom": 82,
+      "IsEmpty": false
+    },
+    "Note": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 88
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 215,
+        "Height": 18
+      },
+      "X": 18,
+      "Y": 88,
+      "Width": 215,
+      "Height": 18,
+      "Left": 18,
+      "Top": 88,
+      "Right": 233,
+      "Bottom": 106,
+      "IsEmpty": false
+    },
+    "Rail": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 18,
+        "Y": 106
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 215,
+        "Height": 4
+      },
+      "X": 18,
+      "Y": 106,
+      "Width": 215,
+      "Height": 4,
+      "Left": 18,
+      "Top": 106,
+      "Right": 233,
+      "Bottom": 110,
+      "IsEmpty": false
+    },
+    "Ring": {
+      "Location": {
+        "IsEmpty": false,
+        "X": 191,
+        "Y": 42
+      },
+      "Size": {
+        "IsEmpty": false,
+        "Width": 42,
+        "Height": 42
+      },
+      "X": 191,
+      "Y": 42,
+      "Width": 42,
+      "Height": 42,
+      "Left": 191,
+      "Top": 42,
+      "Right": 233,
+      "Bottom": 84,
+      "IsEmpty": false
+    },
+    "Ratio": 0.64285713,
+    "DisplayedRatio": 0.64285713,
+    "NumberFontSize": 20.16923,
+    "RatioIsAnimating": false
+  }
+]

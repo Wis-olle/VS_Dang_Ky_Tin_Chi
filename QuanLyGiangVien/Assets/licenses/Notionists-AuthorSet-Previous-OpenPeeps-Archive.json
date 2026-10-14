@@ -1,0 +1,728 @@
+{
+  "status": "historical",
+  "current_manifest": "Assets/licenses/Notionists-AuthorSet-Sources.json",
+  "original_manifest_preserved": "Assets/licenses/OpenPeeps-Avatar-Sources.json",
+  "note": "The original preserved OpenPeeps manifest refers to former active paths. These archive records are the authoritative locations for its retained SVG and PNG files.",
+  "archived_assets": [
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-01.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-01.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-01-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-01&size=512&backgroundColor=fff3ee&inkColor=1d2428&skinColor=ffffff&clothingColor=b9e5de&headContrastColor=a4aba8&headVariant=short2&headProbability=100&expressionVariant=smile&expressionProbability=100&accessoriesProbability=100&accessoriesVariant=glasses2&facialHairProbability=0&facialHairVariant=chin&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-01",
+        "size": "512",
+        "backgroundColor": "fff3ee",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "b9e5de",
+        "headContrastColor": "a4aba8",
+        "headVariant": "short2",
+        "headProbability": "100",
+        "expressionVariant": "smile",
+        "expressionProbability": "100",
+        "accessoriesProbability": "100",
+        "accessoriesVariant": "glasses2",
+        "facialHairProbability": "0",
+        "facialHairVariant": "chin",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nam",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#b9e5de",
+        "background": "#fff3ee"
+      },
+      "curation": {
+        "head": "short2",
+        "expression": "smile",
+        "glasses": "glasses2",
+        "facial_hair": null
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "7e47ed2f0960624b590dd26cf8f824fef9401a99790a9cb039938aedfae0e36a",
+      "svg_sha256": "7e47ed2f0960624b590dd26cf8f824fef9401a99790a9cb039938aedfae0e36a",
+      "png_sha256": "d716e5cc51b2e426578907e10b0c74449c8111696e3d9d26252a147b293e7c29",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-01.png",
+        "svg_file": "Assets/avatars/portrait-01.svg",
+        "original_svg_file": "Assets/avatars/portrait-01-source.svg"
+      }
+    },
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-02.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-02.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-02-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-02&size=512&backgroundColor=f3eefd&inkColor=1d2428&skinColor=ffffff&clothingColor=c6e8ed&headContrastColor=a4aba8&headVariant=longCurly&headProbability=100&expressionVariant=calm&expressionProbability=100&accessoriesProbability=0&accessoriesVariant=glasses&facialHairProbability=0&facialHairVariant=chin&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-02",
+        "size": "512",
+        "backgroundColor": "f3eefd",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "c6e8ed",
+        "headContrastColor": "a4aba8",
+        "headVariant": "longCurly",
+        "headProbability": "100",
+        "expressionVariant": "calm",
+        "expressionProbability": "100",
+        "accessoriesProbability": "0",
+        "accessoriesVariant": "glasses",
+        "facialHairProbability": "0",
+        "facialHairVariant": "chin",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nu",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#c6e8ed",
+        "background": "#f3eefd"
+      },
+      "curation": {
+        "head": "longCurly",
+        "expression": "calm",
+        "glasses": null,
+        "facial_hair": null
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "39d840294f1aa73e236c579606c64d78a0ddb638c1c1d005e11ff4ff7370aaa1",
+      "svg_sha256": "39d840294f1aa73e236c579606c64d78a0ddb638c1c1d005e11ff4ff7370aaa1",
+      "png_sha256": "8d01258873750ee9c731bdc7c56da0be4679ab7ec2de2ec622c55de3b7b3b678",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-02.png",
+        "svg_file": "Assets/avatars/portrait-02.svg",
+        "original_svg_file": "Assets/avatars/portrait-02-source.svg"
+      }
+    },
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-03.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-03.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-03-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-03&size=512&backgroundColor=e9f6f3&inkColor=1d2428&skinColor=ffffff&clothingColor=ead7cb&headContrastColor=a4aba8&headVariant=grayShort&headProbability=100&expressionVariant=old&expressionProbability=100&accessoriesProbability=0&accessoriesVariant=glasses&facialHairProbability=100&facialHairVariant=goatee1&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-03",
+        "size": "512",
+        "backgroundColor": "e9f6f3",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "ead7cb",
+        "headContrastColor": "a4aba8",
+        "headVariant": "grayShort",
+        "headProbability": "100",
+        "expressionVariant": "old",
+        "expressionProbability": "100",
+        "accessoriesProbability": "0",
+        "accessoriesVariant": "glasses",
+        "facialHairProbability": "100",
+        "facialHairVariant": "goatee1",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nam",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#ead7cb",
+        "background": "#e9f6f3"
+      },
+      "curation": {
+        "head": "grayShort",
+        "expression": "old",
+        "glasses": null,
+        "facial_hair": "goatee1"
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "b51ded07ca37ef94cf6789ef8e864ce201c8aa93d6ce65e1c0412d4902f806ec",
+      "svg_sha256": "b51ded07ca37ef94cf6789ef8e864ce201c8aa93d6ce65e1c0412d4902f806ec",
+      "png_sha256": "e8a07a3b5b7bc6d9af6377d1a2d5530b9a730079c69d1983a8313d7cb907099c",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-03.png",
+        "svg_file": "Assets/avatars/portrait-03.svg",
+        "original_svg_file": "Assets/avatars/portrait-03-source.svg"
+      }
+    },
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-04.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-04.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-04-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-04&size=512&backgroundColor=fff3ee&inkColor=1d2428&skinColor=ffffff&clothingColor=b9e5de&headContrastColor=a4aba8&headVariant=bun&headProbability=100&expressionVariant=explaining&expressionProbability=100&accessoriesProbability=100&accessoriesVariant=glasses3&facialHairProbability=0&facialHairVariant=chin&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-04",
+        "size": "512",
+        "backgroundColor": "fff3ee",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "b9e5de",
+        "headContrastColor": "a4aba8",
+        "headVariant": "bun",
+        "headProbability": "100",
+        "expressionVariant": "explaining",
+        "expressionProbability": "100",
+        "accessoriesProbability": "100",
+        "accessoriesVariant": "glasses3",
+        "facialHairProbability": "0",
+        "facialHairVariant": "chin",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nu",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#b9e5de",
+        "background": "#fff3ee"
+      },
+      "curation": {
+        "head": "bun",
+        "expression": "explaining",
+        "glasses": "glasses3",
+        "facial_hair": null
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "fc6a34d694e4f9e833b8b36645a09a5fa31ea87e376b1d3bf9076e81129f6997",
+      "svg_sha256": "fc6a34d694e4f9e833b8b36645a09a5fa31ea87e376b1d3bf9076e81129f6997",
+      "png_sha256": "6343b408cb9988324556dcae6a5d83244af0dde465a9229c3bc0c7bf8bcb9adc",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-04.png",
+        "svg_file": "Assets/avatars/portrait-04.svg",
+        "original_svg_file": "Assets/avatars/portrait-04-source.svg"
+      }
+    },
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-05.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-05.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-05-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-05&size=512&backgroundColor=fff3ee&inkColor=1d2428&skinColor=ffffff&clothingColor=c6e8ed&headContrastColor=a4aba8&headVariant=short4&headProbability=100&expressionVariant=explaining&expressionProbability=100&accessoriesProbability=0&accessoriesVariant=glasses&facialHairProbability=0&facialHairVariant=chin&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-05",
+        "size": "512",
+        "backgroundColor": "fff3ee",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "c6e8ed",
+        "headContrastColor": "a4aba8",
+        "headVariant": "short4",
+        "headProbability": "100",
+        "expressionVariant": "explaining",
+        "expressionProbability": "100",
+        "accessoriesProbability": "0",
+        "accessoriesVariant": "glasses",
+        "facialHairProbability": "0",
+        "facialHairVariant": "chin",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nam",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#c6e8ed",
+        "background": "#fff3ee"
+      },
+      "curation": {
+        "head": "short4",
+        "expression": "explaining",
+        "glasses": null,
+        "facial_hair": null
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "78159e434f1f48ca5321316b5822f66225268e8d52c948fd4e4c8a3153c1c066",
+      "svg_sha256": "78159e434f1f48ca5321316b5822f66225268e8d52c948fd4e4c8a3153c1c066",
+      "png_sha256": "9ab3bd7e2c2a80e52652f169d5ca7793aa6a2de498d8fcaf1b44550ba0b376c3",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-05.png",
+        "svg_file": "Assets/avatars/portrait-05.svg",
+        "original_svg_file": "Assets/avatars/portrait-05-source.svg"
+      }
+    },
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-06.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-06.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-06-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-06&size=512&backgroundColor=e9f6f3&inkColor=1d2428&skinColor=ffffff&clothingColor=f4d3c6&headContrastColor=a4aba8&headVariant=mediumStraight&headProbability=100&expressionVariant=smileTeethGap&expressionProbability=100&accessoriesProbability=0&accessoriesVariant=glasses&facialHairProbability=0&facialHairVariant=chin&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-06",
+        "size": "512",
+        "backgroundColor": "e9f6f3",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "f4d3c6",
+        "headContrastColor": "a4aba8",
+        "headVariant": "mediumStraight",
+        "headProbability": "100",
+        "expressionVariant": "smileTeethGap",
+        "expressionProbability": "100",
+        "accessoriesProbability": "0",
+        "accessoriesVariant": "glasses",
+        "facialHairProbability": "0",
+        "facialHairVariant": "chin",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nu",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#f4d3c6",
+        "background": "#e9f6f3"
+      },
+      "curation": {
+        "head": "mediumStraight",
+        "expression": "smileTeethGap",
+        "glasses": null,
+        "facial_hair": null
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "d9df2628a79d6a4d607c2bdb4bbea98efedcbbef1754ede5103736a7b9baeec4",
+      "svg_sha256": "d9df2628a79d6a4d607c2bdb4bbea98efedcbbef1754ede5103736a7b9baeec4",
+      "png_sha256": "a5cc147c3fc10c5dda969ccb67b356ec89d335b1450dc46206991d640b38c6a4",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-06.png",
+        "svg_file": "Assets/avatars/portrait-06.svg",
+        "original_svg_file": "Assets/avatars/portrait-06-source.svg"
+      }
+    },
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-07.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-07.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-07-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-07&size=512&backgroundColor=fff3ee&inkColor=1d2428&skinColor=ffffff&clothingColor=dfd2ed&headContrastColor=a4aba8&headVariant=pomp&headProbability=100&expressionVariant=calm&expressionProbability=100&accessoriesProbability=100&accessoriesVariant=glasses4&facialHairProbability=0&facialHairVariant=chin&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-07",
+        "size": "512",
+        "backgroundColor": "fff3ee",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "dfd2ed",
+        "headContrastColor": "a4aba8",
+        "headVariant": "pomp",
+        "headProbability": "100",
+        "expressionVariant": "calm",
+        "expressionProbability": "100",
+        "accessoriesProbability": "100",
+        "accessoriesVariant": "glasses4",
+        "facialHairProbability": "0",
+        "facialHairVariant": "chin",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nam",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#dfd2ed",
+        "background": "#fff3ee"
+      },
+      "curation": {
+        "head": "pomp",
+        "expression": "calm",
+        "glasses": "glasses4",
+        "facial_hair": null
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "e5443d53927800702d9e7fc27634d0b9e40800718e19c3c9b73e1cb9a6b511c6",
+      "svg_sha256": "e5443d53927800702d9e7fc27634d0b9e40800718e19c3c9b73e1cb9a6b511c6",
+      "png_sha256": "4db2de7c46947242dd5174cc908cdf983a984384ecb0e4b6df63439368349c6e",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-07.png",
+        "svg_file": "Assets/avatars/portrait-07.svg",
+        "original_svg_file": "Assets/avatars/portrait-07-source.svg"
+      }
+    },
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-08.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-08.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-08-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-08&size=512&backgroundColor=f3eefd&inkColor=1d2428&skinColor=ffffff&clothingColor=c6e8ed&headContrastColor=a4aba8&headVariant=longBangs&headProbability=100&expressionVariant=smile&expressionProbability=100&accessoriesProbability=0&accessoriesVariant=glasses&facialHairProbability=0&facialHairVariant=chin&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-08",
+        "size": "512",
+        "backgroundColor": "f3eefd",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "c6e8ed",
+        "headContrastColor": "a4aba8",
+        "headVariant": "longBangs",
+        "headProbability": "100",
+        "expressionVariant": "smile",
+        "expressionProbability": "100",
+        "accessoriesProbability": "0",
+        "accessoriesVariant": "glasses",
+        "facialHairProbability": "0",
+        "facialHairVariant": "chin",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nu",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#c6e8ed",
+        "background": "#f3eefd"
+      },
+      "curation": {
+        "head": "longBangs",
+        "expression": "smile",
+        "glasses": null,
+        "facial_hair": null
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "13459a6ae60512c9bc234584204ae96828301562cdb0489870c5e71cd5803a3b",
+      "svg_sha256": "13459a6ae60512c9bc234584204ae96828301562cdb0489870c5e71cd5803a3b",
+      "png_sha256": "df354efe06281d54d67c7f6ecd1b802a9aade5e1550468ded806b0a1564c2280",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-08.png",
+        "svg_file": "Assets/avatars/portrait-08.svg",
+        "original_svg_file": "Assets/avatars/portrait-08-source.svg"
+      }
+    },
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-09.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-09.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-09-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-09&size=512&backgroundColor=fff3ee&inkColor=1d2428&skinColor=ffffff&clothingColor=b9e5de&headContrastColor=a4aba8&headVariant=noHair1&headProbability=100&expressionVariant=old&expressionProbability=100&accessoriesProbability=0&accessoriesVariant=glasses&facialHairProbability=0&facialHairVariant=chin&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-09",
+        "size": "512",
+        "backgroundColor": "fff3ee",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "b9e5de",
+        "headContrastColor": "a4aba8",
+        "headVariant": "noHair1",
+        "headProbability": "100",
+        "expressionVariant": "old",
+        "expressionProbability": "100",
+        "accessoriesProbability": "0",
+        "accessoriesVariant": "glasses",
+        "facialHairProbability": "0",
+        "facialHairVariant": "chin",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nam",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#b9e5de",
+        "background": "#fff3ee"
+      },
+      "curation": {
+        "head": "noHair1",
+        "expression": "old",
+        "glasses": null,
+        "facial_hair": null
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "2d232c47386b8e4c28b05497b48bbdc6e55418c51f898b9a1633b3a677e69553",
+      "svg_sha256": "2d232c47386b8e4c28b05497b48bbdc6e55418c51f898b9a1633b3a677e69553",
+      "png_sha256": "f00b1d8a145f43cbd162901cfbe8416be2da7713bb70f0692d70bc4d44288e0a",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-09.png",
+        "svg_file": "Assets/avatars/portrait-09.svg",
+        "original_svg_file": "Assets/avatars/portrait-09-source.svg"
+      }
+    },
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-10.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-10.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-10-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-10&size=512&backgroundColor=e9f6f3&inkColor=1d2428&skinColor=ffffff&clothingColor=f2e6c9&headContrastColor=a4aba8&headVariant=grayBun&headProbability=100&expressionVariant=smile&expressionProbability=100&accessoriesProbability=0&accessoriesVariant=glasses&facialHairProbability=0&facialHairVariant=chin&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-10",
+        "size": "512",
+        "backgroundColor": "e9f6f3",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "f2e6c9",
+        "headContrastColor": "a4aba8",
+        "headVariant": "grayBun",
+        "headProbability": "100",
+        "expressionVariant": "smile",
+        "expressionProbability": "100",
+        "accessoriesProbability": "0",
+        "accessoriesVariant": "glasses",
+        "facialHairProbability": "0",
+        "facialHairVariant": "chin",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nu",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#f2e6c9",
+        "background": "#e9f6f3"
+      },
+      "curation": {
+        "head": "grayBun",
+        "expression": "smile",
+        "glasses": null,
+        "facial_hair": null
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "3517b7442582926e58bc1804d4672f26c6fd43f2a8702fbfd4d305f2b370b6b0",
+      "svg_sha256": "3517b7442582926e58bc1804d4672f26c6fd43f2a8702fbfd4d305f2b370b6b0",
+      "png_sha256": "4e703d34e65e28f96d1d8d2a499f3288444558b624d25f01e2c713d79d53df05",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-10.png",
+        "svg_file": "Assets/avatars/portrait-10.svg",
+        "original_svg_file": "Assets/avatars/portrait-10-source.svg"
+      }
+    },
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-11.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-11.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-11-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-11&size=512&backgroundColor=fff3ee&inkColor=1d2428&skinColor=ffffff&clothingColor=dfd2ed&headContrastColor=a4aba8&headVariant=short5&headProbability=100&expressionVariant=smile&expressionProbability=100&accessoriesProbability=0&accessoriesVariant=glasses&facialHairProbability=100&facialHairVariant=full2&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-11",
+        "size": "512",
+        "backgroundColor": "fff3ee",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "dfd2ed",
+        "headContrastColor": "a4aba8",
+        "headVariant": "short5",
+        "headProbability": "100",
+        "expressionVariant": "smile",
+        "expressionProbability": "100",
+        "accessoriesProbability": "0",
+        "accessoriesVariant": "glasses",
+        "facialHairProbability": "100",
+        "facialHairVariant": "full2",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nam",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#dfd2ed",
+        "background": "#fff3ee"
+      },
+      "curation": {
+        "head": "short5",
+        "expression": "smile",
+        "glasses": null,
+        "facial_hair": "full2"
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "787f1c3e393b0f6088fadc75daa80eebba42c01aa5b8642d7cd7fc12cdb64299",
+      "svg_sha256": "787f1c3e393b0f6088fadc75daa80eebba42c01aa5b8642d7cd7fc12cdb64299",
+      "png_sha256": "868ccc5ac43ad906ab1c32b41b0ef9257603ddb3d6455bf60008416c4f66cea1",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-11.png",
+        "svg_file": "Assets/avatars/portrait-11.svg",
+        "original_svg_file": "Assets/avatars/portrait-11-source.svg"
+      }
+    },
+    {
+      "file": "Assets/licenses/OpenPeeps-Archive/portrait-12.png",
+      "svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-12.svg",
+      "original_svg_file": "Assets/licenses/OpenPeeps-Archive/portrait-12-source.svg",
+      "author": "Pablo Stanley",
+      "style": "Open Peeps / DiceBear",
+      "style_page": "https://www.dicebear.com/styles/open-peeps/",
+      "original_source": "https://www.openpeeps.com/",
+      "download_url": "https://api.dicebear.com/10.x/open-peeps/svg?seed=campus-lecturer-12&size=512&backgroundColor=f3eefd&inkColor=1d2428&skinColor=ffffff&clothingColor=f4d3c6&headContrastColor=a4aba8&headVariant=mediumBangs2&headProbability=100&expressionVariant=cute&expressionProbability=100&accessoriesProbability=0&accessoriesVariant=glasses&facialHairProbability=0&facialHairVariant=chin&maskProbability=0",
+      "options": {
+        "seed": "campus-lecturer-12",
+        "size": "512",
+        "backgroundColor": "f3eefd",
+        "inkColor": "1d2428",
+        "skinColor": "ffffff",
+        "clothingColor": "f4d3c6",
+        "headContrastColor": "a4aba8",
+        "headVariant": "mediumBangs2",
+        "headProbability": "100",
+        "expressionVariant": "cute",
+        "expressionProbability": "100",
+        "accessoriesProbability": "0",
+        "accessoriesVariant": "glasses",
+        "facialHairProbability": "0",
+        "facialHairVariant": "chin",
+        "maskProbability": "0"
+      },
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verified_on": "2026-10-10",
+      "dimensions": [
+        512,
+        512
+      ],
+      "data_record_gender": "Nu",
+      "palette": {
+        "ink": "#1d2428",
+        "paper": "#ffffff",
+        "clothing": "#f4d3c6",
+        "background": "#f3eefd"
+      },
+      "curation": {
+        "head": "mediumBangs2",
+        "expression": "cute",
+        "glasses": null,
+        "facial_hair": null
+      },
+      "modifications": [
+        "Selected native head, expression, accessories and pastel colors",
+        "Converted SVG to a 512 x 512 RGBA PNG with Sharp/librsvg"
+      ],
+      "source_sha256": "47d870e12a3eb618a3beb6e7d6f5f13a890a2f7c1a341843fe059a3f8a3e6eb1",
+      "svg_sha256": "47d870e12a3eb618a3beb6e7d6f5f13a890a2f7c1a341843fe059a3f8a3e6eb1",
+      "png_sha256": "85c107cb6f2a86fb5ef4f024d568a409a717d823ce0a26a9dcc3c10768f906c5",
+      "status": "historical; replaced by exact 48-avatar QuanLyTacGia Notionists set",
+      "former_active_paths": {
+        "file": "Assets/avatars/portrait-12.png",
+        "svg_file": "Assets/avatars/portrait-12.svg",
+        "original_svg_file": "Assets/avatars/portrait-12-source.svg"
+      }
+    }
+  ]
+}

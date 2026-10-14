@@ -1,0 +1,34 @@
+[
+  {
+    "file": "12-page-motion.gif",
+    "nativeInputFrames": 28,
+    "encodedFrames": 5,
+    "durationMs": 4830,
+    "intendedDurationMs": 4845,
+    "withinGifTimingResolution": true
+  },
+  {
+    "file": "18-interaction-motion.gif",
+    "nativeInputFrames": 28,
+    "encodedFrames": 15,
+    "durationMs": 4620,
+    "intendedDurationMs": 4698,
+    "withinGifTimingResolution": true
+  },
+  {
+    "file": "23-metrics-motion.gif",
+    "nativeInputFrames": 28,
+    "encodedFrames": 14,
+    "durationMs": 4260,
+    "intendedDurationMs": 4339,
+    "withinGifTimingResolution": true
+  },
+  {
+    "file": "26-service-motion.gif",
+    "nativeInputFrames": 28,
+    "encodedFrames": 14,
+    "durationMs": 4260,
+    "intendedDurationMs": 4339,
+    "withinGifTimingResolution": true
+  }
+]

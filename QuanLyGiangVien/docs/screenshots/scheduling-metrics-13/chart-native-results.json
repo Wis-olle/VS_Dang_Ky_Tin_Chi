@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "dpi": 96,
+  "checks": [
+    "True maximum two-session day has a legible full-scale coral column",
+    "Seven counts exactly match real scheduled occurrences",
+    "Zero days never receive a colored fill",
+    "Native bar geometry preserves relative counts and zero values",
+    "Chart participates in native keyboard navigation",
+    "Home selects Monday",
+    "Right selects next day",
+    "End selects Sunday",
+    "Keyboard selection stays within seven days",
+    "Accessibility retains all dates and zero counts",
+    "Unchanged data does not restart a bar growth animation",
+    "Changed counts begin finite motion from current values",
+    "Columns interpolate down without resetting instantly to zero",
+    "Rapid data reversal keeps the current painted height",
+    "Bar and hover jobs finish at idle",
+    "Reduced motion renders empty week immediately",
+    "Hidden chart cancels pending growth and hover",
+    "Changed data on an already hidden chart snaps immediately without creating jobs",
+    "Hidden refresh restores the actual seven values before showing the chart",
+    "Resize retains bar geometry inside native bounds",
+    "Dispose releases all chart jobs from the shared clock"
+  ]
+}

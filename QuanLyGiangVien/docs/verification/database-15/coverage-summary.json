@@ -1,0 +1,20 @@
+[
+  {
+    "scope": "Domain",
+    "covered": 445,
+    "total": 449,
+    "linePercent": 99.11
+  },
+  {
+    "scope": "Data/Sql",
+    "covered": 232,
+    "total": 240,
+    "linePercent": 96.67
+  },
+  {
+    "scope": "AllLinkedProduction",
+    "covered": 919,
+    "total": 946,
+    "linePercent": 97.15
+  }
+]

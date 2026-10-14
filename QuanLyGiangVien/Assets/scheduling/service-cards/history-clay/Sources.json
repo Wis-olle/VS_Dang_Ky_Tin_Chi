@@ -1,0 +1,55 @@
+{
+  "variant": "clay",
+  "author": "Vijay Verma / realvjy",
+  "assetLicense": "CC0-1.0, initial V1",
+  "sourceCommit": "8884d59e68a7bae0e0e2163af5b6c2ad992c01c8",
+  "assets": [
+    {
+      "key": "courses",
+      "title": "Notebook",
+      "page": "https://3dicons.co/icons/628100-notebook?angle=dynamic",
+      "url": "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/clay/notebook-dynamic-clay.png"
+    },
+    {
+      "key": "rooms",
+      "title": "Key",
+      "page": "https://3dicons.co/icons/778c78-key?angle=dynamic",
+      "url": "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/clay/key-dynamic-clay.png"
+    },
+    {
+      "key": "schedule",
+      "title": "Calender",
+      "page": "https://3dicons.co/icons/0ef25b-calender?angle=dynamic",
+      "url": "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/clay/calender-dynamic-clay.png"
+    },
+    {
+      "key": "enrollment",
+      "title": "Chart",
+      "page": "https://3dicons.co/icons/4a4275-chart?angle=dynamic",
+      "url": "https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/clay/chart-dynamic-clay.png"
+    }
+  ],
+  "files": [
+    {
+      "file": "courses-original.png",
+      "bytes": 42892,
+      "sha256": "7e03e3a56eadc7d2c1160e098238d03d03074edce60caba6b0ec2aa0b5f74b7c"
+    },
+    {
+      "file": "enrollment-original.png",
+      "bytes": 56225,
+      "sha256": "6d806617856ee66dd6e41d1595603e05c9bc865fe0a5140cdf729a52d37a598f"
+    },
+    {
+      "file": "rooms-original.png",
+      "bytes": 25835,
+      "sha256": "42470263374b3409a136c7ad36705ffa3d056d11ceeaaa75e572a2aa207b40fc"
+    },
+    {
+      "file": "schedule-original.png",
+      "bytes": 51003,
+      "sha256": "f8ec8e51e3cac82e54d651b83dff94df37ec452b242a686071f949901a8fa546"
+    }
+  ],
+  "status": "Archived after user requested colored images on 2026-10-14"
+}

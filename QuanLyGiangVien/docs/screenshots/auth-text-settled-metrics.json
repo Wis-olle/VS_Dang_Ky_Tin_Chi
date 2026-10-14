@@ -1,0 +1,452 @@
+{
+  "SettledScale": 1.05,
+  "NativeGlyphDifferences": 0,
+  "ExpectedInk": 3723,
+  "Labels": [
+    {
+      "Text": "T\u1ED5ng gi\u1EA3ng vi\u00EAn",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 120,
+        "Y": 506
+      },
+      "ExpectedInk": 529,
+      "Surface": "Statistic",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 10.625,
+        "SizeInPoints": 10.625,
+        "Unit": "Point",
+        "Style": "Regular"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 263,
+        "Height": 29
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 363,
+        "Height": 135
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "12",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 120,
+        "Y": 462
+      },
+      "ExpectedInk": 337,
+      "Surface": "Statistic",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 23.75,
+        "SizeInPoints": 23.75,
+        "Unit": "Point",
+        "Style": "Bold"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 263,
+        "Height": 40
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 363,
+        "Height": 135
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "Khoa c\u00F3 gi\u1EA3ng vi\u00EAn",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 503,
+        "Y": 506
+      },
+      "ExpectedInk": 579,
+      "Surface": "Statistic",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 10.625,
+        "SizeInPoints": 10.625,
+        "Unit": "Point",
+        "Style": "Regular"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 263,
+        "Height": 29
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 363,
+        "Height": 135
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "4",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 503,
+        "Y": 462
+      },
+      "ExpectedInk": 184,
+      "Surface": "Statistic",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 23.75,
+        "SizeInPoints": 23.75,
+        "Unit": "Point",
+        "Style": "Bold"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 263,
+        "Height": 40
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 363,
+        "Height": 135
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "L\u01B0\u1EE3t ph\u00E2n c\u00F4ng l\u1EDBp",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 886,
+        "Y": 506
+      },
+      "ExpectedInk": 605,
+      "Surface": "Statistic",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 10.625,
+        "SizeInPoints": 10.625,
+        "Unit": "Point",
+        "Style": "Regular"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 264,
+        "Height": 29
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 364,
+        "Height": 135
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "27",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 886,
+        "Y": 462
+      },
+      "ExpectedInk": 364,
+      "Surface": "Statistic",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 23.75,
+        "SizeInPoints": 23.75,
+        "Unit": "Point",
+        "Style": "Bold"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 264,
+        "Height": 40
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 364,
+        "Height": 135
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "CNTT",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 1214,
+        "Y": 528
+      },
+      "ExpectedInk": 123,
+      "Surface": "Faculty tile",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 9.375,
+        "SizeInPoints": 9.375,
+        "Unit": "Point",
+        "Style": "Regular"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 25
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 74
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "4",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 1286,
+        "Y": 487
+      },
+      "ExpectedInk": 70,
+      "Surface": "Faculty tile",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 13.75,
+        "SizeInPoints": 13.75,
+        "Unit": "Point",
+        "Style": "Bold"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 25,
+        "Height": 35
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 74
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "Kinh t\u1EBF",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 1346,
+        "Y": 528
+      },
+      "ExpectedInk": 166,
+      "Surface": "Faculty tile",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 9.375,
+        "SizeInPoints": 9.375,
+        "Unit": "Point",
+        "Style": "Regular"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 25
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 74
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "3",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 1418,
+        "Y": 487
+      },
+      "ExpectedInk": 86,
+      "Surface": "Faculty tile",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 13.75,
+        "SizeInPoints": 13.75,
+        "Unit": "Point",
+        "Style": "Bold"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 25,
+        "Height": 35
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 74
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "Ngo\u1EA1i ng\u1EEF",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 1478,
+        "Y": 528
+      },
+      "ExpectedInk": 284,
+      "Surface": "Faculty tile",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 9.375,
+        "SizeInPoints": 9.375,
+        "Unit": "Point",
+        "Style": "Regular"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 25
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 74
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "3",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 1550,
+        "Y": 487
+      },
+      "ExpectedInk": 86,
+      "Surface": "Faculty tile",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 13.75,
+        "SizeInPoints": 13.75,
+        "Unit": "Point",
+        "Style": "Bold"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 25,
+        "Height": 35
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 74
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "K\u1EF9 thu\u1EADt",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 1610,
+        "Y": 528
+      },
+      "ExpectedInk": 227,
+      "Surface": "Faculty tile",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 9.375,
+        "SizeInPoints": 9.375,
+        "Unit": "Point",
+        "Style": "Regular"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 25
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 74
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    },
+    {
+      "Text": "2",
+      "Destination": {
+        "IsEmpty": false,
+        "X": 1682,
+        "Y": 487
+      },
+      "ExpectedInk": 83,
+      "Surface": "Faculty tile",
+      "Font": {
+        "Name": "Plus Jakarta Sans",
+        "Size": 13.75,
+        "SizeInPoints": 13.75,
+        "Unit": "Point",
+        "Style": "Bold"
+      },
+      "LabelSize": {
+        "IsEmpty": false,
+        "Width": 25,
+        "Height": 35
+      },
+      "SurfaceSize": {
+        "IsEmpty": false,
+        "Width": 122,
+        "Height": 74
+      },
+      "LabelDpi": 120,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0
+    }
+  ],
+  "CacheReused": true,
+  "OwnerDpi": 120,
+  "LayoutScale": 1.25,
+  "OwnerSize": {
+    "IsEmpty": false,
+    "Width": 1818,
+    "Height": 1096
+  },
+  "CaptureDpiX": 96,
+  "CaptureDpiY": 96,
+  "Comparison": "Native AntdUI OnPaint at final 1.05 scale; integer alignment \u00B11; RGB tolerance 1."
+}

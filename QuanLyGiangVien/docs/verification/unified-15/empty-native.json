@@ -1,0 +1,1 @@
+{"passed":true,"dpi":96,"checks":["Unified checks are isolated from the working database","Connection uses the actual SQL management identity","A database without semesters opens the catalog editor","Empty course and semester catalogs are accessible","Empty-database session can disconnect"]}

@@ -1,0 +1,44 @@
+{
+  "DeviceDpi": 96,
+  "K": 1,
+  "DurationMilliseconds": 4013.1654,
+  "Visible": true,
+  "WindowState": 0,
+  "AmbientTicks": 162,
+  "Hero": {
+    "Size": {
+      "IsEmpty": false,
+      "Width": 906,
+      "Height": 210
+    },
+    "PaintCount": 0,
+    "PaintDispatchesPerSecond": 0,
+    "MedianDurationMilliseconds": null,
+    "P95DurationMilliseconds": null,
+    "MedianGapMilliseconds": null,
+    "P95GapMilliseconds": null,
+    "InvalidationCount": 9,
+    "MedianUpdateGapMilliseconds": 420.1717,
+    "P95UpdateGapMilliseconds": 1666.8344999999997,
+    "Samples": []
+  },
+  "Artwork": {
+    "Size": {
+      "IsEmpty": false,
+      "Width": 302,
+      "Height": 194
+    },
+    "PaintCount": 0,
+    "PaintDispatchesPerSecond": 0,
+    "MedianDurationMilliseconds": null,
+    "P95DurationMilliseconds": null,
+    "MedianGapMilliseconds": null,
+    "P95GapMilliseconds": null,
+    "InvalidationCount": 170,
+    "MedianUpdateGapMilliseconds": 30.386299999999892,
+    "P95UpdateGapMilliseconds": 32.022799999999734,
+    "Samples": []
+  },
+  "ManagedUiThreadBytes": 15200,
+  "Method": "4 seconds of live WM_PAINT dispatch after entrance settling. No screenshots or DrawToBitmap. Paint durations include base WndProc dispatch; gaps are between WM_PAINT starts. Invalidation gaps observe the actual UI animation update cadence even when hidden startup suppresses WM_PAINT. These are UI message-pump measurements, not compositor FPS. Allocations include the observer and other UI-thread work."
+}

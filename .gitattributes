@@ -1,0 +1,11 @@
+# Preserve downloaded assets and license sources byte-for-byte for manifests.
+QuanLyGiangVien/Assets/** -text
+
+# SQL bootstrap verifies the original SHA-256; keep upstream source bytes on checkout.
+QuanLyGiangVien/database/00_Hue.sql -text
+QuanLyGiangVien/Features/Registration/Upstream/** -text
+
+# Generated native captures are binary artifacts.
+*.png binary
+*.gif binary
+*.ttf binary

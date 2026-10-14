@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.21" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <Compile Include="..\QuanLyGiangVien\Domain\*.cs" Link="Domain\%(Filename)%(Extension)" />
+    <Compile Include="..\QuanLyGiangVien\Domain\Scheduling\*.cs" Link="Domain\Scheduling\%(Filename)%(Extension)" />
+    <Compile Include="..\QuanLyGiangVien\Domain\Catalogs\*.cs" Link="Domain\Catalogs\%(Filename)%(Extension)" />
+    <Compile Include="..\QuanLyGiangVien\Domain\Registration\*.cs" Link="Domain\Registration\%(Filename)%(Extension)" />
+    <Compile Include="..\QuanLyGiangVien\Domain\Shell\*.cs" Link="Domain\Shell\%(Filename)%(Extension)" />
+    <Compile Include="..\QuanLyGiangVien\Data\DemoData.cs" Link="Data\DemoData.cs" />
+    <Compile Include="..\QuanLyGiangVien\Data\SchedulingDemo.cs" Link="Data\SchedulingDemo.cs" />
+    <Compile Include="..\QuanLyGiangVien\Data\DatabaseLaunch.cs" Link="Data\DatabaseLaunch.cs" />
+    <Compile Include="..\QuanLyGiangVien\Data\Sql\**\*.cs" Link="Data\Sql\%(RecursiveDir)%(Filename)%(Extension)" />
+    <Compile Include="..\QuanLyGiangVien\Ui\IconPlayback.cs" Link="Ui\IconPlayback.cs" />
+    <Compile Include="..\QuanLyGiangVien\Ui\MotionMath.cs" Link="Ui\MotionMath.cs" />
+    <Compile Include="..\QuanLyGiangVien\Ui\SelectMotionMath.cs" Link="Ui\SelectMotionMath.cs" />
+    <Compile Include="..\QuanLyGiangVien\Ui\AuthMotionMath.cs" Link="Ui\AuthMotionMath.cs" />
+    <Compile Include="..\QuanLyGiangVien\Ui\OverviewMotionMath.cs" Link="Ui\OverviewMotionMath.cs" />
+  </ItemGroup>
+</Project>

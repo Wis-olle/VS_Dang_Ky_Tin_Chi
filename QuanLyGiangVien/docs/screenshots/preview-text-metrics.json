@@ -1,0 +1,37 @@
+{
+  "FractionalShifts": [
+    {
+      "X": 16.35,
+      "Y": 16.45,
+      "Differences": 0,
+      "OffsetX": 0,
+      "OffsetY": 0,
+      "SourceInk": 572,
+      "TranslatedInk": 572
+    },
+    {
+      "X": 16.7,
+      "Y": 16.8,
+      "Differences": 0,
+      "OffsetX": 1,
+      "OffsetY": 1,
+      "SourceInk": 572,
+      "TranslatedInk": 572
+    },
+    {
+      "X": 16.95,
+      "Y": 16.15,
+      "Differences": 0,
+      "OffsetX": 1,
+      "OffsetY": 0,
+      "SourceInk": 572,
+      "TranslatedInk": 572
+    }
+  ],
+  "FractionalGlyphDifferences": 0,
+  "NamePixelsOpaque": true,
+  "MetadataPixelsOpaque": true,
+  "CacheReused": true,
+  "NormalNameInkHeight": 18,
+  "CompactNameInkHeight": 18
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Snapshot": "01-student-timetable",
+    "BodyUnchanged": true
+  },
+  {
+    "Snapshot": "02-empty-semester",
+    "BodyUnchanged": true
+  },
+  {
+    "Snapshot": "03-compact",
+    "BodyUnchanged": true
+  },
+  {
+    "Snapshot": "05-compact-scrolled",
+    "BodyUnchanged": true
+  }
+]

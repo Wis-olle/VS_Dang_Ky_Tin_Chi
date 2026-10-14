@@ -1,0 +1,120 @@
+{
+  "checkedFiles": 19,
+  "allMatch": true,
+  "files": [
+    {
+      "file": "3dicons-CC0.txt",
+      "bytes": 6555,
+      "sha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673",
+      "matches": true
+    },
+    {
+      "file": "courses-metadata.md",
+      "bytes": 533,
+      "sha256": "866d41395b68725fd48b9c522859ef103cf4f3aa52214f892739c9bceb74f361",
+      "matches": true
+    },
+    {
+      "file": "courses-original.png",
+      "bytes": 79549,
+      "sha256": "ae5ae200828048269017d49fda03ee8d70001bbe0d87fb728a27ea43d9c41ec3",
+      "matches": true
+    },
+    {
+      "file": "courses.png",
+      "bytes": 79549,
+      "sha256": "ae5ae200828048269017d49fda03ee8d70001bbe0d87fb728a27ea43d9c41ec3",
+      "matches": true
+    },
+    {
+      "file": "enrollment-metadata.md",
+      "bytes": 517,
+      "sha256": "3b9533e25d1e73635acaef2d777f9951736a51b431161b632cc23dd9709afa19",
+      "matches": true
+    },
+    {
+      "file": "enrollment-original.png",
+      "bytes": 100251,
+      "sha256": "f77d29559d8af041bea0b3897081497b63095ed324339b064c3feff02b702485",
+      "matches": true
+    },
+    {
+      "file": "enrollment.png",
+      "bytes": 100251,
+      "sha256": "f77d29559d8af041bea0b3897081497b63095ed324339b064c3feff02b702485",
+      "matches": true
+    },
+    {
+      "file": "history-clay/courses-original.png",
+      "bytes": 42892,
+      "sha256": "7e03e3a56eadc7d2c1160e098238d03d03074edce60caba6b0ec2aa0b5f74b7c",
+      "matches": true
+    },
+    {
+      "file": "history-clay/enrollment-original.png",
+      "bytes": 56225,
+      "sha256": "6d806617856ee66dd6e41d1595603e05c9bc865fe0a5140cdf729a52d37a598f",
+      "matches": true
+    },
+    {
+      "file": "history-clay/rooms-original.png",
+      "bytes": 25835,
+      "sha256": "42470263374b3409a136c7ad36705ffa3d056d11ceeaaa75e572a2aa207b40fc",
+      "matches": true
+    },
+    {
+      "file": "history-clay/schedule-original.png",
+      "bytes": 51003,
+      "sha256": "f8ec8e51e3cac82e54d651b83dff94df37ec452b242a686071f949901a8fa546",
+      "matches": true
+    },
+    {
+      "file": "history-clay/Sources.json",
+      "bytes": 1896,
+      "sha256": "03c867caa15489731dc9d166489d857da0db96934485f7b9f13c152f56957bd5",
+      "matches": true
+    },
+    {
+      "file": "rooms-metadata.md",
+      "bytes": 505,
+      "sha256": "cb897de41b933db260c4eb3641e8a5e804b59b273d129cb8287a9758b01c27c9",
+      "matches": true
+    },
+    {
+      "file": "rooms-original.png",
+      "bytes": 37040,
+      "sha256": "5859bf56b40058d7783e452a78813c971cde51a162e7634364faad5be0b84d61",
+      "matches": true
+    },
+    {
+      "file": "rooms.png",
+      "bytes": 37040,
+      "sha256": "5859bf56b40058d7783e452a78813c971cde51a162e7634364faad5be0b84d61",
+      "matches": true
+    },
+    {
+      "file": "schedule-metadata.md",
+      "bytes": 532,
+      "sha256": "fabf5c8840fbf49e3f0293ef6e7370e6d7624205c06cda7d69137c2d77f14bc3",
+      "matches": true
+    },
+    {
+      "file": "schedule-original.png",
+      "bytes": 83226,
+      "sha256": "a23f09088def9bf78301c352aa56cf70b5998364f03561e8ada3a2a16a54ab33",
+      "matches": true
+    },
+    {
+      "file": "schedule.png",
+      "bytes": 83226,
+      "sha256": "a23f09088def9bf78301c352aa56cf70b5998364f03561e8ada3a2a16a54ab33",
+      "matches": true
+    },
+    {
+      "file": "ServiceCard-user-reference.txt",
+      "bytes": 5720,
+      "sha256": "4385933f29892ec8db6c90c42ead768c5f22b06344d3c514646c3b62e3235db6",
+      "matches": true
+    }
+  ]
+}

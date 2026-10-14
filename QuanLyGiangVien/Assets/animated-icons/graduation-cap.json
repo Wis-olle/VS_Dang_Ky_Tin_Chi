@@ -1,0 +1,8 @@
+{
+  "id": "graduation-cap",
+  "frameSize": 128,
+  "frameCount": 28,
+  "durationMilliseconds": 900,
+  "idleFrame": 27,
+  "sheet": "graduation-cap.png"
+}

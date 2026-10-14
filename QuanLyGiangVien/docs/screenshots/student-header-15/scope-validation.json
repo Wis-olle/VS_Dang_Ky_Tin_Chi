@@ -1,0 +1,34 @@
+{
+  "Colors": [
+    {
+      "Area": "Caption",
+      "RGB": -4113,
+      "MatchesCanvas": true
+    },
+    {
+      "Area": "Navigation",
+      "RGB": -4113,
+      "MatchesCanvas": true
+    }
+  ],
+  "Layout": [
+    {
+      "Snapshot": "01-student-timetable",
+      "Identical": true
+    },
+    {
+      "Snapshot": "02-empty-semester",
+      "Identical": true
+    },
+    {
+      "Snapshot": "03-compact",
+      "Identical": true
+    },
+    {
+      "Snapshot": "05-compact-scrolled",
+      "Identical": true
+    }
+  ],
+  "Passed": true,
+  "NativeChecks": 28
+}

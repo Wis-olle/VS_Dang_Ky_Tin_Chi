@@ -1,0 +1,170 @@
+[
+  {
+    "file": "Assets/avatars/portrait-01.png",
+    "author": "Joseph Gonzalez",
+    "photo_page": "https://unsplash.com/photos/iFgRcqHznqg",
+    "download_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=512&h=512&fit=crop&crop=faces&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=crop&crop=faces",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  },
+  {
+    "file": "Assets/avatars/portrait-02.png",
+    "author": "Michael Dam",
+    "photo_page": "https://unsplash.com/photos/mEZ3PoFGs_k",
+    "download_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=512&h=512&fit=crop&crop=faces&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=crop&crop=faces",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  },
+  {
+    "file": "Assets/avatars/portrait-03.png",
+    "author": "David Mumma",
+    "photo_page": "https://unsplash.com/photos/aChQUTPMhkI",
+    "download_url": "https://images.unsplash.com/photo-1568316674077-d72ee56de61c?w=512&h=512&fit=facearea&facepad=2.5&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=facearea&facepad=2.5",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  },
+  {
+    "file": "Assets/avatars/portrait-04.png",
+    "author": "Giorgio Trovato",
+    "photo_page": "https://unsplash.com/photos/VzusBjHlKM8",
+    "download_url": "https://images.unsplash.com/photo-1699899657680-421c2c2d5064?w=512&h=512&fit=crop&crop=faces&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=crop&crop=faces",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  },
+  {
+    "file": "Assets/avatars/portrait-05.png",
+    "author": "The Connected Narrative",
+    "photo_page": "https://unsplash.com/photos/N8lRH2uxih4",
+    "download_url": "https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?w=512&h=512&fit=crop&crop=faces&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=crop&crop=faces",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  },
+  {
+    "file": "Assets/avatars/portrait-06.png",
+    "author": "Troy Spoelma",
+    "photo_page": "https://unsplash.com/photos/EV8PPQG6zxY",
+    "download_url": "https://images.unsplash.com/photo-1701096374092-bb70915fdc5c?w=512&h=512&fit=crop&crop=faces&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=crop&crop=faces",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  },
+  {
+    "file": "Assets/avatars/portrait-07.png",
+    "author": "Albert Dera",
+    "photo_page": "https://unsplash.com/photos/ILip77SbmOE",
+    "download_url": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=512&h=512&fit=crop&crop=faces&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=crop&crop=faces",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  },
+  {
+    "file": "Assets/avatars/portrait-08.png",
+    "author": "Christina @ wocintechchat.com",
+    "photo_page": "https://unsplash.com/photos/SJvDxw0azqw",
+    "download_url": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=512&h=512&fit=crop&crop=faces&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=crop&crop=faces",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  },
+  {
+    "file": "Assets/avatars/portrait-09.png",
+    "author": "Ryan Hoffman",
+    "photo_page": "https://unsplash.com/photos/v7Jja2ChN6s",
+    "download_url": "https://images.unsplash.com/photo-1576558656222-ba66febe3dec?w=512&h=512&fit=facearea&facepad=2.5&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=facearea&facepad=2.5",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  },
+  {
+    "file": "Assets/avatars/portrait-10.png",
+    "author": "Tony Luginsland",
+    "photo_page": "https://unsplash.com/photos/ODrd-02Q6JI",
+    "download_url": "https://images.unsplash.com/photo-1655249481446-25d575f1c054?w=512&h=512&fit=facearea&facepad=2.5&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=facearea&facepad=2.5",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  },
+  {
+    "file": "Assets/avatars/portrait-11.png",
+    "author": "itay verchik",
+    "photo_page": "https://unsplash.com/photos/YmQ8TrsieE4",
+    "download_url": "https://images.unsplash.com/photo-1600878459138-e1123b37cb30?w=512&h=512&fit=crop&crop=faces&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=crop&crop=faces",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  },
+  {
+    "file": "Assets/avatars/portrait-12.png",
+    "author": "Gill Ramsay",
+    "photo_page": "https://unsplash.com/photos/Ya85swr-Hhs",
+    "download_url": "https://images.unsplash.com/photo-1586522434115-38d718beeca5?w=512&h=512&fit=crop&crop=faces&fm=png&q=90",
+    "license": "https://unsplash.com/license",
+    "verified_on": "2026-10-10",
+    "dimensions": [
+      512,
+      512
+    ],
+    "crop": "fit=crop&crop=faces",
+    "usage": "Stock portrait illustrating a fictional lecturer record"
+  }
+]

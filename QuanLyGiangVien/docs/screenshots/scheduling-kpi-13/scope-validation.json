@@ -1,0 +1,308 @@
+{
+  "changedFiles": [
+    "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingStat.cs",
+    "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingMetricsUiCheck.cs"
+  ],
+  "files": [
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\VietLocalization.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\UiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\UiCapture.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SurfaceTransition.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SurfaceHover.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SelectUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SelectPopup.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\SelectMotionMath.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\Portraits.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\PageMotionCoordinator.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\OverviewMotionMath.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\MotionPaintBenchmark.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\MotionMath.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\MotionButton.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\Motion.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\ListHoverUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\LecturerRow.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\LecturerGrid.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\LecturerCard.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\IconSprite.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\IconPlayback.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\HeroMotionBenchmark.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\FloatingArtwork.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\FacultySpreadUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardStats.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardOverview.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardHero.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\DashboardFaculty.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthTextUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthMotionMath.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthCornerUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthCardUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AuthCardMotion.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AppTheme.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AnimatedSelect.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Ui\\AnimatedDashboardIcon.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Program.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Panels\\LecturerProfile.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\MainForm.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\WeeklySchedulePaintCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\WeeklySchedule.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingVisualUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingVisualCatalog.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingTheme.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingTabs.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingStat.cs",
+      "unchanged": false
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingRows.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingResourceCover.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingPreview.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingPage.Layout.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingPage.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingPage.Actions.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingMetricsUiCheck.cs",
+      "unchanged": false
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingIcon.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingEditorBase.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingDetail.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingAssetsUiCheck.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\SchedulingArtwork.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\ScheduleAnalytics.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\RoomEditor.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\MeetingEditor.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Features\\Scheduling\\CourseClassEditor.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Domain\\Scheduling\\TeachingCatalog.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Domain\\Scheduling\\SchedulingQuery.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Domain\\Scheduling\\SchedulingModels.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Domain\\Scheduling\\SchedulingLecturerGuard.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Domain\\Scheduling\\ScheduleStore.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Domain\\Scheduling\\ScheduleRules.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Domain\\LecturerStore.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Domain\\LecturerQuery.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Domain\\Lecturer.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Dialogs\\LecturerEditor.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Data\\SchedulingDemo.cs",
+      "unchanged": true
+    },
+    {
+      "path": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\Data\\DemoData.cs",
+      "unchanged": true
+    }
+  ]
+}

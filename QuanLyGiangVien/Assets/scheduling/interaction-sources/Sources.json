@@ -1,0 +1,39 @@
+{
+  "checkedDate": "2026-10-13",
+  "runtime": "Native WinForms using the existing shared Motion clock. No React, WebView, network requests or new runtime packages.",
+  "sources": [
+    {
+      "name": "SmoothUI Animated Tabs via 21st",
+      "catalog": "https://preview.21st.dev/%40educalvolpz/components/animated-tabs",
+      "page": "https://smoothui.dev/docs/components/animated-tabs",
+      "repository": "https://github.com/educlopez/smoothui",
+      "license": "MIT",
+      "licenseFile": "SmoothUI-LICENSE.txt",
+      "licenseSource": "https://raw.githubusercontent.com/educlopez/smoothui/main/LICENSE",
+      "licenseSha256": "9877f4310c0549e5ce26affe52ba97c4e60325472bdcdd308a92fccd90f119cc",
+      "observed": "Live preview and source: sliding underline, icon support, keyboard navigation, reduced motion; source spring duration 250ms and bounce 0.05.",
+      "applied": "C# adaptation: measured underline position and width move for 220ms with EaseOut, rapid retargeting, fixed native button bounds, selected-only TabStop. No React source copied."
+    },
+    {
+      "name": "SmoothUI Animated Progress Bar",
+      "page": "https://smoothui.dev/docs/components/animated-progress-bar",
+      "license": "MIT, same project notice",
+      "applied": "Native occupancy fill transitions for 360ms using actual enrolled/capacity values. Inspector crossfade covers only schedule rows so the live fill is visible; hiding/disposal stops the motion."
+    },
+    {
+      "name": "Codrops Icon Hover Effects",
+      "hub": "https://tympanus.net/codrops/hub/",
+      "page": "https://tympanus.net/Development/IconHoverEffects/#set-1",
+      "source": "https://raw.githubusercontent.com/codrops/IconHoverEffects/master/css/component.css",
+      "licensePage": "https://tympanus.net/codrops/licensing/",
+      "observed": "Live icon hover demo: finite 200ms fill, color and ring feedback.",
+      "applied": "Compact pastel icon chips and finite hover feedback. Behavioral reference only; no EcoIco font, CSS, JavaScript or media copied. Glyph animations come from the separate Lucide Animated manifest."
+    },
+    {
+      "name": "Awwwards Hover animation",
+      "page": "https://www.awwwards.com/inspiration/hover-animation-4",
+      "observed": "Video inspected: menu hover underline and changing typography.",
+      "applied": "Reference for clear active/hover navigation cues. No video, image or source code reused; no media reuse license inferred."
+    }
+  ]
+}

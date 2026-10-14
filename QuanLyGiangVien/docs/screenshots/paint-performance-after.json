@@ -1,0 +1,29 @@
+{
+  "DeviceDpi": 96,
+  "K": 1,
+  "Samples": [
+    {
+      "Name": "Hero float \u002B native paint",
+      "Size": {
+        "IsEmpty": false,
+        "Width": 906,
+        "Height": 210
+      },
+      "MedianMilliseconds": 3.8058,
+      "P95Milliseconds": 4.6525,
+      "ManagedBytesPerPaint": 52419
+    },
+    {
+      "Name": "Lecturer hover \u002B native paint",
+      "Size": {
+        "IsEmpty": false,
+        "Width": 272,
+        "Height": 220
+      },
+      "MedianMilliseconds": 0.9935,
+      "P95Milliseconds": 1.1974,
+      "ManagedBytesPerPaint": 536
+    }
+  ],
+  "Method": "48 synchronous DrawToBitmap paints after 8 warmup frames, reusing one destination bitmap; includes preparing each animation state. Not screen FPS."
+}
