@@ -1,0 +1,127 @@
+﻿{
+  "tables": {
+    "KHOA": [
+      "ma_khoa",
+      "ten_khoa",
+      "mo_ta",
+      "trang_thai"
+    ],
+    "NGANH": [
+      "ma_nganh",
+      "ten_nganh",
+      "ma_khoa",
+      "mo_ta",
+      "trang_thai"
+    ],
+    "LOP": [
+      "ma_lop",
+      "ten_lop",
+      "ma_nganh",
+      "khoa_hoc",
+      "nien_khoa",
+      "trang_thai"
+    ],
+    "SINH_VIEN": [
+      "ma_sv",
+      "ho_ten",
+      "ngay_sinh",
+      "gioi_tinh",
+      "email",
+      "sdt",
+      "ma_nganh",
+      "ma_lop",
+      "dia_chi",
+      "trang_thai"
+    ],
+    "GIANG_VIEN": [
+      "ma_gv",
+      "ho_ten",
+      "ngay_sinh",
+      "gioi_tinh",
+      "email",
+      "sdt",
+      "ma_khoa",
+      "trang_thai"
+    ],
+    "TAI_KHOAN": [
+      "ma_tk",
+      "ten_dang_nhap",
+      "mat_khau_hash",
+      "vai_tro",
+      "trang_thai",
+      "email",
+      "ma_sv",
+      "ma_gv",
+      "ngay_tao",
+      "lan_dang_nhap_cuoi"
+    ],
+    "HOC_PHAN": [
+      "ma_hp",
+      "ten_hp",
+      "so_tin_chi",
+      "loai_hp",
+      "tin_chi_min",
+      "tin_chi_max",
+      "trang_thai"
+    ],
+    "HOC_KY": [
+      "ma_hk",
+      "nam_hoc",
+      "hoc_ky",
+      "tg_bat_dau",
+      "tg_ket_thuc",
+      "han_huy_dk",
+      "trang_thai"
+    ],
+    "PHONG_HOC": [
+      "ma_phong",
+      "ten_phong",
+      "toa_nha",
+      "suc_chua",
+      "loai_phong",
+      "trang_thai"
+    ],
+    "LOP_HOC_PHAN": [
+      "ma_lhp",
+      "ma_hp",
+      "ma_gv",
+      "ma_hk",
+      "ma_phong",
+      "si_so_max",
+      "si_so_hien_tai",
+      "trang_thai"
+    ],
+    "DANG_KY": [
+      "ma_dk",
+      "ma_sv",
+      "ma_lhp",
+      "ngay_dk",
+      "trang_thai",
+      "ngay_huy"
+    ],
+    "LICH_HOC": [
+      "ma_lich",
+      "ma_lhp",
+      "thu",
+      "tiet_bd",
+      "tiet_kt",
+      "ma_phong",
+      "ngay_bd",
+      "ngay_kt"
+    ],
+    "KET_QUA": [
+      "ma_kq",
+      "ma_sv",
+      "ma_hp",
+      "diem_qt",
+      "diem_gk",
+      "diem_ck",
+      "diem_tk",
+      "diem_he4",
+      "diem_chu",
+      "ket_qua"
+    ]
+  },
+  "table_count": 13,
+  "column_count": 95
+}
