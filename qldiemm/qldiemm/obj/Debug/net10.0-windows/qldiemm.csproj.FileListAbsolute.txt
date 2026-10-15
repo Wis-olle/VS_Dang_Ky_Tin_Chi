@@ -1,0 +1,16 @@
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\bin\Debug\net10.0-windows\qldiemm.exe
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\bin\Debug\net10.0-windows\qldiemm.deps.json
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\bin\Debug\net10.0-windows\qldiemm.runtimeconfig.json
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\bin\Debug\net10.0-windows\qldiemm.dll
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\bin\Debug\net10.0-windows\qldiemm.pdb
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\obj\Debug\net10.0-windows\qldiemm.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\obj\Debug\net10.0-windows\qldiemm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\obj\Debug\net10.0-windows\qldiemm.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\obj\Debug\net10.0-windows\qldiemm.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\obj\Debug\net10.0-windows\qldiemm.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\obj\Debug\net10.0-windows\qldiemm.dll
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\obj\Debug\net10.0-windows\refint\qldiemm.dll
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\obj\Debug\net10.0-windows\qldiemm.pdb
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\obj\Debug\net10.0-windows\qldiemm.genruntimeconfig.cache
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\obj\Debug\net10.0-windows\ref\qldiemm.dll
+C:\Users\ADMIN\source\repos\qldiemm\qldiemm\obj\Debug\net10.0-windows\qldiemm.txtHoTen.resources

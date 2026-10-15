@@ -1,0 +1,16 @@
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\bin\Debug\net10.0-windows\Nguyenmanhtung.exe
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\bin\Debug\net10.0-windows\Nguyenmanhtung.deps.json
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\bin\Debug\net10.0-windows\Nguyenmanhtung.runtimeconfig.json
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\bin\Debug\net10.0-windows\Nguyenmanhtung.dll
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\bin\Debug\net10.0-windows\Nguyenmanhtung.pdb
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\obj\Debug\net10.0-windows\Nguyenmanhtung.Form1.resources
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\obj\Debug\net10.0-windows\Nguyenmanhtung.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\obj\Debug\net10.0-windows\Nguyenmanhtung.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\obj\Debug\net10.0-windows\Nguyenmanhtung.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\obj\Debug\net10.0-windows\Nguyenmanhtung.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\obj\Debug\net10.0-windows\Nguyenmanhtung.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\obj\Debug\net10.0-windows\Nguyenmanhtung.dll
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\obj\Debug\net10.0-windows\refint\Nguyenmanhtung.dll
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\obj\Debug\net10.0-windows\Nguyenmanhtung.pdb
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\obj\Debug\net10.0-windows\Nguyenmanhtung.genruntimeconfig.cache
+C:\Users\ADMIN\source\repos\Nguyenmanhtung\Nguyenmanhtung\obj\Debug\net10.0-windows\ref\Nguyenmanhtung.dll

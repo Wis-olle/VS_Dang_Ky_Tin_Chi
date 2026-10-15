@@ -1,0 +1,6 @@
+C:\Users\ADMIN\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net8.0-windows\QLDIEM.Form1.resources
+C:\Users\ADMIN\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.AssemblyInfoInputs.cache
+C:\Users\ADMIN\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.AssemblyInfo.cs
+C:\Users\ADMIN\source\repos\WinFormsApp2\WinFormsApp2\obj\Debug\net8.0-windows\WinFormsApp2.csproj.CoreCompileInputs.cache
