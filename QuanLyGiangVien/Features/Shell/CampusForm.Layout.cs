@@ -70,6 +70,11 @@ internal sealed partial class CampusForm
                 Domain.Shell.CampusModule.Catalogs => 170, Domain.Shell.CampusModule.Reports => 100,
                 Domain.Shell.CampusModule.Registration => 178, _ => 150
             };
+            if (pair.Key == Domain.Shell.CampusModule.Students) buttonWidth = 110;
+            if (width < s(1200) && identity?.Role != "SINH_VIEN") buttonWidth = pair.Key switch {
+                Domain.Shell.CampusModule.Lecturers => 90, Domain.Shell.CampusModule.Scheduling => 130,
+                Domain.Shell.CampusModule.Catalogs => 146, _ => 90
+            };
             pair.Value.SetBounds(x, s(10), s(buttonWidth), s(42)); x += s(buttonWidth + 6);
         }
         disconnect.SetBounds(width - s(138), s(11), s(112), s(40));
@@ -77,8 +82,9 @@ internal sealed partial class CampusForm
         int identityWidth = Math.Max(s(70), width - s(154) - identityX);
         identityText.SetBounds(identityX, s(8), identityWidth, s(25));
         roleText.SetBounds(identityX, s(32), identityWidth, s(22));
+        int cardHeight = passwordLogin ? 520 : 390;
         connectCard.SetBounds(Math.Max(s(16), (host.Width - s(640)) / 2),
-            Math.Max(s(30), (host.Height - s(390)) / 2), s(640), s(390));
+            Math.Max(s(16), (host.Height - s(cardHeight)) / 2), s(640), s(cardHeight));
     }
     private void FitCurrentPage()
     {

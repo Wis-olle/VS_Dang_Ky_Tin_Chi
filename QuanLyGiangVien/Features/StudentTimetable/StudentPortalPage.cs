@@ -52,6 +52,16 @@ internal sealed class StudentPortalPage : UserControl
             if (module == CampusModule.Registration)
             {
                 var semester = ActiveModule == CampusModule.Timetable ? timetable?.Snapshot.Semester.Id : registration.MaHocKy;
+                // Native TabControl selects its first TabPage when its handle
+                // exists. Show the workspace before loading so the first query
+                // reaches the selected lookup page on a fresh password login.
+                if (ActivePage != registration)
+                {
+                    SurfaceTransition.CancelAll();
+                    ActivePage?.Hide();
+                    registration.Bounds = ClientRectangle;
+                    registration.Show(); registration.BringToFront();
+                }
                 await registration.ReloadForSemesterAsync(semester);
                 if (IsDisposed) return;
                 next = registration;

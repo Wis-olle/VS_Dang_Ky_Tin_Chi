@@ -17,7 +17,7 @@ public sealed class CatalogRepository
  {
   try {
    using var cn=new SqlConnection(connectionString);using var cmd=new SqlCommand("dbo.usp_Phong_"+proc,cn) {CommandType=CommandType.StoredProcedure,CommandTimeout=15};
-   cmd.Parameters.AddRange(ps);await cn.OpenAsync().ConfigureAwait(false);using var reader=await cmd.ExecuteReaderAsync().ConfigureAwait(false);
+   cmd.Parameters.AddRange(ps);await AppSqlConnection.OpenAsync(cn).ConfigureAwait(false);using var reader=await cmd.ExecuteReaderAsync().ConfigureAwait(false);
    var result=new DataTable();result.Load(reader);return result;
   }catch(SqlException ex){throw new PersistenceException(Error(ex.Number));}
   catch(InvalidOperationException){throw new PersistenceException("Không thể đọc danh mục. Kiểm tra kết nối và tải lại dữ liệu.");}
@@ -26,7 +26,7 @@ public sealed class CatalogRepository
  {
   try {
    using var cn=new SqlConnection(connectionString);using var cmd=new SqlCommand("dbo.usp_Phong_"+proc,cn) {CommandType=CommandType.StoredProcedure,CommandTimeout=15};
-   cmd.Parameters.AddRange(ps);await cn.OpenAsync().ConfigureAwait(false);await cmd.ExecuteNonQueryAsync().ConfigureAwait(false);
+   cmd.Parameters.AddRange(ps);await AppSqlConnection.OpenAsync(cn).ConfigureAwait(false);await cmd.ExecuteNonQueryAsync().ConfigureAwait(false);
   }catch(SqlException ex){throw new PersistenceException(Error(ex.Number));}
   catch(InvalidOperationException){throw new PersistenceException("Không thể lưu danh mục. Kiểm tra kết nối và tải lại dữ liệu.");}
   changed();

@@ -48,7 +48,7 @@ if (-not $databaseExists) {
 }
 if ($BaseOnly) { Write-Host "Đã tạo schema Huệ để kiểm tra RED tại $DatabaseName."; return }
 
-foreach ($name in @('01_Minh.sql', '02_Resources.sql', '03_Classes.sql', '03_Read.sql', '06_Catalogs.sql', '07_RegistrationIntegration.sql')) {
+foreach ($name in @('01_Minh.sql', '02_Resources.sql', '03_Classes.sql', '03_Read.sql', '06_Catalogs.sql', '07_RegistrationIntegration.sql', '08_PasswordLogin.sql', '09_Students.sql')) {
     Invoke-ScriptText ([IO.File]::ReadAllText((Join-Path $sqlRoot $name))) $DatabaseName
 }
 if ($SeedDemo) { Invoke-ScriptText ([IO.File]::ReadAllText((Join-Path $sqlRoot '05_DemoSeed.sql'))) $DatabaseName }

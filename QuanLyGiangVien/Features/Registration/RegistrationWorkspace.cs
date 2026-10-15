@@ -27,13 +27,13 @@ public abstract class RegistrationWorkspace : UserControl
     private readonly Action dataChanged;
     private readonly bool reports;
     private readonly ComboBox terms = new() { Name = "cboHocKy", DropDownStyle = ComboBoxStyle.DropDownList,
-        Width = 280, Margin = new Padding(4, 8, 12, 4) };
-    private readonly TabControl tabs = new() { Dock = DockStyle.Fill, Padding = new Point(20, 10) };
+        Width = AppTheme.S(280), Margin = new Padding(AppTheme.S(4), AppTheme.S(8), AppTheme.S(12), AppTheme.S(4)) };
+    private readonly TabControl tabs = new() { Dock = DockStyle.Fill, Padding = new Point(AppTheme.S(20), AppTheme.S(10)) };
     private readonly FlowLayoutPanel top = Ui.Toolbar();
     private readonly Label deadline = new() { Name = "lblRegistrationDeadline", AutoSize = true, Dock = DockStyle.Top,
-        Padding = new Padding(18, 12, 18, 12), BackColor = AppTheme.Lilac };
-    private readonly Label status = new() { Name = "lblRegistrationStatus", Dock = DockStyle.Bottom, Height = 36,
-        TextAlign = ContentAlignment.MiddleLeft, Padding = new Padding(15, 0, 0, 0) };
+        Padding = new Padding(AppTheme.S(18), AppTheme.S(12), AppTheme.S(18), AppTheme.S(12)), BackColor = AppTheme.Lilac };
+    private readonly Label status = new() { Name = "lblRegistrationStatus", Dock = DockStyle.Bottom, Height = AppTheme.S(36),
+        TextAlign = ContentAlignment.MiddleLeft, Padding = new Padding(AppTheme.S(15), 0, 0, 0) };
     private readonly System.Windows.Forms.Timer timer = new() { Interval = 1000 };
     private readonly Stopwatch serverAge = new();
     private RegistrationDeadline? deadlineValue;
@@ -45,11 +45,12 @@ public abstract class RegistrationWorkspace : UserControl
     {
         this.identity = identity; this.dataChanged = dataChanged; this.reports = reports;
         Service = new(new RegistrationRepository(connectionString));
+        AutoScaleMode = AutoScaleMode.None;
         Dock = DockStyle.Fill; BackColor = AppTheme.Canvas; ForeColor = AppTheme.Ink;
-        Font = Ui.OwnFont(this, AppTheme.Font(10)); Padding = new Padding(16);
+        Font = Ui.OwnFont(this, AppTheme.Font(10)); Padding = new Padding(AppTheme.S(16));
         var title = new Label { Text = reports ? "Kết quả đăng ký & thống kê" : "Đăng ký học phần",
-            Name = "lblRegistrationHeading", Dock = DockStyle.Top, Height = 62,
-            Font = AppTheme.Font(20, true), Padding = new Padding(16, 12, 0, 0) };
+            Name = "lblRegistrationHeading", Dock = DockStyle.Top, Height = AppTheme.S(62),
+            Font = AppTheme.Font(20, true), Padding = new Padding(AppTheme.S(16), AppTheme.S(12), 0, 0) };
         Ui.OwnFont(title, title.Font);
         var refresh = Ui.Button("Làm mới"); refresh.Name = "btnLamMoiDangKy";
         top.Controls.AddRange([Ui.Label("Học kỳ"), terms, refresh,

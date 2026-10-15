@@ -3,13 +3,14 @@ using System;
 using System.Data;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyGiangVien.Ui;
 
 namespace QuanLyGiangVien.Features.Registration
 {
     internal sealed class TraCuuPage : ModulePage
     {
-        private readonly TextBox keyword = new TextBox { Name = "txtTuKhoa", Width = 290, MaxLength = 100, Margin = new Padding(4, 10, 6, 4) };
-        private readonly CheckBox conCho = new CheckBox { Name = "chkConCho", Text = "Chỉ lớp còn chỗ", AutoSize = true, Margin = new Padding(12, 12, 8, 4) };
+        private readonly TextBox keyword = new TextBox { Name = "txtTuKhoa", Width = AppTheme.S(240), MaxLength = 100, Margin = new Padding(AppTheme.S(4), AppTheme.S(10), AppTheme.S(6), AppTheme.S(4)) };
+        private readonly CheckBox conCho = new CheckBox { Name = "chkConCho", Text = "Chỉ lớp còn chỗ", AutoSize = true, Margin = new Padding(AppTheme.S(12), AppTheme.S(12), AppTheme.S(8), AppTheme.S(4)) };
         private readonly DataGridView grid = Ui.Grid();
         private readonly Button register = Ui.Button("Đăng ký lớp đã chọn", true);
         private readonly Label summary = Ui.Label("");

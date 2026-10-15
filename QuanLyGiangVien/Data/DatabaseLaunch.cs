@@ -19,7 +19,7 @@ public sealed class DatabaseLaunch
             throw new ArgumentException("Chỉ chọn một chế độ: --demo hoặc --database.");
         bool useDatabase = !flags.Contains("--demo") && (!nativeUiCheck || flags.Contains("--database"));
         // The certificate exception applies only to this local development instance.
-        const string local = "Server=localhost;Database=DangKyTinChi_Minh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5";
+        const string local = "Server=.\\SQLEXPRESS;Database=DangKyTinChi_Minh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5";
         return new(useDatabase, string.IsNullOrWhiteSpace(configuredConnection) ? local : configuredConnection.Trim());
     }
 }

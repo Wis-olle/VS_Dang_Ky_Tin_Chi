@@ -5,6 +5,7 @@ using QuanLyGiangVien.Domain.Shell;
 using QuanLyGiangVien.Features.Catalogs;
 using QuanLyGiangVien.Features.Registration;
 using QuanLyGiangVien.Features.StudentTimetable;
+using QuanLyGiangVien.Features.Students;
 using QuanLyGiangVien.Ui;
 
 namespace QuanLyGiangVien.Features.Shell;
@@ -30,6 +31,7 @@ internal sealed partial class CampusForm : Window
     private bool busy;
     private readonly CampusModule? initialModule;
     private readonly bool studentOnly;
+    private readonly bool passwordLogin;
     internal Control? CurrentPage => currentPage;
     internal Control? CurrentModulePage => currentPage is StudentPortalPage portal ? portal.ActivePage : currentPage;
     internal CampusModule? SelectedModule => selectedModule;
@@ -37,8 +39,10 @@ internal sealed partial class CampusForm : Window
     internal System.Windows.Forms.Panel PageHost => host;
     internal IReadOnlyCollection<CampusModule> NavigationModules => moduleButtons.Keys;
 
-    internal CampusForm(string connectionString, CampusModule? initialModule = null, bool studentPortal = false)
+    internal CampusForm(string connectionString, CampusModule? initialModule = null, bool studentPortal = false, bool passwordLogin = false)
     {
+        this.passwordLogin = passwordLogin;
+        loginPortal = studentPortal ? LoginPortal.Student : LoginPortal.Training;
         this.connectionString = connectionString; this.initialModule = initialModule;
         repository = new(connectionString); identityRepository = new(connectionString);
         AutoHandDpi = false; AutoScaleMode = AutoScaleMode.None; AppTheme.SetScale(DeviceDpi);
@@ -49,9 +53,11 @@ internal sealed partial class CampusForm : Window
         identityText = TextLabel("", 9, true); roleText = TextLabel("", 8, false, AppTheme.Muted);
         connectionText = TextLabel("", 9, false, AppTheme.Muted); errorText = TextLabel("", 9, false, AppTheme.Danger);
         connect = ActionButton("Kết nối hệ thống", true); disconnect = ActionButton("Ngắt kết nối");
-        BuildChrome(); BuildConnection(); LayoutShell();
-        connect.Click += async (_, _) => await ConnectAsync();
-        disconnect.Click += (_, _) => Disconnect();
+        BuildChrome();
+        if (passwordLogin) BuildPasswordLogin(); else BuildConnection();
+        LayoutShell();
+        connect.Click += async (_, _) => { if (passwordLogin) await AuthenticateAsync(); else await ConnectAsync(); };
+        disconnect.Click += async (_, _) => { if (passwordLogin) await LogoutAsync(); else Disconnect(); };
         SizeChanged += (_, _) => LayoutShell();
         FormClosing += (_, args) => { if (busy || canLeave?.Invoke() == false) args.Cancel = true; };
         KeyPreview = true;
@@ -62,7 +68,8 @@ internal sealed partial class CampusForm : Window
         };
         UnifiedUiCheck.Attach(this, connectionString);
         StudentPortalUiCheck.Attach(this, connectionString);
-        if (studentPortal)
+        PasswordLoginUiCheck.Attach(this);
+        if (studentPortal && !passwordLogin)
         {
             studentOnly = true;
             Shown += async (_, _) => await ConnectAsync();
@@ -142,6 +149,10 @@ internal sealed partial class CampusForm : Window
                 var reports = new ReportsPage(connectionString, user, DataChanged);
                 currentPage = reports; canLeave = reports.CanLeave; reload = reports.ReloadAsync;
                 break;
+            case CampusModule.Students:
+                var students = new StudentsPage(connectionString, DataChanged);
+                currentPage = students; canLeave = students.CanLeave; reload = students.ReloadAsync;
+                break;
             default: throw new ArgumentOutOfRangeException(nameof(module));
         }
         connectCard.Visible = false;
@@ -210,7 +221,7 @@ internal sealed partial class CampusForm : Window
         : "Chưa thể mở phân hệ. Kiểm tra dữ liệu và các script tích hợp, sau đó kết nối lại.";
     protected override void Dispose(bool disposing)
     {
-        if (disposing) { lifetime.Cancel(); ClearPage(); lifetime.Dispose(); }
+        if (disposing) { lifetime.Cancel(); ClearPage(); lifetime.Dispose(); if (passwordLogin) _ = new PasswordLogin(connectionString).SignOutAsync(); }
         base.Dispose(disposing);
         if (disposing) { foreach (var font in ownedFonts) font.Dispose(); ownedFonts.Clear(); }
     }

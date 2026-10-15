@@ -24,31 +24,34 @@ namespace QuanLyGiangVien.Features.Registration
         }
         public static Button Button(string text, bool primary = false)
         {
-            return new Button { Text = text, AutoSize = true, Height = 36, MinimumSize = new Size(100, 36),
-                Padding = new Padding(10, 3, 10, 3), Margin = new Padding(4), FlatStyle = FlatStyle.Flat,
+            return new Button { Text = text, AutoSize = true, Height = AppTheme.S(36), MinimumSize = new Size(AppTheme.S(100), AppTheme.S(36)),
+                Padding = new Padding(AppTheme.S(10), AppTheme.S(3), AppTheme.S(10), AppTheme.S(3)), Margin = new Padding(AppTheme.S(4)), FlatStyle = FlatStyle.Flat,
                 BackColor = primary ? Accent : Color.White, ForeColor = primary ? Color.White : Ink,
                 UseVisualStyleBackColor = false, Cursor = Cursors.Hand, AutoEllipsis = true };
         }
         public static Label Label(string text)
-        { return new Label { Text = text, AutoSize = true, Margin = new Padding(6, 12, 6, 4), ForeColor = Ink }; }
+        { return new Label { Text = text, AutoSize = true, Margin = new Padding(AppTheme.S(6), AppTheme.S(12), AppTheme.S(6), AppTheme.S(4)), ForeColor = Ink }; }
         public static FlowLayoutPanel Toolbar()
         { return new FlowLayoutPanel { Dock = DockStyle.Top, AutoSize = true, WrapContents = true,
-            Padding = new Padding(6), BackColor = Color.White }; }
+            Padding = new Padding(AppTheme.S(6)), BackColor = Color.White }; }
         public static DataGridView Grid()
         {
             var grid = new DataGridView { Dock = DockStyle.Fill, ReadOnly = true, MultiSelect = false,
                 SelectionMode = DataGridViewSelectionMode.FullRowSelect, AllowUserToAddRows = false,
                 AllowUserToDeleteRows = false, AllowUserToOrderColumns = true, RowHeadersVisible = false,
                 AutoGenerateColumns = true, BackgroundColor = Color.White, BorderStyle = BorderStyle.None,
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
                 AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells, EnableHeadersVisualStyles = false,
-                ColumnHeadersHeight = 42, ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing };
+                ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize };
             grid.ColumnHeadersDefaultCellStyle.BackColor = AppTheme.Lilac;
             grid.ColumnHeadersDefaultCellStyle.ForeColor = Ink;
             grid.ColumnHeadersDefaultCellStyle.SelectionBackColor = AppTheme.Lilac;
             grid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Ink;
             grid.ColumnHeadersDefaultCellStyle.Font = OwnFont(grid, AppTheme.Font(10, true));
-            grid.DefaultCellStyle.Padding = new Padding(6);
+            grid.ColumnHeadersDefaultCellStyle.Padding = new Padding(AppTheme.S(6));
+            grid.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            grid.DefaultCellStyle.Padding = new Padding(AppTheme.S(6));
+            grid.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             grid.DefaultCellStyle.SelectionBackColor = AppTheme.AccentSoft;
             grid.DefaultCellStyle.SelectionForeColor = Ink;
             grid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 249, 249);
@@ -68,9 +71,9 @@ namespace QuanLyGiangVien.Features.Registration
         };
         private static readonly Dictionary<string, string> Headers = new Dictionary<string, string>
         {
-            {"ma_lhp","Mã lớp HP"},{"ma_hp","Mã học phần"},{"ten_hp","Tên học phần"},
+            {"ma_lhp","Mã lớp HP"},{"ma_hp","Mã HP"},{"ten_hp","Tên học phần"},
             {"so_tin_chi","Tín chỉ"},{"loai_hp","Loại HP"},{"ten_gv","Giảng viên"},{"lich_hoc","Lịch học"},
-            {"si_so_hien_tai","Đã đăng ký"},{"si_so_max","Sĩ số tối đa"},{"so_cho_con","Chỗ còn"},
+            {"si_so_hien_tai","Đã ĐK"},{"si_so_max","Sĩ số"},{"so_cho_con","Còn chỗ"},
             {"trang_thai","Trạng thái"},{"ma_dk","Mã đăng ký"},{"ngay_dk","Ngày đăng ký"},{"ngay_huy","Ngày hủy"},
             {"trang_thai_lop","Trạng thái lớp"},{"ty_le_lap_day","Lấp đầy (%)"},
             {"tong_tin_chi_dang_ky","Tổng TC đăng ký"},{"stt","STT"},{"ma_sv","Mã sinh viên"},
@@ -82,13 +85,22 @@ namespace QuanLyGiangVien.Features.Registration
             foreach (DataGridViewColumn column in grid.Columns)
             {
                 if (Headers.TryGetValue(column.Name, out var caption)) column.HeaderText = caption;
-                column.Width = 125;
-                if (column.Name == "ten_hp" || column.Name == "ho_ten" || column.Name == "ten_gv") column.Width = 230;
-                if (column.Name == "lich_hoc") { column.Width = 390; column.DefaultCellStyle.WrapMode = DataGridViewTriState.True; }
+                int minimum = column.Name switch {
+                    "ten_hp" or "ho_ten" => 145, "ten_gv" => 130, "lich_hoc" => 210,
+                    "so_tin_chi" or "stt" => 48,
+                    "si_so_hien_tai" or "si_so_max" or "so_cho_con" => 65,
+                    "loai_hp" => 80, _ => 90
+                };
+                column.MinimumWidth = AppTheme.S(minimum);
+                column.FillWeight = minimum;
+                if (column.Name == "lich_hoc") column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 if (column.ValueType == typeof(DateTime))
-                { column.DefaultCellStyle.Format = column.Name == "ngay_sinh" ? "dd/MM/yyyy" : "dd/MM/yyyy HH:mm"; column.Width = 170; }
+                { column.DefaultCellStyle.Format = column.Name == "ngay_sinh" ? "dd/MM/yyyy" : "dd/MM/yyyy HH:mm"; column.MinimumWidth = AppTheme.S(150); column.FillWeight = 150; }
                 if (column.Name == "ty_le_lap_day") column.DefaultCellStyle.Format = "N2";
             }
+            // Recalculate after captions and widths settle; generated SQL column
+            // names may have temporarily required many wrapped header lines.
+            grid.AutoResizeColumnHeadersHeight();
         }
         public static DataRow? Current(DataGridView grid)
         {

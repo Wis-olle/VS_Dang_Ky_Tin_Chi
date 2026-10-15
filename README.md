@@ -1,98 +1,104 @@
-# Đăng ký tín chỉ — Cổng Đào tạo và Sinh viên
+# Campus — Đăng ký tín chỉ
 
-Ứng dụng WinForms C# .NET 10 gồm cổng phòng đào tạo và form sinh viên có hai tab **Đăng ký học phần** / **Thời khóa biểu**. Repository có sẵn SQL tạo database, stored procedures, migration và dữ liệu mẫu theo bộ SQL của Huệ.
+Ứng dụng WinForms .NET 10 có hai cổng đăng nhập trên cùng database `DangKyTinChi_Minh`:
 
-## 1. Chuẩn bị
+- **Sinh viên**: đăng ký học phần, kết quả đăng ký và thời khóa biểu của chính sinh viên đang đăng nhập.
+- **Phòng đào tạo**: giảng viên, lớp/phòng/lịch, học phần/học kỳ, thống kê và **quản lý sinh viên**.
 
-- Windows, Git và **.NET SDK 10.0**.
-- **SQL Server** chạy instance mặc định trên máy local, kết nối được bằng `localhost` và Windows Authentication.
-- Công cụ **sqlcmd** có trong PATH. Tài khoản Windows chạy setup cần quyền tạo database và áp dụng SQL trên SQL Server local.
-- Internet để restore package NuGet lần đầu.
-- Nếu chạy bằng Visual Studio: dùng phiên bản hỗ trợ .NET 10, cài workload **.NET desktop development**.
+## Cài đặt
 
-Kiểm tra trong PowerShell:
+Cần **Windows**, **.NET SDK 10**, **PowerShell 7.4 trở lên** (`pwsh`), **SQL Server Express** và **sqlcmd**. Chạy các lệnh bên dưới trong PowerShell 7, tại thư mục gốc repository. Script tạo mật khẩu dùng API .NET mới, không chạy bằng Windows PowerShell 5.1.
 
-```powershell
-dotnet --version
-sqlcmd -S localhost -E -C -Q "SELECT @@SERVERNAME"
-```
-
-## 2. Clone và khởi tạo database
-
-Mở PowerShell và chạy:
+Cấu hình mặc định là `.\SQLEXPRESS`, database `DangKyTinChi_Minh`, kết nối SQL bằng Windows Authentication. Tài khoản Windows chạy setup cần có quyền tạo database và áp dụng schema; dịch vụ SQL Server (SQLEXPRESS) phải đang chạy. Đóng các phiên Campus đang dùng bản Release trước khi chạy setup để tránh khóa file build.
 
 ```powershell
 git clone https://github.com/Wis-olle/VS_Dang_Ky_Tin_Chi.git
 cd VS_Dang_Ky_Tin_Chi
-.\scripts\Setup-Team.ps1
+.\scripts\Setup-Team.ps1 -Server '.\SQLEXPRESS'
 ```
 
-Script tự restore/build solution, tạo database, chạy SQL và nạp dữ liệu mẫu. Font, avatar và hình dùng trong ứng dụng đã có sẵn trong repository.
-
-Nếu database đã tồn tại trên máy, chạy:
+Nếu database đã tồn tại:
 
 ```powershell
-.\scripts\Setup-Team.ps1 -UpgradeExisting
+.\scripts\Setup-Team.ps1 -Server '.\SQLEXPRESS' -UpgradeExisting
 ```
 
-Lệnh nâng cấp không xóa database hoặc tự đổi ánh xạ tài khoản đã có; dữ liệu mẫu chỉ thêm các mã còn thiếu. Không chạy các bộ SQL khác schema chồng lên database này.
-
-## 3. Chạy cổng Đào tạo
-
-Từ thư mục repository:
+Nâng cấp chỉ áp dụng migration và seed các mã còn thiếu, không đặt lại mật khẩu mẫu. Để tạo hai tài khoản mẫu lần đầu sau khi nâng cấp:
 
 ```powershell
+.\scripts\Initialize-LoginDemo.ps1 -Server '.\SQLEXPRESS'
+```
+
+Script tạo `sv2024001` (Sinh viên, liên kết `SV2024001 — Bùi Quang Minh`) và `daotao` (Phòng đào tạo). Mỗi tài khoản có mật khẩu ngẫu nhiên riêng được ghi vào **`.tmp/TaiKhoanMau.txt`**, đã được loại khỏi Git. Muốn đặt lại hai mật khẩu mẫu, chủ động chạy script với `-ResetPasswords`.
+
+| Cổng đăng nhập | Tên đăng nhập | Mật khẩu |
+| --- | --- | --- |
+| Sinh viên | `sv2024001` | Xem `.tmp/TaiKhoanMau.txt` sau setup |
+| Phòng đào tạo | `daotao` | Xem `.tmp/TaiKhoanMau.txt` sau setup |
+
+```powershell
+# Xem mật khẩu trên máy vừa cài
+Get-Content .tmp/TaiKhoanMau.txt
+
+# Chỉ dùng khi muốn đặt lại cả hai mật khẩu mẫu (thu hồi các phiên cũ)
+.\scripts\Initialize-LoginDemo.ps1 -Server '.\SQLEXPRESS' -ResetPasswords
+```
+
+Mỗi máy cài mới sinh mật khẩu riêng. Hai tài khoản trên là tài khoản ứng dụng; không dùng chúng để kết nối SQL Server trong SSMS hoặc đổi sang SQL Authentication.
+
+## Chạy và đăng nhập
+
+```powershell
+# Mở cổng Phòng đào tạo
 dotnet run --project QuanLyGiangVien/QuanLyGiangVien.csproj --launch-profile QuanLyGiangVien
-```
-
-Bấm **Kết nối hệ thống** để vào các trang giảng viên, lớp/phòng/lịch, học phần/học kỳ, kết quả và thống kê đăng ký. Cổng dùng database `DangKyTinChi_Minh`, với tài khoản Windows được ánh xạ vai trò `DAO_TAO` khi setup mới.
-
-## 4. Chạy cổng Sinh viên
-
-Mở tab **Đăng ký** trước:
-
-```powershell
+# Mở cổng Sinh viên
 dotnet run --project QuanLyGiangVien/QuanLyGiangVien.csproj --launch-profile DangKyHocPhanSinhVien
 ```
 
-Hoặc mở tab **Thời khóa biểu** trước:
+Trong Visual Studio mở `QuanLyGiangVien/QuanLyGiangVien.slnx`, chọn một trong hai profile trên và bấm F5. Profile `ThoiKhoaBieuSinhVien` mở thời khóa biểu sau khi sinh viên đăng nhập. Cả hai cổng đều cần tài khoản đúng vai trò; có thể đổi cổng ở màn hình đăng nhập. **Đăng xuất** trở về màn hình này và xóa phiên hiện tại.
+
+### SQL Server có tên khác
+
+Ví dụ dùng instance mặc định `localhost`: thay `-Server` khi setup, rồi đặt chuỗi kết nối khi chạy. Dùng `--no-launch-profile` để profile mặc định không ghi đè biến môi trường.
 
 ```powershell
-dotnet run --project QuanLyGiangVien/QuanLyGiangVien.csproj --launch-profile ThoiKhoaBieuSinhVien
+.\scripts\Setup-Team.ps1 -Server 'localhost'
+# Nếu database đã tồn tại, thêm -UpgradeExisting như phần trên.
+$env:MINH_DB_CONNECTION = 'Server=localhost;Database=DangKyTinChi_Minh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5'
+dotnet run --project QuanLyGiangVien/QuanLyGiangVien.csproj --no-launch-profile -- --database
+# Cổng Sinh viên: thêm --student-portal vào cuối lệnh chạy.
 ```
 
-Hai profile mở cùng form và tự kết nối database sinh viên mẫu. Có thể chuyển qua lại hai tab trong ứng dụng. Sinh viên mẫu là **SV2024001 — Bùi Quang Minh**; học kỳ `HK1-2627` ban đầu có 4 lớp, 12 tín chỉ và 6 buổi học mỗi tuần. Học kỳ 2 ban đầu chưa có đăng ký.
+`TrustServerCertificate=True` phục vụ SQL Server phát triển cục bộ. Khi dùng Visual Studio với instance khác, sửa `MINH_DB_CONNECTION` trong `QuanLyGiangVien/Properties/launchSettings.json` của profile tương ứng.
 
-Đăng ký lớp:
+### Khi không đăng nhập được
 
-1. Chọn học kỳ, tìm lớp có lịch và còn chỗ.
-2. Bấm vào dòng lớp, rồi bấm **Đăng ký lớp đã chọn** và xác nhận.
-3. Xem hoặc hủy ở **Kết quả đăng ký**; chuyển sang **Thời khóa biểu** để xem lịch sau thay đổi.
+- **Không kết nối được SQL**: kiểm tra tên instance, dịch vụ SQL Server, Windows Authentication và database `DangKyTinChi_Minh`. Chạy setup với `-UpgradeExisting` nếu chưa áp dụng migration mới.
+- **Tài khoản chưa có mật khẩu**: chạy `Initialize-LoginDemo.ps1` một lần sau khi nâng cấp database cũ; đọc file mật khẩu cục bộ. Nếu script báo tài khoản đã có mật khẩu, chỉ thêm `-ResetPasswords` khi muốn đặt lại.
+- **Sai cổng**: `sv2024001` đăng nhập cổng Sinh viên; `daotao` đăng nhập cổng Phòng đào tạo.
+- **Đăng nhập sai nhiều lần**: tài khoản bị khóa tạm 10 phút sau 5 lần sai. Kiểm tra lại mật khẩu và chờ hết thời gian khóa.
+- **Ngoài hạn đăng ký**: đăng nhập Phòng đào tạo để kiểm tra thời hạn học kỳ; tạo tài khoản không tự thay đổi lịch đăng ký.
 
-Server kiểm tra hạn đăng ký, trùng học phần/lịch, sĩ số và quyền. Setup mở hạn đăng ký học kỳ mẫu trong 7 ngày. Nếu báo ngoài hạn, chạy rồi bấm **Làm mới**:
+## Quản lý sinh viên
+
+Đăng nhập Phòng đào tạo, mở tab **Sinh viên**. Có thể tìm theo mã/tên/email; thêm hoặc cập nhật hồ sơ; chọn khoa → ngành → lớp; xem hồ sơ và ngừng/kích hoạt sinh viên. Việc ngừng sinh viên sẽ chặn các nghiệp vụ đăng ký của sinh viên đó. Những thông tin được schema cho phép để trống vẫn có thể để trống.
+
+Đăng ký học phần vẫn tuân theo thời hạn học kỳ được Phòng đào tạo cấu hình. Việc tạo tài khoản đăng nhập không tự mở lại hạn đăng ký đã đóng.
+
+## Tích hợp và phân quyền
+
+Nguồn đăng nhập, PBKDF2 và hành vi quản lý sinh viên được chuyển từ bộ `QL_DANGKY_TINCHI` được cung cấp tại máy vào cấu trúc hiện có; giữ schema Huệ và giao diện Campus. Không chạy SQL tạo database khác chồng lên schema hiện tại.
+
+Migration `08_PasswordLogin.sql` bổ sung xác thực PBKDF2-SHA256 (600.000 vòng), thử thách dùng một lần, khóa tạm sau 5 lần sai và phiên ngẫu nhiên hết hạn sau 8 giờ. SQL xác định danh tính từ token được cấp và kiểm lại vai trò/trạng thái trên mỗi nghiệp vụ. `AppSqlConnection` gắn phiên vào từng kết nối trong pool. Không lưu mật khẩu trong source hoặc đổi authentication mode của SQL Server.
+
+Migration `09_Students.sql` kiểm quyền Phòng đào tạo tại SQL; không cấp quyền sửa bảng trực tiếp. Bộ quản lý tài khoản/khôi phục mật khẩu demo của nguồn ngoài chưa được đưa vào menu chung.
+
+Các harness Windows identity cũ vẫn dùng database riêng `DangKyTinChi_Minh_Test_*`; không dùng các biến môi trường harness này để mở database chính. `DangKyTinChi_Minh_Test_StudentPreview` chỉ còn là fixture kiểm chứng, không phải database của các profile đăng nhập thông thường.
+
+## Kiểm chứng
 
 ```powershell
-.\scripts\Initialize-StudentPreview.ps1 -OpenRegistration
+dotnet test QuanLyGiangVien.Tests/QuanLyGiangVien.Tests.csproj -c Release
 ```
 
-Lệnh này chỉ mở lại hạn trong database sinh viên mẫu.
-
-## 5. Chạy bằng Visual Studio
-
-1. Mở `QuanLyGiangVien/QuanLyGiangVien.slnx`.
-2. Đặt project `QuanLyGiangVien` làm Startup Project nếu cần.
-3. Ở danh sách cạnh nút chạy, chọn `QuanLyGiangVien` cho cổng Đào tạo hoặc `DangKyHocPhanSinhVien` / `ThoiKhoaBieuSinhVien` cho cổng Sinh viên.
-4. Nhấn **F5**. Cần chạy setup ở bước 2 trước lần mở đầu tiên.
-
-## Database và phạm vi bản ghép
-
-| Database local | Mục đích |
-| --- | --- |
-| `DangKyTinChi_Minh` | Cổng Đào tạo |
-| `DangKyTinChi_Minh_Test_StudentPreview` | Cổng Sinh viên mẫu |
-
-**Hai database demo có dữ liệu riêng, chưa tự đồng bộ với nhau.** Cách này cho phép cùng một tài khoản Windows thử cả hai vai trò. Hai profile của cổng Sinh viên dùng chung database sinh viên nên đăng ký và thời khóa biểu đọc cùng dữ liệu.
-
-Để triển khai hai cổng dùng chung dữ liệu thật, cần SQL/Windows identity riêng cho từng người, ánh xạ bảng `TAI_KHOAN` đúng vai trò/mã sinh viên và cấu hình `MINH_DB_CONNECTION` của các profile trỏ cùng một database. Luồng đăng nhập tên người dùng/mật khẩu của Tùng còn thiếu source, chưa nằm trong bản ghép.
-
-Bộ SQL nằm trong [`QuanLyGiangVien/database`](QuanLyGiangVien/database), gồm SQL gốc Huệ, các migration và seed. Không cần gửi kèm file MDF/BAK. Xem thêm [hướng dẫn database và chạy ứng dụng](QuanLyGiangVien/docs/CLONE_AND_RUN.md).
+Unit tests và kiểm thử native đăng nhập/quản lý sinh viên đã chạy trên máy. SQL integration tests đăng nhập cần `CAMPUS_LOGIN_TEST_CONNECTION`, `DEMO_STUDENT_PASSWORD`, `DEMO_TRAINING_PASSWORD`; không ghi mật khẩu vào test/source. Chi tiết và phạm vi kiểm chứng ở `QuanLyGiangVien/docs/UI_VERIFICATION.md`.

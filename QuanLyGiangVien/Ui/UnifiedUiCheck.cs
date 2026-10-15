@@ -50,7 +50,7 @@ internal static class UnifiedUiCheck
                     File.WriteAllText(Path.Combine(output, "results.json"), JsonSerializer.Serialize(new { passed = true, dpi = form.DeviceDpi, checks }));
                     return;
                 }
-                Expect(form.NavigationModules.Count == 4, "Management navigation contains four available modules");
+                Expect(form.NavigationModules.Count == 5, "Management navigation contains five available modules");
                 Expect(form.CurrentPage is CatalogsPage, "Phong's catalogs are the initial management page");
                 await Shot("01-catalogs");
                 foreach (var module in new[] { CampusModule.Lecturers, CampusModule.Scheduling, CampusModule.Catalogs, CampusModule.Reports })

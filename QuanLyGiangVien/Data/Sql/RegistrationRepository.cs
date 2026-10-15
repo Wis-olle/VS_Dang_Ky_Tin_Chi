@@ -43,7 +43,7 @@ public sealed class RegistrationRepository
         try
         {
             await using var connection = new SqlConnection(connectionString);
-            await connection.OpenAsync().ConfigureAwait(false);
+            await AppSqlConnection.OpenAsync(connection).ConfigureAwait(false);
             command.Connection = connection;
             await using var reader = await command.ExecuteReaderAsync().ConfigureAwait(false);
             var table = new DataTable { Locale = System.Globalization.CultureInfo.InvariantCulture };

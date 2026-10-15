@@ -6,7 +6,7 @@ internal abstract class ModulePage : UserControl
     protected RegistrationWorkspace Host { get; }
     protected DangKyService Service => Host.Service;
     protected ModulePage(RegistrationWorkspace host)
-    { Host = host; Dock = DockStyle.Fill; Padding = new Padding(12); }
+    { Host = host; AutoScaleMode = AutoScaleMode.None; Dock = DockStyle.Fill; Padding = new Padding(QuanLyGiangVien.Ui.AppTheme.S(12)); }
     public abstract Task RefreshDataAsync();
     public abstract void ClearData();
     public virtual void ApplyDeadline() { }

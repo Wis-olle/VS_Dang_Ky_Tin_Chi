@@ -26,7 +26,7 @@ public sealed class SqlIdentityRepository
     {
         try
         {
-            using var connection = new SqlConnection(connectionString); await connection.OpenAsync(token).ConfigureAwait(false);
+            using var connection = new SqlConnection(connectionString); await AppSqlConnection.OpenAsync(connection, token).ConfigureAwait(false);
             using var command = Command(); command.Connection = connection;
             using var reader = await command.ExecuteReaderAsync(token).ConfigureAwait(false);
             return Read(reader);

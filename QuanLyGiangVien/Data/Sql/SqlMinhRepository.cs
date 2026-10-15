@@ -27,7 +27,7 @@ public sealed class SqlMinhRepository : ILecturerPersistence, ISchedulePersisten
         try
         {
             using var connection = new SqlConnection(connectionString);
-            await connection.OpenAsync(cancellationToken).ConfigureAwait(false);
+            await AppSqlConnection.OpenAsync(connection, cancellationToken).ConfigureAwait(false);
             using var command = SqlMinhCommands.Load();
             command.Connection = connection;
             using var reader = await command.ExecuteReaderAsync(cancellationToken).ConfigureAwait(false);
@@ -54,7 +54,7 @@ public sealed class SqlMinhRepository : ILecturerPersistence, ISchedulePersisten
         try
         {
             using var connection = new SqlConnection(connectionString);
-            connection.Open();
+            AppSqlConnection.Open(connection);
             command.Connection = connection;
             return execute(command);
         }
@@ -66,6 +66,7 @@ public sealed class SqlMinhRepository : ILecturerPersistence, ISchedulePersisten
 public static class SqlErrorMessages
 {
     public static string ForNumber(int number) => number switch {
+        52105 => "Phiên đăng nhập đã hết hạn. Vui lòng đăng xuất và đăng nhập lại.",
         -2 => "Hết thời gian chờ SQL; chưa xác nhận được kết quả. Vui lòng tải lại dữ liệu trước khi thử lại.",
         1222 or 52002 => "SQL đang bận. Vui lòng tải lại dữ liệu và thử lại.",
         1205 => "Có thao tác đồng thời trên SQL. Dữ liệu chưa thay đổi; vui lòng thử lại.",

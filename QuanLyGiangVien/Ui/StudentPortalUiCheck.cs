@@ -63,6 +63,35 @@ internal static class StudentPortalUiCheck
                 }
                 Expect(form.CurrentModulePage == registration, "Registration is the first tab");
                 Expect(registration.MaHocKy == "HK1-2627", "Both launch profiles select the current semester before any manual selection");
+                if (Environment.GetEnvironmentVariable("STUDENT_PORTAL_LAYOUT_ONLY") == "1")
+                {
+                    for (int retry = 0; retry < 200 && !registration.CanLeave(); retry++) await Task.Delay(50);
+                    Expect(registration.CanLeave(), "Registration data finishes loading before measuring layout");
+                    foreach (var size in new[] { new Size(1100, 820), new Size(1440, 960) })
+                    {
+                        form.ClientSize = new(AppTheme.S(size.Width), AppTheme.S(size.Height));
+                        await registration.ReloadAsync();
+                        await Shot($"registration-{size.Width}");
+                        var heading = Descendants(registration).OfType<Label>().Single(item => item.Name == "lblRegistrationHeading");
+                        var grid = Descendants(registration).OfType<DataGridView>().Single(item => item.Name == "dgvLopMo");
+                        var picker = Descendants(registration).OfType<ComboBox>().Single(item => item.Name == "cboHocKy");
+                        var headerFont = grid.ColumnHeadersDefaultCellStyle.Font ?? grid.Font;
+                        File.WriteAllText(Path.Combine(output, $"geometry-{size.Width}.json"), JsonSerializer.Serialize(new {
+                            dpi = form.DeviceDpi, headingHeight = heading.Height, headingPreferred = heading.PreferredHeight,
+                            gridWidth = grid.ClientSize.Width, columnsWidth = grid.Columns.GetColumnsWidth(DataGridViewElementStates.Visible),
+                            headerHeight = grid.ColumnHeadersHeight, headerFontHeight = headerFont.Height,
+                            pickerWidth = picker.Width, pickerPreferred = picker.GetPreferredSize(Size.Empty).Width,
+                            rows = grid.RowCount, visible = grid.Visible, status = Descendants(registration).Single(item => item.Name == "lblRegistrationStatus").Text
+                        }));
+                        Expect(heading.Height >= heading.PreferredHeight, $"Heading is fully visible at {size.Width}");
+                        Expect(grid.ColumnHeadersHeight >= headerFont.Height + grid.DefaultCellStyle.Padding.Vertical,
+                            $"Grid headings have enough height at {size.Width}");
+                        Expect(grid.Columns.GetColumnsWidth(DataGridViewElementStates.Visible) >= grid.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4,
+                            $"Grid columns fill the viewport at {size.Width}");
+                    }
+                    File.WriteAllText(Path.Combine(output, "results.json"), JsonSerializer.Serialize(new { passed = true, dpi = form.DeviceDpi, checks }));
+                    return;
+                }
                 var keyword = Descendants(registration).OfType<TextBox>().Single(item => item.Name == "txtTuKhoa");
                 keyword.Text = "IT";
                 await Shot("01-registration");

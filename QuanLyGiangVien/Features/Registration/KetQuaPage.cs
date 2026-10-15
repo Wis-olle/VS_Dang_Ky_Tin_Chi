@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyGiangVien.Ui;
 
 
 namespace QuanLyGiangVien.Features.Registration
@@ -11,8 +12,8 @@ namespace QuanLyGiangVien.Features.Registration
     internal sealed class KetQuaPage : ModulePage
     {
         private readonly DataGridView grid = Ui.Grid();
-        private readonly TextBox student = new TextBox { Name = "txtMaSv", Width = 170, MaxLength = 20, Margin = new Padding(4, 10, 6, 4) };
-        private readonly CheckBox history = new CheckBox { Text = "Hiện cả đăng ký đã hủy", AutoSize = true, Margin = new Padding(10, 12, 8, 4) };
+        private readonly TextBox student = new TextBox { Name = "txtMaSv", Width = AppTheme.S(170), MaxLength = 20, Margin = new Padding(AppTheme.S(4), AppTheme.S(10), AppTheme.S(6), AppTheme.S(4)) };
+        private readonly CheckBox history = new CheckBox { Text = "Hiện cả đăng ký đã hủy", AutoSize = true, Margin = new Padding(AppTheme.S(10), AppTheme.S(12), AppTheme.S(8), AppTheme.S(4)) };
         private readonly Button cancel = Ui.Button("Hủy đăng ký đã chọn");
         private readonly Label summary = Ui.Label("");
         private DataTable? data;

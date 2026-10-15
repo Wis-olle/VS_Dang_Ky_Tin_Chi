@@ -3,6 +3,7 @@ using QuanLyGiangVien.Data;
 using QuanLyGiangVien.Data.Sql;
 using QuanLyGiangVien.Domain.Shell;
 using QuanLyGiangVien.Features.Shell;
+using Microsoft.Data.SqlClient;
 
 namespace QuanLyGiangVien;
 
@@ -20,11 +21,15 @@ internal static class Program
             bool harness = HasEnvironment("LECTURER_UI_CHECK") || HasEnvironment("SCHEDULING_UI_CHECK")
                 || HasEnvironment("STUDENT_TIMETABLE_UI_CHECK");
             var mode = DatabaseLaunch.Parse(args, Environment.GetEnvironmentVariable("MINH_DB_CONNECTION"), harness);
-            if (mode.UseDatabase && !harness && !args.Contains("--standalone"))
+            bool legacyCheck = HasEnvironment("STUDENT_PORTAL_UI_CHECK") || HasEnvironment("UNIFIED_UI_CHECK");
+            if (mode.UseDatabase && (legacyCheck || harness)
+                && !new SqlConnectionStringBuilder(mode.ConnectionString).InitialCatalog.StartsWith("DangKyTinChi_Minh_Test_", StringComparison.Ordinal))
+                throw new InvalidOperationException("Kiểm chứng Windows identity chỉ được chạy trên database kiểm thử riêng.");
+            if (mode.UseDatabase && !harness)
             {
                 CampusModule? first = args.Contains("--scheduling") ? CampusModule.Scheduling
                     : args.Contains("--student-timetable") ? CampusModule.Timetable : null;
-                Application.Run(new CampusForm(mode.ConnectionString, first, args.Contains("--student-portal")));
+                Application.Run(new CampusForm(mode.ConnectionString, first, args.Contains("--student-portal"), passwordLogin: !legacyCheck));
                 return;
             }
             var database = mode.UseDatabase ? new SqlMinhRepository(mode.ConnectionString).LoadAsync().GetAwaiter().GetResult() : null;

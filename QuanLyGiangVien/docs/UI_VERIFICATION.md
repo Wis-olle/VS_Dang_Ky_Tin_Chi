@@ -423,3 +423,13 @@ Hai nhóm JSON benchmark được giữ riêng: số paint đồng bộ ở mụ
 Ứng dụng có xử lý DPI theo metadata font và bố cục. Chưa xác minh thao tác kéo cửa sổ thật giữa hai màn hình có DPI khác nhau. Dữ liệu chỉ tồn tại trong phiên, chưa có SQL Server hay luồng xác thực.
 
 Những thao tác cần thử khi nhóm tích hợp: kiểm tra DPI trên máy từng thành viên, thay kho dữ liệu trong phiên bằng tầng truy cập dữ liệu, thay danh sách phân công mẫu bằng dữ liệu lớp học phần thật và nối điều hướng vào dashboard phòng đào tạo.
+
+## Đăng nhập hợp nhất và quản lý sinh viên — 15/10/2026
+
+- Build Release: 0 lỗi, 0 cảnh báo. Bộ kiểm thử chung: 432 PASS, 13 SKIP (các fixture SQL không được cấu hình trong lần chạy chung).
+- Kiểm tra trước commit ngày 15/10/2026: build Release riêng tại `.tmp/commit-build` thành công, 0 lỗi/cảnh báo; chạy lại bộ test với cấu hình SQL cho đăng nhập: **434 PASS, 11 SKIP, 0 FAIL**. Các test bỏ qua còn lại cần fixture SQL riêng. Cú pháp các script PowerShell và `git diff --check` hợp lệ.
+- 21 kiểm thử tập trung PASS, gồm 2 integration test dùng database mẫu đang chạy: xác thực đúng/sai cổng, danh tính SQL của sinh viên, giới hạn dữ liệu thời khóa biểu, từ chối truy cập danh mục/QLSV, thu hồi phiên, chống proof replay và token giả. CRUD sinh viên nullable được kiểm tra trong transaction và rollback toàn bộ.
+- Native password harness ở DPI 192 (200%): 11 kiểm tra PASS, gồm đăng nhập đúng/sai, xóa mật khẩu khi lỗi, hai hướng sai cổng, dữ liệu đăng ký xuất hiện ngay lần đầu, thời khóa biểu, đăng xuất và QLSV ở cửa sổ rộng/compact. Kết quả cục bộ `.tmp/login-ui-final/results.json`, ảnh cùng thư mục; không suy ra FPS hay kết quả đa màn hình từ DrawToBitmap.
+- Có kiểm chứng RED trước khi sửa lỗi trang đăng ký lần đầu: `.tmp/login-first-load-red/results.json`; trang đã được hiển thị trước khi tải selected TabPage. Lỗi DPI Registration từ lượt trước vẫn giữ.
+- Designer và code-reviewer đã rà bố cục và luồng auth/SQL. Không thay đổi authentication mode hoặc restart SQL Server, không đưa plaintext mật khẩu vào source. Phiên cấp tại SQL, kiểm tra lại trạng thái tài khoản và hồ sơ cho mỗi nghiệp vụ.
+- Chưa đo coverage toàn WinForms hoặc kiểm thử chuyển giữa các monitor có DPI khác nhau. Chưa có UI quản lý tài khoản/khôi phục mật khẩu trong menu hợp nhất.

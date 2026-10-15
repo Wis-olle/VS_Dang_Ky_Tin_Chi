@@ -2,11 +2,17 @@
   "profiles": {
     "QuanLyGiangVien": {
       "commandName": "Project",
-      "commandLineArgs": "--database"
+      "commandLineArgs": "--database",
+      "environmentVariables": {
+        "MINH_DB_CONNECTION": "Server=.\\SQLEXPRESS;Database=DangKyTinChi_Minh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5"
+      }
     },
     "LopVaPhongSQL": {
       "commandName": "Project",
-      "commandLineArgs": "--database --scheduling"
+      "commandLineArgs": "--database --scheduling",
+      "environmentVariables": {
+        "MINH_DB_CONNECTION": "Server=.\\SQLEXPRESS;Database=DangKyTinChi_Minh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5"
+      }
     },
     "GiangVienDemo": {
       "commandName": "Project",
@@ -16,7 +22,7 @@
       "commandName": "Project",
       "commandLineArgs": "--student-portal --database --student-timetable",
       "environmentVariables": {
-        "MINH_DB_CONNECTION": "Server=localhost;Database=DangKyTinChi_Minh_Test_StudentPreview;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5"
+        "MINH_DB_CONNECTION": "Server=.\\SQLEXPRESS;Database=DangKyTinChi_Minh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5"
       }
     },
     "ThoiKhoaBieuDemo": {
@@ -25,18 +31,24 @@
     },
     "ThoiKhoaBieuSQL": {
       "commandName": "Project",
-      "commandLineArgs": "--student-timetable --database"
+      "commandLineArgs": "--student-timetable --database",
+      "environmentVariables": {
+        "MINH_DB_CONNECTION": "Server=.\\SQLEXPRESS;Database=DangKyTinChi_Minh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5"
+      }
     },
     "DangKyHocPhanSinhVien": {
       "commandName": "Project",
       "commandLineArgs": "--student-portal --database",
       "environmentVariables": {
-        "MINH_DB_CONNECTION": "Server=localhost;Database=DangKyTinChi_Minh_Test_StudentPreview;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5"
+        "MINH_DB_CONNECTION": "Server=.\\SQLEXPRESS;Database=DangKyTinChi_Minh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5"
       }
     },
     "GiangVienSQLDocLap": {
       "commandName": "Project",
-      "commandLineArgs": "--database --standalone"
+      "commandLineArgs": "--database --standalone",
+      "environmentVariables": {
+        "MINH_DB_CONNECTION": "Server=.\\SQLEXPRESS;Database=DangKyTinChi_Minh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5"
+      }
     }
   }
 }
