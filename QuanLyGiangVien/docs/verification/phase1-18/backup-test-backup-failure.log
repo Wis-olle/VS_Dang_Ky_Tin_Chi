@@ -1,0 +1,10 @@
+Sao lưu DangKyTinChi_Minh_Test_Phase1F06Backup trên . trước khi nâng cấp. Backup/VERIFYONLY lỗi sẽ dừng trước migration.
+Msg 3201, Level 16, State 1, Server QuangMinhLaptop, Line 6
+Cannot open backup device 'Z:\CampusMissingBackupFolder\DangKyTinChi_Minh_Test_Phase1F06Backup_20261017_134349_15b60e3f25324d068527e779f50a1899.bak'. Operating system error 3(The system cannot find the path specified.).
+Msg 3013, Level 16, State 1, Server QuangMinhLaptop, Line 6
+BACKUP DATABASE is terminating abnormally.
+Msg 3201, Level 16, State 2, Server QuangMinhLaptop, Line 7
+Cannot open backup device 'Z:\CampusMissingBackupFolder\DangKyTinChi_Minh_Test_Phase1F06Backup_20261017_134349_15b60e3f25324d068527e779f50a1899.bak'. Operating system error 3(The system cannot find the path specified.).
+Msg 3013, Level 16, State 1, Server QuangMinhLaptop, Line 7
+VERIFY DATABASE is terminating abnormally.
+Backup đã kiểm tra: Z:\CampusMissingBackupFolder\DangKyTinChi_Minh_Test_Phase1F06Backup_20261017_134349_15b60e3f25324d068527e779f50a1899.bak

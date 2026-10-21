@@ -1,0 +1,4 @@
+Sao lưu DangKyTinChi_Minh_Test_UpgradeContract trên . trước khi nâng cấp. Backup/VERIFYONLY lỗi sẽ dừng trước migration.
+Sao lưu DangKyTinChi_Minh_Test_UpgradeContract trên . trước khi nâng cấp. Backup/VERIFYONLY lỗi sẽ dừng trước migration.
+Database DangKyTinChi_Minh_Test_UpgradeContract đã sẵn sàng trên SQL Server '.'.
+PASS: backup failure blocks DDL; verified backup precedes ordered migrations; no implicit seed/map; explicit upgrade required.

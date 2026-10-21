@@ -1,0 +1,19 @@
+si_so_hien_tai
+--------------
+             0
+evidence       ma_dk                ma_hp                ma_hk                trang_thai  
+-------------- -------------------- -------------------- -------------------- ------------
+BEFORE_HISTORY                    6 IT101                HK1-2627             DA_HUY      
+si_so_hien_tai
+--------------
+             0
+evidence      ma_dk                ma_hp                ma_hk                trang_thai  
+------------- -------------------- -------------------- -------------------- ------------
+AFTER_HISTORY                    6 IT102                HK2-2627             DA_HUY      
+evidence      trang_thai
+------------- ----------
+AFTER_DISABLE          0
+evidence         trang_thai
+---------------- ----------
+AFTER_STALE_SAVE          1
+Both reproductions observed; all synthetic changes rolled back.

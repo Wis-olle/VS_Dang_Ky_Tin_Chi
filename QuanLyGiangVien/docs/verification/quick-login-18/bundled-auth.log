@@ -1,0 +1,2 @@
+quick_login=Student; authenticated=true; role=SINH_VIEN; password_not_logged=true
+quick_login=Training; authenticated=true; role=DAO_TAO; password_not_logged=true

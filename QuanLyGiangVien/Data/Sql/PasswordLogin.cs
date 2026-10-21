@@ -36,6 +36,7 @@ public sealed class PasswordLogin(string connectionString)
         {
             await using var connection = new SqlConnection(connectionString);
             await connection.OpenAsync(token).ConfigureAwait(false);
+            await CampusSchema.ValidateAsync(connection, token).ConfigureAwait(false);
             using var begin = new SqlCommand("dbo.usp_Auth_Begin", connection) { CommandType = CommandType.StoredProcedure };
             begin.Parameters.Add("@username", SqlDbType.NVarChar, 128).Value = username.Trim();
             Guid challenge; byte[] salt, nonce; int iterations;
@@ -62,11 +63,12 @@ public sealed class PasswordLogin(string connectionString)
         catch (SqlException error)
         {
             throw new PersistenceException(error.Number switch {
-                52101 => "Tên đăng nhập hoặc mật khẩu không chính xác.",
-                52102 => "Tài khoản đang bị khóa hoặc hồ sơ không hoạt động. Vui lòng liên hệ phòng đào tạo.",
-                52103 => "Tài khoản không thuộc cổng đã chọn. Hãy chọn đúng Sinh viên hoặc Phòng đào tạo.",
-                52104 => "Tạm khóa đăng nhập trong 10 phút sau nhiều lần nhập sai.",
-                _ => "Không thể đăng nhập. Kiểm tra kết nối và script thiết lập tài khoản."
+                52401 => "Tên đăng nhập hoặc mật khẩu không chính xác.",
+                52402 => "Tài khoản đang bị khóa hoặc hồ sơ không hoạt động. Vui lòng liên hệ phòng đào tạo.",
+                52403 => "Tài khoản không thuộc cổng đã chọn. Hãy chọn đúng Sinh viên hoặc Phòng đào tạo.",
+                52404 => "Tạm khóa đăng nhập trong 10 phút sau nhiều lần nhập sai.",
+                52406 => "Xác thực đang bận. Hãy thử lại.",
+                _ => "Không thể kết nối SQL hoặc đăng nhập. Kiểm tra tên máy chủ, database và phiên bản triển khai."
             });
         }
     }

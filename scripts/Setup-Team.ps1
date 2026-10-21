@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([switch]$UpgradeExisting, [string]$Server = '.\SQLEXPRESS')
+param([switch]$UpgradeExisting, [string]$Server = '.', [string]$BackupDirectory)
 
 $ErrorActionPreference = 'Stop'
 $workspaceRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
@@ -16,7 +16,9 @@ if ($LASTEXITCODE -ne 0) { throw 'Restore thất bại; kiểm tra .NET SDK 10.0
 & dotnet build $solution -c Release --no-restore
 if ($LASTEXITCODE -ne 0) { throw 'Build thất bại; chưa thay đổi database.' }
 
-$databaseOptions = @{ Server = $Server; SeedDemo = $true; MapLocalLogin = $true; UpgradeExisting = $UpgradeExisting }
+$databaseOptions = @{ Server = $Server; UpgradeExisting = $UpgradeExisting }
+if ($BackupDirectory) { $databaseOptions.BackupDirectory = $BackupDirectory }
+if (-not $UpgradeExisting) { $databaseOptions.SeedDemo = $true; $databaseOptions.MapLocalLogin = $true }
 & (Join-Path $PSScriptRoot 'Initialize-Database.ps1') @databaseOptions
 if (-not $UpgradeExisting) { & (Join-Path $PSScriptRoot 'Initialize-LoginDemo.ps1') -Server $Server }
 

@@ -26,7 +26,9 @@ public sealed class CourseClassEditor : SchedulingEditorBase
 
     public CourseClassEditor(ScheduleStore store, CourseClass? original = null)
         : base(original is null ? "Mở lớp học phần" : "Chỉnh sửa lớp học phần",
-            "Chọn học phần, phân công giảng viên và bố trí các buổi học.", "LỚP HỌC PHẦN", 680, 700,
+            original is { HasRegistrationHistory: true } or { Enrolled: > 0 }
+                ? "Có lịch sử đăng ký: giữ học phần, kỳ, giảng viên và lịch; tạo lớp mới nếu cần."
+                : "Chọn học phần, phân công giảng viên và bố trí các buổi học.", "LỚP HỌC PHẦN", 680, 700,
             original is null ? "Mở lớp" : "Lưu thay đổi")
     {
         this.store = store;
@@ -45,6 +47,8 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         enrolled.BackColor = SchedulingTheme.Canvas;
         capacity.PlaceholderText = "Ví dụ: 40";
         ConfigureReferences();
+        course.Enabled = semester.Enabled = original is not { HasRegistrationHistory: true } and not { Enrolled: > 0 };
+        lecturer.Enabled = original is not { Enrolled: > 0 } and not { HasRegistrationHistory: true };
         ConfigureSelect(status, SchedulingLabels.ClassStatuses, "Chọn trạng thái");
         int top = GridBottom(7);
         semesterInfo = AddLabel("", MarginX, top, ContentWidth, AppTheme.S(24), 8, color: SchedulingTheme.Muted);
@@ -72,6 +76,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         editMeeting.SetBounds(MarginX + AppTheme.S(140), buttonTop, AppTheme.S(94), AppTheme.S(36));
         removeMeeting.SetBounds(MarginX + AppTheme.S(246), buttonTop, AppTheme.S(112), AppTheme.S(36));
         add.TabIndex = 8;
+        add.Enabled = original is not { Enrolled: > 0 } and not { HasRegistrationHistory: true };
         editMeeting.TabIndex = 9;
         removeMeeting.TabIndex = 10;
         add.Click += (_, _) => AddMeeting();
@@ -90,7 +95,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         semester.SelectedIndexChanged += (_, _) => UpdateSemesterInfo();
         if (original is not null) FillForCheck(original);
         else {
-            InitializeNewId(id, store.NextClassId, "Nhập một mã lớp còn trống, gồm LHP và 4 chữ số, ví dụ LHP0001.");
+            InitializeNewId(id, store.NextClassId, "Nhập mã lớp còn trống, gồm 1–20 chữ cái ASCII, chữ số, gạch ngang hoặc gạch dưới.");
             enrolled.Text = "0";
             capacity.Text = "40";
             status.SelectedIndex = 0;
@@ -156,7 +161,8 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         if (!TryInteger(capacity, nameof(CourseClass.Capacity), parseErrors, out int seats)) return ShowErrors(parseErrors);
         var value = new CourseClass(id.Text, courseIds.GetValueOrDefault(Selected(course)) ?? "",
             semesterIds.GetValueOrDefault(Selected(semester)) ?? "", lecturerIds.GetValueOrDefault(Selected(lecturer)) ?? "",
-            seats, original?.Enrolled ?? 0, Selected(status), meetings);
+            seats, original?.Enrolled ?? 0, Selected(status), meetings, original?.Version ?? "", original?.HasRegistrationHistory ?? false,
+            original?.Lifecycle ?? "REGISTRATION", original?.ActualMeetings ?? default);
         if (!store.TrySaveClass(value, original is null, out var validation)) return ShowErrors(validation);
         Result = store.Classes.First(item => item.Id.Equals(value.Id.Trim(), StringComparison.OrdinalIgnoreCase));
         return true;
@@ -167,9 +173,10 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         ClearErrors();
         var validation = new Dictionary<string, string>();
         selected = CurrentSemester();
+        if (original is { Enrolled: > 0 } or { HasRegistrationHistory: true }) validation[nameof(CourseClass.Meetings)] = "Lớp có lịch sử đăng ký; không thể đổi buổi học.";
         if (selected is null) validation[nameof(CourseClass.SemesterId)] = "Chọn học kỳ trước khi thêm buổi học.";
         TryInteger(capacity, nameof(CourseClass.Capacity), validation, out seats);
-        if (seats is < 1 or > 500) validation[nameof(CourseClass.Capacity)] = "Sĩ số tối đa nằm trong khoảng 1–500.";
+        if (seats is < 1 or > 1000) validation[nameof(CourseClass.Capacity)] = "Sĩ số tối đa nằm trong khoảng 1–1000.";
         return validation.Count == 0 || ShowErrors(validation);
     }
 
@@ -195,7 +202,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
     private void RemoveMeeting()
     {
         int index = meetingList.SelectedIndex;
-        if (index < 0) return;
+        if (index < 0 || original is { Enrolled: > 0 } or { HasRegistrationHistory: true }) return;
         meetings = meetings.RemoveAt(index);
         ClearErrors();
         RefreshMeetings(Math.Min(index, meetings.Length - 1));
@@ -214,7 +221,8 @@ public sealed class CourseClassEditor : SchedulingEditorBase
 
     private void UpdateMeetingActions()
     {
-        editMeeting.Enabled = removeMeeting.Enabled = meetingList.SelectedIndex >= 0;
+        editMeeting.Enabled = removeMeeting.Enabled = meetingList.SelectedIndex >= 0
+            && original is not { Enrolled: > 0 } and not { HasRegistrationHistory: true };
     }
 
     private void DrawMeeting(System.Windows.Forms.DrawItemEventArgs args, Font titleFont, Font detailFont)

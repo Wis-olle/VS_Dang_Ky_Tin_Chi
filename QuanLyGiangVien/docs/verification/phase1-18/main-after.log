@@ -1,0 +1,25 @@
+table_name                                                                                                                       row_count           
+-------------------------------------------------------------------------------------------------------------------------------- --------------------
+APP_CREDENTIAL                                                                                                                                      2
+APP_LOGIN_CHALLENGE                                                                                                                                 0
+APP_SESSION                                                                                                                                         0
+CAMPUS_SCHEMA_VERSION                                                                                                                               1
+DANG_KY                                                                                                                                             5
+GIANG_VIEN                                                                                                                                         12
+HOC_KY                                                                                                                                              2
+HOC_PHAN                                                                                                                                            8
+KET_QUA                                                                                                                                             0
+KHOA                                                                                                                                                4
+LICH_HOC                                                                                                                                           10
+LOP                                                                                                                                                 1
+LOP_HOC_PHAN                                                                                                                                       10
+NGANH                                                                                                                                               1
+PHONG_HOC                                                                                                                                           8
+SINH_VIEN                                                                                                                                           2
+TAI_KHOAN                                                                                                                                           3
+           
+-----------
+          1
+new_app_accounts
+----------------
+               2

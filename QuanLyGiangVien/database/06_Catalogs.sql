@@ -64,7 +64,7 @@ BEGIN
   IF @ma_khoa IS NOT NULL AND NOT EXISTS(SELECT 1 FROM dbo.KHOA WITH(HOLDLOCK) WHERE ma_khoa=@ma_khoa AND trang_thai=1)
    AND (@la_moi=1 OR @oldFaculty IS NULL OR @oldFaculty<>@ma_khoa) THROW 52104,N'Khoa không hoạt động.',1;
   IF @trang_thai=0 AND EXISTS(SELECT 1 FROM dbo.LOP_HOC_PHAN WHERE ma_hp=@ma_hp AND trang_thai<>'HUY') THROW 52102,N'Học phần còn lớp đang sử dụng.',1;
-  IF @la_moi=0 AND (EXISTS(SELECT 1 FROM dbo.LOP_HOC_PHAN l JOIN dbo.DANG_KY d ON d.ma_lhp=l.ma_lhp WHERE l.ma_hp=@ma_hp AND d.trang_thai='DANG_KY')
+  IF @la_moi=0 AND (EXISTS(SELECT 1 FROM dbo.LOP_HOC_PHAN l JOIN dbo.DANG_KY d ON d.ma_lhp=l.ma_lhp WHERE l.ma_hp=@ma_hp)
     OR EXISTS(SELECT 1 FROM dbo.KET_QUA WHERE ma_hp=@ma_hp))
    AND EXISTS(SELECT 1 FROM dbo.HOC_PHAN WHERE ma_hp=@ma_hp AND (ten_hp<>TRIM(@ten_hp) OR so_tin_chi<>@so_tin_chi OR loai_hp<>@loai_hp
      OR ISNULL(tin_chi_min,so_tin_chi)<>@tin_chi_min OR ISNULL(tin_chi_max,so_tin_chi)<>@tin_chi_max OR ISNULL(ma_khoa,'')<>ISNULL(@ma_khoa,''))) THROW 52102,N'Học phần đã có đăng ký/kết quả.',1;

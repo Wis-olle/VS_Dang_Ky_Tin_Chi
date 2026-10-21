@@ -1,0 +1,7 @@
+area               digest                                                          
+------------------ ----------------------------------------------------------------
+accounts           37FB473AB17FC0BBF9BA10E9572B81D6C5CAE7F659FE73C293B32CE9F982AFCE
+credentials        307596AA1238B7374EC159F442D46EF4617617223C359239404439B84DA9C737
+registrations      B32E1BB2EAAB07DFF93F5D5AFED9354C3369C8AB1DB70D5B85E577F0C77BC748
+academic_documents C4A295C1D951B6CF23578B7A26A5B0D5C3F8C11FC34331E78015C435FC75DD8A
+permissions        NULL                                                            

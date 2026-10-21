@@ -32,8 +32,7 @@ internal static class ScheduleRules
         return $"{prefix}{maximum + 1:0000}";
     }
 
-    internal static bool ValidRoomId(string value) => value.Length <= 20
-        && Regex.IsMatch(value, @"^[A-Z0-9][A-Z0-9-]{1,19}$");
+    internal static bool ValidRoomId(string value) => Regex.IsMatch(value, @"^[A-Z0-9_-]{1,20}$");
 
     internal static bool ValidTime(ClassMeeting? meeting) => meeting is not null
         && Enum.IsDefined(meeting.Day) && meeting.StartPeriod is >= 1 and <= 12

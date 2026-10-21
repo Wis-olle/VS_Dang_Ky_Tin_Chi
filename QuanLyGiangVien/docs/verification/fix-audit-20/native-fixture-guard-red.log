@@ -1,0 +1,3 @@
+System.InvalidOperationException: Academic native checks require the explicit disposable native fixture.
+   at QuanLyGiangVien.Ui.PhaseFourAcademicUiCheck.RunAsync(CampusForm form, String cs, String output, List`1 checks) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien\Ui\PhaseFourAcademicUiCheck.cs:line 17
+   at QuanLyGiangVien.Ui.PhaseFourUiCheck.Run(CampusForm form, String cs, String output) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien\Ui\PhaseFourUiCheck.cs:line 98

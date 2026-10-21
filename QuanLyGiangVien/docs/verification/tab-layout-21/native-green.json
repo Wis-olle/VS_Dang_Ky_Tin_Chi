@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "checks": [
+    "Pages added after wrapping with a late inherited font: the entire native header is outside its viewport.",
+    "Pages added after wrapping with a late inherited font: the actual page fills the viewport.",
+    "Pages added after wrapping with a late inherited font: no native tab header intersects the visible viewport.",
+    "Runtime font change: the entire native header is outside its viewport.",
+    "Runtime font change: the actual page fills the viewport.",
+    "Runtime font change: no native tab header intersects the visible viewport.",
+    "Header padding change: the entire native header is outside its viewport.",
+    "Header padding change: the actual page fills the viewport.",
+    "Header padding change: no native tab header intersects the visible viewport.",
+    "Native multiline header after compact resize: the entire native header is outside its viewport.",
+    "Native multiline header after compact resize: the actual page fills the viewport.",
+    "Native multiline header after compact resize: no native tab header intersects the visible viewport.",
+    "Selecting another native row: the entire native header is outside its viewport.",
+    "Selecting another native row: the actual page fills the viewport.",
+    "Selecting another native row: no native tab header intersects the visible viewport.",
+    "Clearing and repopulating all pages: the entire native header is outside its viewport.",
+    "Clearing and repopulating all pages: the actual page fills the viewport.",
+    "Clearing and repopulating all pages: no native tab header intersects the visible viewport.",
+    "Native handle recreation: the entire native header is outside its viewport.",
+    "Native handle recreation: the actual page fills the viewport.",
+    "Native handle recreation: no native tab header intersects the visible viewport.",
+    "Nested navigation: the entire native header is outside its viewport.",
+    "Nested navigation: the actual page fills the viewport.",
+    "Nested navigation: no native tab header intersects the visible viewport.",
+    "The full waiting-list label fits its visible navigation button.",
+    "Rounded navigation selects the original native page."
+  ],
+  "errors": []
+}

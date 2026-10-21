@@ -21,7 +21,7 @@ public static class SqlSnapshotMapper
             var lecturers = Rows(reader, r => new Lecturer(Text(r, "ma_gv"), Text(r, "ho_ten"),
                 Date(r, "ngay_sinh"), Text(r, "gioi_tinh"), Text(r, "email"), Text(r, "sdt"),
                 Text(r, "ten_khoa"), Text(r, "hoc_vi"), Bit(r, "trang_thai") ? "Đang giảng dạy" : "Tạm nghỉ",
-                Text(r, "avatar_key"), Number(r, "active_classes")));
+                Text(r, "avatar_key"), Number(r, "active_classes"), Version(r)));
             Next(reader);
             var courses = Rows(reader, r => new Course(Text(r, "ma_hp"), Text(r, "ten_hp"),
                 Number(r, "so_tin_chi"), Text(r, "ten_khoa")));
@@ -30,11 +30,12 @@ public static class SqlSnapshotMapper
                 DateOnly.FromDateTime(Date(r, "ngay_hoc_bd")), DateOnly.FromDateTime(Date(r, "ngay_hoc_kt"))));
             Next(reader);
             var rooms = Rows(reader, r => new Room(Text(r, "ma_phong"), Text(r, "toa_nha"), Number(r, "suc_chua"),
-                Text(r, "loai_phong"), Bit(r, "trang_thai") ? SchedulingLabels.Ready : SchedulingLabels.Maintenance));
+                Text(r, "loai_phong"), Bit(r, "trang_thai") ? SchedulingLabels.Ready : SchedulingLabels.Maintenance, Version(r)));
             Next(reader);
             var classes = Rows(reader, r => new CourseClass(Text(r, "ma_lhp"), Text(r, "ma_hp"), Text(r, "ma_hk"),
                 Text(r, "ma_gv"), Number(r, "si_so_max"), Number(r, "si_so_hien_tai"),
-                ClassStatus(Text(r, "trang_thai")), []));
+                ClassStatus(Text(r, "trang_thai")), [], Version(r), Lifecycle: OptionalColumn(r,"lifecycle") ?? "REGISTRATION",
+                ActualMeetings: LifecycleRules.ReadActualCalendar(OptionalColumn(r,"actual_meetings_json"))));
             Next(reader);
             var meetings = Rows(reader, r => (ClassId: Text(r, "ma_lhp"), Meeting: new ClassMeeting(Text(r, "ma_phong"),
                 Weekday(Number(r, "thu")), Number(r, "tiet_bd"), Number(r, "tiet_kt"),
@@ -45,7 +46,7 @@ public static class SqlSnapshotMapper
             if (reader.NextResult()) throw InvalidData();
             if (meetings.Any(item => !classes.Any(c => Same(c.Id, item.ClassId)))) throw InvalidData();
             var snapshot = new DatabaseSnapshot(identities[0], faculties, lecturers, courses, semesters, rooms,
-                classes.Select(c => c with { Meetings = meetings.Where(m => Same(m.ClassId, c.Id))
+                classes.Select(c => c with { HasRegistrationHistory = registrations.Any(r => Same(r.ClassId, c.Id)), Meetings = meetings.Where(m => Same(m.ClassId, c.Id))
                     .Select(m => m.Meeting).ToImmutableArray() }).ToImmutableArray(), registrations);
             Validate(snapshot);
             return snapshot;
@@ -80,7 +81,7 @@ public static class SqlSnapshotMapper
         }
         if (value.Identity.Role != "SINH_VIEN") foreach (var lecturer in value.Lecturers)
             if (lecturer.ActiveClasses != value.Classes.Count(c => Same(c.LecturerId, lecturer.Id)
-                && c.Status != SchedulingLabels.Canceled)) throw InvalidData();
+                && LifecycleRules.BlocksResources(c))) throw InvalidData();
         _ = stores;
     }
 
@@ -90,6 +91,9 @@ public static class SqlSnapshotMapper
         while (reader.Read()) result.Add(map(reader));
         return result.ToImmutable();
     }
+    private static string Version(DbDataReader reader) => Enumerable.Range(0, reader.FieldCount)
+        .Any(i => reader.GetName(i) == "phien_ban") && reader["phien_ban"] is byte[] { Length: 8 } bytes
+        ? Convert.ToHexString(bytes) : "";
     private static void Next(DbDataReader reader) { if (!reader.NextResult()) throw InvalidData(); }
     private static string? Optional(DbDataReader reader, string name) => reader[name] is DBNull ? null
         : Convert.ToString(reader[name], CultureInfo.InvariantCulture)?.Trim();

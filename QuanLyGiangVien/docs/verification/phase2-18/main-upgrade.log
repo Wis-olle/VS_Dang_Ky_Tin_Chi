@@ -1,0 +1,15 @@
+Sao lưu DangKyTinChi_Minh trên . trước khi nâng cấp. Backup/VERIFYONLY lỗi sẽ dừng trước migration.
+Processed 848 pages for database 'DangKyTinChi_Minh', file 'DangKyTinChi_Minh' on file 1.
+Processed 2 pages for database 'DangKyTinChi_Minh', file 'DangKyTinChi_Minh_log' on file 1.
+BACKUP DATABASE successfully processed 850 pages in 0.042 seconds (158.017 MB/sec).
+The backup set on file 1 is valid.
+Backup đã kiểm tra: C:\Program Files\Microsoft SQL Server\MSSQL17.MSSQLSERVER\MSSQL\Backup\DangKyTinChi_Minh_20261018_022830_29981698713a436cb48946847d16bce1.bak
+The module 'usp_SinhVien_Luu' depends on the missing object 'dbo.usp_HocVu_Lock'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'usp_SinhVien_TrangThai' depends on the missing object 'dbo.usp_HocVu_Lock'. The module will still be created; however, it cannot run successfully until the object exists.
+
+(1 rows affected)
+Caution: Changing any part of an object name could break scripts and stored procedures.
+Caution: Changing any part of an object name could break scripts and stored procedures.
+
+(1 rows affected)
+Database DangKyTinChi_Minh đã sẵn sàng trên SQL Server '.'.

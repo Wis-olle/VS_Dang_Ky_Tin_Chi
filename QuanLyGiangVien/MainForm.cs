@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using AntdUI;
 using QuanLyGiangVien.Data;
 using QuanLyGiangVien.Data.Sql;
@@ -18,6 +19,7 @@ public sealed partial class MainForm : Window
     private IReadOnlyList<string> facultyNames;
     private readonly bool databaseMode;
     private readonly SqlMinhRepository? databaseRepository;
+    private IReadOnlyList<DatabaseRegistration> timetableRegistrations = [];
     private bool reloadBusy;
     private readonly PageHeader titlebar = new();
     private readonly Panel nav = new();
@@ -78,6 +80,7 @@ public sealed partial class MainForm : Window
                 throw new PersistenceException("Chức năng quản lý chỉ dành cho phòng đào tạo hoặc quản trị.");
             var data = database.CreateStores();
             databaseRepository = database.Repository;
+            timetableRegistrations = database.Registrations;
             store = data.Lecturers; scheduleStore = data.Scheduling;
             facultyNames = database.Faculties.Select(item => item.Name).ToArray();
             userName.Text = database.Identity.DisplayName;
@@ -125,6 +128,8 @@ public sealed partial class MainForm : Window
         };
         UiCheck.Attach(this);
         SchedulingUiCheck.Attach(this);
+        WeeklyTimetableUiCheck.Attach(this);
+        ScopedTimetableUiCheck.Attach(this);
         DatabaseUiCheck.Attach(this, database);
         KeyPreview = true;
         KeyDown += async (_, key) => {
@@ -145,6 +150,7 @@ public sealed partial class MainForm : Window
                 throw new PersistenceException("Tài khoản không còn quyền quản lý. Vui lòng đóng ứng dụng và đăng nhập lại.");
             var data = snapshot.CreateStores();
             var selectedFaculty = faculty.SelectedValue?.ToString();
+            timetableRegistrations = snapshot.Registrations;
             CaptureSchedulingView();
             if (!scheduleStore.Catalog.Semesters.SequenceEqual(data.Scheduling.Catalog.Semesters)) schedulingView = null;
             store = data.Lecturers; scheduleStore = data.Scheduling;
@@ -592,10 +598,24 @@ public sealed partial class MainForm : Window
     }
     private SchedulingPage CreateSchedulingPage()
     {
-        var page = new SchedulingPage(this, scheduleStore);
+        var page = new SchedulingPage(this, scheduleStore, directoryLoader: LoadTimetableDirectoryAsync,
+            reloadTimetable: databaseRepository != null ? ReloadDatabaseAsync : null);
         if (embedded) page.UseShellNavigation();
         if (schedulingView != null) page.RestoreView(schedulingView);
         return page;
+    }
+    private async Task<TimetableDirectory> LoadTimetableDirectoryAsync(CancellationToken token)
+    {
+        if (databaseRepository != null)
+        {
+            var students = await databaseRepository.LoadTimetableStudentsAsync(token);
+            return new(students, timetableRegistrations.Select(r => new TimetableRegistration(
+                r.StudentId, r.ClassId, r.Status != "DANG_KY")).ToImmutableArray());
+        }
+        if (databaseMode) throw new PersistenceException("Chưa có nguồn dữ liệu sinh viên cho thời khóa biểu. Vui lòng tải lại ứng dụng.");
+        return new([new(StudentTimetableDemo.StudentId, StudentTimetableDemo.StudentName, "CNTT24A", "Công nghệ thông tin 24A"),
+            new("SV2024002", "Sinh viên mẫu 2", "KT24A", "Kinh tế 24A")],
+            StudentTimetableDemo.Registrations.Select(r => new TimetableRegistration(r.StudentId, r.ClassId, r.IsCanceled)).ToImmutableArray());
     }
     private IReadOnlyList<TeachingClass> AssignedClasses(Lecturer lecturer) => scheduleStore.Classes
         .Where(item => item.LecturerId == lecturer.Id && item.Status != SchedulingLabels.Canceled)

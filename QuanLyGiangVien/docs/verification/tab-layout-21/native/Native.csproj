@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net10.0-windows</TargetFramework><UseWindowsForms>true</UseWindowsForms><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <CampusBuild Condition="'$(CampusBuild)' == ''">green</CampusBuild>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Campus"><HintPath>../../../../../.tmp/tab-layout-21/$(CampusBuild)/bin/QuanLyGiangVien/release/QuanLyGiangVien.dll</HintPath></Reference>
+    <PackageReference Include="AntdUI" Version="2.4.8"/><PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1"/>
+    <Content Include="../../../../Assets/fonts/*.ttf"><Link>Assets/fonts/%(Filename)%(Extension)</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+  </ItemGroup>
+</Project>

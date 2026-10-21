@@ -29,7 +29,7 @@ internal sealed partial class SchedulingPage : UserControl
     private readonly AntdUI.Label listTitle = AppTheme.Label("Danh sách lớp", 12, true);
     private readonly SchedulingTabs tabs = new();
     private readonly Input search = new();
-    private readonly Select filter = new(), roomFilter = new();
+    private readonly Select filter = new();
     private readonly AntdUI.Button add = SchedulingTheme.Button("Mở lớp", "PlusOutlined", true);
     private readonly AntdUI.Button previousWeek = SchedulingTheme.Button("", "LeftOutlined"), nextWeek = SchedulingTheme.Button("", "RightOutlined");
     private readonly AntdUI.Button currentWeek = SchedulingTheme.Button("Tuần này", "CalendarOutlined");
@@ -51,10 +51,15 @@ internal sealed partial class SchedulingPage : UserControl
     internal DateOnly WeekForCheck => monday;
     internal int CalendarCountForCheck => calendar.OccurrenceCount;
 
-    internal SchedulingPage(MainForm owner, ScheduleStore store)
+    internal SchedulingPage(MainForm owner, ScheduleStore store, TimetableDirectory? directory = null,
+        Func<CancellationToken, Task<TimetableDirectory>>? directoryLoader = null, Func<Task>? reloadTimetable = null)
     {
         this.owner = owner;
         Store = store;
+        timetableDirectory = directory ?? new([], []);
+        timetableDirectoryReady = directory != null;
+        loadTimetableDirectory = directoryLoader;
+        reloadTimetableSnapshot = reloadTimetable;
         BackColor = SchedulingTheme.Canvas; AutoScaleMode = AutoScaleMode.None;
         SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
         var today = DateOnly.FromDateTime(DateTime.Today);
@@ -102,8 +107,7 @@ internal sealed partial class SchedulingPage : UserControl
         search.PlaceholderText = "Tìm mã lớp, học phần, giảng viên…";
         search.BackColor = AppTheme.Canvas; search.BorderWidth = 0; search.AccessibleName = "Tìm lớp hoặc phòng";
         ConfigureSelect(filter, ["Tất cả trạng thái", SchedulingLabels.Open, SchedulingLabels.Closed, SchedulingLabels.Canceled]);
-        ConfigureSelect(roomFilter, ["Tất cả phòng", .. Store.Rooms.Select(r => r.Id)]);
-        roomFilter.AccessibleName = "Lọc lịch theo phòng";
+        BuildTimetableSelectors();
         filter.AccessibleName = "Lọc theo trạng thái hoặc tòa nhà";
         table.BackColor = Color.White; table.ForeColor = SchedulingTheme.Ink; table.Font = AppTheme.Font(9);
         table.ColumnFont = AppTheme.Font(8.5f); ownedFonts.Add(table.ColumnFont);
@@ -113,7 +117,8 @@ internal sealed partial class SchedulingPage : UserControl
         table.RowHoverBg = AppTheme.Canvas; table.RowSelectedBg = AppTheme.AccentSoft;
         table.AccessibleName = "Bảng lớp học phần hoặc phòng học";
         empty.TextMultiLine = true; empty.TextAlign = ContentAlignment.MiddleCenter;
-        listCard.Controls.AddRange([listTitle, tabs, search, filter, roomFilter, table, calendar, emptyArtwork, empty, reset, previousWeek, nextWeek, currentWeek, weekLabel]);
+        listCard.Controls.AddRange([listTitle, tabs, search, filter, timetableScope, timetableSubject, reloadTimetableSubjects,
+            table, calendar, emptyArtwork, empty, reset, previousWeek, nextWeek, currentWeek, weekLabel]);
         ConfigureTable();
     }
 
@@ -140,7 +145,6 @@ internal sealed partial class SchedulingPage : UserControl
         search.TextChanged += (_, _) => { if (!ready) return; debounce.Stop(); debounce.Start(); };
         debounce.Tick += (_, _) => { debounce.Stop(); RefreshData(); };
         filter.SelectedIndexChanged += (_, _) => { if (ready) RefreshData(); };
-        roomFilter.SelectedIndexChanged += (_, _) => { if (ready) RefreshData(); };
         semester.SelectedIndexChanged += (_, _) => { if (!ready) return; ResetWeek(); RefreshData(); };
         reset.Click += (_, _) => ResetFilters();
         add.Click += (_, _) => { if (tabs.SelectIndex == 1) EditRoom(null); else EditClass(null); };
@@ -182,7 +186,7 @@ internal sealed partial class SchedulingPage : UserControl
     }
     protected override void Dispose(bool disposing)
     {
-        if (disposing) { debounce.Dispose(); tooltips.Dispose(); SurfaceTransition.CancelAll(); }
+        if (disposing && !IsDisposed) { timetableLifetime.Cancel(); timetableLifetime.Dispose(); debounce.Dispose(); tooltips.Dispose(); SurfaceTransition.CancelAll(); }
         base.Dispose(disposing);
         if (disposing) { visuals.Dispose(); foreach (var font in ownedFonts.Distinct<Font>(ReferenceEqualityComparer.Instance)) font.Dispose(); ownedFonts.Clear(); }
     }

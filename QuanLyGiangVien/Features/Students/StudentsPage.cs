@@ -18,7 +18,7 @@ public sealed class StudentsPage : UserControl
     private readonly DateTimePicker birthday = new() { Format = DateTimePickerFormat.Custom, CustomFormat = "dd/MM/yyyy", ShowCheckBox = true };
     private readonly CheckBox active = new() { Text = "Đang hoạt động", Checked = true, AutoSize = true };
     private readonly CheckBox includeInactive = new() { Text = "Gồm sinh viên ngừng hoạt động", Checked = true, AutoSize = true };
-    private readonly Label count = new(), editorTitle = new();
+    private readonly Label count = new(), editorTitle = new(), editorNotice = new();
     private DataTable choices = new();
     private StudentRecord? baseline;
     private bool busy, binding;
@@ -42,14 +42,18 @@ public sealed class StudentsPage : UserControl
         var body = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 2, RowCount = 1, Margin = Padding.Empty };
         body.ColumnStyles.Add(new(SizeType.Percent, 100)); body.ColumnStyles.Add(new(SizeType.Absolute, S(350)));
         body.RowStyles.Add(new(SizeType.Percent, 100)); root.Controls.Add(body, 0, 2);
-        var list = new Panel { Dock = DockStyle.Fill, BackColor = Color.White, Padding = new(S(12)), Margin = new(0, 0, S(16), 0) };
+        var list = new SoftSurface { Dock = DockStyle.Fill, BackColor = Color.White, Padding = new(S(14)), Margin = new(0, 0, S(16), 0) };
         count.Dock = DockStyle.Bottom; count.Height = S(38); count.TextAlign = ContentAlignment.MiddleLeft; count.ForeColor = AppTheme.Muted;
         BuildGrid(); list.Controls.Add(grid); list.Controls.Add(count); body.Controls.Add(list, 0, 0);
-        var editor = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, AutoScroll = true, BackColor = Color.White, Padding = new(S(18)), Margin = Padding.Empty };
-        editor.ColumnStyles.Add(new(SizeType.Percent, 100)); body.Controls.Add(editor, 1, 0);
+        var editorSurface = new SoftSurface { Dock = DockStyle.Fill, Padding = new(S(18)), Margin = Padding.Empty };
+        var editor = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, AutoScroll = true, BackColor = Color.White, Margin = Padding.Empty };
+        editor.ColumnStyles.Add(new(SizeType.Percent, 100)); editorSurface.Controls.Add(editor); body.Controls.Add(editorSurface, 1, 0);
         void Add(Control control) { int row = editor.RowCount++; editor.RowStyles.Add(new(SizeType.AutoSize)); control.Anchor = AnchorStyles.Left | AnchorStyles.Right; control.Margin = new(0, 0, 0, S(10)); editor.Controls.Add(control, 0, row); }
         void Field(string text, Control control) { var label = Label(text); label.Margin = new(0, S(3), 0, S(4)); Add(label); Add(control); }
         editorTitle.AutoSize = true; editorTitle.Font = OwnFont(12, true); Add(editorTitle);
+        editorNotice.AutoSize = true; editorNotice.MaximumSize = new(S(295), 0);
+        editorNotice.ForeColor = AppTheme.Primary; editorNotice.Font = OwnFont(); editorNotice.Visible = false;
+        Add(editorNotice);
         code.MaxLength = 20; name.MaxLength = 100; email.MaxLength = 254; phone.MaxLength = 20; address.MaxLength = 250;
         foreach (var combo in new[] { faculty, major, studentClass, gender }) { combo.DropDownStyle = ComboBoxStyle.DropDownList; combo.Font = Font; }
         birthday.MaxDate = DateTime.Today; birthday.MinDate = new(1900, 1, 1); birthday.Value = DateTime.Today.AddYears(-18); birthday.Checked = false;
@@ -77,7 +81,7 @@ public sealed class StudentsPage : UserControl
     private Label Label(string text, float size = 9, bool bold = false) => new() { Text = text, AutoSize = true, Font = OwnFont(size, bold), ForeColor = AppTheme.Ink, BackColor = Color.Transparent };
     private Button Button(string text, bool primary = false)
     {
-        var button = new Button { Text = text, AutoSize = true, MinimumSize = new(S(95), S(36)), Font = Font, Padding = new(S(10), S(5), S(10), S(5)), Margin = new(0, 0, S(8), S(8)), FlatStyle = FlatStyle.Flat, BackColor = primary ? AppTheme.Primary : Color.White, ForeColor = primary ? Color.White : AppTheme.Ink, Cursor = Cursors.Hand };
+        var button = new QuanLyGiangVien.Features.Registration.ShowcaseButton { Primary = primary, Text = text, AutoSize = true, MinimumSize = new(S(95), S(36)), Font = Font, Padding = new(S(10), S(5), S(10), S(5)), Margin = new(0, 0, S(8), S(8)), FlatStyle = FlatStyle.Flat, BackColor = primary ? AppTheme.Primary : Color.White, ForeColor = primary ? Color.White : AppTheme.Ink, Cursor = Cursors.Hand };
         button.FlatAppearance.BorderColor = primary ? AppTheme.Primary : AppTheme.Line; return button;
     }
     private void BuildGrid()
@@ -110,7 +114,8 @@ public sealed class StudentsPage : UserControl
     private void PopulateClasses(string? selected = null) => Bind(studentClass, ChoiceRows.Where(row => row.Field<string>("ma_nganh") == Selected(major)).Select(row => new Choice(row.Field<string>("ma_lop")!, row.Field<string>("ten_lop")!)).Distinct(), selected);
     private static string? Optional(string value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim();
     private StudentRecord ReadEditor() => new(code.Text.Trim(), name.Text.Trim(), birthday.Checked ? birthday.Value.Date : null,
-        gender.SelectedIndex <= 0 ? null : gender.Text, Optional(email.Text), Optional(phone.Text), Optional(address.Text), Selected(major) ?? "", Selected(studentClass) ?? "", active.Checked);
+        gender.SelectedIndex <= 0 ? null : gender.Text, Optional(email.Text), Optional(phone.Text), Optional(address.Text), Selected(major) ?? "", Selected(studentClass) ?? "", active.Checked,
+        isNew ? null : baseline?.Version);
     public bool HasUnsavedChanges => baseline != null && baseline != ReadEditor();
     public bool CanLeave() => !busy && DiscardChanges();
     private bool DiscardChanges() => !HasUnsavedChanges || MessageBox.Show(this, "Có thay đổi sinh viên chưa lưu. Bỏ thay đổi này?", "Campus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
@@ -126,7 +131,8 @@ public sealed class StudentsPage : UserControl
     {
         binding = true; grid.ClearSelection(); isNew = true; code.ReadOnly = false; code.Clear(); name.Clear(); email.Clear(); phone.Clear(); address.Clear();
         birthday.Value = DateTime.Today.AddYears(-18); birthday.Checked = false; gender.SelectedIndex = 0; active.Checked = true;
-        PopulateFaculties(); PopulateMajors(); editorTitle.Text = "Thêm sinh viên mới"; baseline = ReadEditor(); binding = false;
+        PopulateFaculties(); PopulateMajors(); editorTitle.Text = "Thêm sinh viên mới"; editorNotice.Visible = false;
+        baseline = ReadEditor(); binding = false;
     }
     private void SelectStudent()
     {
@@ -138,7 +144,8 @@ public sealed class StudentsPage : UserControl
         birthday.Value = student.BirthDate is { } date && date >= birthday.MinDate && date <= birthday.MaxDate ? date : DateTime.Today.AddYears(-18); birthday.Checked = student.BirthDate != null;
         gender.SelectedIndex = student.Gender == null ? 0 : Math.Max(0, gender.Items.IndexOf(student.Gender)); email.Text = student.Email ?? ""; phone.Text = student.Phone ?? ""; address.Text = student.Address ?? ""; active.Checked = student.Active;
         PopulateFaculties(Convert.ToString(view.Row["ma_khoa"])); PopulateMajors(student.Major); PopulateClasses(student.Class);
-        editorTitle.Text = "Hồ sơ · " + student.Code; baseline = ReadEditor(); binding = false;
+        editorTitle.Text = "Hồ sơ · " + student.Code; editorNotice.Visible = false;
+        baseline = student; baseline = ReadEditor(); binding = false;
     }
     private void RestoreSelection()
     {
@@ -156,7 +163,7 @@ public sealed class StudentsPage : UserControl
         if (isNew || baseline == null) throw new ArgumentException("Chọn sinh viên cần đổi trạng thái.");
         if (HasUnsavedChanges) throw new ArgumentException("Lưu hoặc bỏ thay đổi trong biểu mẫu trước khi đổi trạng thái.");
         if (baseline.Active && MessageBox.Show(this, "Ngừng hoạt động sẽ chặn sinh viên đăng nhập và đăng ký học. Tiếp tục?", "Campus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
-        await repository.SetStatusAsync(baseline.Code, !baseline.Active); changed(); await ReloadAsync();
+        await repository.SetStatusAsync(baseline, !baseline.Active); changed(); await ReloadAsync();
     }
     private void ShowProfile()
     {
@@ -168,7 +175,23 @@ public sealed class StudentsPage : UserControl
     {
         if (busy || IsDisposed) return; busy = true; Enabled = false; UseWaitCursor = true;
         try { await operation(); }
-        catch (Exception error) when (error is ArgumentException or PersistenceException or InvalidOperationException) { if (!IsDisposed) MessageBox.Show(this, error.Message, "Quản lý sinh viên", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+        catch (Exception error) when (error is ArgumentException or PersistenceException or InvalidOperationException)
+        {
+            if (!IsDisposed)
+            {
+                if (error is PersistenceException { Kind: PersistenceFailure.DataConflict })
+                {
+                    editorNotice.Text = "Hồ sơ đã đổi ở phiên khác. Bản nháp vẫn được giữ. Ghi lại nội dung cần giữ, rồi bấm Tải lại để cập nhật.";
+                    editorNotice.Visible = true;
+                    if (editorNotice.Parent is ScrollableControl editor)
+                    {
+                        editor.PerformLayout();
+                        editor.ScrollControlIntoView(editorNotice);
+                    }
+                }
+                MessageBox.Show(this, error.Message, "Quản lý sinh viên", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         finally { busy = false; if (!IsDisposed) { Enabled = true; UseWaitCursor = false; } }
     }
     protected override void Dispose(bool disposing)

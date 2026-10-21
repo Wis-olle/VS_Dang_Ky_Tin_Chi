@@ -59,19 +59,19 @@ BEGIN
  DELETE dbo.APP_LOGIN_CHALLENGE WHERE id=@challenge AND owner_name=ORIGINAL_LOGIN();
  SELECT @verifier=c.verifier,@until=c.locked_until,@role=t.vai_tro,@active=t.trang_thai,@sv=t.ma_sv
   FROM dbo.APP_CREDENTIAL c WITH(UPDLOCK,HOLDLOCK) JOIN dbo.TAI_KHOAN t ON t.ma_tk=c.ma_tk WHERE c.ma_tk=@id;
- IF @until>SYSUTCDATETIME() BEGIN COMMIT; THROW 52104,N'Tạm khóa đăng nhập.',1; END;
+ IF @until>SYSUTCDATETIME() BEGIN COMMIT; THROW 52404,N'Tạm khóa đăng nhập.',1; END;
  IF @id IS NULL OR @verifier IS NULL OR @proof IS NULL OR @nonce IS NULL
    OR HASHBYTES('SHA2_256',@nonce+@verifier)<>@proof
  BEGIN
   UPDATE dbo.APP_CREDENTIAL SET failed_count=CASE WHEN locked_until<=SYSUTCDATETIME() THEN 1 ELSE failed_count+1 END,
    locked_until=CASE WHEN failed_count>=4 AND (locked_until IS NULL OR locked_until>SYSUTCDATETIME()) THEN DATEADD(MINUTE,10,SYSUTCDATETIME()) ELSE NULL END
    WHERE ma_tk=@id;
-  COMMIT; THROW 52101,N'Đăng nhập thất bại.',1;
+  COMMIT; THROW 52401,N'Đăng nhập thất bại.',1;
  END;
  IF @active<>1 OR (@role='SINH_VIEN' AND NOT EXISTS(SELECT 1 FROM dbo.SINH_VIEN WHERE ma_sv=@sv AND trang_thai=1))
- BEGIN COMMIT; THROW 52102,N'Tài khoản hoặc hồ sơ không hoạt động.',1; END;
+ BEGIN COMMIT; THROW 52402,N'Tài khoản hoặc hồ sơ không hoạt động.',1; END;
  IF @portal IS NULL OR NOT ((@portal='STUDENT' AND @role='SINH_VIEN') OR (@portal='TRAINING' AND @role IN ('DAO_TAO','QUAN_TRI')))
- BEGIN COMMIT; THROW 52103,N'Sai cổng đăng nhập.',1; END;
+ BEGIN COMMIT; THROW 52403,N'Sai cổng đăng nhập.',1; END;
  UPDATE dbo.APP_CREDENTIAL SET failed_count=0,locked_until=NULL WHERE ma_tk=@id;
  UPDATE dbo.TAI_KHOAN SET lan_dang_nhap_cuoi=DATEADD(HOUR,7,SYSUTCDATETIME()) WHERE ma_tk=@id;
  DECLARE @token varbinary(32)=CRYPT_GEN_RANDOM(32);
@@ -89,7 +89,7 @@ BEGIN
   SELECT 1 FROM dbo.APP_SESSION s JOIN dbo.TAI_KHOAN t ON t.ma_tk=s.ma_tk
   WHERE s.token_hash=HASHBYTES('SHA2_256',@token) AND s.owner_name=ORIGINAL_LOGIN()
    AND s.expires>SYSUTCDATETIME() AND t.trang_thai=1)
-  THROW 52105,N'Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.',1;
+  THROW 52405,N'Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.',1;
  EXEC sys.sp_set_session_context @key=N'campus_token',@value=@token,@read_only=1;
 END;
 GO

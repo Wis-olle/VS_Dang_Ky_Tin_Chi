@@ -37,4 +37,45 @@ public class StudentsTests
         Assert.Throws<ArgumentException>(() => StudentRepository.Validate(Student with { Code = code, Name = name, Email = email }));
     [Fact]
     public void FutureBirthDateRejected() => Assert.Throws<ArgumentException>(() => StudentRepository.Validate(Student with { BirthDate = DateTime.Today.AddDays(1) }));
+
+    [Fact]
+    public void ExistingStudentCannotSaveWithoutTheLoadedVersion() =>
+        Assert.Throws<ArgumentException>(() => StudentRepository.SaveCommand(Student, false));
+
+    [Fact]
+    public void SaveAndStatusCarryTheLoadedImmutableVersion()
+    {
+        var loaded = Student with { Version = new string('A', 64) };
+        using var save = StudentRepository.SaveCommand(loaded with { Phone = "0901234567" }, false);
+        using var status = StudentRepository.StatusCommand(loaded, false);
+        foreach (var command in new[] { save, status })
+        {
+            Assert.Equal(SqlDbType.Binary, command.Parameters["@phien_ban"].SqlDbType);
+            Assert.Equal(32, command.Parameters["@phien_ban"].Size);
+            Assert.Equal(Convert.FromHexString(loaded.Version), (byte[])command.Parameters["@phien_ban"].Value);
+        }
+        Assert.Equal(new string('A', 64), loaded.Version);
+        Assert.Equal(false, status.Parameters["@trang_thai"].Value);
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("invalid-version")]
+    public void StatusRejectsMissingOrMalformedVersion(string? version) =>
+        Assert.Throws<ArgumentException>(() => StudentRepository.StatusCommand(Student with { Version = version }, false));
+
+    [Fact]
+    public void ReadPreservesDatabaseVersionWithoutSharingMutableBytes()
+    {
+        var table = new DataTable();
+        foreach (var field in new[] { "ma_sv", "ho_ten", "ngay_sinh", "gioi_tinh", "email", "sdt", "dia_chi", "ma_nganh", "ma_lop", "trang_thai" })
+            table.Columns.Add(field, field == "ngay_sinh" ? typeof(DateTime) : field == "trang_thai" ? typeof(bool) : typeof(string));
+        table.Columns.Add("phien_ban", typeof(byte[]));
+        var version = Enumerable.Repeat((byte)0xA5, 32).ToArray();
+        table.Rows.Add("SV2024001", "Sinh viên mẫu", DBNull.Value, DBNull.Value, DBNull.Value, DBNull.Value, DBNull.Value, "CNTT", "CNTT01", true, version);
+        var loaded = StudentRepository.FromRow(table.Rows[0]);
+        version[0] = 0;
+        Assert.Equal(string.Concat(Enumerable.Repeat("A5", 32)), loaded.Version);
+    }
 }

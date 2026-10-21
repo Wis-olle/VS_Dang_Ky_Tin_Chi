@@ -1,0 +1,4 @@
+Processed 536 pages for database 'DangKyTinChi_Minh_Test_Phase1F06Restore', file 'DangKyTinChi_Minh_Test_Phase1F06Backup' on file 1.
+Processed 2 pages for database 'DangKyTinChi_Minh_Test_Phase1F06Restore', file 'DangKyTinChi_Minh_Test_Phase1F06Backup_log' on file 1.
+RESTORE DATABASE successfully processed 538 pages in 0.013 seconds (323.016 MB/sec).
+PASS: full backup restored separately; marker77 and prior version77 preserved; upgraded source version1

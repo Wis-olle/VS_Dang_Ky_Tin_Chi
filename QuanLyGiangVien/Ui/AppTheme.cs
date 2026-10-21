@@ -24,6 +24,10 @@ public static class AppTheme
     public static readonly Color Lilac = ColorTranslator.FromHtml("#F6EDFE");
     public static readonly Color Mint = ColorTranslator.FromHtml("#E9F9EF");
     public static readonly Color FacultyHoverFill = ColorTranslator.FromHtml("#FCE7F3");
+    public static readonly Color TableHeader = ColorTranslator.FromHtml("#FBF7FD");
+    public static readonly Color Selection = ColorTranslator.FromHtml("#FBE9E5");
+    public static readonly Color SubtleLilac = ColorTranslator.FromHtml("#FBF7FD");
+    public static readonly Color SubtlePeach = ColorTranslator.FromHtml("#FCECE8");
     public const string HeroGradient = "90, #E2D6FC, #FCCAC1";
     public static readonly Color Green = ColorTranslator.FromHtml("#286644");
     public static readonly Color Danger = ColorTranslator.FromHtml("#B62D3C");

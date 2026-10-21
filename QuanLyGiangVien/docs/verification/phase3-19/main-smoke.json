@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "portal": "STUDENT",
+      "Role": "SINH_VIEN",
+      "timetableClasses": 4,
+      "cartAvailable": true
+    },
+    {
+      "portal": "TRAINING",
+      "Role": "DAO_TAO",
+      "classes": 10,
+      "explicitPermissions": 0
+    }
+  ]
+}

@@ -1,9 +1,11 @@
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
 GO
+IF COL_LENGTH('dbo.LOP_HOC_PHAN','phien_ban') IS NULL ALTER TABLE dbo.LOP_HOC_PHAN ADD phien_ban rowversion;
+GO
 CREATE OR ALTER PROCEDURE dbo.usp_Minh_LuuLop
  @ma_lhp varchar(20),@ma_hp varchar(20),@ma_gv varchar(20),@ma_hk varchar(20),
- @si_so_max int,@trang_thai varchar(12),@lich_json nvarchar(max),@la_moi bit
+ @si_so_max int,@trang_thai varchar(12),@lich_json nvarchar(max),@la_moi bit,@phien_ban binary(8)=NULL
 AS
 BEGIN
  SET NOCOUNT ON; SET XACT_ABORT ON;
@@ -44,6 +46,10 @@ BEGIN
   SELECT @old_hp=ma_hp,@old_gv=ma_gv FROM dbo.LOP_HOC_PHAN WITH(UPDLOCK,HOLDLOCK) WHERE ma_lhp=@ma_lhp;
   IF @la_moi=1 AND @old_hp IS NOT NULL THROW 52034,N'Mã lớp học phần đã tồn tại.',1;
   IF @la_moi=0 AND @old_hp IS NULL THROW 52035,N'Lớp không còn tồn tại. Hãy tải lại.',1;
+  IF @la_moi=0 AND NOT EXISTS(SELECT 1 FROM dbo.LOP_HOC_PHAN WHERE ma_lhp=@ma_lhp AND phien_ban=@phien_ban)
+   THROW 52046,N'Dữ liệu đã thay đổi. Vui lòng tải lại trước khi sửa hoặc xóa.',1;
+  IF EXISTS(SELECT 1 FROM dbo.DANG_KY WHERE ma_lhp=@ma_lhp) AND (@old_hp<>@ma_hp OR @old_hk<>@ma_hk)
+   THROW 52047,N'Lớp có lịch sử đăng ký; không thể đổi học phần hoặc học kỳ.',1;
   SELECT @tc=so_tin_chi FROM dbo.HOC_PHAN WITH(HOLDLOCK) WHERE ma_hp=@ma_hp AND trang_thai=1;
   IF @tc IS NULL OR @tc>12 THROW 52036,N'Học phần cần đang hoạt động và có từ 1 đến 12 tín chỉ.',1;
   IF NOT EXISTS(SELECT 1 FROM dbo.GIANG_VIEN WITH(HOLDLOCK) WHERE ma_gv=@ma_gv AND trang_thai=1)
@@ -55,12 +61,12 @@ BEGIN
    THROW 52039,N'Ngày buổi học phải nằm trong thời gian học của học kỳ.',1;
   SELECT @count=COUNT(*) FROM dbo.DANG_KY WHERE ma_lhp=@ma_lhp AND trang_thai='DANG_KY';
   IF @count>@si_so_max THROW 52040,N'Sĩ số tối đa không được thấp hơn số đăng ký thực tế.',1;
-  IF @count>0 AND (@old_hp<>@ma_hp OR @old_gv<>@ma_gv OR @old_hk<>@ma_hk OR
+  IF EXISTS(SELECT 1 FROM dbo.DANG_KY WHERE ma_lhp=@ma_lhp) AND (@old_hp<>@ma_hp OR @old_gv<>@ma_gv OR @old_hk<>@ma_hk OR
    EXISTS(SELECT ma_phong,thu,tiet_bd,tiet_kt,ngay_bd,ngay_kt FROM @lich
     EXCEPT SELECT ma_phong,thu,tiet_bd,tiet_kt,ngay_bd,ngay_kt FROM dbo.LICH_HOC WHERE ma_lhp=@ma_lhp) OR
    EXISTS(SELECT ma_phong,thu,tiet_bd,tiet_kt,ngay_bd,ngay_kt FROM dbo.LICH_HOC WHERE ma_lhp=@ma_lhp
     EXCEPT SELECT ma_phong,thu,tiet_bd,tiet_kt,ngay_bd,ngay_kt FROM @lich))
-   THROW 52041,N'Lớp đã có sinh viên đăng ký; không thể đổi học phần, học kỳ, giảng viên hoặc buổi học.',1;
+   THROW 52041,N'Lớp có lịch sử đăng ký; không thể đổi học phần, học kỳ, giảng viên hoặc buổi học.',1;
   IF @trang_thai='HUY' AND @count>0 THROW 52042,N'Lớp còn đăng ký hợp lệ; cần xử lý đăng ký trước khi hủy lớp.',1;
   IF EXISTS(SELECT 1 FROM @lich a JOIN @lich b ON a.id<b.id AND a.thu=b.thu AND a.tiet_bd<=b.tiet_kt AND b.tiet_bd<=a.tiet_kt
    CROSS APPLY(SELECT CASE WHEN a.ngay_bd>b.ngay_bd THEN a.ngay_bd ELSE b.ngay_bd END bd,
@@ -81,19 +87,20 @@ BEGIN
    VALUES(@ma_lhp,@ma_hp,@ma_gv,@ma_hk,NULL,@si_so_max,@count,@state);
   ELSE UPDATE dbo.LOP_HOC_PHAN SET ma_hp=@ma_hp,ma_gv=@ma_gv,ma_hk=@ma_hk,
    si_so_max=@si_so_max,si_so_hien_tai=@count,trang_thai=@state WHERE ma_lhp=@ma_lhp;
-  -- Keep schedule row identities when registration is active and the schedule is unchanged.
-  IF @count=0
+  -- Historical joins must retain the original schedule, including canceled registrations.
+  IF NOT EXISTS(SELECT 1 FROM dbo.DANG_KY WHERE ma_lhp=@ma_lhp)
   BEGIN
    DELETE dbo.LICH_HOC WHERE ma_lhp=@ma_lhp;
    INSERT dbo.LICH_HOC(ma_lhp,ma_phong,thu,tiet_bd,tiet_kt,ngay_bd,ngay_kt)
     SELECT @ma_lhp,ma_phong,thu,tiet_bd,tiet_kt,ngay_bd,ngay_kt FROM @lich;
   END;
+  SELECT @count AS si_so_hien_tai,phien_ban,CONVERT(bit,CASE WHEN EXISTS(SELECT 1 FROM dbo.DANG_KY WHERE ma_lhp=@ma_lhp) THEN 1 ELSE 0 END) co_lich_su
+   FROM dbo.LOP_HOC_PHAN WHERE ma_lhp=@ma_lhp;
   COMMIT;
-  SELECT @count AS si_so_hien_tai;
  END TRY BEGIN CATCH IF XACT_STATE()<>0 ROLLBACK; THROW; END CATCH
 END;
 GO
-CREATE OR ALTER PROCEDURE dbo.usp_Minh_XoaLop @ma_lhp varchar(20)
+CREATE OR ALTER PROCEDURE dbo.usp_Minh_XoaLop @ma_lhp varchar(20),@phien_ban binary(8)=NULL
 AS
 BEGIN
  SET NOCOUNT ON; SET XACT_ABORT ON;
@@ -105,6 +112,8 @@ BEGIN
   SELECT @lock=ma_hk FROM dbo.HOC_KY WITH(HOLDLOCK) WHERE ma_hk=@hk;
   SELECT @lock=ma_lhp FROM dbo.LOP_HOC_PHAN WITH(UPDLOCK,HOLDLOCK) WHERE ma_lhp=@ma_lhp;
   IF @lock IS NULL THROW 52035,N'Lớp không còn tồn tại. Hãy tải lại.',1;
+  IF NOT EXISTS(SELECT 1 FROM dbo.LOP_HOC_PHAN WHERE ma_lhp=@ma_lhp AND phien_ban=@phien_ban)
+   THROW 52046,N'Dữ liệu đã thay đổi. Vui lòng tải lại trước khi sửa hoặc xóa.',1;
   IF EXISTS(SELECT 1 FROM dbo.DANG_KY WHERE ma_lhp=@ma_lhp)
    THROW 52045,N'Lớp có lịch sử đăng ký; không thể xóa.',1;
   DELETE dbo.LICH_HOC WHERE ma_lhp=@ma_lhp;

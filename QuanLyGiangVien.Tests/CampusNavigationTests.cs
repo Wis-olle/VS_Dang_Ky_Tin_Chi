@@ -10,7 +10,7 @@ public sealed class CampusNavigationTests
     [InlineData("QUAN_TRI")]
     public void TrainingAndAdminReceiveOnlyAvailableManagementModules(string role)
     {
-        Assert.Equal(new[] { CampusModule.Lecturers, CampusModule.Scheduling, CampusModule.Catalogs, CampusModule.Students, CampusModule.Reports },
+        Assert.Equal(new[] { CampusModule.Lecturers, CampusModule.Scheduling, CampusModule.Catalogs, CampusModule.Students, CampusModule.Academics, CampusModule.Reports },
             CampusNavigation.ForRole(role));
         Assert.DoesNotContain(CampusModule.Registration, CampusNavigation.ForRole(role));
     }
@@ -22,6 +22,7 @@ public sealed class CampusNavigationTests
         Assert.False(CampusNavigation.CanOpen("SINH_VIEN", CampusModule.Catalogs));
         Assert.False(CampusNavigation.CanOpen("SINH_VIEN", CampusModule.Reports));
         Assert.False(CampusNavigation.CanOpen("SINH_VIEN", CampusModule.Students));
+        Assert.False(CampusNavigation.CanOpen("SINH_VIEN", CampusModule.Academics));
     }
 
     [Theory]

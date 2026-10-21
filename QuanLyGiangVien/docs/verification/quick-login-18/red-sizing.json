@@ -1,0 +1,1 @@
+{"passed":false,"checks":["Both quick-login buttons are visible for the configured database.","The login screen never displays the stored sample password."],"error":"The entire login card fits the actual visible compact client rectangle, including its bottom edge."}

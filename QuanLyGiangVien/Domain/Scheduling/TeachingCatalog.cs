@@ -1,14 +1,26 @@
 namespace QuanLyGiangVien.Domain.Scheduling;
 
+public sealed record TeachingLecturer(string Id, string Name, string Status);
+
 public sealed class TeachingCatalog
 {
-    private readonly Func<IReadOnlyList<Lecturer>> lecturers;
+    private readonly Func<IReadOnlyList<TeachingLecturer>> lecturers;
     public IReadOnlyList<Course> Courses { get; }
     public IReadOnlyList<Semester> Semesters { get; }
-    public IReadOnlyList<Lecturer> Lecturers => Array.AsReadOnly(lecturers().ToArray());
+    public IReadOnlyList<TeachingLecturer> Lecturers => Array.AsReadOnly(lecturers().ToArray());
 
     public TeachingCatalog(IEnumerable<Course> courses, IEnumerable<Semester> semesters,
         Func<IReadOnlyList<Lecturer>> lecturers)
+        : this(courses, semesters, () => lecturers().Select(l => new TeachingLecturer(l.Id, l.Name, l.Status)).ToArray(), true)
+    {
+        ArgumentNullException.ThrowIfNull(lecturers);
+    }
+
+    public static TeachingCatalog ForTimetable(IEnumerable<Course> courses, IEnumerable<Semester> semesters,
+        IReadOnlyList<TeachingLecturer> teachers) => new(courses, semesters, () => teachers, true);
+
+    private TeachingCatalog(IEnumerable<Course> courses, IEnumerable<Semester> semesters,
+        Func<IReadOnlyList<TeachingLecturer>> lecturers, bool readModel)
     {
         ArgumentNullException.ThrowIfNull(courses);
         ArgumentNullException.ThrowIfNull(semesters);

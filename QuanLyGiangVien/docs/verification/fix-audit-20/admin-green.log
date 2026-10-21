@@ -1,0 +1,12 @@
+PASS: Creation requires explicit first-administrator switch.
+PASS: Unsafe username is rejected before SQL.
+PASS: Blank authorization reason is rejected.
+PASS: Handoff outside ignored local directory is rejected.
+Đã khởi tạo quản trị đầu tiên. Bàn giao riêng tại E:\AI Agents\Dangkytinchi\.tmp\first-admin-tests\4fd15b13d6d84c0da142011abd449fcc\admin.txt; đăng nhập cổng PĐT rồi đổi mật khẩu.
+PASS: Exactly one new active administrator is provisioned.
+PASS: Existing accounts are preserved.
+PASS: Bootstrap has a durable audit entry.
+PASS: Handoff password matches committed verifier.
+PASS: A second bootstrap is rejected when an administrator exists.
+PASS: Existing username is never promoted or overwritten.
+PASS: Student identity remains unchanged after rejection.

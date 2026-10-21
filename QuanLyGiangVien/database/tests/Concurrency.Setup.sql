@@ -15,6 +15,7 @@ EXEC dbo.usp_Minh_LuuLop 'TEST_CONCURRENT','IT101','GV0009','HK1-2627',60,'DANG_
 UPDATE dbo.HOC_KY SET tg_bat_dau=DATEADD(DAY,-1,DATEADD(HOUR,7,SYSUTCDATETIME())),
  tg_ket_thuc=DATEADD(DAY,1,DATEADD(HOUR,7,SYSUTCDATETIME())),
  han_huy_dk=DATEADD(DAY,1,DATEADD(HOUR,7,SYSUTCDATETIME())),trang_thai='DANG_MO' WHERE ma_hk='HK1-2627';
+IF COL_LENGTH('dbo.HOC_KY','lifecycle') IS NOT NULL EXEC(N'UPDATE dbo.HOC_KY SET lifecycle=''REGISTRATION'' WHERE ma_hk=''HK1-2627'';');
 UPDATE dbo.TAI_KHOAN SET vai_tro='SINH_VIEN',ma_sv='SV2024002' WHERE ten_dang_nhap=ORIGINAL_LOGIN();
 GO
 -- Pause inside Huệ's own transaction after INSERT. Authentication has already

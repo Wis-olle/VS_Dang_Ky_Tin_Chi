@@ -6,6 +6,8 @@ using QuanLyGiangVien.Features.Catalogs;
 using QuanLyGiangVien.Features.Registration;
 using QuanLyGiangVien.Features.StudentTimetable;
 using QuanLyGiangVien.Features.Students;
+using QuanLyGiangVien.Features.Academics;
+using QuanLyGiangVien.Features.Accounts;
 using QuanLyGiangVien.Ui;
 
 namespace QuanLyGiangVien.Features.Shell;
@@ -24,6 +26,7 @@ internal sealed partial class CampusForm : Window
     private readonly AntdUI.Panel connectCard = new();
     private readonly AntdUI.Label brand, identityText, roleText, connectionText, errorText;
     private readonly AntdUI.Button connect, disconnect;
+    private readonly AntdUI.Button changePassword = new();
     private Control? currentPage;
     private Func<bool>? canLeave;
     private DatabaseIdentity? identity;
@@ -54,11 +57,14 @@ internal sealed partial class CampusForm : Window
         connectionText = TextLabel("", 9, false, AppTheme.Muted); errorText = TextLabel("", 9, false, AppTheme.Danger);
         connect = ActionButton("Kết nối hệ thống", true); disconnect = ActionButton("Ngắt kết nối");
         BuildChrome();
+        BuildSessionRecovery();
         if (passwordLogin) BuildPasswordLogin(); else BuildConnection();
         LayoutShell();
         connect.Click += async (_, _) => { if (passwordLogin) await AuthenticateAsync(); else await ConnectAsync(); };
         disconnect.Click += async (_, _) => { if (passwordLogin) await LogoutAsync(); else Disconnect(); };
         SizeChanged += (_, _) => LayoutShell();
+        ClientSizeChanged += (_, _) => LayoutShell();
+        Activated += (_, _) => { if (passwordLogin && identity == null && !busy) RefreshQuickLogin(); };
         FormClosing += (_, args) => { if (busy || canLeave?.Invoke() == false) args.Cancel = true; };
         KeyPreview = true;
         KeyDown += async (_, args) => {
@@ -69,6 +75,13 @@ internal sealed partial class CampusForm : Window
         UnifiedUiCheck.Attach(this, connectionString);
         StudentPortalUiCheck.Attach(this, connectionString);
         PasswordLoginUiCheck.Attach(this);
+        PhaseOneUiCheck.Attach(this, connectionString);
+        PhaseTwoUiCheck.Attach(this, connectionString);
+        PhaseThreeUiCheck.Attach(this, connectionString);
+        PhaseFourUiCheck.Attach(this, connectionString);
+        AuditFixUiCheck.Attach(this, connectionString);
+        ShowcaseUiCheck.Attach(this, connectionString);
+        QuickLoginUiCheck.Attach(this, connectionString);
         if (studentPortal && !passwordLogin)
         {
             studentOnly = true;
@@ -153,6 +166,10 @@ internal sealed partial class CampusForm : Window
                 var students = new StudentsPage(connectionString, DataChanged);
                 currentPage = students; canLeave = students.CanLeave; reload = students.ReloadAsync;
                 break;
+            case CampusModule.Academics:
+                var academics = new AcademicPage(connectionString, DataChanged);
+                currentPage = academics; canLeave = academics.CanLeave; reload = academics.ReloadAsync;
+                break;
             default: throw new ArgumentOutOfRangeException(nameof(module));
         }
         connectCard.Visible = false;
@@ -161,6 +178,7 @@ internal sealed partial class CampusForm : Window
         host.Controls.Add(currentPage); currentPage.BringToFront();
         if (currentPage is Form embeddedForm) embeddedForm.Show();
         else currentPage.Show();
+        if (currentPage is CatalogsPage or StudentsPage or AcademicPage) ShowcaseStyle.Apply(currentPage);
         host.PerformLayout();
         FitCurrentPage();
         foreach (var button in moduleButtons) ApplySelected(button.Value, button.Key == module);
@@ -173,6 +191,9 @@ internal sealed partial class CampusForm : Window
         identity = user; identityText.Text = user.DisplayName;
         Text = user.Role == "SINH_VIEN" ? "Campus · Cổng sinh viên" : "Campus · Đăng ký tín chỉ";
         roleText.Text = user.Role == "SINH_VIEN" ? user.StudentId : user.Role == "QUAN_TRI" ? "Quản trị" : "Phòng đào tạo";
+        if (Environment.GetEnvironmentVariable("CAMPUS_SHOWCASE_DEMO") == "1"
+            && new Microsoft.Data.SqlClient.SqlConnectionStringBuilder(connectionString).InitialCatalog.StartsWith("DangKyTinChi_Minh_Test_Showcase_", StringComparison.Ordinal))
+        { roleText.Text += " · Dữ liệu mô phỏng"; Text += " · Bản trình diễn"; }
         foreach (var button in moduleButtons.Values) { ownedFonts.Remove(button.Font); button.Font.Dispose(); button.Dispose(); }
         moduleButtons.Clear();
         foreach (var module in CampusNavigation.ForRole(user.Role))
@@ -189,6 +210,7 @@ internal sealed partial class CampusForm : Window
             moduleButtons.Add(module, button); navigation.Controls.Add(button);
         }
         disconnect.Visible = identityText.Visible = roleText.Visible = true;
+        changePassword.Visible = passwordLogin;
         LayoutShell();
     }
 
@@ -199,9 +221,10 @@ internal sealed partial class CampusForm : Window
     }
     private void DisconnectCore()
     {
+        sessionBlocked = false; sessionNotice.Visible = false; host.Enabled = true;
         ClearPage(); identity = null; selectedModule = null;
         foreach (var button in moduleButtons.Values) { ownedFonts.Remove(button.Font); button.Font.Dispose(); button.Dispose(); }
-        moduleButtons.Clear(); disconnect.Visible = identityText.Visible = roleText.Visible = false;
+        moduleButtons.Clear(); disconnect.Visible = identityText.Visible = roleText.Visible = changePassword.Visible = false;
         connectCard.Visible = true; errorText.Text = ""; LayoutShell();
     }
     private void ClearPage()
@@ -212,16 +235,16 @@ internal sealed partial class CampusForm : Window
     private void DataChanged() => host.AccessibleDescription = "Dữ liệu vừa được cập nhật. Chuyển trang hoặc bấm F5 để nạp dữ liệu mới.";
     private void SetBusy(bool value)
     {
-        busy = value; connect.Enabled = disconnect.Enabled = !value;
-        if (currentPage != null) currentPage.Enabled = !value;
-        foreach (var button in moduleButtons.Values) button.Enabled = !value;
+        busy = value; connect.Enabled = disconnect.Enabled = changePassword.Enabled = !value;
+        if (currentPage != null) currentPage.Enabled = !value && !sessionBlocked;
+        foreach (var button in moduleButtons.Values) button.Enabled = !value && !sessionBlocked;
         UseWaitCursor = value;
     }
     private static string SafeMessage(Exception error) => error is PersistenceException ? error.Message
         : "Chưa thể mở phân hệ. Kiểm tra dữ liệu và các script tích hợp, sau đó kết nối lại.";
     protected override void Dispose(bool disposing)
     {
-        if (disposing) { lifetime.Cancel(); ClearPage(); lifetime.Dispose(); if (passwordLogin) _ = new PasswordLogin(connectionString).SignOutAsync(); }
+        if (disposing) { AppSqlConnection.SessionExpired -= OnSessionExpired; AppSqlConnection.SessionRetryBlocked -= OnSessionExpired; lifetime.Cancel(); ClearPage(); lifetime.Dispose(); if (passwordLogin) _ = new PasswordLogin(connectionString).SignOutAsync(); }
         base.Dispose(disposing);
         if (disposing) { foreach (var font in ownedFonts) font.Dispose(); ownedFonts.Clear(); }
     }

@@ -1,0 +1,66 @@
+[
+  {
+    "caseName": "ZeroCreditGroup",
+    "actual": "No error"
+  },
+  {
+    "caseName": "MinimumGroupUsedAsCapacity",
+    "expectedAllocatedDone": 6,
+    "expectedSatisfied": true,
+    "actualAllocatedDone": 6,
+    "actualSatisfied": true,
+    "rows": [
+      {
+        "Requirement": {
+          "Id": "A",
+          "Course": "A",
+          "Group": "G1",
+          "Credits": 3,
+          "Required": true,
+          "Equivalence": null
+        },
+        "Done": 3,
+        "InProgress": 0,
+        "Planned": 0
+      },
+      {
+        "Requirement": {
+          "Id": "B",
+          "Course": "B",
+          "Group": "G1",
+          "Credits": 3,
+          "Required": true,
+          "Equivalence": null
+        },
+        "Done": 3,
+        "InProgress": 0,
+        "Planned": 0
+      }
+    ]
+  },
+  {
+    "caseName": "CrossStageRerouting",
+    "expectedDone": 3,
+    "expectedInProgress": 3,
+    "actualDone": 3,
+    "actualInProgress": 3,
+    "allocations": [
+      {
+        "SourceCourse": "X",
+        "TargetId": "B",
+        "TargetCourse": "B",
+        "Group": "G2",
+        "Stage": "DONE",
+        "Credits": 3
+      },
+      {
+        "SourceCourse": "Y",
+        "TargetId": "A",
+        "TargetCourse": "A",
+        "Group": "G1",
+        "Stage": "IN_PROGRESS",
+        "Credits": 3
+      }
+    ]
+  }
+]

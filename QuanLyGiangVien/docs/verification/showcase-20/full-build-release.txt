@@ -1,0 +1,13 @@
+  Determining projects to restore...
+  Restored WORKSPACE\QuanLyGiangVien.Tests\QuanLyGiangVien.Tests.csproj (in 302 ms).
+  Restored WORKSPACE\QuanLyGiangVien\QuanLyGiangVien.csproj (in 302 ms).
+  Restored WORKSPACE\QuanLyGiangVien.Worker\QuanLyGiangVien.Worker.csproj (in 302 ms).
+  QuanLyGiangVien -> WORKSPACE\.tmp\verify-campus\Vfaee42bd1778\artifacts\bin\QuanLyGiangVien\release\QuanLyGiangVien.dll
+  QuanLyGiangVien.Tests -> WORKSPACE\.tmp\verify-campus\Vfaee42bd1778\artifacts\bin\QuanLyGiangVien.Tests\release\QuanLyGiangVien.Tests.dll
+  QuanLyGiangVien.Worker -> WORKSPACE\.tmp\verify-campus\Vfaee42bd1778\artifacts\bin\QuanLyGiangVien.Worker\release\QuanLyGiangVien.Worker.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.81

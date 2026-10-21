@@ -1,0 +1,26 @@
+Nonqualified transactions are being rolled back. Estimated rollback completion: 0%.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 100%.
+DROPPED DangKyTinChi_Minh_Test_Phase1Auth
+Nonqualified transactions are being rolled back. Estimated rollback completion: 0%.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 100%.
+DROPPED DangKyTinChi_Minh_Test_Phase1Concurrency
+DROPPED DangKyTinChi_Minh_Test_Phase1Core
+Nonqualified transactions are being rolled back. Estimated rollback completion: 0%.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 100%.
+DROPPED DangKyTinChi_Minh_Test_Phase1Scheduling
+Nonqualified transactions are being rolled back. Estimated rollback completion: 0%.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 100%.
+DROPPED DangKyTinChi_Minh_Test_Phase1UiRetry
+Nonqualified transactions are being rolled back. Estimated rollback completion: 0%.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 100%.
+DROPPED DangKyTinChi_Minh_Test_Phase1UiRetry2
+Nonqualified transactions are being rolled back. Estimated rollback completion: 0%.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 100%.
+DROPPED DangKyTinChi_Minh_Test_Phase1UiRetry3
+Nonqualified transactions are being rolled back. Estimated rollback completion: 0%.
+Nonqualified transactions are being rolled back. Estimated rollback completion: 100%.
+DROPPED DangKyTinChi_Minh_Test_Phase1UiRetry4
+DROPPED DangKyTinChi_Minh_Test_Phase1Workflow
+DROPPED DangKyTinChi_Minh_Test_Phase1UiFinal18
+DROPPED DangKyTinChi_Minh_Test_Phase1Workflow18
+DROPPED DangKyTinChi_Minh_Test_Phase1Concurrency18

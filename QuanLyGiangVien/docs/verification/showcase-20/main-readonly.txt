@@ -1,0 +1,15 @@
+           
+-----------
+          4
+accounts    registrations administrators explicit_permissions
+----------- ------------- -------------- --------------------
+          3             5              0                    0
+ma_hk                trang_thai  
+-------------------- ------------
+HK1-2627             DONG        
+HK2-2627             DONG        
+name                                                                                                                            
+--------------------------------------------------------------------------------------------------------------------------------
+DangKyTinChi_Minh                                                                                                               
+DangKyTinChi_Minh_Test_Showcase_762645b5077e41bd8d169334d4ce852c                                                                
+DangKyTinChi_Minh_Test_StudentPreview                                                                                           

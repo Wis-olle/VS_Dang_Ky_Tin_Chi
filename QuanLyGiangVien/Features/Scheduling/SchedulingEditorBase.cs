@@ -172,6 +172,14 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         return false;
     }
 
+    internal void SessionRecovered()
+    {
+        if (!FieldErrors.ContainsKey("_session")) return;
+        ClearErrors();
+        summary.Text = "Đã đăng nhập lại. Bản nháp chưa được lưu.";
+        summary.ForeColor = SchedulingTheme.Muted;
+    }
+
     protected static void ConfigureSelect(AntdUI.Select select, IEnumerable<string> choices, string placeholder)
     {
         select.Items.AddRange(choices.Cast<object>().ToArray());

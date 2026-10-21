@@ -7,11 +7,20 @@ GO
 IF OBJECT_ID('dbo.usp_Minh_KiemTraQuyen','P') IS NULL OR OBJECT_ID('dbo.SINH_VIEN','U') IS NULL
  THROW 52300,N'Cần khởi tạo schema và migration Minh trước.',1;
 GO
+-- Length prefixes preserve NULL/empty/delimiter distinctions in the immutable profile token.
+CREATE OR ALTER VIEW dbo.vw_SinhVien_PhienBan AS
+ SELECT s.*,HASHBYTES('SHA2_256',CONVERT(nvarchar(max),CONCAT(
+ LEN(ho_ten),N':',ho_ten,N'|',COALESCE(CONVERT(varchar(10),ngay_sinh,126),'NULL'),N'|',
+ COALESCE(LEN(gioi_tinh),-1),N':',gioi_tinh,N'|',COALESCE(LEN(email),-1),N':',email,N'|',
+ COALESCE(LEN(sdt),-1),N':',sdt,N'|',COALESCE(LEN(dia_chi),-1),N':',dia_chi,N'|',
+ LEN(ma_nganh),N':',ma_nganh,N'|',LEN(ma_lop),N':',ma_lop,N'|',trang_thai))) phien_ban
+ FROM dbo.SINH_VIEN s;
+GO
 CREATE OR ALTER PROCEDURE dbo.usp_SinhVien_DanhSach @tu_khoa nvarchar(200)=N'',@gom_ngung bit=1 AS
 BEGIN
  SET NOCOUNT ON; EXEC dbo.usp_Minh_KiemTraQuyen;
  SELECT s.*,l.ten_lop,n.ten_nganh,k.ten_khoa,n.ma_khoa
- FROM dbo.SINH_VIEN s JOIN dbo.LOP l ON l.ma_lop=s.ma_lop
+ FROM dbo.vw_SinhVien_PhienBan s JOIN dbo.LOP l ON l.ma_lop=s.ma_lop
  JOIN dbo.NGANH n ON n.ma_nganh=s.ma_nganh JOIN dbo.KHOA k ON k.ma_khoa=n.ma_khoa
  WHERE (@gom_ngung=1 OR s.trang_thai=1)
  AND (@tu_khoa=N'' OR CHARINDEX(@tu_khoa,s.ma_sv)>0 OR CHARINDEX(@tu_khoa,s.ho_ten)>0 OR CHARINDEX(@tu_khoa,s.email)>0)
@@ -30,7 +39,7 @@ GO
 CREATE OR ALTER PROCEDURE dbo.usp_SinhVien_Luu
  @la_moi bit,@ma_sv varchar(128),@ho_ten nvarchar(4000),@ngay_sinh date=NULL,@gioi_tinh nvarchar(128)=NULL,
  @email varchar(1000)=NULL,@sdt varchar(128)=NULL,@dia_chi nvarchar(4000)=NULL,
- @ma_nganh varchar(128)=NULL,@ma_lop varchar(128)=NULL,@trang_thai bit=1 AS
+ @ma_nganh varchar(128)=NULL,@ma_lop varchar(128)=NULL,@trang_thai bit=1,@phien_ban binary(32)=NULL AS
 BEGIN
  SET NOCOUNT ON; SET XACT_ABORT ON; EXEC dbo.usp_Minh_KiemTraQuyen;
  SET @ma_sv=TRIM(@ma_sv); SET @ho_ten=TRIM(@ho_ten);
@@ -45,10 +54,14 @@ BEGIN
  OR LEN(@ma_nganh)>20 OR LEN(@ma_lop)>20 THROW 52300,N'Thông tin sinh viên không hợp lệ.',1;
  BEGIN TRY
   BEGIN TRAN;
+  IF OBJECT_ID('dbo.usp_HocVu_Lock','P') IS NOT NULL EXEC dbo.usp_HocVu_Lock;
+  EXEC dbo.usp_Minh_KiemTraQuyen;
   DECLARE @old varchar(20),@oldnganh varchar(20),@oldlop varchar(20);
   SELECT @old=ma_sv,@oldnganh=ma_nganh,@oldlop=ma_lop FROM dbo.SINH_VIEN WITH(UPDLOCK,HOLDLOCK) WHERE ma_sv=@ma_sv;
   IF @la_moi=1 AND @old IS NOT NULL THROW 52301,N'Mã sinh viên đã tồn tại.',1;
   IF @la_moi=0 AND @old IS NULL THROW 52302,N'Không tìm thấy sinh viên.',1;
+  IF @la_moi=0 AND NOT EXISTS(SELECT 1 FROM dbo.vw_SinhVien_PhienBan WHERE ma_sv=@ma_sv AND phien_ban=@phien_ban)
+   THROW 52304,N'Hồ sơ sinh viên đã thay đổi. Hãy tải lại trước khi lưu.',1;
   IF NOT EXISTS(SELECT 1 FROM dbo.LOP l WITH(HOLDLOCK) JOIN dbo.NGANH n WITH(HOLDLOCK) ON n.ma_nganh=l.ma_nganh
    JOIN dbo.KHOA k WITH(HOLDLOCK) ON k.ma_khoa=n.ma_khoa
    WHERE l.ma_lop=@ma_lop AND n.ma_nganh=@ma_nganh AND l.trang_thai=1 AND n.trang_thai=1 AND k.trang_thai=1)
@@ -62,12 +75,22 @@ BEGIN
  END TRY BEGIN CATCH IF XACT_STATE()<>0 ROLLBACK; THROW; END CATCH;
 END;
 GO
-CREATE OR ALTER PROCEDURE dbo.usp_SinhVien_TrangThai @ma_sv varchar(20),@trang_thai bit AS
+CREATE OR ALTER PROCEDURE dbo.usp_SinhVien_TrangThai @ma_sv varchar(20),@trang_thai bit,@phien_ban binary(32)=NULL AS
 BEGIN
- SET NOCOUNT ON; EXEC dbo.usp_Minh_KiemTraQuyen;
+ SET NOCOUNT ON; SET XACT_ABORT ON; EXEC dbo.usp_Minh_KiemTraQuyen;
  IF @trang_thai IS NULL THROW 52300,N'Trạng thái sinh viên không hợp lệ.',1;
- UPDATE dbo.SINH_VIEN SET trang_thai=@trang_thai WHERE ma_sv=@ma_sv;
- IF @@ROWCOUNT=0 THROW 52302,N'Không tìm thấy sinh viên.',1;
+ BEGIN TRY
+  BEGIN TRAN;
+  IF OBJECT_ID('dbo.usp_HocVu_Lock','P') IS NOT NULL EXEC dbo.usp_HocVu_Lock;
+  EXEC dbo.usp_Minh_KiemTraQuyen;
+  DECLARE @old varchar(20);
+  SELECT @old=ma_sv FROM dbo.SINH_VIEN WITH(UPDLOCK,HOLDLOCK) WHERE ma_sv=@ma_sv;
+  IF @old IS NULL THROW 52302,N'Không tìm thấy sinh viên.',1;
+  IF NOT EXISTS(SELECT 1 FROM dbo.vw_SinhVien_PhienBan WHERE ma_sv=@ma_sv AND phien_ban=@phien_ban)
+   THROW 52304,N'Hồ sơ sinh viên đã thay đổi. Hãy tải lại trước khi đổi trạng thái.',1;
+  UPDATE dbo.SINH_VIEN SET trang_thai=@trang_thai WHERE ma_sv=@ma_sv;
+  COMMIT;
+ END TRY BEGIN CATCH IF XACT_STATE()<>0 ROLLBACK; THROW; END CATCH;
 END;
 GO
 GRANT EXECUTE ON dbo.usp_SinhVien_DanhSach TO app_minh;

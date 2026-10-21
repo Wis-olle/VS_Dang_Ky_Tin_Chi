@@ -1,0 +1,6 @@
+           
+-----------
+          3
+accounts    registrations explicit_permissions
+----------- ------------- --------------------
+          3             5                    0

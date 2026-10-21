@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": [
+    "Applying presentation preserves the draft and raises no edit event.",
+    "Single-line field has a padded surface at least 34px high.",
+    "Spanning field retains its original table cell and span.",
+    "Tab sequence, native focus and accessible label survive presentation.",
+    "Password masking and native input remain available.",
+    "Choice selection and dropdown behavior are preserved.",
+    "Recreating the native combo handle preserves selection and focusability.",
+    "The wrapped native combo can open its actual popup.",
+    "Date field retains its optional checkbox and original date inside the padded surface.",
+    "Native date selection remains editable after presentation.",
+    "Multiline input keeps its content and scrollbar.",
+    "Hidden read-only output keeps its own visibility and reserves no empty field surface.",
+    "Responsive read-only output can shrink from 104 to 48px.",
+    "Repeated styling does not nest fields or duplicate table cells.",
+    "Native selection editing still raises exactly one text-change event.",
+    "Read-only transition keeps edited content.",
+    "Resize keeps fields and multiline content inside their surfaces."
+  ]
+}

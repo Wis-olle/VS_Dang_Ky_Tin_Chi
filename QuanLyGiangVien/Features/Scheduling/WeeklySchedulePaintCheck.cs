@@ -7,12 +7,23 @@ internal sealed class WeeklySchedulePaintCheck : Control
 {
     internal bool CornersMatchBackground(Control calendar, string folder, string name)
     {
-        foreach (var button in calendar.Controls.Cast<Control>()
-            .SelectMany(day => day.Controls.OfType<System.Windows.Forms.Button>()))
+        var buttons = Descendants(calendar).OfType<Button>()
+            .Where(button => button is WeeklySessionButton or WeeklyGroupButton).ToArray();
+        if (buttons.Length == 0) return false;
+        foreach (var button in buttons)
         {
             if (!ControlCornersMatchBackground(button, folder, name)) return false;
         }
         return true;
+    }
+
+    private static IEnumerable<Control> Descendants(Control root)
+    {
+        foreach (Control child in root.Controls)
+        {
+            yield return child;
+            foreach (var nested in Descendants(child)) yield return nested;
+        }
     }
 
     internal bool ControlCornersMatchBackground(Control button, string folder, string name)

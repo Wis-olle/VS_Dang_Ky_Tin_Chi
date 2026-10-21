@@ -59,6 +59,7 @@ internal static class SchedulingUiCheck
         async Task Shot(Control control, string name) { await Task.Delay(260); using var bitmap = UiCapture.Client(control); bitmap.Save(Path.Combine(folder, name + ".png"), ImageFormat.Png); }
         var page = form.ShowScheduling();
         await Task.Delay(900);
+        await PhaseOneSchedulingUiCheck.Run(form, page.Store, folder, checks);
         SchedulingServiceUiCheck.CheckWholeCardClicks(form, page, checks);
         SchedulingServiceUiCheck.CheckAssets(page, checks);
         SchedulingMetricsUiCheck.CheckData(page, checks);
@@ -101,6 +102,8 @@ internal static class SchedulingUiCheck
         page.SetSearchForCheck(page.Store.Rooms[0].Id);
         Expect(page.ResultCount == 1, "Room search filters native table");
         page.SwitchTab(2);
+        Expect(page.ResultCount == 0, "Weekly view requires an explicit timetable subject");
+        page.SetLecturerFilterForCheck(page.Store.Classes.First().LecturerId);
         Expect(page.ResultCount > 0 && page.CalendarCountForCheck == page.ResultCount, "Week contains actual scheduled occurrences");
         await Shot(form, "03-week");
         Expect(page.CalendarCardsReadableForCheck, "Weekly cards retain course, class, room and periods after text wraps");
@@ -115,6 +118,7 @@ internal static class SchedulingUiCheck
         var filtered = SchedulingQuery.Occurrences(page.Store, page.WeekForCheck, page.WeekForCheck.AddDays(6), page.Store.Rooms[0].Id);
         Expect(page.CalendarCountForCheck == filtered.Count, "Room filter matches exact weekly dates");
         page.SetRoomFilterForCheck("");
+        page.SetLecturerFilterForCheck(page.Store.Classes.First().LecturerId);
         var week = page.WeekForCheck; page.MoveWeek(7);
         Expect(page.WeekForCheck == week.AddDays(7), "Next week navigation advances seven days");
         page.MoveWeek(-7);
@@ -168,10 +172,11 @@ internal static class SchedulingUiCheck
         page.SelectSavedSemester(term.Id == page.Store.Catalog.Semesters[0].Id ? page.Store.Catalog.Semesters[1].Id : term.Id);
         Expect(page.WeekForCheck == SchedulingQuery.WeekStart(page.Store.Catalog.Semesters[1].StartDate), "Saving a class in another semester resets calendar week");
         page.SetSemesterForCheck(0);
-        using (var editor = new LecturerEditor(form.Store, lecturer,
+        var fullLecturer = form.Store.Items.First(item => item.Id == lecturer.Id);
+        using (var editor = new LecturerEditor(form.Store, fullLecturer,
             (value, isNew) => SchedulingLecturerGuard.ValidationError(page.Store, value, isNew)))
         {
-            editor.Show(form); editor.FillForTest(lecturer with { Status = "Tạm nghỉ" });
+            editor.Show(form); editor.FillForTest(fullLecturer with { Status = "Tạm nghỉ" });
             Expect(!editor.TrySave() && form.Store.Items.First(l => l.Id == lecturer.Id).Status == "Đang giảng dạy",
                 "Lecturer editor prevents suspending a teacher assigned to a class");
             editor.Close();

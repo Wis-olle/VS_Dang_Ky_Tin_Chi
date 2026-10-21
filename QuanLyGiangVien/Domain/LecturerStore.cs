@@ -33,10 +33,11 @@ public sealed class LecturerStore(IEnumerable<Lecturer> initial, ILecturerPersis
         errors = Validate(normalized, isNew);
         if (errors.Count > 0)
             return false;
-        try { persistence?.SaveLecturer(normalized, isNew); }
+        try { normalized = persistence?.SaveLecturer(normalized, isNew) ?? normalized; }
         catch (PersistenceException exception)
         {
-            errors = ImmutableDictionary<string, string>.Empty.Add("_global", exception.Message);
+            errors = ImmutableDictionary<string, string>.Empty.Add(
+                exception.Kind == PersistenceFailure.SessionExpired ? "_session" : "_global", exception.Message);
             return false;
         }
         items = Array.AsReadOnly(isNew ? items.Append(normalized).ToArray() :
@@ -51,7 +52,7 @@ public sealed class LecturerStore(IEnumerable<Lecturer> initial, ILecturerPersis
             ? "Giảng viên đang được phân công lớp học. Vui lòng chuyển phân công trước khi xóa." : null;
         if (error is not null)
             return false;
-        try { persistence?.DeleteLecturer(existing!.Id); }
+        try { persistence?.DeleteLecturer(existing!.Id, existing.Version); }
         catch (PersistenceException exception) { error = exception.Message; return false; }
         items = Array.AsReadOnly(items.Where(item => !Same(item.Id, id)).ToArray());
         return true;
@@ -59,12 +60,15 @@ public sealed class LecturerStore(IEnumerable<Lecturer> initial, ILecturerPersis
 
     private IReadOnlyDictionary<string, string> Validate(Lecturer value, bool isNew)
     {
-        var hasId = items.Any(item => Same(item.Id, value.Id));
+        var existing = items.FirstOrDefault(item => Same(item.Id, value.Id));
+        var hasId = existing is not null;
         var today = DateTime.Today;
         var rules = new (string Key, bool Invalid, string Message)[] {
-            (nameof(value.Id), !Regex.IsMatch(value.Id, @"^GV[0-9]{4}$"), "Mã giảng viên gồm GV và 4 chữ số."),
+            (nameof(value.Id), !Regex.IsMatch(value.Id, @"^[A-Z0-9_-]{1,20}$"), "Mã giảng viên gồm 1–20 chữ cái ASCII, chữ số, gạch ngang hoặc gạch dưới."),
             (nameof(value.Id), isNew && hasId, "Mã giảng viên đã tồn tại."),
             (nameof(value.Id), !isNew && !hasId, "Không tìm thấy giảng viên cần cập nhật."),
+            ("_global", !isNew && existing is not null && existing.Version != value.Version,
+                "Dữ liệu đã thay đổi. Vui lòng đóng form, tải lại bằng F5 và mở lại."),
             (nameof(value.Name), value.Name.Length > 100 || value.Name.Count(char.IsLetter) < 2 || !Regex.IsMatch(value.Name, @"^[\p{L}\p{M}\s.'’-]+$"), "Họ tên phải hợp lệ và không quá 100 ký tự."),
             (nameof(value.BirthDate), value.BirthDate.Date > today.AddYears(-18) || value.BirthDate.Date < today.AddYears(-100), "Giảng viên phải từ 18 đến 100 tuổi."),
             (nameof(value.Gender), !new[] { "Nam", "Nữ", "Khác" }.Contains(value.Gender), "Vui lòng chọn giới tính."),
@@ -72,7 +76,7 @@ public sealed class LecturerStore(IEnumerable<Lecturer> initial, ILecturerPersis
             (nameof(value.Email), items.Any(item => Same(item.Email, value.Email) && (isNew || !Same(item.Id, value.Id))), "Email đã được sử dụng."),
             (nameof(value.Phone), !Regex.IsMatch(value.Phone, @"^0[0-9]{9,10}$"), "Số điện thoại phải có 10–11 chữ số, bắt đầu bằng 0 hoặc +84."),
             (nameof(value.Faculty), string.IsNullOrWhiteSpace(value.Faculty) || value.Faculty.Length > 100, "Khoa phải có 1–100 ký tự."),
-            (nameof(value.Degree), string.IsNullOrWhiteSpace(value.Degree) || value.Degree.Length > 80, "Học vị phải có 1–80 ký tự."),
+            (nameof(value.Degree), !new[] { "Thạc sĩ", "Tiến sĩ", "PGS. Tiến sĩ", "Giáo sư" }.Contains(value.Degree), "Vui lòng chọn học vị trong danh mục."),
             (nameof(value.AvatarKey), !Regex.IsMatch(value.AvatarKey, @"^portrait-(?:0[1-9]|[1-3][0-9]|4[0-8])$"), "Vui lòng chọn ảnh đại diện từ bộ 48 ảnh có sẵn."),
             (nameof(value.Status), !new[] { "Đang giảng dạy", "Tạm nghỉ" }.Contains(value.Status), "Vui lòng chọn trạng thái."),
             (nameof(value.ActiveClasses), value.ActiveClasses < 0, "Số lớp phụ trách không được âm.")

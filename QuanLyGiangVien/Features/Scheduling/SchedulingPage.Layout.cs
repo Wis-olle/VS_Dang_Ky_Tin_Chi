@@ -61,21 +61,24 @@ internal sealed partial class SchedulingPage
         listTitle.SetBounds(pad, s(12), width - tabsWidth - s(14), s(34));
         tabs.SetBounds(listCard.Width - pad - tabsWidth, s(8), tabsWidth, s(42));
         search.Visible = filter.Visible = !schedule;
-        roomFilter.Visible = previousWeek.Visible = nextWeek.Visible = currentWeek.Visible = weekLabel.Visible = schedule;
+        timetableScope.Visible = timetableSubject.Visible = reloadTimetableSubjects.Visible = schedule;
+        previousWeek.Visible = nextWeek.Visible = currentWeek.Visible = weekLabel.Visible = schedule;
         if (schedule)
         {
             previousWeek.SetBounds(pad, s(68), s(34), s(34));
             nextWeek.SetBounds(pad + s(40), s(68), s(34), s(34));
             weekLabel.SetBounds(pad + s(90), s(68), s(230), s(34));
             currentWeek.SetBounds(pad + s(330), s(68), s(110), s(34));
-            roomFilter.SetBounds(listCard.Width - pad - s(184), s(68), s(184), s(34));
+            timetableScope.SetBounds(pad, s(110), s(180), s(34));
+            timetableSubject.SetBounds(pad + s(192), s(110), Math.Max(s(240), width - s(324)), s(34));
+            reloadTimetableSubjects.SetBounds(listCard.Width - pad - s(120), s(110), s(120), s(34));
         }
         else
         {
             search.SetBounds(pad, s(60), Math.Max(s(180), width - s(200)), s(38));
             filter.SetBounds(listCard.Width - pad - s(184), s(60), s(184), s(38));
         }
-        int resultsY = s(114), resultsHeight = Math.Max(s(180), listCard.Height - resultsY - s(20));
+        int resultsY = s(schedule ? 156 : 114), resultsHeight = Math.Max(s(180), listCard.Height - resultsY - s(20));
         table.SetBounds(pad, resultsY, width, resultsHeight);
         calendar.SetBounds(pad, resultsY, width, resultsHeight);
         emptyArtwork.SetBounds((listCard.Width - s(112)) / 2, resultsY + s(24), s(112), s(76));

@@ -1,0 +1,7 @@
+           
+-----------
+          4
+accounts    registrations explicit_permissions rounds      quotas      plans      
+----------- ------------- -------------------- ----------- ----------- -----------
+          3             5                    0           0           0           0
+PASS: SHA256 comparison preserved account identities, password salts/verifiers/iterations, every registration row and every academic document.

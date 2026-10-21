@@ -1,0 +1,20 @@
+[
+  {
+    "area": "Data",
+    "covered": 340,
+    "valid": 582,
+    "percent": 58.42
+  },
+  {
+    "area": "Domain",
+    "covered": 456,
+    "valid": 471,
+    "percent": 96.82
+  },
+  {
+    "area": "Ui",
+    "covered": 120,
+    "valid": 120,
+    "percent": 100.0
+  }
+]

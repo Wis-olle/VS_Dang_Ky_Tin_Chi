@@ -14,7 +14,7 @@ namespace QuanLyGiangVien.Features.Catalogs
   public static readonly Color Navy=AppTheme.Ink, Blue=AppTheme.Primary, Background=AppTheme.Canvas;
   public static Button Button(string text,bool primary=false)
   {
-   var b=new Button {Text=text,AutoSize=true,MinimumSize=new Size(94,34),Height=34,FlatStyle=FlatStyle.Flat,
+   var b=new QuanLyGiangVien.Features.Registration.ShowcaseButton {Primary=primary,Text=text,AutoSize=true,MinimumSize=new Size(94,34),Height=34,FlatStyle=FlatStyle.Flat,
     BackColor=primary?Blue:Color.White,ForeColor=primary?Color.White:Navy,Cursor=Cursors.Hand,Margin=new Padding(0,4,8,4)};
    b.FlatAppearance.BorderColor=primary?Blue:Color.FromArgb(206,216,229); return b;
   }

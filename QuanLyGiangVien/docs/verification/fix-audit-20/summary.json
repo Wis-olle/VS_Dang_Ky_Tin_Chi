@@ -1,0 +1,56 @@
+{
+  "runId": "V3dd9c5299271",
+  "server": ".",
+  "passed": true,
+  "fixtures": [
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_Full",
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_Lifecycle",
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_Concurrent",
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_Team",
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_Import",
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_Seats",
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_Academic",
+    "DangKyTinChi_Minh_Test_Planner4_V3dd9c5299271_Sql",
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_Native1",
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_Native2",
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_Native3",
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_Native4",
+    "DangKyTinChi_Minh_Test_Verify_V3dd9c5299271_NativeAudit"
+  ],
+  "tests": {
+    "scope": "Production source linked into test assembly; excludes remaining WinForms, worker and T-SQL.",
+    "skipped": 0,
+    "lineCoverage": 0.9098,
+    "total": 834,
+    "passed": 834
+  },
+  "native": [
+    {
+      "name": "Native1",
+      "checks": 18,
+      "passed": true
+    },
+    {
+      "name": "Native2",
+      "checks": 30,
+      "passed": true
+    },
+    {
+      "name": "Native3",
+      "checks": 22,
+      "passed": true
+    },
+    {
+      "name": "Native4",
+      "checks": 47,
+      "passed": true
+    },
+    {
+      "name": "NativeAudit",
+      "checks": 17,
+      "passed": true
+    }
+  ],
+  "cleanupErrors": [],
+  "error": null
+}

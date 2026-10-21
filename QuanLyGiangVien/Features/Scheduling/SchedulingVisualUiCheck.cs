@@ -33,6 +33,7 @@ internal static class SchedulingVisualUiCheck
         }
         page.SelectClassForCheck(0);
         page.SwitchTab(2);
+        page.SetLecturerFilterForCheck(page.Store.Classes.First().LecturerId);
         Expect(page.CalendarThumbnailCountForCheck == page.CalendarCountForCheck,
             "Every scheduled occurrence has its subject illustration");
         Expect(page.CalendarThumbnailsFitForCheck && page.CalendarCardsReadableForCheck,

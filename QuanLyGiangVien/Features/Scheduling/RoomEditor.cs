@@ -38,7 +38,7 @@ public sealed class RoomEditor : SchedulingEditorBase
         SetContentHeight(noteTop + AppTheme.S(42));
         if (original is not null) FillForCheck(original);
         else {
-            InitializeNewId(id, store.NextRoomId, "Nhập mã phòng chưa dùng, gồm 2–20 chữ cái, chữ số hoặc dấu gạch ngang.");
+            InitializeNewId(id, store.NextRoomId, "Nhập mã phòng chưa dùng, gồm 1–20 chữ cái ASCII, chữ số, gạch ngang hoặc gạch dưới.");
             type.SelectedIndex = 0;
             status.SelectedIndex = 0;
         }
@@ -59,7 +59,7 @@ public sealed class RoomEditor : SchedulingEditorBase
         ClearErrors();
         var parseErrors = new Dictionary<string, string>();
         if (!TryInteger(capacity, nameof(Room.Capacity), parseErrors, out int seats)) return ShowErrors(parseErrors);
-        var value = new Room(id.Text, building.Text, seats, Selected(type), Selected(status));
+        var value = new Room(id.Text, building.Text, seats, Selected(type), Selected(status), original?.Version ?? "");
         if (!store.TrySaveRoom(value, original is null, out var validation)) return ShowErrors(validation);
         Result = store.Rooms.First(room => room.Id.Equals(value.Id.Trim(), StringComparison.OrdinalIgnoreCase));
         return true;

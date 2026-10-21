@@ -164,35 +164,35 @@ public sealed class PersistenceTests
 
     private sealed class EnrollmentPersistence(int enrolled) : ISchedulePersistence
     {
-        public void SaveRoom(Room value, bool isNew) { }
-        public void DeleteRoom(string id) { }
-        public int SaveClass(CourseClass value, bool isNew) => enrolled;
-        public void DeleteClass(string id) { }
+        public Room SaveRoom(Room value, bool isNew) => value;
+        public void DeleteRoom(string id, string version = "") { }
+        public CourseClass SaveClass(CourseClass value, bool isNew) => value with { Enrolled = enrolled };
+        public void DeleteClass(string id, string version = "") { }
     }
 
     private sealed class RecordingPersistence(Action<Lecturer> save) : ILecturerPersistence
     {
-        public void SaveLecturer(Lecturer value, bool isNew) => save(value);
-        public void DeleteLecturer(string id) { }
+        public Lecturer SaveLecturer(Lecturer value, bool isNew) { save(value); return value; }
+        public void DeleteLecturer(string id, string version = "") { }
     }
 
     private sealed class RecordingSchedulePersistence(Action<string, string> write) : ISchedulePersistence
     {
-        public void SaveRoom(Room value, bool isNew) => write("room-save", value.Id);
-        public void DeleteRoom(string id) => write("room-delete", id);
-        public int SaveClass(CourseClass value, bool isNew) { write("class-save", value.Id); return value.Enrolled; }
-        public void DeleteClass(string id) => write("class-delete", id);
+        public Room SaveRoom(Room value, bool isNew) { write("room-save", value.Id); return value; }
+        public void DeleteRoom(string id, string version = "") => write("room-delete", id);
+        public CourseClass SaveClass(CourseClass value, bool isNew) { write("class-save", value.Id); return value; }
+        public void DeleteClass(string id, string version = "") => write("class-delete", id);
     }
 
     private sealed class FailingPersistence : ILecturerPersistence, ISchedulePersistence
     {
         public int Calls { get; private set; }
         private void Fail() { Calls++; throw new PersistenceException("Không thể lưu dữ liệu kiểm thử."); }
-        public void SaveLecturer(Lecturer value, bool isNew) => Fail();
-        public void DeleteLecturer(string id) => Fail();
-        public void SaveRoom(Room value, bool isNew) => Fail();
-        public void DeleteRoom(string id) => Fail();
-        public int SaveClass(CourseClass value, bool isNew) { Fail(); return 0; }
-        public void DeleteClass(string id) => Fail();
+        public Lecturer SaveLecturer(Lecturer value, bool isNew) { Fail(); return value; }
+        public void DeleteLecturer(string id, string version = "") => Fail();
+        public Room SaveRoom(Room value, bool isNew) { Fail(); return value; }
+        public void DeleteRoom(string id, string version = "") => Fail();
+        public CourseClass SaveClass(CourseClass value, bool isNew) { Fail(); return value; }
+        public void DeleteClass(string id, string version = "") => Fail();
     }
 }

@@ -1,0 +1,13 @@
+  Determining projects to restore...
+  Restored E:\AI Agents\Dangkytinchi\QuanLyGiangVien\QuanLyGiangVien.csproj (in 289 ms).
+  Restored E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\QuanLyGiangVien.Tests.csproj (in 289 ms).
+  Restored E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Worker\QuanLyGiangVien.Worker.csproj (in 289 ms).
+  QuanLyGiangVien -> E:\AI Agents\Dangkytinchi\.tmp\verify-campus\V3dd9c5299271\artifacts\bin\QuanLyGiangVien\release\QuanLyGiangVien.dll
+  QuanLyGiangVien.Tests -> E:\AI Agents\Dangkytinchi\.tmp\verify-campus\V3dd9c5299271\artifacts\bin\QuanLyGiangVien.Tests\release\QuanLyGiangVien.Tests.dll
+  QuanLyGiangVien.Worker -> E:\AI Agents\Dangkytinchi\.tmp\verify-campus\V3dd9c5299271\artifacts\bin\QuanLyGiangVien.Worker\release\QuanLyGiangVien.Worker.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.81

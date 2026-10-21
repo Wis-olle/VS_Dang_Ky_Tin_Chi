@@ -2,18 +2,23 @@ using QuanLyGiangVien.Domain.Scheduling;
 
 namespace QuanLyGiangVien.Domain;
 
-public sealed class PersistenceException(string message) : Exception(message);
+public enum PersistenceFailure { General, SessionExpired, DataConflict, SchemaMismatch, BusinessRejected }
+
+public sealed class PersistenceException(string message, PersistenceFailure kind = PersistenceFailure.General) : Exception(message)
+{
+    public PersistenceFailure Kind { get; } = kind;
+}
 
 public interface ILecturerPersistence
 {
-    void SaveLecturer(Lecturer value, bool isNew);
-    void DeleteLecturer(string id);
+    Lecturer SaveLecturer(Lecturer value, bool isNew);
+    void DeleteLecturer(string id, string version = "");
 }
 
 public interface ISchedulePersistence
 {
-    void SaveRoom(Room value, bool isNew);
-    void DeleteRoom(string id);
-    int SaveClass(CourseClass value, bool isNew);
-    void DeleteClass(string id);
+    Room SaveRoom(Room value, bool isNew);
+    void DeleteRoom(string id, string version = "");
+    CourseClass SaveClass(CourseClass value, bool isNew);
+    void DeleteClass(string id, string version = "");
 }

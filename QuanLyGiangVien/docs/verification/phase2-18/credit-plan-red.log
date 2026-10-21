@@ -1,0 +1,54 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  QuanLyGiangVien.Tests -> E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\bin\Debug\net10.0\QuanLyGiangVien.Tests.dll
+Test run for E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\bin\Debug\net10.0\QuanLyGiangVien.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.67]     QuanLyGiangVien.Tests.AcademicIntegrationTests.CreditPlanAtZeroCreditsChecksMinimumForExplicitSemester [FAIL]
+[xUnit.net 00:00:00.69]     QuanLyGiangVien.Tests.AcademicIntegrationTests.ConfirmedFinalSemesterCanBeExemptFromMinimum [FAIL]
+  Failed QuanLyGiangVien.Tests.AcademicIntegrationTests.CreditPlanAtZeroCreditsChecksMinimumForExplicitSemester [425 ms]
+  Error Message:
+   Microsoft.Data.SqlClient.SqlException : @ma_hk is not a parameter for procedure usp_HocVu_Precheck.
+  Stack Trace:
+     at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteReaderAsync>b__283_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at QuanLyGiangVien.Tests.AcademicIntegrationTests.Fixture.Check(String json, String op, Nullable`1 dk, String term) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\AcademicIntegrationTests.cs:line 52
+   at QuanLyGiangVien.Tests.AcademicIntegrationTests.CreditPlanAtZeroCreditsChecksMinimumForExplicitSemester() in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\AcademicIntegrationTests.cs:line 142
+   at QuanLyGiangVien.Tests.AcademicIntegrationTests.CreditPlanAtZeroCreditsChecksMinimumForExplicitSemester() in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\AcademicIntegrationTests.cs:line 142
+--- End of stack trace from previous location ---
+  Failed QuanLyGiangVien.Tests.AcademicIntegrationTests.ConfirmedFinalSemesterCanBeExemptFromMinimum [15 ms]
+  Error Message:
+   Microsoft.Data.SqlClient.SqlException : @ma_hk is not a parameter for procedure usp_HocVu_Precheck.
+  Stack Trace:
+     at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.Connection.SqlConnectionInternal.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteReaderAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteReaderAsync>b__283_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at QuanLyGiangVien.Tests.AcademicIntegrationTests.Fixture.Check(String json, String op, Nullable`1 dk, String term) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\AcademicIntegrationTests.cs:line 52
+   at QuanLyGiangVien.Tests.AcademicIntegrationTests.ConfirmedFinalSemesterCanBeExemptFromMinimum() in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\AcademicIntegrationTests.cs:line 144
+   at QuanLyGiangVien.Tests.AcademicIntegrationTests.ConfirmedFinalSemesterCanBeExemptFromMinimum() in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\AcademicIntegrationTests.cs:line 144
+--- End of stack trace from previous location ---
+Results File: E:\AI Agents\Dangkytinchi\.tmp\phase2-18\credit-plan-red\credit-plan-red.trx
+
+Failed!  - Failed:     2, Passed:     0, Skipped:     0, Total:     2, Duration: 439 ms - QuanLyGiangVien.Tests.dll (net10.0)

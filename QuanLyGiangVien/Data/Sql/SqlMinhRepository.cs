@@ -37,14 +37,31 @@ public sealed class SqlMinhRepository : ILecturerPersistence, ISchedulePersisten
         catch (InvalidOperationException) { throw new PersistenceException("Không thể mở kết nối SQL. Kiểm tra cấu hình và dịch vụ SQL Server."); }
     }
 
-    public void SaveLecturer(Lecturer value, bool isNew) => Execute(SqlMinhCommands.SaveLecturer(value, isNew));
-    public void DeleteLecturer(string id) => Execute(SqlMinhCommands.DeleteLecturer(id));
-    public void SaveRoom(Room value, bool isNew) => Execute(SqlMinhCommands.SaveRoom(value, isNew));
-    public void DeleteRoom(string id) => Execute(SqlMinhCommands.DeleteRoom(id));
-    public int SaveClass(CourseClass value, bool isNew) => Execute(SqlMinhCommands.SaveClass(value, isNew), command =>
-        command.ExecuteScalar() is int enrolled && enrolled >= 0 && enrolled <= value.Capacity ? enrolled
-            : throw new PersistenceException("SQL chưa trả về sĩ số thực tế. Vui lòng cập nhật script tích hợp và tải lại dữ liệu."));
-    public void DeleteClass(string id) => Execute(SqlMinhCommands.DeleteClass(id));
+    public Lecturer SaveLecturer(Lecturer value, bool isNew) => value with { Version = Execute(SqlMinhCommands.SaveLecturer(value, isNew), ReadVersion) };
+    public Task<System.Collections.Immutable.ImmutableArray<TimetableStudent>> LoadTimetableStudentsAsync(CancellationToken token = default)
+        => new TimetableDirectoryRepository(connectionString).LoadStudentsAsync(token);
+    public void DeleteLecturer(string id, string version = "") => Execute(SqlMinhCommands.DeleteLecturer(id, version));
+    public Room SaveRoom(Room value, bool isNew) => value with { Version = Execute(SqlMinhCommands.SaveRoom(value, isNew), ReadVersion) };
+    public void DeleteRoom(string id, string version = "") => Execute(SqlMinhCommands.DeleteRoom(id, version));
+    public CourseClass SaveClass(CourseClass value, bool isNew) => Execute(SqlMinhCommands.SaveClass(value, isNew), command =>
+    {
+        using var reader = command.ExecuteReader();
+        if (!reader.Read() || reader["si_so_hien_tai"] is not int enrolled || enrolled < 0 || enrolled > value.Capacity
+            || reader["phien_ban"] is not byte[] { Length: 8 } version)
+            throw new PersistenceException("SQL chưa trả về sĩ số/phiên bản. Vui lòng cập nhật script tích hợp và tải lại dữ liệu.");
+        return value with { Enrolled = enrolled, Version = Convert.ToHexString(version),
+            HasRegistrationHistory = Convert.ToBoolean(reader["co_lich_su"]),
+            Lifecycle = HasColumn(reader,"lifecycle") ? Convert.ToString(reader["lifecycle"])! : value.Lifecycle,
+            ActualMeetings = HasColumn(reader,"actual_meetings_json")
+                ? LifecycleRules.ReadActualCalendar(Convert.ToString(reader["actual_meetings_json"])) : value.ActualMeetings };
+    });
+    public void DeleteClass(string id, string version = "") => Execute(SqlMinhCommands.DeleteClass(id, version));
+
+    private static bool HasColumn(System.Data.Common.DbDataReader reader,string name) =>
+        Enumerable.Range(0,reader.FieldCount).Any(i=>reader.GetName(i)==name);
+
+    private static string ReadVersion(SqlCommand command) => command.ExecuteScalar() is byte[] { Length: 8 } version
+        ? Convert.ToHexString(version) : throw new PersistenceException("SQL chưa trả về phiên bản. Vui lòng cập nhật script tích hợp và tải lại dữ liệu.");
 
     private void Execute(SqlCommand command) => Execute(command, value => value.ExecuteNonQuery());
 
@@ -66,6 +83,8 @@ public sealed class SqlMinhRepository : ILecturerPersistence, ISchedulePersisten
 public static class SqlErrorMessages
 {
     public static string ForNumber(int number) => number switch {
+        52405 => "Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.",
+        52410 => "Database chưa đủ migration hiện tại. Vui lòng nâng cấp database trước khi mở ứng dụng.",
         52105 => "Phiên đăng nhập đã hết hạn. Vui lòng đăng xuất và đăng nhập lại.",
         -2 => "Hết thời gian chờ SQL; chưa xác nhận được kết quả. Vui lòng tải lại dữ liệu trước khi thử lại.",
         1222 or 52002 => "SQL đang bận. Vui lòng tải lại dữ liệu và thử lại.",
@@ -87,10 +106,20 @@ public static class SqlErrorMessages
         52038 => "Phòng không sẵn sàng hoặc không đủ sức chứa cho sĩ số tối đa.",
         52039 => "Ngày buổi học phải nằm trong thời gian học của học kỳ.",
         52040 => "Sĩ số tối đa không được thấp hơn số đăng ký thực tế. Vui lòng tải lại dữ liệu.",
-        52041 => "Lớp đã có sinh viên đăng ký; không thể đổi học phần, học kỳ, giảng viên hoặc buổi học.",
+        52041 => "Lớp có lịch sử đăng ký; không thể đổi học phần, học kỳ, giảng viên hoặc buổi học. Hãy tạo lớp mới nếu cần.",
         52042 => "Lớp còn đăng ký hợp lệ; cần xử lý đăng ký trước khi hủy lớp.",
         52043 or 52044 => "Trùng phòng hoặc lịch giảng viên vào ngày học thực tế. Vui lòng tải lại và điều chỉnh lịch.",
+        52046 => "Dữ liệu đã được người khác cập nhật. Vui lòng đóng form, tải lại bằng F5 và mở lại trước khi sửa hoặc xóa.",
+        52047 => "Lớp có lịch sử đăng ký; không thể đổi học phần hoặc học kỳ.",
         52045 => "Lớp có lịch sử đăng ký; không thể xóa.",
+        52600 => "Thông tin thao tác vận hành chưa hợp lệ.",
+        52601 => "Phiên bản lớp/học kỳ đã thay đổi hoặc đã kết thúc. Hãy tải lại.",
+        52602 => "Dùng quy trình vận hành lớp/học kỳ để thay đổi vòng đời hoặc lịch ngoại lệ.",
+        52603 => "Còn lớp, tổ hợp hoặc môn đồng hành bị ảnh hưởng. Cần xử lý các đăng ký liên quan trước.",
+        52604 => "Có xung đột lịch thực tế. Thay đổi chưa được lưu.",
+        52605 => "Ngày học hoặc tài nguyên mới chưa hợp lệ. Không được sửa lại lịch sử đã học.",
+        52606 => "Hợp đồng lịch chưa tương thích. Cần kiểm tra migration và đối soát lịch sử.",
+        52801 => "Tài khoản chưa được cấp quyền chi tiết cho thao tác này. Liên hệ quản trị.",
         >= 52000 and <= 52099 => "SQL từ chối thao tác vì dữ liệu đã thay đổi hoặc không thỏa điều kiện. Vui lòng tải lại và kiểm tra dữ liệu.",
         >= 51000 and <= 51099 => "Tài khoản hoặc điều kiện nghiệp vụ đăng ký không hợp lệ.",
         _ => "Không thể truy cập dữ liệu SQL. Kiểm tra kết nối, script tích hợp và quyền tài khoản."

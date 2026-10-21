@@ -19,10 +19,12 @@ internal static class Program
             var args = Environment.GetCommandLineArgs();
             bool HasEnvironment(string key) => !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable(key));
             bool harness = HasEnvironment("LECTURER_UI_CHECK") || HasEnvironment("SCHEDULING_UI_CHECK")
-                || HasEnvironment("STUDENT_TIMETABLE_UI_CHECK");
+                || HasEnvironment("STUDENT_TIMETABLE_UI_CHECK") || HasEnvironment("WEEKLY_TIMETABLE_UI_CHECK")
+                || HasEnvironment("SCOPED_TIMETABLE_UI_CHECK");
             var mode = DatabaseLaunch.Parse(args, Environment.GetEnvironmentVariable("MINH_DB_CONNECTION"), harness);
             bool legacyCheck = HasEnvironment("STUDENT_PORTAL_UI_CHECK") || HasEnvironment("UNIFIED_UI_CHECK");
-            if (mode.UseDatabase && (legacyCheck || harness)
+            bool loginCheck = HasEnvironment("PASSWORD_LOGIN_UI_CHECK") || HasEnvironment("CAMPUS_PHASE1_UI_CHECK") || HasEnvironment("CAMPUS_PHASE2_UI_CHECK") || HasEnvironment("CAMPUS_PHASE3_UI_CHECK") || HasEnvironment("CAMPUS_PHASE4_UI_CHECK") || HasEnvironment("CAMPUS_AUDIT_FIX_UI_CHECK") || HasEnvironment("CAMPUS_SHOWCASE_UI_CHECK") || HasEnvironment("CAMPUS_QUICK_LOGIN_UI_CHECK");
+            if (mode.UseDatabase && (legacyCheck || harness || loginCheck)
                 && !new SqlConnectionStringBuilder(mode.ConnectionString).InitialCatalog.StartsWith("DangKyTinChi_Minh_Test_", StringComparison.Ordinal))
                 throw new InvalidOperationException("Kiểm chứng Windows identity chỉ được chạy trên database kiểm thử riêng.");
             if (mode.UseDatabase && !harness)
@@ -32,10 +34,12 @@ internal static class Program
                 Application.Run(new CampusForm(mode.ConnectionString, first, args.Contains("--student-portal"), passwordLogin: !legacyCheck));
                 return;
             }
-            var database = mode.UseDatabase ? new SqlMinhRepository(mode.ConnectionString).LoadAsync().GetAwaiter().GetResult() : null;
+            var sqlIdentity = mode.UseDatabase ? new SqlIdentityRepository(mode.ConnectionString).LoadAsync().GetAwaiter().GetResult() : null;
+            var timetableData = sqlIdentity?.Role == "SINH_VIEN" ? new StudentTimetableRepository(mode.ConnectionString).LoadAsync().GetAwaiter().GetResult() : null;
+            var database = mode.UseDatabase && timetableData == null ? new SqlMinhRepository(mode.ConnectionString).LoadAsync().GetAwaiter().GetResult() : null;
             bool student = args.Contains("--student-timetable") || HasEnvironment("STUDENT_TIMETABLE_UI_CHECK")
-                || database?.Identity.Role == "SINH_VIEN";
-            Application.Run(student ? new Features.StudentTimetable.StudentTimetableForm(database)
+                || timetableData != null;
+            Application.Run(student ? new Features.StudentTimetable.StudentTimetableForm(database, readModel: timetableData)
                 : new MainForm(args.Contains("--scheduling") || HasEnvironment("SCHEDULING_UI_CHECK"), database));
         }
         catch (Exception error) when (error is Domain.PersistenceException or ArgumentException or InvalidOperationException)

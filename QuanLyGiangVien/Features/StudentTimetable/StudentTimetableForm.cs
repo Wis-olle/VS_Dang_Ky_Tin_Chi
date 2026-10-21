@@ -42,11 +42,20 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
     internal int ScrollOffset => scroll.AutoScrollPosition.Y;
     internal void ScrollPage(int y) { scroll.AutoScrollPosition = new(0, S(y)); }
 
-    internal StudentTimetableForm(DatabaseSnapshot? database = null, bool embedded = false)
+    internal StudentTimetableForm(DatabaseSnapshot? database = null, bool embedded = false, StudentTimetableData? readModel = null)
     {
         this.embedded = embedded;
         if (embedded) { TopLevel = false; FormBorderStyle = FormBorderStyle.None; Dock = DockStyle.Fill; }
-        if (database != null)
+        if (readModel != null)
+        {
+            store = readModel.CreateStore();
+            studentId = readModel.Identity.StudentId!; studentName = readModel.Identity.DisplayName;
+            studentClass = readModel.Identity.ClassId ?? "Chưa có lớp hành chính";
+            studentMajor = readModel.Identity.MajorName ?? "Chưa có thông tin";
+            registrations = readModel.Registrations.Select(item => new StudentRegistration(item.StudentId, item.ClassId, item.Status == "DA_HUY")).ToArray();
+            semesterId = store.Catalog.Semesters.First().Id;
+        }
+        else if (database != null)
         {
             if (database.Identity.Role != "SINH_VIEN" || string.IsNullOrWhiteSpace(database.Identity.StudentId))
                 throw new PersistenceException("Thời khóa biểu SQL cần tài khoản sinh viên đã được liên kết với SQL login. Dùng --demo để xem bản mẫu.");

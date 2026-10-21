@@ -1,0 +1,15 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  QuanLyGiangVien.Tests -> E:\AI Agents\Dangkytinchi\.tmp\campus-audit-20261016\test-build\bin\QuanLyGiangVien.Tests\release\QuanLyGiangVien.Tests.dll
+Test run for E:\AI Agents\Dangkytinchi\.tmp\campus-audit-20261016\test-build\bin\QuanLyGiangVien.Tests\release\QuanLyGiangVien.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.98]     QuanLyGiangVien.Tests.PasswordLoginIntegrationTests.SharedDatabaseEnforcesPortalsSessionsAndStudentManagement [SKIP]
+[xUnit.net 00:00:00.98]     QuanLyGiangVien.Tests.PasswordLoginIntegrationTests.ServerChallengesCannotBeReplayedAndArbitraryTokensCannotAuthenticate [SKIP]
+  Skipped QuanLyGiangVien.Tests.PasswordLoginIntegrationTests.SharedDatabaseEnforcesPortalsSessionsAndStudentManagement [1 ms]
+  Skipped QuanLyGiangVien.Tests.PasswordLoginIntegrationTests.ServerChallengesCannotBeReplayedAndArbitraryTokensCannotAuthenticate [1 ms]
+Results File: E:\AI Agents\Dangkytinchi\.tmp\campus-audit-20261016\sql-test-results\audit-sql.trx
+
+Passed!  - Failed:     0, Passed:   443, Skipped:     2, Total:   445, Duration: 8 s - QuanLyGiangVien.Tests.dll (net10.0)
+
+Attachments:
+  E:\AI Agents\Dangkytinchi\.tmp\campus-audit-20261016\sql-test-results\15e7e835-6a50-4646-bd36-bde25d83ef42\coverage.cobertura.xml

@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "checks": [
+    "Fixture password login opens intended portal.",
+    "Cancelling round selection retains unsaved editor values and dirty state.",
+    "Cancelling round selection restores the prior selected row once (row=AU_R1, prompts=1).",
+    "Refreshing a seat snapshot preserves unsaved editor values.",
+    "Refresh keeps the original draft row version, so a concurrent operator edit rejects stale save and retains the draft.",
+    "Confirming row discard loads a new clean baseline.",
+    "Cancelling quota selection restores its own row and unsaved capacity.",
+    "Quota draft survives snapshot refresh independently of the round editor.",
+    "Successful quota save refreshes its clean baseline.",
+    "Fixture password login opens intended portal.",
+    "Cancelling semester change restores the original term and petition draft.",
+    "Cancelling workspace reload preserves the same draft controls.",
+    "Revisiting a tab preserves its pending draft.",
+    "Confirmed semester discard disposes every old scoped form and resets dirty state.",
+    "New semester has no stale petition values.",
+    "Planner input also blocks unconfirmed semester reassignment.",
+    "Confirmed semester discard replaces planner inputs and captured search state."
+  ],
+  "scope": "Native controls, code-driven input on disposable SQL fixture; no physical input, FPS or DPI scaling claim."
+}

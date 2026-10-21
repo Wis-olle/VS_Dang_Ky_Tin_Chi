@@ -19,5 +19,6 @@ public static class SchedulingLecturerGuard
     }
 
     private static CourseClass? AssignedClass(ScheduleStore store, string id, bool includeCanceled) => store.Classes.FirstOrDefault(item =>
-        (includeCanceled || item.Status != SchedulingLabels.Canceled) && ScheduleRules.Same(item.LecturerId, id));
+        (includeCanceled || LifecycleRules.BlocksResources(item)) && (ScheduleRules.Same(item.LecturerId, id)
+            || (!item.ActualMeetings.IsDefault && item.ActualMeetings.Any(m=>ScheduleRules.Same(m.LecturerId,id)))));
 }

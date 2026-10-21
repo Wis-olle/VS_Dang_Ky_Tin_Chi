@@ -2,17 +2,18 @@ using System.Collections.Immutable;
 
 namespace QuanLyGiangVien.Domain.Scheduling;
 
-public sealed record Room(string Id, string Building, int Capacity, string Type, string Status);
+public sealed record Room(string Id, string Building, int Capacity, string Type, string Status, string Version = "");
 public sealed record Course(string Id, string Name, int Credits, string Faculty);
 public sealed record Semester(string Id, string Name, DateOnly StartDate, DateOnly EndDate);
 public sealed record ClassMeeting(string RoomId, DayOfWeek Day, int StartPeriod, int EndPeriod,
     DateOnly StartDate, DateOnly EndDate);
 public sealed record CourseClass(string Id, string CourseId, string SemesterId, string LecturerId,
-    int Capacity, int Enrolled, string Status, ImmutableArray<ClassMeeting> Meetings);
+    int Capacity, int Enrolled, string Status, ImmutableArray<ClassMeeting> Meetings, string Version = "", bool HasRegistrationHistory = false, string Lifecycle = "REGISTRATION", ImmutableArray<ActualClassMeeting> ActualMeetings = default);
 public sealed record ScheduledOccurrence(DateOnly Date, CourseClass Class, ClassMeeting Meeting)
 {
     public string RoomId => Meeting.RoomId;
-    public string LecturerId => Class.LecturerId;
+    public string LecturerId => ActualLecturerId ?? Class.LecturerId;
+    public string? ActualLecturerId { get; init; }
 }
 public sealed record ScheduleSummary(int TotalClasses, int OpenClasses, int UnscheduledClasses,
     int TotalRooms, int AvailableRooms, int MaintenanceRooms, int Enrolled, int Capacity)

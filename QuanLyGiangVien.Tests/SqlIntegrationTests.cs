@@ -51,7 +51,7 @@ public sealed class SqlIntegrationTests
             Assert.Same(prior, stale.Items);
             Assert.Single((await repository.LoadAsync()).Lecturers.Where(v => v.Id == lecturerId));
 
-            Assert.True(stores.Scheduling.TrySaveRoom(room with { Building = "Tòa đã sửa" }, false, out _));
+            Assert.True(stores.Scheduling.TrySaveRoom(stores.Scheduling.Rooms.Single(r => r.Id == roomId) with { Building = "Tòa đã sửa" }, false, out _));
             Assert.Equal("Tòa đã sửa", (await repository.LoadAsync()).Rooms.Single(v => v.Id == roomId).Building);
             Assert.True(stores.Scheduling.TryDeleteClass(classId, out _));
             classAdded = false;
@@ -68,9 +68,13 @@ public sealed class SqlIntegrationTests
         }
         finally
         {
-            if (classAdded) repository.DeleteClass(classId);
-            if (roomAdded) repository.DeleteRoom(roomId);
-            if (lecturerAdded) repository.DeleteLecturer(lecturerId);
+            if (classAdded || roomAdded || lecturerAdded)
+            {
+                var cleanup = await repository.LoadAsync();
+                if (classAdded) repository.DeleteClass(classId, cleanup.Classes.Single(c => c.Id == classId).Version);
+                if (roomAdded) repository.DeleteRoom(roomId, cleanup.Rooms.Single(r => r.Id == roomId).Version);
+                if (lecturerAdded) repository.DeleteLecturer(lecturerId, cleanup.Lecturers.Single(g => g.Id == lecturerId).Version);
+            }
         }
     }
 }

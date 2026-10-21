@@ -1,0 +1,1 @@
+{"passed":true,"checks":["New academic page is clean before references.","Reference binding leaves untouched editors clean. Dirty: ","Typing creates an unsaved draft.","Reference reload preserves a real dirty draft.","Resetting the only draft restores a clean page.","Viewing the clean academic page can leave without a discard dialog."]}

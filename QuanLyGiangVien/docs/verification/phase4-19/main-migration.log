@@ -1,0 +1,21 @@
+Sao lưu DangKyTinChi_Minh trên . trước khi nâng cấp. Backup/VERIFYONLY lỗi sẽ dừng trước migration.
+Processed 1088 pages for database 'DangKyTinChi_Minh', file 'DangKyTinChi_Minh' on file 1.
+Processed 2 pages for database 'DangKyTinChi_Minh', file 'DangKyTinChi_Minh_log' on file 1.
+BACKUP DATABASE successfully processed 1090 pages in 0.050 seconds (170.234 MB/sec).
+The backup set on file 1 is valid.
+Backup đã kiểm tra: C:\Program Files\Microsoft SQL Server\MSSQL17.MSSQLSERVER\MSSQL\Backup\DangKyTinChi_Minh_20261019_134833_0dd9aac980ea4b31945a3309132ce6ba.bak
+
+(1 rows affected)
+
+(1 rows affected)
+
+(0 rows affected)
+
+(0 rows affected)
+
+(0 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+Database DangKyTinChi_Minh đã sẵn sàng trên SQL Server '.'.

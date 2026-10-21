@@ -10,9 +10,15 @@ internal abstract class ModulePage : UserControl
     public abstract Task RefreshDataAsync();
     public abstract void ClearData();
     public virtual void ApplyDeadline() { }
+    public virtual bool HasUnsavedChanges => false;
+    protected override void OnCreateControl()
+    {
+        base.OnCreateControl();
+        ShowcaseStyle.Apply(this);
+    }
     protected override void Dispose(bool disposing)
     {
-        if (disposing) ClearData();
+        if (disposing) { ClearData(); Ui.DisposeOwnedFonts(this); }
         base.Dispose(disposing);
     }
 }

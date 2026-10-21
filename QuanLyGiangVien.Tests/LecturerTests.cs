@@ -44,7 +44,7 @@ public sealed class LecturerTests
     {
         var store = new LecturerStore([Sample()]);
         var invalid = Sample() with {
-            Id = "INVALID", Name = "1", BirthDate = DateTime.Today.AddDays(1), Gender = "?",
+            Id = "INVALID?", Name = "1", BirthDate = DateTime.Today.AddDays(1), Gender = "?",
             Email = "bad", Phone = "123", Faculty = "", Degree = "", Status = "?", ActiveClasses = -1
         };
         Assert.False(store.TrySave(invalid, true, out var errors));

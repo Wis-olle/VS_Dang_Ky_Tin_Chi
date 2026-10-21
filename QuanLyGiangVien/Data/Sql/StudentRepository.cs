@@ -7,7 +7,7 @@ using QuanLyGiangVien.Domain;
 namespace QuanLyGiangVien.Data.Sql;
 
 public sealed record StudentRecord(string Code, string Name, DateTime? BirthDate, string? Gender,
-    string? Email, string? Phone, string? Address, string Major, string Class, bool Active);
+    string? Email, string? Phone, string? Address, string Major, string Class, bool Active, string? Version = null);
 
 /// <summary>Student management adapted from the supplied QL_DANGKY_TINCHI source to the main schema.</summary>
 public sealed class StudentRepository
@@ -40,7 +40,22 @@ public sealed class StudentRepository
             P("@gioi_tinh", SqlDbType.NVarChar, student.Gender, 10), P("@email", SqlDbType.VarChar, student.Email, 254),
             P("@sdt", SqlDbType.VarChar, student.Phone, 20), P("@dia_chi", SqlDbType.NVarChar, student.Address, 250),
             P("@ma_nganh", SqlDbType.VarChar, student.Major, 20), P("@ma_lop", SqlDbType.VarChar, student.Class, 20),
-            P("@trang_thai", SqlDbType.Bit, student.Active)]);
+            P("@trang_thai", SqlDbType.Bit, student.Active), VersionParameter(student.Version, isNew)]);
+        return command;
+    }
+
+    private static SqlParameter VersionParameter(string? version, bool isNew = false)
+    {
+        if (version is null && !isNew || version is not null && (version.Length != 64 || !version.All(Uri.IsHexDigit)))
+            throw new ArgumentException("Thiếu phiên bản hồ sơ hợp lệ. Hãy tải lại sinh viên trước khi lưu hoặc đổi trạng thái.");
+        return P("@phien_ban", SqlDbType.Binary, version is null ? null : Convert.FromHexString(version), 32);
+    }
+
+    public static SqlCommand StatusCommand(StudentRecord student, bool active)
+    {
+        var command = Command("TrangThai");
+        command.Parameters.AddRange([P("@ma_sv", SqlDbType.VarChar, student.Code, 20),
+            P("@trang_thai", SqlDbType.Bit, active), VersionParameter(student.Version)]);
         return command;
     }
 
@@ -66,17 +81,18 @@ public sealed class StudentRepository
             52300 => "Thông tin sinh viên không hợp lệ. Kiểm tra các trường và ngày sinh.",
             52301 => "Mã sinh viên đã tồn tại.", 52302 => "Sinh viên không còn tồn tại. Hãy tải lại danh sách.",
             52303 => "Lớp phải thuộc ngành đã chọn; lớp, ngành và khoa cần đang hoạt động.",
+            52304 => "Hồ sơ sinh viên đã thay đổi ở phiên khác. Bản nháp vẫn được giữ; hãy ghi lại nội dung cần giữ và bấm Tải lại trước khi sửa tiếp.",
             2812 => "Cần chạy migration 09_Students.sql để sử dụng quản lý sinh viên.",
-            _ => SqlErrorMessages.ForNumber(error.Number) }); }
+            _ => SqlErrorMessages.ForNumber(error.Number) },
+            error.Number == 52304 ? PersistenceFailure.DataConflict : PersistenceFailure.General); }
         catch (InvalidOperationException) { throw new PersistenceException("Không thể truy cập danh sách sinh viên. Hãy thử tải lại."); }
     }
     public Task<DataTable> ListAsync(string keyword, bool includeInactive) => QueryAsync("DanhSach", P("@tu_khoa", SqlDbType.NVarChar, keyword.Trim(), 200), P("@gom_ngung", SqlDbType.Bit, includeInactive));
     public Task<DataTable> ChoicesAsync() => QueryAsync("DanhMuc");
     public async Task SaveAsync(StudentRecord student, bool isNew) { using var command = SaveCommand(student, isNew); await RunAsync(command, false); }
-    public async Task SetStatusAsync(string code, bool active)
+    public async Task SetStatusAsync(StudentRecord student, bool active)
     {
-        using var command = Command("TrangThai");
-        command.Parameters.AddRange([P("@ma_sv", SqlDbType.VarChar, code, 20), P("@trang_thai", SqlDbType.Bit, active)]);
+        using var command = StatusCommand(student, active);
         await RunAsync(command, false);
     }
     public static StudentRecord FromRow(DataRow row)
@@ -85,6 +101,7 @@ public sealed class StudentRepository
         return new(Convert.ToString(row["ma_sv"])!, Convert.ToString(row["ho_ten"])!,
             row.IsNull("ngay_sinh") ? null : Convert.ToDateTime(row["ngay_sinh"]), Optional("gioi_tinh"),
             Optional("email"), Optional("sdt"), Optional("dia_chi"), Convert.ToString(row["ma_nganh"])!,
-            Convert.ToString(row["ma_lop"])!, Convert.ToBoolean(row["trang_thai"]));
+            Convert.ToString(row["ma_lop"])!, Convert.ToBoolean(row["trang_thai"]),
+            row.Table.Columns.Contains("phien_ban") && !row.IsNull("phien_ban") ? Convert.ToHexString((byte[])row["phien_ban"]) : null);
     }
 }

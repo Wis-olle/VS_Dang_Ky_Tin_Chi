@@ -20,7 +20,7 @@ internal sealed partial class CampusForm
         connectCard.Radius = 20; connectCard.BorderWidth = 1; connectCard.BorderColor = AppTheme.Line;
         loginHeading = TextLabel("", 22, true);
         loginHeading.SetBounds(s(32), s(24), s(576), s(48));
-        var description = TextLabel("Chọn cổng và đăng nhập bằng tài khoản được cấp.", 10, false, AppTheme.Muted);
+        var description = TextLabel("Chọn cổng hoặc dùng tài khoản mẫu bên dưới.", 10, false, AppTheme.Muted);
         description.SetBounds(s(32), s(80), s(576), s(32));
         studentLogin = ActionButton("Sinh viên"); trainingLogin = ActionButton("Phòng đào tạo");
         studentLogin.AccessibleName = "Cổng Sinh viên"; trainingLogin.AccessibleName = "Cổng Phòng đào tạo";
@@ -45,6 +45,8 @@ internal sealed partial class CampusForm
             if (args.KeyCode == Keys.Enter) { args.SuppressKeyPress = true; await AuthenticateAsync(); }
         };
         connectCard.Controls.AddRange([loginHeading, description, studentLogin, trainingLogin, userLabel, username, passwordLabel, password, connect, errorText]);
+        studentLogin.TabIndex = 5; trainingLogin.TabIndex = 6;
+        BuildQuickLogin();
         disconnect.Text = "Đăng xuất";
         SelectLoginPortal(loginPortal);
     }
@@ -63,6 +65,7 @@ internal sealed partial class CampusForm
     {
         if (!passwordLogin || busy || identity != null) return;
         SetBusy(true); SetLoginEnabled(false); errorText.Text = "";
+        bool failed = false;
         var auth = new PasswordLogin(connectionString);
         try
         {
@@ -80,9 +83,9 @@ internal sealed partial class CampusForm
         catch (Exception error) when (error is PersistenceException or ArgumentException or InvalidOperationException)
         {
             await auth.SignOutAsync();
-            if (!IsDisposed) { DisconnectCore(); errorText.Text = SafeMessage(error); password.Clear(); password.Focus(); }
+            if (!IsDisposed) { DisconnectCore(); errorText.Text = SafeMessage(error); password.Clear(); failed = true; }
         }
-        finally { if (!IsDisposed) { SetBusy(false); SetLoginEnabled(true); } }
+        finally { if (!IsDisposed) { SetBusy(false); SetLoginEnabled(true); if (failed) password.Focus(); } }
     }
 
     internal async Task LogoutAsync()
@@ -92,7 +95,7 @@ internal sealed partial class CampusForm
         try { await new PasswordLogin(connectionString).SignOutAsync(); }
         finally
         {
-            if (!IsDisposed) { DisconnectCore(); password.Clear(); username.Clear(); SetBusy(false); SelectLoginPortal(loginPortal); username.Focus(); }
+            if (!IsDisposed) { DisconnectCore(); password.Clear(); username.Clear(); SetBusy(false); RefreshQuickLogin(); LayoutShell(); SelectLoginPortal(loginPortal); username.Focus(); }
         }
     }
     private void SetLoginEnabled(bool enabled)
@@ -100,5 +103,7 @@ internal sealed partial class CampusForm
         username.Enabled = password.Enabled = enabled;
         if (studentLogin != null) studentLogin.Enabled = enabled;
         if (trainingLogin != null) trainingLogin.Enabled = enabled;
+        if (quickStudentLogin != null) quickStudentLogin.Enabled = enabled && quickLoginAvailable;
+        if (quickTrainingLogin != null) quickTrainingLogin.Enabled = enabled && quickLoginAvailable;
     }
 }

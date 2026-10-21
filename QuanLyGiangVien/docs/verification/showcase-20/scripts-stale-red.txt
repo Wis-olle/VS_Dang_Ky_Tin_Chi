@@ -1,0 +1,14 @@
+PASS: Showcase has a dedicated provisioning entry point.
+PASS: Unsafe or pre-existing target name rejected: DangKyTinChi_Minh
+PASS: Unsafe or pre-existing target name rejected: DangKyTinChi_Minh_Test_StudentPreview
+PASS: Unsafe or pre-existing target name rejected: DangKyTinChi_Minh_Test_Showcase_abc
+PASS: Unsafe or pre-existing target name rejected: DangKyTinChi_Minh_Test_Showcase_';DROP
+PASS: Remote server rejected before SQL.
+PASS: Ephemeral database requires verification.
+PASS: Default database is a fresh UUID in the showcase namespace.
+PASS: Default demo is retained with private local evidence.
+Exception: <workspace>\scripts\tests\Test-ShowcaseDemo.ps1:7
+Line |
+   7 |  … dition,[string]$message) { if(-not $condition){throw $message}; Write …
+     |                                                   ~~~~~~~~~~~~~~
+     | Launcher resets previous native results before a verification launch.

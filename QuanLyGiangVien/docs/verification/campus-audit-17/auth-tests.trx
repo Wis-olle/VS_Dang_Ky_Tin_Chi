@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="a4788c34-46ef-4fa3-bb7c-3a0e3e14b3a3" name="minhq@QUANGMINHLAPTOP 2026-10-17 01:08:39" runUser="QUANGMINHLAPTOP\minhq" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-17T01:08:39.6977308+07:00" queuing="2026-10-17T01:08:39.6977310+07:00" start="2026-10-17T01:08:38.1773862+07:00" finish="2026-10-17T01:08:39.7020141+07:00" />
+  <TestSettings name="default" id="9410fb71-1df5-4e86-a53b-e6d1bfb87ee9">
+    <Deployment runDeploymentRoot="minhq_QUANGMINHLAPTOP_2026-10-17_01_08_39" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="9e59e738-42d5-4c6b-b0e0-bba01fc9a819" testId="416d12c8-252b-c784-2bc2-417fd6d41cd0" testName="QuanLyGiangVien.Tests.PasswordLoginIntegrationTests.SharedDatabaseEnforcesPortalsSessionsAndStudentManagement" computerName="QUANGMINHLAPTOP" duration="00:00:00.7600188" startTime="2026-10-17T01:08:39.5313299+07:00" endTime="2026-10-17T01:08:39.5313640+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9e59e738-42d5-4c6b-b0e0-bba01fc9a819" />
+    <UnitTestResult executionId="9392c742-abc5-42e7-8f15-5b35a1b078d6" testId="21c69bbf-0728-44a9-e6c6-e33ba58c0245" testName="QuanLyGiangVien.Tests.PasswordLoginIntegrationTests.ServerChallengesCannotBeReplayedAndArbitraryTokensCannotAuthenticate" computerName="QUANGMINHLAPTOP" duration="00:00:00.0670436" startTime="2026-10-17T01:08:39.5999031+07:00" endTime="2026-10-17T01:08:39.5999032+07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9392c742-abc5-42e7-8f15-5b35a1b078d6" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="QuanLyGiangVien.Tests.PasswordLoginIntegrationTests.SharedDatabaseEnforcesPortalsSessionsAndStudentManagement" storage="e:\ai agents\dangkytinchi\.tmp\campus-audit-20261016\test-build\bin\quanlygiangvien.tests\release\quanlygiangvien.tests.dll" id="416d12c8-252b-c784-2bc2-417fd6d41cd0">
+      <Execution id="9e59e738-42d5-4c6b-b0e0-bba01fc9a819" />
+      <TestMethod codeBase="E:\AI Agents\Dangkytinchi\.tmp\campus-audit-20261016\test-build\bin\QuanLyGiangVien.Tests\release\QuanLyGiangVien.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="QuanLyGiangVien.Tests.PasswordLoginIntegrationTests" name="SharedDatabaseEnforcesPortalsSessionsAndStudentManagement" />
+    </UnitTest>
+    <UnitTest name="QuanLyGiangVien.Tests.PasswordLoginIntegrationTests.ServerChallengesCannotBeReplayedAndArbitraryTokensCannotAuthenticate" storage="e:\ai agents\dangkytinchi\.tmp\campus-audit-20261016\test-build\bin\quanlygiangvien.tests\release\quanlygiangvien.tests.dll" id="21c69bbf-0728-44a9-e6c6-e33ba58c0245">
+      <Execution id="9392c742-abc5-42e7-8f15-5b35a1b078d6" />
+      <TestMethod codeBase="E:\AI Agents\Dangkytinchi\.tmp\campus-audit-20261016\test-build\bin\QuanLyGiangVien.Tests\release\QuanLyGiangVien.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="QuanLyGiangVien.Tests.PasswordLoginIntegrationTests" name="ServerChallengesCannotBeReplayedAndArbitraryTokensCannotAuthenticate" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="416d12c8-252b-c784-2bc2-417fd6d41cd0" executionId="9e59e738-42d5-4c6b-b0e0-bba01fc9a819" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="21c69bbf-0728-44a9-e6c6-e33ba58c0245" executionId="9392c742-abc5-42e7-8f15-5b35a1b078d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 10.0.12)&#xD;
+[xUnit.net 00:00:00.07]   Discovering: QuanLyGiangVien.Tests&#xD;
+[xUnit.net 00:00:00.17]   Discovered:  QuanLyGiangVien.Tests&#xD;
+[xUnit.net 00:00:00.17]   Starting:    QuanLyGiangVien.Tests&#xD;
+[xUnit.net 00:00:01.05]   Finished:    QuanLyGiangVien.Tests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

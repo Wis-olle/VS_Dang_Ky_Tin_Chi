@@ -21,6 +21,8 @@ public sealed class SqlConcurrencyTests
         await hue.OpenAsync(); await minh.OpenAsync(); await observer.OpenAsync();
         using var session = new SqlCommand("SELECT @@SPID;", hue);
         int hueSession = (short)(await session.ExecuteScalarAsync())!;
+        using var readVersion = new SqlCommand("SELECT phien_ban FROM dbo.LOP_HOC_PHAN WHERE ma_lhp='TEST_CONCURRENT';", observer);
+        var originalVersion = Convert.ToHexString((byte[])(await readVersion.ExecuteScalarAsync())!);
         using var registration = new SqlCommand("EXEC dbo.usp_DangKyHocPhan @ma_lhp='TEST_CONCURRENT';", hue) { CommandTimeout = 30 };
         var hueTask = registration.ExecuteNonQueryAsync();
         try
@@ -41,14 +43,14 @@ public sealed class SqlConcurrencyTests
             await mapping.ExecuteNonQueryAsync();
             var mappingWait = mappingClock.ElapsedMilliseconds;
             var item = new CourseClass("TEST_CONCURRENT", "IT102", "HK1-2627", "GV0009", 60, 0, SchedulingLabels.Open,
-                ImmutableArray.Create(new ClassMeeting("C101", DayOfWeek.Sunday, 10, 12, new(2026, 9, 7), new(2026, 12, 27))));
+                ImmutableArray.Create(new ClassMeeting("C101", DayOfWeek.Sunday, 10, 12, new(2026, 9, 7), new(2026, 12, 27))), originalVersion);
             using var save = SqlMinhCommands.SaveClass(item, false);
             save.Connection = minh;
             var saveClock = Stopwatch.StartNew();
             var failure = await Assert.ThrowsAsync<SqlException>(() => save.ExecuteScalarAsync());
             var procedureWait = saveClock.ElapsedMilliseconds;
             await hueTask;
-            Assert.Equal(52041, failure.Number);
+            Assert.Equal(52046, failure.Number);
             Assert.True(procedureWait >= 1000, $"Class procedure must wait for the registration; mapping={mappingWait}ms, procedure={procedureWait}ms");
             using var verify = new SqlCommand("SELECT COUNT(*) FROM dbo.DANG_KY d JOIN dbo.LOP_HOC_PHAN l ON l.ma_lhp=d.ma_lhp WHERE d.ma_lhp='TEST_CONCURRENT' AND d.trang_thai='DANG_KY' AND l.ma_hp='IT101';", minh);
             Assert.Equal(1, (int)(await verify.ExecuteScalarAsync())!);

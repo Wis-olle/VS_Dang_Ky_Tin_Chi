@@ -1,0 +1,8 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  QuanLyGiangVien.Tests -> E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\bin\Release\net10.0\QuanLyGiangVien.Tests.dll
+Test run for E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\bin\Release\net10.0\QuanLyGiangVien.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: E:\AI Agents\Dangkytinchi\.tmp\quick-login-18\tests\quick-login.trx
+
+Passed!  - Failed:     0, Passed:    35, Skipped:     0, Total:    35, Duration: 267 ms - QuanLyGiangVien.Tests.dll (net10.0)

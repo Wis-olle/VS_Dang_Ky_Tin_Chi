@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "dpi": 96,
+  "checks": [
+    "Real password login opens the training portal.",
+    "Editing name and phone creates a real unsaved student draft.",
+    "The actual Save button displays a native warning for a stale profile.",
+    "The stale-write warning keeps both edited fields and unsaved state.",
+    "The editor retains a visible instruction to reload after a conflict.",
+    "The conflict instruction scrolls into the editor viewport after saving from the bottom.",
+    "Only the isolated account\u0027s SQL sessions are expired for the regression.",
+    "Session expiry disables the same page instead of replacing its editor.",
+    "Session expiry preserves the student\u0027s pending draft.",
+    "The real same-account password dialog restores the session and enabled page.",
+    "Reauthentication preserves the exact same page, draft and unsaved state.",
+    "Conflict, session expiry and password recovery never replay or save the draft automatically.",
+    "A real modal room editor rejects Save after its session expires.",
+    "Canceling modal password recovery keeps the draft and the session blocked.",
+    "Retrying Save from the same modal editor is blocked before writing.",
+    "Modal reauthentication preserves the room draft without committing or replaying Save.",
+    "Successful modal recovery replaces the obsolete expiry error with an unsaved-draft confirmation.",
+    "SQL confirms that canceled and retried modal saves never changed the room."
+  ]
+}

@@ -12,6 +12,7 @@ internal sealed partial class SchedulingPage
     internal void RefreshData(bool animate = true)
     {
         if (!ready) return;
+        ConfigureTimetableSubjects();
         SurfaceTransition.CancelAll();
         var summary = SchedulingQuery.Summary(Store, SemesterId);
         int activeClasses = Store.Classes.Count(c => c.SemesterId == SemesterId && c.Status != SchedulingLabels.Canceled);
@@ -65,10 +66,11 @@ internal sealed partial class SchedulingPage
     }
     private void RefreshCalendar(IReadOnlyList<ScheduledOccurrence> sessions)
     {
-        var room = roomFilter.SelectedIndex <= 0 ? null : roomFilter.SelectedValue?.ToString();
-        var filtered = sessions.Where(s => room == null || s.RoomId == room).ToArray();
-        ResultCount = filtered.Length;
-        calendar.SetData(Store, filtered, monday);
+        var filtered = UsesStudentDirectory && !timetableDirectoryReady ? []
+            : TimetableScope.Select(Store, sessions, timetableDirectory, scopeKind, timetableSubjectId);
+        ResultCount = filtered.Count;
+        calendar.SetData(Store, filtered, monday, SchedulingQuery.Occurrences(Store, monday, monday.AddDays(6)),
+            personalSchedule: scopeKind == TimetableScopeKind.Student, caption: TimetableCaption());
         var term = Store.Catalog.Semesters.First(s => s.Id == SemesterId);
         previousWeek.Enabled = monday > SchedulingQuery.WeekStart(term.StartDate);
         nextWeek.Enabled = monday < SchedulingQuery.WeekStart(term.EndDate);
@@ -80,7 +82,7 @@ internal sealed partial class SchedulingPage
         ConfigureSelect(filter, tabs.SelectIndex == 1 ? new[] { "Tất cả tòa nhà" }.Concat(Store.Rooms.Select(r => r.Building).Distinct())
             : new[] { "Tất cả trạng thái", SchedulingLabels.Open, SchedulingLabels.Closed, SchedulingLabels.Canceled });
         add.Text = tabs.SelectIndex == 1 ? "Thêm phòng" : "Mở lớp";
-        listTitle.Text = tabs.SelectIndex == 1 ? "Danh sách phòng" : tabs.SelectIndex == 2 ? "Lịch giảng dạy" : "Danh sách lớp";
+        listTitle.Text = tabs.SelectIndex == 1 ? "Danh sách phòng" : tabs.SelectIndex == 2 ? "Thời khóa biểu" : "Danh sách lớp";
         search.PlaceholderText = tabs.SelectIndex == 1 ? "Tìm mã phòng, tòa nhà, loại phòng…" : "Tìm mã lớp, học phần, giảng viên…";
         ConfigureTable(); ready = true; RefreshData(false);
         SurfaceTransition.Reveal(tabs.SelectIndex == 2 ? calendar : ResultCount > 0 ? table : emptyArtwork, 180);
@@ -92,7 +94,7 @@ internal sealed partial class SchedulingPage
     }
     private void ResetFilters()
     {
-        ready = false; search.Text = ""; filter.SelectedIndex = roomFilter.SelectedIndex = 0;
+        ready = false; search.Text = ""; filter.SelectedIndex = 0; timetableSubjectId = null;
         ready = true; debounce.Stop(); RefreshData();
     }
     private void ResetWeek()
@@ -123,8 +125,7 @@ internal sealed partial class SchedulingPage
     private void ShowRoomSchedule(string id)
     {
         SwitchTab(2);
-        roomFilter.SelectedIndex = Math.Max(0, roomFilter.Items.ToList().FindIndex(x => x.ToString() == id));
-        RefreshData();
+        _ = SelectTimetableAsync(TimetableScopeKind.Room, id);
     }
     private void EditClass(CourseClass? item)
     {
@@ -159,11 +160,9 @@ internal sealed partial class SchedulingPage
     }
     internal void RefreshRoomChoices()
     {
-        var selectedRoom = roomFilter.SelectedValue?.ToString();
         var selectedBuilding = filter.SelectedValue?.ToString();
         ready = false;
-        ConfigureSelect(roomFilter, new[] { "Tất cả phòng" }.Concat(Store.Rooms.Select(r => r.Id)));
-        roomFilter.SelectedIndex = Math.Max(0, roomFilter.Items.ToList().FindIndex(x => x.ToString() == selectedRoom));
+        ConfigureTimetableSubjects();
         if (tabs.SelectIndex == 1)
         {
             ConfigureSelect(filter, new[] { "Tất cả tòa nhà" }.Concat(Store.Rooms.Select(r => r.Building).Distinct()));
@@ -172,19 +171,22 @@ internal sealed partial class SchedulingPage
         ready = true;
     }
     internal SchedulingViewState CaptureView() => new(tabs.SelectIndex, semester.SelectedIndex, search.Text,
-        filter.SelectedValue?.ToString(), roomFilter.SelectedValue?.ToString(), monday, selectedClassId, selectedRoomId,
-        new Point(-content.AutoScrollPosition.X, -content.AutoScrollPosition.Y));
+        filter.SelectedValue?.ToString(), scopeKind == TimetableScopeKind.Room ? timetableSubjectId : null,
+        monday, selectedClassId, selectedRoomId, new Point(-content.AutoScrollPosition.X, -content.AutoScrollPosition.Y),
+        scopeKind == TimetableScopeKind.Lecturer ? timetableSubjectId : null, scopeKind, timetableSubjectId);
     internal void RestoreView(SchedulingViewState state)
     {
         SwitchTab(state.Tab);
         ready = false;
         semester.SelectedIndex = state.Semester; search.Text = state.Query;
         filter.SelectedIndex = Math.Max(0, filter.Items.ToList().FindIndex(x => x.ToString() == state.Filter));
-        roomFilter.SelectedIndex = Math.Max(0, roomFilter.Items.ToList().FindIndex(x => x.ToString() == state.RoomFilter));
+        scopeKind = state.Scope; timetableScope.SelectedIndex = (int)scopeKind;
+        timetableSubjectId = state.SubjectId;
         monday = state.Week; selectedClassId = state.ClassId; selectedRoomId = state.RoomId;
         ready = true; RefreshData(false); content.AutoScrollPosition = state.Scroll;
+        if (UsesStudentDirectory) _ = EnsureTimetableDirectoryAsync();
     }
-    internal bool RoomChoiceExistsForCheck(string id) => roomFilter.Items.ToList().Any(x => x.ToString() == id);
+    internal bool RoomChoiceExistsForCheck(string id) => Store.Rooms.Any(r => ScheduleRules.Same(r.Id, id));
     private void DeleteRoom(Room room)
     {
         if (!ConfirmDelete("Xóa phòng học?", $"Xóa phòng {room.Id} khỏi danh sách?")) return;
@@ -192,7 +194,13 @@ internal sealed partial class SchedulingPage
         RefreshRoomChoices(); RefreshData();
     }
     internal void SetSearchForCheck(string query) { search.Text = query; debounce.Stop(); RefreshData(false); }
-    internal void SetRoomFilterForCheck(string id) { roomFilter.SelectedIndex = Math.Max(0, roomFilter.Items.ToList().FindIndex(x => x.ToString() == id)); RefreshData(false); }
+    internal void SetRoomFilterForCheck(string id) => _ = SetScopeForCheckAsync(TimetableScopeKind.Room, string.IsNullOrWhiteSpace(id) ? null : id);
+    internal void SetLecturerFilterForCheck(string id) => _ = SetScopeForCheckAsync(TimetableScopeKind.Lecturer, string.IsNullOrWhiteSpace(id) ? null : id);
+    internal IReadOnlyList<ScheduledOccurrence> VisibleCalendarSessionsForCheck => calendar.PlacementsForCheck.Select(p => p.Occurrence).ToArray();
+    internal bool CalendarFiltersDoNotOverlapForCheck => !timetableScope.Bounds.IntersectsWith(timetableSubject.Bounds)
+        && !timetableSubject.Bounds.IntersectsWith(reloadTimetableSubjects.Bounds)
+        && !timetableScope.Bounds.IntersectsWith(currentWeek.Bounds)
+        && reloadTimetableSubjects.Right <= listCard.Width && timetableSubject.Bottom <= calendar.Top;
     internal void SetSemesterForCheck(int index) { semester.SelectedIndex = index; RefreshData(false); }
     internal void SelectClassForCheck(int index) => SelectClass(Store.Classes[index]);
     internal bool HasHorizontalScrollForCheck => content.HorizontalScroll.Visible;
@@ -235,4 +243,5 @@ internal sealed partial class SchedulingPage
 }
 
 internal sealed record SchedulingViewState(int Tab, int Semester, string Query, string? Filter, string? RoomFilter,
-    DateOnly Week, string? ClassId, string? RoomId, Point Scroll);
+    DateOnly Week, string? ClassId, string? RoomId, Point Scroll, string? LecturerFilter = null,
+    TimetableScopeKind Scope = TimetableScopeKind.Lecturer, string? SubjectId = null);

@@ -7,6 +7,7 @@
 **/obj/
 **/.vs/
 **/TestResults/
+**/.tmp-output/
 *.user
 *.suo
 *.userosscache
@@ -15,6 +16,7 @@
 *.pyc
 
 # Local credentials and environment configuration
+**/quick-login.dat
 .env
 .env.*
 !.env.example

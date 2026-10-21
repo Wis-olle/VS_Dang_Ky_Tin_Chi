@@ -1,0 +1,2 @@
+student_login=true; own_registrations=4; minimal_teacher_dto=true
+training_login=true; students=2; lecturers=12; classes=10; row_versions=true

@@ -1,0 +1,10 @@
+Changed database context to 'DangKyTinChi_Minh_Test_Phase1Provision18_11f643e923c4'.
+
+(0 rows affected)
+
+(1 rows affected)
+Database DangKyTinChi_Minh_Test_Phase1Provision18_11f643e923c4 đã sẵn sàng trên SQL Server '.'.
+Msg 52112, Level 16, State 1, Server QuangMinhLaptop, Line 17
+Tài khoản mẫu đã có mật khẩu; dùng -ResetPasswords nếu cần đặt lại.
+PASS: A pre-existing second credential rejects provisioning.
+Fixture evidence: E:\AI Agents\Dangkytinchi\.tmp\phase1-provision-tests\11f643e923c4456baac483a96273ae32

@@ -1,0 +1,59 @@
+[
+  {
+    "caseName": "ZeroCreditGroup",
+    "expected": "Published SQL curriculum remains readable",
+    "actual": "C\u1EA5u tr\u00FAc CT\u0110T kh\u00F4ng h\u1EE3p l\u1EC7."
+  },
+  {
+    "caseName": "MinimumGroupUsedAsCapacity",
+    "expectedAllocatedDone": 6,
+    "expectedSatisfied": true,
+    "actualAllocatedDone": 3,
+    "actualSatisfied": false,
+    "rows": [
+      {
+        "Requirement": {
+          "Id": "A",
+          "Course": "A",
+          "Group": "G1",
+          "Credits": 3,
+          "Required": true,
+          "Equivalence": null
+        },
+        "Done": 3,
+        "InProgress": 0,
+        "Planned": 0
+      },
+      {
+        "Requirement": {
+          "Id": "B",
+          "Course": "B",
+          "Group": "G1",
+          "Credits": 3,
+          "Required": true,
+          "Equivalence": null
+        },
+        "Done": 0,
+        "InProgress": 0,
+        "Planned": 0
+      }
+    ]
+  },
+  {
+    "caseName": "CrossStageRerouting",
+    "expectedDone": 3,
+    "expectedInProgress": 3,
+    "actualDone": 3,
+    "actualInProgress": 0,
+    "allocations": [
+      {
+        "SourceCourse": "X",
+        "TargetId": "A",
+        "TargetCourse": "A",
+        "Group": "G1",
+        "Stage": "DONE",
+        "Credits": 3
+      }
+    ]
+  }
+]

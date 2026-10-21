@@ -23,6 +23,7 @@ public sealed class LecturerEditor : AntdUI.Window
     private readonly AntdUI.Label summary;
     private readonly string[] portraitKeys;
     private string avatarKey;
+    private bool sessionError;
     private readonly List<Font> layoutFonts = [];
     private readonly Motion appearance = new();
 
@@ -214,10 +215,12 @@ public sealed class LecturerEditor : AntdUI.Window
     /// <summary>Returns success without closing, so the caller can inspect validation state.</summary>
     public bool TrySave()
     {
+        sessionError = false;
         foreach (var field in fields.Values) { field.Input.Status = TType.None; field.Error.Text = ""; }
         summary.Text = "";
+        summary.ForeColor = AppTheme.Danger;
         var value = new Lecturer(id.Text, name.Text, birth.Value ?? default, Selected(gender), email.Text,
-            phone.Text, Selected(faculty), Selected(degree), Selected(status), avatarKey, original?.ActiveClasses ?? 0);
+            phone.Text, Selected(faculty), Selected(degree), Selected(status), avatarKey, original?.ActiveClasses ?? 0, original?.Version ?? "");
         var assignmentError = assignmentValidation?.Invoke(value, original is null);
         if (assignmentError != null)
         {
@@ -226,6 +229,7 @@ public sealed class LecturerEditor : AntdUI.Window
         }
         if (!store.TrySave(value, original is null, out var errors))
         {
+            sessionError = errors.ContainsKey("_session");
             foreach (var error in errors)
                 if (fields.TryGetValue(error.Key, out var field)) { field.Input.Status = TType.Error; field.Error.Text = error.Value; }
             summary.Text = errors.Keys.Any(fields.ContainsKey) ? "Vui lòng kiểm tra các trường được đánh dấu bên trên."
@@ -236,6 +240,14 @@ public sealed class LecturerEditor : AntdUI.Window
         }
         Result = store.Items.First(item => item.Id.Equals(value.Id.Trim(), StringComparison.OrdinalIgnoreCase));
         return true;
+    }
+
+    internal void SessionRecovered()
+    {
+        if (!sessionError) return;
+        sessionError = false;
+        summary.Text = "Đã đăng nhập lại. Bản nháp chưa được lưu.";
+        summary.ForeColor = AppTheme.Muted;
     }
 
     private void SaveAndClose()

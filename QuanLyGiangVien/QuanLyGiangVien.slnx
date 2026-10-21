@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="QuanLyGiangVien.csproj" />
   <Project Path="../QuanLyGiangVien.Tests/QuanLyGiangVien.Tests.csproj" />
+  <Project Path="../QuanLyGiangVien.Worker/QuanLyGiangVien.Worker.csproj" />
 </Solution>

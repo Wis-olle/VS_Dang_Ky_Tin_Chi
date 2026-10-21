@@ -31,12 +31,20 @@ public static class SchedulingQuery
     {
         ArgumentNullException.ThrowIfNull(store);
         if (startDate > endDate) return [];
-        return Array.AsReadOnly(store.Classes.Where(item => item.Status != SchedulingLabels.Canceled
-            && (string.IsNullOrWhiteSpace(lecturerId) || ScheduleRules.Same(item.LecturerId, lecturerId)))
-            .SelectMany(item => item.Meetings.Where(meeting => string.IsNullOrWhiteSpace(roomId)
-                || ScheduleRules.Same(meeting.RoomId, roomId)).SelectMany(meeting => Expand(item, meeting, startDate, endDate)))
+        return Array.AsReadOnly(store.Classes.Where(item => item.Status != SchedulingLabels.Canceled)
+            .SelectMany(item => ExpandActual(item, startDate, endDate))
+            .Where(item => (string.IsNullOrWhiteSpace(roomId) || ScheduleRules.Same(item.RoomId,roomId))
+                && (string.IsNullOrWhiteSpace(lecturerId) || ScheduleRules.Same(item.LecturerId,lecturerId)))
             .OrderBy(item => item.Date).ThenBy(item => item.Meeting.StartPeriod).ThenBy(item => item.Class.Id, StringComparer.Ordinal)
             .ToArray());
+    }
+
+    internal static IEnumerable<ScheduledOccurrence> ExpandActual(CourseClass item, DateOnly from, DateOnly to)
+    {
+        if(item.ActualMeetings.IsDefault) return item.Meetings.SelectMany(m=>Expand(item,m,from,to));
+        return item.ActualMeetings.Where(m=>m.Date>=from && m.Date<=to).Select(m=>
+            new ScheduledOccurrence(m.Date,item,new(m.RoomId,m.Date.DayOfWeek,m.StartPeriod,m.EndPeriod,m.Date,m.Date))
+                {ActualLecturerId=m.LecturerId});
     }
 
     public static DateOnly WeekStart(DateOnly date) => date.AddDays(-((int)date.DayOfWeek + 6) % 7);
@@ -58,16 +66,16 @@ public static class SchedulingQuery
     {
         ArgumentNullException.ThrowIfNull(store);
         if (!ScheduleRules.ValidTime(requested) || capacity is < 1 or > 500) return [];
-        var scheduled = store.Classes.Where(item => item.Status != SchedulingLabels.Canceled
-            && !ScheduleRules.Same(item.Id, excludeClassId)).SelectMany(item => item.Meetings).ToArray();
+        var scheduled = store.Classes.Where(item => LifecycleRules.BlocksResources(item)
+            && !ScheduleRules.Same(item.Id, excludeClassId)).SelectMany(item=>ExpandActual(item,requested.StartDate,requested.EndDate)).ToArray();
         return Array.AsReadOnly(store.Rooms.Where(room => room.Status == SchedulingLabels.Ready && room.Capacity >= capacity
-            && !scheduled.Any(meeting => ScheduleRules.Same(meeting.RoomId, room.Id)
-                && ScheduleRules.Overlaps(requested, meeting))).ToArray());
+            && !scheduled.Any(occurrence => ScheduleRules.Same(occurrence.RoomId, room.Id)
+                && ScheduleRules.Overlaps(requested, occurrence.Meeting))).ToArray());
     }
 
     private static bool All(string? value, string label) => string.IsNullOrWhiteSpace(value) || ScheduleRules.Same(value, label);
 
-    private static IEnumerable<string> ClassFields(ScheduleStore store, IReadOnlyList<Lecturer> lecturers, CourseClass item)
+    private static IEnumerable<string> ClassFields(ScheduleStore store, IReadOnlyList<TeachingLecturer> lecturers, CourseClass item)
     {
         var course = store.Catalog.Courses.FirstOrDefault(course => ScheduleRules.Same(course.Id, item.CourseId));
         var lecturer = lecturers.FirstOrDefault(lecturer => ScheduleRules.Same(lecturer.Id, item.LecturerId));

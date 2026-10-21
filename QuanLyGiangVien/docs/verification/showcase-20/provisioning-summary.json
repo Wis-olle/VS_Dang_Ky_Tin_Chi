@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "synthetic": true,
+  "cleaned": true,
+  "keepDatabase": false,
+  "database": "DangKyTinChi_Minh_Test_Showcase_232d16b66fb54ae8b28a71de2a7a3ab5",
+  "checkCount": 21,
+  "nativeChecks": 25,
+  "scope": "Fresh synthetic UUID fixture; real local SQL provisioning and native verification; exact fixture cleaned. User-selected demo preserved by NoSelect."
+}

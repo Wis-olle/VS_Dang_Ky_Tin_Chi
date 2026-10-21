@@ -1,0 +1,11 @@
+{
+  "workers": 12,
+  "simultaneousClaimRetries": 2,
+  "offered": 1,
+  "enrolled": 1,
+  "allocationRows": 1,
+  "claimEvents": 1,
+  "elapsedMilliseconds": 1584,
+  "utc": "2026-10-19T21:48:42.3437719Z",
+  "scope": "Local SQL concurrency fixture; not a production capacity claim"
+}

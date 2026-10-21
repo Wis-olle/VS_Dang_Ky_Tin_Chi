@@ -31,7 +31,18 @@ internal sealed partial class CampusForm
         caption.Text = " "; caption.ShowButton = true; caption.ShowIcon = false;
         caption.UseSystemStyleColor = true; caption.BackColor = AppTheme.Canvas; caption.Font = MakeFont(8);
         navigation.BackColor = host.BackColor = AppTheme.Canvas;
-        navigation.Controls.AddRange([brand, identityText, roleText, disconnect]);
+        changePassword.Text = "Đổi mật khẩu"; changePassword.Font = MakeFont(9, true);
+        changePassword.Radius = 12; changePassword.DefaultBack = Color.White;
+        changePassword.ForeColor = AppTheme.Ink; changePassword.AccessibleName = "Đổi mật khẩu của tôi";
+        changePassword.Visible = false;
+        changePassword.Click += (_, _) => {
+            using var dialog = new Features.Accounts.PasswordChangeDialog(connectionString);
+            if (dialog.ShowDialog(this) == DialogResult.OK) {
+                AntdUI.Message.success(this, "Đã đổi mật khẩu. Đăng nhập lại bằng mật khẩu mới để tiếp tục.");
+                OnSessionExpired();
+            }
+        };
+        navigation.Controls.AddRange([brand, identityText, roleText, changePassword, disconnect]);
         disconnect.Visible = identityText.Visible = roleText.Visible = false;
         Controls.AddRange([caption, navigation, host]);
         host.Controls.Add(connectCard);
@@ -56,35 +67,43 @@ internal sealed partial class CampusForm
     {
         if (brand == null) return;
         int s(int value) => AppTheme.S(value);
-        int width = ClientSize.Width;
+        // AntdUI keeps a normal-window size cache; layout must follow the visible client area.
+        var visibleClient = ((Control)this).ClientSize;
+        int width = visibleClient.Width;
         caption.SetBounds(0, 0, width, s(30));
-        navigation.SetBounds(0, s(30), width, s(62));
-        host.SetBounds(0, s(92), width, Math.Max(1, ClientSize.Height - s(92)));
+        bool twoRows = identity != null;
+        int navigationHeight = twoRows ? 112 : 62;
+        navigation.SetBounds(0, s(30), width, s(navigationHeight));
+        int hostY = s(30 + navigationHeight + (sessionNotice.Visible ? 64 : 0));
+        LayoutSessionRecovery(width);
+        host.SetBounds(0, hostY, width, Math.Max(1, visibleClient.Height - hostY));
         FitCurrentPage();
         brand.SetBounds(s(28), s(9), s(width < s(1200) ? 125 : 150), s(42));
-        int x = s(width < s(1200) ? 164 : 240);
+        int x = s(28);
         foreach (var pair in moduleButtons)
         {
             int buttonWidth = pair.Key switch {
                 Domain.Shell.CampusModule.Lecturers => 110, Domain.Shell.CampusModule.Scheduling => 154,
-                Domain.Shell.CampusModule.Catalogs => 170, Domain.Shell.CampusModule.Reports => 100,
+                Domain.Shell.CampusModule.Catalogs => 170, Domain.Shell.CampusModule.Reports => 175,
                 Domain.Shell.CampusModule.Registration => 178, _ => 150
             };
             if (pair.Key == Domain.Shell.CampusModule.Students) buttonWidth = 110;
+            if (pair.Key == Domain.Shell.CampusModule.Academics) buttonWidth = 90;
             if (width < s(1200) && identity?.Role != "SINH_VIEN") buttonWidth = pair.Key switch {
                 Domain.Shell.CampusModule.Lecturers => 90, Domain.Shell.CampusModule.Scheduling => 130,
-                Domain.Shell.CampusModule.Catalogs => 146, _ => 90
+                Domain.Shell.CampusModule.Catalogs => 146, Domain.Shell.CampusModule.Reports => 175, _ => 90
             };
-            pair.Value.SetBounds(x, s(10), s(buttonWidth), s(42)); x += s(buttonWidth + 6);
+            pair.Value.SetBounds(x, s(62), s(buttonWidth), s(42)); x += s(buttonWidth + 6);
         }
         disconnect.SetBounds(width - s(138), s(11), s(112), s(40));
-        int identityX = Math.Max(x + s(10), width - s(338));
-        int identityWidth = Math.Max(s(70), width - s(154) - identityX);
+        changePassword.SetBounds(width - s(270), s(11), s(122), s(40));
+        int identityX = width - s(530);
+        int identityWidth = s(240);
         identityText.SetBounds(identityX, s(8), identityWidth, s(25));
         roleText.SetBounds(identityX, s(32), identityWidth, s(22));
-        int cardHeight = passwordLogin ? 520 : 390;
+        int cardHeight = passwordLogin ? 624 : 390;
         connectCard.SetBounds(Math.Max(s(16), (host.Width - s(640)) / 2),
-            Math.Max(s(16), (host.Height - s(cardHeight)) / 2), s(640), s(cardHeight));
+            Math.Max(s(4), (host.Height - s(cardHeight)) / 2), s(640), s(cardHeight));
     }
     private void FitCurrentPage()
     {

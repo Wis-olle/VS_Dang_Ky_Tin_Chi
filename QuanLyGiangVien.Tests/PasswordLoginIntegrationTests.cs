@@ -14,6 +14,7 @@ public sealed class PasswordLoginIntegrationTests
     public async Task SharedDatabaseEnforcesPortalsSessionsAndStudentManagement()
     {
         var connectionString = Environment.GetEnvironmentVariable("CAMPUS_LOGIN_TEST_CONNECTION")!;
+        Assert.StartsWith("DangKyTinChi_Minh_Test_", new SqlConnectionStringBuilder(connectionString).InitialCatalog, StringComparison.Ordinal);
         var studentPassword = Environment.GetEnvironmentVariable("DEMO_STUDENT_PASSWORD")!;
         var trainingPassword = Environment.GetEnvironmentVariable("DEMO_TRAINING_PASSWORD")!;
         var auth = new PasswordLogin(connectionString);
@@ -24,7 +25,7 @@ public sealed class PasswordLoginIntegrationTests
             await auth.SignInAsync("sv2024001", studentPassword, LoginPortal.Student);
             var identity = await new SqlIdentityRepository(connectionString).LoadAsync();
             Assert.Equal("SINH_VIEN", identity.Role); Assert.Equal("SV2024001", identity.StudentId);
-            var snapshot = await new SqlMinhRepository(connectionString).LoadAsync();
+            var snapshot = await new StudentTimetableRepository(connectionString).LoadAsync();
             Assert.Equal(identity.AccountId, snapshot.Identity.AccountId);
             Assert.All(snapshot.Registrations, row => Assert.Equal(identity.StudentId, row.StudentId));
             await Assert.ThrowsAsync<PersistenceException>(() => new StudentRepository(connectionString).ListAsync("", true));
@@ -52,7 +53,9 @@ public sealed class PasswordLoginIntegrationTests
             {
                 using var save = StudentRepository.SaveCommand(created, true); save.Connection = connection; save.Transaction = transaction;
                 await save.ExecuteNonQueryAsync();
-                using var update = StudentRepository.SaveCommand(created with { Name = "Đã sửa", Active = false }, false);
+                using var getVersion = new SqlCommand("SELECT phien_ban FROM dbo.vw_SinhVien_PhienBan WHERE ma_sv='SV_AUTH_TEST'", connection, transaction);
+                var saved = created with { Version = Convert.ToHexString((byte[])(await getVersion.ExecuteScalarAsync())!) };
+                using var update = StudentRepository.SaveCommand(saved with { Name = "Đã sửa", Active = false }, false);
                 update.Connection = connection; update.Transaction = transaction; await update.ExecuteNonQueryAsync();
                 using var verify = new SqlCommand("SELECT ho_ten,trang_thai FROM dbo.SINH_VIEN WHERE ma_sv='SV_AUTH_TEST'", connection, transaction);
                 using var reader = await verify.ExecuteReaderAsync();
@@ -67,6 +70,7 @@ public sealed class PasswordLoginIntegrationTests
     public async Task ServerChallengesCannotBeReplayedAndArbitraryTokensCannotAuthenticate()
     {
         var connectionString = Environment.GetEnvironmentVariable("CAMPUS_LOGIN_TEST_CONNECTION")!;
+        Assert.StartsWith("DangKyTinChi_Minh_Test_", new SqlConnectionStringBuilder(connectionString).InitialCatalog, StringComparison.Ordinal);
         var password = Environment.GetEnvironmentVariable("DEMO_STUDENT_PASSWORD")!;
         await using var connection = new SqlConnection(connectionString);
         await connection.OpenAsync();
@@ -86,10 +90,10 @@ public sealed class PasswordLoginIntegrationTests
         try
         {
             var replay = await Assert.ThrowsAsync<SqlException>(() => complete.ExecuteScalarAsync());
-            Assert.Equal(52101, replay.Number);
+            Assert.Equal(52401, replay.Number);
             using var fake = new SqlCommand("dbo.usp_Auth_UseSession", connection) { CommandType = CommandType.StoredProcedure };
             fake.Parameters.Add("@token", SqlDbType.VarBinary, 32).Value = RandomNumberGenerator.GetBytes(32);
-            var rejected = await Assert.ThrowsAsync<SqlException>(() => fake.ExecuteNonQueryAsync()); Assert.Equal(52105, rejected.Number);
+            var rejected = await Assert.ThrowsAsync<SqlException>(() => fake.ExecuteNonQueryAsync()); Assert.Equal(52405, rejected.Number);
         }
         finally
         {

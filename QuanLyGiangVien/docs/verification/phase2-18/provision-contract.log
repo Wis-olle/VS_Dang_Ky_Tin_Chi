@@ -1,0 +1,13 @@
+Đã tạo 2 tài khoản mẫu. Thông tin đăng nhập tại E:\AI Agents\Dangkytinchi\.tmp\phase1-provision-tests\3c027fbe885e4496ab4d76f6fae46a94\.tmp\mock-create.txt
+PASS: A new handoff is published after a single SQL mutation call (calls: 1).
+PASS: An existing output is rejected before SQL mutation and stays byte-for-byte intact.
+Đã giữ bản bàn giao cũ tại E:\AI Agents\Dangkytinchi\.tmp\phase1-provision-tests\3c027fbe885e4496ab4d76f6fae46a94\.tmp\mock-create.txt.previous-196774483acf40698d3cbc9830d602d2
+Đã tạo 2 tài khoản mẫu. Thông tin đăng nhập tại E:\AI Agents\Dangkytinchi\.tmp\phase1-provision-tests\3c027fbe885e4496ab4d76f6fae46a94\.tmp\mock-create.txt
+PASS: Reset keeps a durable copy of the previous handoff.
+PASS: Failure to create the pending handoff prevents all SQL writes.
+PASS: A final-name race preserves the other file and retains the pending rescue handoff.
+PASS: The rescue file contains the proposed password without printing it.
+PASS: A failed atomic replacement preserves both the old and rescue handoffs.
+PASS: An uncertain SQL result retains and identifies the rescue file.
+PASS: Failure messages do not expose plaintext passwords.
+Cleaned isolated provisioning fixture: DangKyTinChi_Minh_Test_Phase1Provision18_3c027fbe885e

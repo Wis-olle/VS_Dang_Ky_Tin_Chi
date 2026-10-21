@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "checks": [
+    "Password login opens the intended portal.",
+    "Semester selector retains both its actual value and display text in the compact native layout.",
+    "Student has a durable cart tab.",
+    "The real Add-to-cart button persists a class without enrolling.",
+    "SQL stores the cart for the signed-in student and semester.",
+    "The real cart precheck displays credit and eligibility information.",
+    "Compact cart viewport fits its header and a complete registration row.",
+    "Password login opens the intended portal.",
+    "Logging out and back in restores the saved cart.",
+    "An unresolved persisted request disables new submissions and exposes result lookup.",
+    "Retry of a committed request resolves and clears the pending marker.",
+    "A lost commit acknowledgement followed by Retry creates exactly one enrollment.",
+    "The real petition button creates the student\u0027s own pending request.",
+    "Successful petition submission clears its local draft.",
+    "Committed student events appear in the native notification center.",
+    "Password login opens the intended portal.",
+    "Sample training account does not implicitly gain new operational permissions.",
+    "An explicit fixture-only operational grant enables the controls.",
+    "Operational schedule editor reads the shared actual-date calendar.",
+    "The operational class selector retains its selected class and actual display text.",
+    "Compact operational calendar fits its header and a complete teaching occurrence.",
+    "An explicitly authorized reviewer sees the pending student petition."
+  ],
+  "scope": "Native controls and code-driven events, offscreen rendered captures; no physical-input or FPS claim."
+}

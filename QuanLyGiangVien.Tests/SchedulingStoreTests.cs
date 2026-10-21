@@ -322,7 +322,7 @@ public sealed class SchedulingStoreTests
     }
 
     [Theory]
-    [InlineData(501)]
+    [InlineData(1001)]
     [InlineData(int.MaxValue)]
     public void CapacityUpperBoundaryRejectsRoomsAndClasses(int capacity)
     {

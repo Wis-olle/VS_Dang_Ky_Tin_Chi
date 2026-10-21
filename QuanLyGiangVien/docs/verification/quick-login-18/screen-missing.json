@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "Both sample buttons remain visible even without credentials.",
+    "Buttons reflect credential availability.",
+    "No sample password is displayed.",
+    "Screen verification never signs in.",
+    "The entire login card fits the visible compact client area."
+  ],
+  "executable": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\bin\\Debug\\net10.0-windows\\QuanLyGiangVien.exe",
+  "assembly": "E:\\AI Agents\\Dangkytinchi\\QuanLyGiangVien\\bin\\Debug\\net10.0-windows\\QuanLyGiangVien.dll",
+  "available": false,
+  "dpi": 96,
+  "scope": "Actual Program startup and rendered controls; no authentication or business writes."
+}

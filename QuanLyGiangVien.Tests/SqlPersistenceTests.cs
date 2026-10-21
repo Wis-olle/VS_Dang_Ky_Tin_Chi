@@ -103,7 +103,7 @@ public sealed class SqlPersistenceTests
     public void DirectCommandFactoriesRejectTruncationAndLossyVarcharConversion()
     {
         Assert.Throws<PersistenceException>(() => SqlMinhCommands.SaveLecturer(DemoData.Create()[0] with { Name = new string('A', 101) }, true));
-        Assert.Throws<PersistenceException>(() => SqlMinhCommands.SaveRoom(new("P1234", new string('A', 61), 40, SchedulingLabels.Theory, SchedulingLabels.Ready), true));
+        Assert.Throws<PersistenceException>(() => SqlMinhCommands.SaveRoom(new("P1234", new string('A', 81), 40, SchedulingLabels.Theory, SchedulingLabels.Ready), true));
         Assert.Throws<PersistenceException>(() => SqlMinhCommands.SaveClass(SchedulingDemo.Create().Classes[0] with { CourseId = new string('A', 21) }, false));
         Assert.Throws<PersistenceException>(() => SqlMinhCommands.DeleteRoom("Phòng thử"));
     }
@@ -185,7 +185,7 @@ public sealed class SqlPersistenceTests
         using var room = SqlMinhCommands.SaveRoom(new("P1234", "Tòa thử", 60, SchedulingLabels.Lab, SchedulingLabels.Maintenance), false);
         Assert.Equal("dbo.usp_Minh_LuuPhong", room.CommandText);
         Assert.Equal(SqlDbType.NVarChar, room.Parameters["@toa_nha"].SqlDbType);
-        Assert.Equal(60, room.Parameters["@toa_nha"].Size);
+        Assert.Equal(80, room.Parameters["@toa_nha"].Size);
         Assert.Equal(false, room.Parameters["@trang_thai"].Value);
         Assert.Equal(60, room.Parameters["@suc_chua"].Value);
         using var lecturerDelete = SqlMinhCommands.DeleteLecturer("GV9999");
@@ -195,7 +195,9 @@ public sealed class SqlPersistenceTests
         Assert.Equal("P1234", roomDelete.Parameters["@ma_phong"].Value);
         Assert.Equal("LHP9999", classDelete.Parameters["@ma_lhp"].Value);
         Assert.All(new[] { lecturerDelete, roomDelete, classDelete }, command => {
-            Assert.Single(command.Parameters.Cast<SqlParameter>());
+            Assert.Equal(2, command.Parameters.Count);
+            Assert.Equal(SqlDbType.Binary, command.Parameters["@phien_ban"].SqlDbType);
+            Assert.Equal(8, command.Parameters["@phien_ban"].Size);
             Assert.Equal(SqlDbType.VarChar, command.Parameters[0].SqlDbType);
             Assert.Equal(20, command.Parameters[0].Size);
         });

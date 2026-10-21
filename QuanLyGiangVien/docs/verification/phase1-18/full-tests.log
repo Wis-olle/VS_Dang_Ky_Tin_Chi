@@ -1,0 +1,11 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  QuanLyGiangVien.Tests -> E:\AI Agents\Dangkytinchi\.tmp\phase1-final-20261018\tests\bin\QuanLyGiangVien.Tests\release\QuanLyGiangVien.Tests.dll
+Test run for E:\AI Agents\Dangkytinchi\.tmp\phase1-final-20261018\tests\bin\QuanLyGiangVien.Tests\release\QuanLyGiangVien.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: E:\AI Agents\Dangkytinchi\.tmp\phase1-final-20261018\full-results\full.trx
+
+Passed!  - Failed:     0, Passed:   472, Skipped:     0, Total:   472, Duration: 8 s - QuanLyGiangVien.Tests.dll (net10.0)
+
+Attachments:
+  E:\AI Agents\Dangkytinchi\.tmp\phase1-final-20261018\full-results\27c1848f-4583-4907-84ab-a27dab273a0f\coverage.cobertura.xml

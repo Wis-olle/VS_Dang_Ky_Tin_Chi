@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "Both quick-login buttons are visible for the configured database.",
+    "The login screen never displays the stored sample password.",
+    "The entire login card fits the actual visible compact client rectangle, including its bottom edge. {X=0,Y=0,Width=1100,Height=720} / {X=230,Y=96,Width=640,Height=624}",
+    "Both sample buttons remain inside the login card.",
+    "A sample login disables other login actions immediately.",
+    "The student button signs into the actual linked SQL student account.",
+    "Student quick-login opens registration with student-only navigation.",
+    "Successful quick-login clears the password field.",
+    "Logout returns to reusable quick-login buttons with cleared credentials.",
+    "The training button selects the training portal and retains SQL-authorized management navigation.",
+    "Missing quick-login credentials never create a session or bypass authentication.",
+    "Manual password login remains available if the local sample file is missing."
+  ],
+  "dpi": 96,
+  "scope": "Native button events, actual SQL password login, offscreen captures; no physical-mouse E2E claim."
+}

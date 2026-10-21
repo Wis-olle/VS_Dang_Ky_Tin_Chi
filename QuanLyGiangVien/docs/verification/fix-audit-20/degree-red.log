@@ -1,0 +1,98 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  QuanLyGiangVien.Tests -> E:\AI Agents\Dangkytinchi\.tmp\fix-audit-20\degree\bin\Debug\net10.0\QuanLyGiangVien.Tests.dll
+Test run for E:\AI Agents\Dangkytinchi\.tmp\fix-audit-20\degree\bin\Debug\net10.0\QuanLyGiangVien.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.32]     QuanLyGiangVien.Tests.DegreeAuditTests.PublishedZeroCreditGroupRemainsReadable [FAIL]
+[xUnit.net 00:00:00.33]     QuanLyGiangVien.Tests.DegreeAuditTests.LaterEvidenceCannotTakeAwayAlreadySatisfiedGraduation [FAIL]
+[xUnit.net 00:00:00.35]     QuanLyGiangVien.Tests.DegreeAuditTests.EarlierFlexibleEvidenceCanRerouteToFitLaterEvidence(earlier: "DONE", later: "IN_PROGRESS") [FAIL]
+[xUnit.net 00:00:00.35]     QuanLyGiangVien.Tests.DegreeAuditTests.EarlierFlexibleEvidenceCanRerouteToFitLaterEvidence(earlier: "IN_PROGRESS", later: "PLANNED") [FAIL]
+[xUnit.net 00:00:00.35]     QuanLyGiangVien.Tests.DegreeAuditTests.EarlierFlexibleEvidenceCanRerouteToFitLaterEvidence(earlier: "DONE", later: "PLANNED") [FAIL]
+  Failed QuanLyGiangVien.Tests.DegreeAuditTests.PublishedZeroCreditGroupRemainsReadable [7 ms]
+  Error Message:
+   System.ArgumentException : Cấu trúc CTĐT không hợp lệ.
+  Stack Trace:
+     at QuanLyGiangVien.Domain.Academics.DegreeAudit.Validate(DegreeCurriculum c) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien\Domain\Academics\DegreeAudit.cs:line 71
+   at QuanLyGiangVien.Domain.Academics.DegreeAudit.Calculate(DegreeCurriculum curriculum, IEnumerable`1 evidence, IEnumerable`1 substitutions) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien\Domain\Academics\DegreeAudit.cs:line 10
+   at QuanLyGiangVien.Tests.DegreeAuditTests.PublishedZeroCreditGroupRemainsReadable() in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\DegreeAuditTests.cs:line 53
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed QuanLyGiangVien.Tests.DegreeAuditTests.LaterEvidenceCannotTakeAwayAlreadySatisfiedGraduation [< 1 ms]
+  Error Message:
+   System.ArgumentException : Cấu trúc CTĐT không hợp lệ.
+  Stack Trace:
+     at QuanLyGiangVien.Domain.Academics.DegreeAudit.Validate(DegreeCurriculum c) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien\Domain\Academics\DegreeAudit.cs:line 71
+   at QuanLyGiangVien.Domain.Academics.DegreeAudit.Calculate(DegreeCurriculum curriculum, IEnumerable`1 evidence, IEnumerable`1 substitutions) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien\Domain\Academics\DegreeAudit.cs:line 10
+   at QuanLyGiangVien.Tests.DegreeAuditTests.LaterEvidenceCannotTakeAwayAlreadySatisfiedGraduation() in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\DegreeAuditTests.cs:line 101
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed QuanLyGiangVien.Tests.DegreeAuditTests.EarlierFlexibleEvidenceCanRerouteToFitLaterEvidence(earlier: "DONE", later: "IN_PROGRESS") [27 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 6
+Actual:   3
+  Stack Trace:
+     at QuanLyGiangVien.Tests.DegreeAuditTests.EarlierFlexibleEvidenceCanRerouteToFitLaterEvidence(String earlier, String later) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\DegreeAuditTests.cs:line 73
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Failed QuanLyGiangVien.Tests.DegreeAuditTests.EarlierFlexibleEvidenceCanRerouteToFitLaterEvidence(earlier: "IN_PROGRESS", later: "PLANNED") [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 6
+Actual:   3
+  Stack Trace:
+     at QuanLyGiangVien.Tests.DegreeAuditTests.EarlierFlexibleEvidenceCanRerouteToFitLaterEvidence(String earlier, String later) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\DegreeAuditTests.cs:line 73
+   at InvokeStub_DegreeAuditTests.EarlierFlexibleEvidenceCanRerouteToFitLaterEvidence(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Failed QuanLyGiangVien.Tests.DegreeAuditTests.EarlierFlexibleEvidenceCanRerouteToFitLaterEvidence(earlier: "DONE", later: "PLANNED") [< 1 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 6
+Actual:   3
+  Stack Trace:
+     at QuanLyGiangVien.Tests.DegreeAuditTests.EarlierFlexibleEvidenceCanRerouteToFitLaterEvidence(String earlier, String later) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\DegreeAuditTests.cs:line 73
+   at InvokeStub_DegreeAuditTests.EarlierFlexibleEvidenceCanRerouteToFitLaterEvidence(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:00.40]     QuanLyGiangVien.Tests.DegreeAuditTests.GroupCreditRequirementIsMinimumAndDoesNotTruncateRequiredCourses [FAIL]
+[xUnit.net 00:00:00.40]     QuanLyGiangVien.Tests.DegreeAuditTests.AllocationDoesNotDependOnInputEnumerationOrder [FAIL]
+[xUnit.net 00:00:00.40]     QuanLyGiangVien.Tests.DegreeAuditTests.OptionalCreditsBeyondGroupMinimumCanMeetOverallMinimum [FAIL]
+  Failed QuanLyGiangVien.Tests.DegreeAuditTests.GroupCreditRequirementIsMinimumAndDoesNotTruncateRequiredCourses [< 1 ms]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at QuanLyGiangVien.Tests.DegreeAuditTests.GroupCreditRequirementIsMinimumAndDoesNotTruncateRequiredCourses() in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\DegreeAuditTests.cs:line 61
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed QuanLyGiangVien.Tests.DegreeAuditTests.AllocationDoesNotDependOnInputEnumerationOrder [13 ms]
+  Error Message:
+   Assert.Equal() Failure: Collections differ
+Expected: [DegreeCreditAllocation { SourceCourse = X, TargetId = A, TargetCourse = A, Group = G1, Stage = DONE, Credits = 3 }]
+Actual:   [DegreeCreditAllocation { SourceCourse = X, TargetId = B, TargetCourse = B, Group = G2, Stage = DONE, Credits = 3 }, DegreeCreditAllocation { SourceCourse = Y, TargetId = A, TargetCourse = A, Group = G1, Stage = IN_PROGRESS, Credits = 3 }]
+  Stack Trace:
+     at QuanLyGiangVien.Tests.DegreeAuditTests.AllocationDoesNotDependOnInputEnumerationOrder() in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\DegreeAuditTests.cs:line 121
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed QuanLyGiangVien.Tests.DegreeAuditTests.OptionalCreditsBeyondGroupMinimumCanMeetOverallMinimum [4 ms]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at QuanLyGiangVien.Tests.DegreeAuditTests.OptionalCreditsBeyondGroupMinimumCanMeetOverallMinimum() in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\DegreeAuditTests.cs:line 89
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:00.40]     QuanLyGiangVien.Tests.DegreeAuditTests.LaterEvidenceCannotTakeAwaySatisfiedOptionalGroupMinimum [FAIL]
+  Failed QuanLyGiangVien.Tests.DegreeAuditTests.LaterEvidenceCannotTakeAwaySatisfiedOptionalGroupMinimum [< 1 ms]
+  Error Message:
+   System.ArgumentException : Cấu trúc CTĐT không hợp lệ.
+  Stack Trace:
+     at QuanLyGiangVien.Domain.Academics.DegreeAudit.Validate(DegreeCurriculum c) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien\Domain\Academics\DegreeAudit.cs:line 71
+   at QuanLyGiangVien.Domain.Academics.DegreeAudit.Calculate(DegreeCurriculum curriculum, IEnumerable`1 evidence, IEnumerable`1 substitutions) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien\Domain\Academics\DegreeAudit.cs:line 10
+   at QuanLyGiangVien.Tests.DegreeAuditTests.LaterEvidenceCannotTakeAwaySatisfiedOptionalGroupMinimum() in E:\AI Agents\Dangkytinchi\QuanLyGiangVien.Tests\DegreeAuditTests.cs:line 109
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: E:\AI Agents\Dangkytinchi\.tmp\fix-audit-20\degree\red\red-final.trx
+
+Failed!  - Failed:     9, Passed:    10, Skipped:     0, Total:    19, Duration: 85 ms - QuanLyGiangVien.Tests.dll (net10.0)

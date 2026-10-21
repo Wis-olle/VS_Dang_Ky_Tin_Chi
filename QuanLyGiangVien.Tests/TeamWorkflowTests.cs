@@ -82,7 +82,7 @@ public sealed class TeamWorkflowTests
             Assert.True(registrationId > 0);
 
             // Minh's SQL snapshot and timetable consume Huệ's persisted registration immediately.
-            var enrolled = await minh.LoadAsync();
+            var enrolled = await new StudentTimetableRepository(connection).LoadAsync();
             Assert.Equal(StudentId, enrolled.Identity.StudentId);
             Assert.Equal(1, enrolled.Classes.Single(value => value.Id == ClassId).Enrolled);
             var timetable = Timetable(enrolled, sunday);
@@ -101,7 +101,7 @@ public sealed class TeamWorkflowTests
 
             using (var canceled = await hue.HuyAsync(registrationId))
                 Assert.Equal(registrationId, Convert.ToInt64(canceled.Rows[0]["ma_dk"]));
-            var afterCancellation = await minh.LoadAsync();
+            var afterCancellation = await new StudentTimetableRepository(connection).LoadAsync();
             Assert.Equal(0, afterCancellation.Classes.Single(value => value.Id == ClassId).Enrolled);
             var empty = Timetable(afterCancellation, sunday);
             Assert.Empty(empty.Classes);
@@ -128,8 +128,8 @@ public sealed class TeamWorkflowTests
         Assert.Empty(rejected.AsEnumerable());
     }
 
-    private static StudentTimetableSnapshot Timetable(DatabaseSnapshot snapshot, DateOnly sunday) =>
-        StudentTimetable.Create(snapshot.CreateStores().Scheduling, snapshot.Registrations.Select(value =>
+    private static StudentTimetableSnapshot Timetable(StudentTimetableData snapshot, DateOnly sunday) =>
+        StudentTimetable.Create(snapshot.CreateStore(), snapshot.Registrations.Select(value =>
             new StudentRegistration(value.StudentId, value.ClassId, value.Status == "DA_HUY")), StudentId, SemesterId, sunday);
 
     private static async Task<DateTime> ServerVietnamTimeAsync(string connectionString)

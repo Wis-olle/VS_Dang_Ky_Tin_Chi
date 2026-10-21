@@ -1,0 +1,55 @@
+Đã tạo 2 tài khoản mẫu. Thông tin đăng nhập tại E:\AI Agents\Dangkytinchi\.tmp\phase1-provision-tests\24858f4dd0c343089d68414b3871fc86\.tmp\mock-create.txt
+PASS: A new handoff is published after a single SQL mutation call (calls: 1).
+PASS: An existing output is rejected before SQL mutation and stays byte-for-byte intact.
+Đã giữ bản bàn giao cũ tại E:\AI Agents\Dangkytinchi\.tmp\phase1-provision-tests\24858f4dd0c343089d68414b3871fc86\.tmp\mock-create.txt.previous-bce6e8c793b34dfdaa9bd9cffd669913
+Đã tạo 2 tài khoản mẫu. Thông tin đăng nhập tại E:\AI Agents\Dangkytinchi\.tmp\phase1-provision-tests\24858f4dd0c343089d68414b3871fc86\.tmp\mock-create.txt
+PASS: Reset keeps a durable copy of the previous handoff.
+PASS: Failure to create the pending handoff prevents all SQL writes.
+PASS: A final-name race preserves the other file and retains the pending rescue handoff.
+PASS: The rescue file contains the proposed password without printing it.
+PASS: A failed atomic replacement preserves both the old and rescue handoffs.
+PASS: An uncertain SQL result retains and identifies the rescue file.
+PASS: Failure messages do not expose plaintext passwords.
+Changed database context to 'DangKyTinChi_Minh_Test_Phase1Provision18_24858f4dd0c3'.
+The module 'usp_SinhVien_Luu' depends on the missing object 'dbo.usp_HocVu_Lock'. The module will still be created; however, it cannot run successfully until the object exists.
+The module 'usp_SinhVien_TrangThai' depends on the missing object 'dbo.usp_HocVu_Lock'. The module will still be created; however, it cannot run successfully until the object exists.
+
+(0 rows affected)
+
+(1 rows affected)
+Caution: Changing any part of an object name could break scripts and stored procedures.
+Caution: Changing any part of an object name could break scripts and stored procedures.
+
+(1 rows affected)
+
+(0 rows affected)
+
+(0 rows affected)
+
+(0 rows affected)
+Caution: Changing any part of an object name could break scripts and stored procedures.
+
+(1 rows affected)
+
+(1 rows affected)
+Database DangKyTinChi_Minh_Test_Phase1Provision18_24858f4dd0c3 đã sẵn sàng trên SQL Server '.'.
+Msg 52112, Level 16, State 1, Server QuangMinhLaptop, Line 18
+Tài khoản mẫu đã có mật khẩu; dùng -ResetPasswords nếu cần đặt lại.
+PASS: A pre-existing second credential rejects provisioning.
+PASS: Failure on account two leaves no new student account or orphaned credential.
+Msg 52990, Level 16, State 1, Server QuangMinhLaptop, Procedure Phase1ProvisionReject, Line 3
+Isolated provisioning rollback test.
+PASS: A late SQL trigger failure rolls back both inserted accounts and all credential changes.
+Đã tạo 2 tài khoản mẫu. Thông tin đăng nhập tại E:\AI Agents\Dangkytinchi\.tmp\phase1-provision-tests\24858f4dd0c343089d68414b3871fc86\.tmp\accounts.txt
+PASS: Successful SQL provisioning publishes the credential file.
+PASS: Both credentials exist after one successful provisioning.
+PASS: The committed verifier matches the isolated handoff password.
+PASS: The committed verifier matches the isolated handoff password.
+PASS: A normal rerun preserves the existing credential file.
+Đã giữ bản bàn giao cũ tại E:\AI Agents\Dangkytinchi\.tmp\phase1-provision-tests\24858f4dd0c343089d68414b3871fc86\.tmp\accounts.txt.previous-a185eb6e64c84e1a807f5c5cf945ac92
+Đã tạo 2 tài khoản mẫu. Thông tin đăng nhập tại E:\AI Agents\Dangkytinchi\.tmp\phase1-provision-tests\24858f4dd0c343089d68414b3871fc86\.tmp\accounts.txt
+PASS: Explicit password reset publishes a new handoff.
+PASS: Explicit reset preserves the exact old credential file.
+PASS: The committed verifier matches the isolated handoff password.
+PASS: The committed verifier matches the isolated handoff password.
+Cleaned isolated provisioning fixture: DangKyTinChi_Minh_Test_Phase1Provision18_24858f4dd0c3

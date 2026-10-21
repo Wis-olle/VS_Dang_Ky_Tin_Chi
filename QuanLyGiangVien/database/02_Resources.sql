@@ -1,10 +1,13 @@
 SET ANSI_NULLS ON;
 SET QUOTED_IDENTIFIER ON;
 GO
+IF COL_LENGTH('dbo.GIANG_VIEN','phien_ban') IS NULL ALTER TABLE dbo.GIANG_VIEN ADD phien_ban rowversion;
+IF COL_LENGTH('dbo.PHONG_HOC','phien_ban') IS NULL ALTER TABLE dbo.PHONG_HOC ADD phien_ban rowversion;
+GO
 CREATE OR ALTER PROCEDURE dbo.usp_Minh_LuuGiangVien
  @ma_gv varchar(20),@ho_ten nvarchar(100),@ngay_sinh date,@gioi_tinh nvarchar(10),
  @email varchar(254),@sdt varchar(20),@ten_khoa nvarchar(100),@hoc_vi nvarchar(80),
- @avatar_key varchar(40),@trang_thai bit,@la_moi bit
+ @avatar_key varchar(40),@trang_thai bit,@la_moi bit,@phien_ban binary(8)=NULL
 AS
 BEGIN
  SET NOCOUNT ON; SET XACT_ABORT ON;
@@ -31,6 +34,8 @@ BEGIN
   SELECT @lock=ma_lhp FROM dbo.LOP_HOC_PHAN WITH(UPDLOCK,HOLDLOCK) WHERE ma_gv=@ma_gv ORDER BY ma_lhp;
   IF @la_moi=1 AND EXISTS(SELECT 1 FROM dbo.GIANG_VIEN WHERE ma_gv=@ma_gv) THROW 52012,N'Mã giảng viên đã tồn tại.',1;
   IF @la_moi=0 AND NOT EXISTS(SELECT 1 FROM dbo.GIANG_VIEN WHERE ma_gv=@ma_gv) THROW 52013,N'Giảng viên không còn tồn tại. Hãy tải lại.',1;
+  IF @la_moi=0 AND NOT EXISTS(SELECT 1 FROM dbo.GIANG_VIEN WITH(UPDLOCK,HOLDLOCK) WHERE ma_gv=@ma_gv AND phien_ban=@phien_ban)
+   THROW 52046,N'Dữ liệu đã thay đổi. Vui lòng tải lại trước khi sửa hoặc xóa.',1;
   IF @trang_thai=0 AND EXISTS(SELECT 1 FROM dbo.LOP_HOC_PHAN WHERE ma_gv=@ma_gv AND trang_thai<>'HUY')
    THROW 52014,N'Giảng viên còn được phân công lớp; chưa thể tạm nghỉ.',1;
   IF EXISTS(SELECT 1 FROM dbo.GIANG_VIEN WITH(HOLDLOCK) WHERE ma_gv<>@ma_gv AND (email=@email OR sdt=@sdt))
@@ -40,17 +45,20 @@ BEGIN
    VALUES(@ma_gv,TRIM(@ho_ten),@ngay_sinh,@gioi_tinh,@email,@sdt,@khoa,@hoc_vi,@avatar_key,@trang_thai);
   ELSE UPDATE dbo.GIANG_VIEN SET ho_ten=TRIM(@ho_ten),ngay_sinh=@ngay_sinh,gioi_tinh=@gioi_tinh,
    email=@email,sdt=@sdt,ma_khoa=@khoa,hoc_vi=@hoc_vi,avatar_key=@avatar_key,trang_thai=@trang_thai WHERE ma_gv=@ma_gv;
+  SELECT phien_ban FROM dbo.GIANG_VIEN WHERE ma_gv=@ma_gv;
   COMMIT;
  END TRY BEGIN CATCH IF XACT_STATE()<>0 ROLLBACK; THROW; END CATCH
 END;
 GO
-CREATE OR ALTER PROCEDURE dbo.usp_Minh_XoaGiangVien @ma_gv varchar(20)
+CREATE OR ALTER PROCEDURE dbo.usp_Minh_XoaGiangVien @ma_gv varchar(20),@phien_ban binary(8)=NULL
 AS
 BEGIN
  SET NOCOUNT ON; SET XACT_ABORT ON;
  EXEC dbo.usp_Minh_KiemTraQuyen;
  BEGIN TRY
   BEGIN TRAN; EXEC dbo.usp_Minh_KhoaLapLich;
+  IF NOT EXISTS(SELECT 1 FROM dbo.GIANG_VIEN WITH(UPDLOCK,HOLDLOCK) WHERE ma_gv=@ma_gv AND phien_ban=@phien_ban)
+   THROW 52046,N'Dữ liệu đã thay đổi. Vui lòng tải lại trước khi sửa hoặc xóa.',1;
   IF EXISTS(SELECT 1 FROM dbo.LOP_HOC_PHAN WHERE ma_gv=@ma_gv) OR EXISTS(SELECT 1 FROM dbo.TAI_KHOAN WHERE ma_gv=@ma_gv)
    THROW 52016,N'Giảng viên đang có dữ liệu liên kết; không thể xóa.',1;
   DELETE dbo.GIANG_VIEN WHERE ma_gv=@ma_gv;
@@ -60,7 +68,7 @@ BEGIN
 END;
 GO
 CREATE OR ALTER PROCEDURE dbo.usp_Minh_LuuPhong
- @ma_phong varchar(20),@toa_nha nvarchar(80),@suc_chua int,@loai_phong nvarchar(50),@trang_thai bit,@la_moi bit
+ @ma_phong varchar(20),@toa_nha nvarchar(80),@suc_chua int,@loai_phong nvarchar(50),@trang_thai bit,@la_moi bit,@phien_ban binary(8)=NULL
 AS
 BEGIN
  SET NOCOUNT ON; SET XACT_ABORT ON;
@@ -78,6 +86,8 @@ BEGIN
    SELECT 1 FROM dbo.LICH_HOC c WHERE c.ma_lhp=l.ma_lhp AND c.ma_phong=@ma_phong) ORDER BY l.ma_lhp;
   IF @la_moi=1 AND EXISTS(SELECT 1 FROM dbo.PHONG_HOC WHERE ma_phong=@ma_phong) THROW 52021,N'Mã phòng đã tồn tại.',1;
   IF @la_moi=0 AND NOT EXISTS(SELECT 1 FROM dbo.PHONG_HOC WHERE ma_phong=@ma_phong) THROW 52022,N'Phòng không còn tồn tại. Hãy tải lại.',1;
+  IF @la_moi=0 AND NOT EXISTS(SELECT 1 FROM dbo.PHONG_HOC WITH(UPDLOCK,HOLDLOCK) WHERE ma_phong=@ma_phong AND phien_ban=@phien_ban)
+   THROW 52046,N'Dữ liệu đã thay đổi. Vui lòng tải lại trước khi sửa hoặc xóa.',1;
   IF EXISTS(SELECT 1 FROM dbo.LOP_HOC_PHAN l WHERE l.trang_thai<>'HUY' AND
    (l.ma_phong=@ma_phong OR EXISTS(SELECT 1 FROM dbo.LICH_HOC c WHERE c.ma_lhp=l.ma_lhp AND c.ma_phong=@ma_phong))
    AND (@trang_thai=0 OR l.si_so_max>@suc_chua))
@@ -85,17 +95,20 @@ BEGIN
   IF @la_moi=1 INSERT dbo.PHONG_HOC(ma_phong,ten_phong,toa_nha,suc_chua,loai_phong,trang_thai)
    VALUES(@ma_phong,@ma_phong,TRIM(@toa_nha),@suc_chua,@loai_phong,@trang_thai);
   ELSE UPDATE dbo.PHONG_HOC SET toa_nha=TRIM(@toa_nha),suc_chua=@suc_chua,loai_phong=@loai_phong,trang_thai=@trang_thai WHERE ma_phong=@ma_phong;
+  SELECT phien_ban FROM dbo.PHONG_HOC WHERE ma_phong=@ma_phong;
   COMMIT;
  END TRY BEGIN CATCH IF XACT_STATE()<>0 ROLLBACK; THROW; END CATCH
 END;
 GO
-CREATE OR ALTER PROCEDURE dbo.usp_Minh_XoaPhong @ma_phong varchar(20)
+CREATE OR ALTER PROCEDURE dbo.usp_Minh_XoaPhong @ma_phong varchar(20),@phien_ban binary(8)=NULL
 AS
 BEGIN
  SET NOCOUNT ON; SET XACT_ABORT ON;
  EXEC dbo.usp_Minh_KiemTraQuyen;
  BEGIN TRY
   BEGIN TRAN; EXEC dbo.usp_Minh_KhoaLapLich;
+  IF NOT EXISTS(SELECT 1 FROM dbo.PHONG_HOC WITH(UPDLOCK,HOLDLOCK) WHERE ma_phong=@ma_phong AND phien_ban=@phien_ban)
+   THROW 52046,N'Dữ liệu đã thay đổi. Vui lòng tải lại trước khi sửa hoặc xóa.',1;
   IF EXISTS(SELECT 1 FROM dbo.LICH_HOC WHERE ma_phong=@ma_phong) OR EXISTS(SELECT 1 FROM dbo.LOP_HOC_PHAN WHERE ma_phong=@ma_phong)
    THROW 52024,N'Phòng có lịch hoặc lớp liên kết; không thể xóa.',1;
   DELETE dbo.PHONG_HOC WHERE ma_phong=@ma_phong;

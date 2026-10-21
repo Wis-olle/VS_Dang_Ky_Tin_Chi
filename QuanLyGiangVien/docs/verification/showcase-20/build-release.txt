@@ -1,0 +1,7 @@
+  QuanLyGiangVien -> WORKSPACE\.tmp\showcase-20\762645b5077e41bd8d169334d4ce852c\artifacts\bin\QuanLyGiangVien\release\QuanLyGiangVien.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.79

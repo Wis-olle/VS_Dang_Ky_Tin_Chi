@@ -24,6 +24,7 @@ public static class SqlMinhCommands
         Add(command, "avatar_key", SqlDbType.VarChar, value.AvatarKey, 40);
         Add(command, "trang_thai", SqlDbType.Bit, value.Status == "Đang giảng dạy");
         Add(command, "la_moi", SqlDbType.Bit, isNew);
+        Version(command, value.Version);
         return command;
     }
 
@@ -31,11 +32,12 @@ public static class SqlMinhCommands
     {
         var command = Procedure("LuuPhong");
         Add(command, "ma_phong", SqlDbType.VarChar, value.Id, 20);
-        Add(command, "toa_nha", SqlDbType.NVarChar, value.Building, 60);
+        Add(command, "toa_nha", SqlDbType.NVarChar, value.Building, 80);
         Add(command, "suc_chua", SqlDbType.Int, value.Capacity);
         Add(command, "loai_phong", SqlDbType.NVarChar, value.Type, 50);
         Add(command, "trang_thai", SqlDbType.Bit, value.Status == SchedulingLabels.Ready);
         Add(command, "la_moi", SqlDbType.Bit, isNew);
+        Version(command, value.Version);
         return command;
     }
 
@@ -55,18 +57,26 @@ public static class SqlMinhCommands
             m.StartPeriod, m.EndPeriod, m.StartDate, m.EndDate });
         Add(command, "lich_json", SqlDbType.NVarChar, JsonSerializer.Serialize(meetings), -1);
         Add(command, "la_moi", SqlDbType.Bit, isNew);
+        Version(command, value.Version);
         return command;
     }
 
-    public static SqlCommand DeleteLecturer(string id) => Delete("XoaGiangVien", "ma_gv", id);
-    public static SqlCommand DeleteRoom(string id) => Delete("XoaPhong", "ma_phong", id);
-    public static SqlCommand DeleteClass(string id) => Delete("XoaLop", "ma_lhp", id);
+    public static SqlCommand DeleteLecturer(string id, string version = "") => Delete("XoaGiangVien", "ma_gv", id, version);
+    public static SqlCommand DeleteRoom(string id, string version = "") => Delete("XoaPhong", "ma_phong", id, version);
+    public static SqlCommand DeleteClass(string id, string version = "") => Delete("XoaLop", "ma_lhp", id, version);
 
-    private static SqlCommand Delete(string procedure, string parameter, string id)
+    private static SqlCommand Delete(string procedure, string parameter, string id, string version)
     {
         var command = Procedure(procedure);
         Add(command, parameter, SqlDbType.VarChar, id, 20);
+        Version(command, version);
         return command;
+    }
+    private static void Version(SqlCommand command, string version)
+    {
+        if (version.Length != 0 && (version.Length != 16 || !version.All(Uri.IsHexDigit)))
+            throw new PersistenceException("Phiên bản dữ liệu không hợp lệ. Vui lòng tải lại.");
+        Add(command, "phien_ban", SqlDbType.Binary, version.Length == 0 ? DBNull.Value : Convert.FromHexString(version), 8);
     }
     private static SqlCommand Procedure(string name) => new("dbo.usp_Minh_" + name) {
         CommandType = CommandType.StoredProcedure, CommandTimeout = 15 };

@@ -1,0 +1,3 @@
+System.InvalidOperationException: A timetable without a selected subject starts empty instead of showing the whole school
+   at QuanLyGiangVien.Features.Scheduling.ScopedTimetableUiCheck.Expect(Boolean condition, String label, List`1 checks) in E:\AI Agents\Dangkytinchi\QuanLyGiangVien\Features\Scheduling\ScopedTimetableUiCheck.cs:line 44
+   at QuanLyGiangVien.Features.Scheduling.ScopedTimetableUiCheck.<>c__DisplayClass0_0.<<Attach>b__0>d.MoveNext() in E:\AI Agents\Dangkytinchi\QuanLyGiangVien\Features\Scheduling\ScopedTimetableUiCheck.cs:line 25

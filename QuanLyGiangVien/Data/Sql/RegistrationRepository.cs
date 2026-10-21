@@ -56,7 +56,8 @@ public sealed class RegistrationRepository
             }
             return table;
         }
-        catch (SqlException error) { throw new PersistenceException(RegistrationErrorMessages.ForNumber(error.Number)); }
+        catch (SqlException error) { throw new PersistenceException(error.Number is >= 52600 and <= 52699
+            ? error.Message : RegistrationErrorMessages.ForNumber(error.Number)); }
         catch (InvalidOperationException) { throw new PersistenceException("Không thể truy cập SQL. Vui lòng tải lại dữ liệu và kiểm tra kết nối."); }
     }
 }

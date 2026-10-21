@@ -8,8 +8,11 @@
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="docs\**\*.cs" />
     <PackageReference Include="AntdUI" Version="2.4.8" />
     <Content Include="Assets\**" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\.tmp\Campus\quick-login.dat" Condition="Exists('..\.tmp\Campus\quick-login.dat')"
+             Link="quick-login.dat" TargetPath="quick-login.dat" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="Never" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,5 @@
+STUDENT_SNAPSHOT role=SINH_VIEN; lecturersReturned=12; lecturersInDatabase=12; lecturersInStudentClasses=4; personalFieldsInDTO=BirthDate,Gender,Email,Phone
+EXPIRED_CATALOG_MESSAGE=Học phần/học kỳ đang được sử dụng nên không thể xóa.
+ROOM_BASELINE_ROLE=DAO_TAO
+SQL_ACCEPTS_501_BUT_SNAPSHOT_REJECTS=Dữ liệu SQL chưa hợp lệ hoặc chưa tương thích. Vui lòng kiểm tra script tích hợp và dữ liệu chung của nhóm.
+SAME_ROOM_AT_500_SNAPSHOT_SUCCEEDS=true

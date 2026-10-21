@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "checks": [
+    "Applying presentation preserves the draft and raises no edit event."
+  ],
+  "error": "System.InvalidOperationException: Single-line field has a padded surface at least 34px high.\r\n   at Program.\u003CMain\u003Eg__Expect|0_0(Boolean value, String message, \u003C\u003Ec__DisplayClass0_0\u0026) in WORKSPACE\\.tmp\\ui-polish-20\\native\\Program.cs:line 13\r\n   at Program.Main(String[] args) in WORKSPACE\\.tmp\\ui-polish-20\\native\\Program.cs:line 33"
+}

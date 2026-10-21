@@ -9,7 +9,7 @@ namespace QuanLyGiangVien.Features.StudentTimetable;
 /// <summary>The two student tabs share one identity and retain their view state.</summary>
 internal sealed class StudentPortalPage : UserControl
 {
-    private readonly SqlMinhRepository repository;
+    private readonly StudentTimetableRepository repository;
     private readonly DatabaseIdentity identity;
     private readonly RegistrationPage registration;
     private StudentTimetableForm? timetable;
@@ -77,7 +77,7 @@ internal sealed class StudentPortalPage : UserControl
                 if (string.IsNullOrWhiteSpace(term) || !fresh.Semesters.Any(value => value.Id == term))
                     throw new PersistenceException("Chưa xác định được học kỳ từ SQL. Hãy tải lại danh mục học kỳ trước khi xem lịch.");
                 prior = timetable?.CaptureView();
-                var replacement = new StudentTimetableForm(fresh, embedded: true);
+                var replacement = new StudentTimetableForm(embedded: true, readModel: fresh);
                 replacement.RestoreView(term, prior);
                 Controls.Add(replacement);
                 timetable?.Dispose(); timetable = replacement; next = replacement;
