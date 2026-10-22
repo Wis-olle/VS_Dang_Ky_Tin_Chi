@@ -22,6 +22,7 @@ public sealed class MeetingEditor : SchedulingEditorBase
     ];
     public ClassMeeting? Result { get; private set; }
 
+    // Mở form thêm hoặc sửa buổi học
     public MeetingEditor(ScheduleStore store, Semester semester, int capacity, ClassMeeting? original = null)
         : base(original is null ? "Thêm buổi học" : "Chỉnh sửa buổi học",
             "Chọn phòng, tiết học và khoảng ngày của buổi học hằng tuần.", "LỊCH HỌC", 610, 570,
@@ -58,6 +59,7 @@ public sealed class MeetingEditor : SchedulingEditorBase
         Shown += (_, _) => room.Focus();
     }
 
+    // Nạp danh sách phòng phù hợp
     private void PopulateRooms(string? originalId)
     {
         var choices = store.Rooms.Where(item => item.Status == SchedulingLabels.Ready && item.Capacity >= capacity)
@@ -79,6 +81,7 @@ public sealed class MeetingEditor : SchedulingEditorBase
         if (choices is null) room.Items.Add(text); else choices.Add(text);
     }
 
+    // Điền thông tin buổi học
     public void FillForCheck(ClassMeeting value)
     {
         PreserveRoom(value.RoomId);
@@ -90,6 +93,7 @@ public sealed class MeetingEditor : SchedulingEditorBase
         end.Value = value.EndDate == default ? null : value.EndDate.ToDateTime(TimeOnly.MinValue);
     }
 
+    // Kiểm tra và nhận thông tin buổi học
     public override bool TrySave()
     {
         ClearErrors();
@@ -113,6 +117,7 @@ public sealed class MeetingEditor : SchedulingEditorBase
         return true;
     }
 
+    // Kiểm tra ngày học
     private void ValidateDates(Dictionary<string, string> validation)
     {
         if (start.Value is null) validation[nameof(ClassMeeting.StartDate)] = "Chọn ngày bắt đầu.";

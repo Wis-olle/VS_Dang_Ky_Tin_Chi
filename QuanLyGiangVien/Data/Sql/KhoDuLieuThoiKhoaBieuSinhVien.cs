@@ -17,6 +17,7 @@ public sealed record StudentTimetableData(DatabaseIdentity Identity, ImmutableAr
 /// <summary>Only the signed-in student's display data; this model has no personal lecturer fields or write repository.</summary>
 public sealed class StudentTimetableRepository(string connectionString)
 {
+    // Đọc thời khóa biểu từ database
     public async Task<StudentTimetableData> LoadAsync(CancellationToken token = default)
     {
         try

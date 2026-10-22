@@ -213,6 +213,7 @@ public sealed class LecturerEditor : AntdUI.Window
     }
 
     /// <summary>Returns success without closing, so the caller can inspect validation state.</summary>
+    // Lưu giảng viên
     public bool TrySave()
     {
         sessionError = false;
@@ -250,6 +251,7 @@ public sealed class LecturerEditor : AntdUI.Window
         summary.ForeColor = AppTheme.Muted;
     }
 
+    // Lưu và đóng form
     private void SaveAndClose()
     {
         if (!TrySave()) return;

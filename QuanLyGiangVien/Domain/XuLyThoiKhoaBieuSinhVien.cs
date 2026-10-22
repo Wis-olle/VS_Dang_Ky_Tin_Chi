@@ -17,6 +17,7 @@ public sealed record StudentTimetableSnapshot(Semester Semester, DateOnly WeekSt
 /// <summary>Read-only projection. Registrations must come from the signed-in student's authorized source at integration.</summary>
 public static class StudentTimetable
 {
+    // Lấy thời khóa biểu sinh viên
     public static StudentTimetableSnapshot Create(ScheduleStore store, IEnumerable<StudentRegistration> registrations,
         string studentId, string semesterId, DateOnly date)
     {

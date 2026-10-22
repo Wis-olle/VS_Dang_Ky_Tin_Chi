@@ -21,6 +21,7 @@ internal sealed class StudentWeekCalendar : Control
         SetStyle(ControlStyles.ResizeRedraw, true);
         AccessibleName = "Thời khóa biểu tuần, từ thứ hai đến chủ nhật";
     }
+    // Hiển thị các buổi học trong tuần
     internal void SetWeek(ScheduleStore store, DateOnly start, IReadOnlyList<ScheduledOccurrence> occurrences)
     {
         SuspendLayout();
@@ -38,12 +39,14 @@ internal sealed class StudentWeekCalendar : Control
         if (cards.Count > 0) cards[0].Selected = true;
         ResumeLayout(); LayoutCards(); Invalidate();
     }
+    // Chọn buổi học để xem chi tiết
     internal void SelectSession(SessionCard selected)
     {
         foreach (var card in cards) { card.Selected = card == selected; card.Invalidate(); }
         SessionSelected?.Invoke(selected.Occurrence);
     }
     protected override void OnResize(EventArgs e) { base.OnResize(e); LayoutCards(); }
+    // Sắp xếp ô môn học theo ngày và tiết
     private void LayoutCards()
     {
         float column = Math.Max(1, Width - S(52)) / 7f;
@@ -71,6 +74,7 @@ internal sealed class StudentWeekCalendar : Control
             }
         }
     }
+    // Vẽ lưới ngày và tiết học
     protected override void OnPaint(PaintEventArgs e)
     {
         base.OnPaint(e);

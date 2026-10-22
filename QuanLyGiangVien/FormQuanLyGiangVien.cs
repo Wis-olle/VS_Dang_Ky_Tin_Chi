@@ -138,6 +138,7 @@ public sealed partial class MainForm : Window
             await ReloadDatabaseAsync();
         };
     }
+    // Tải lại dữ liệu
     internal async Task ReloadDatabaseAsync()
     {
         if (databaseRepository == null || reloadBusy || CurrentEditor != null || HasOpenProfileDrawer) return;
@@ -166,6 +167,7 @@ public sealed partial class MainForm : Window
         catch (PersistenceException error) { if (!IsDisposed) AntdUI.Message.error(this, error.Message); }
         finally { reloadBusy = false; if (!IsDisposed) Enabled = true; }
     }
+    #region Nhóm 1 - Dựng giao diện danh sách giảng viên
     private void BuildShell()
     {
         // A space hides the title while retaining font metrics for caption icons.
@@ -253,14 +255,20 @@ public sealed partial class MainForm : Window
         tableCard.Padding = new(AppTheme.S(12));
         tableCard.Controls.Add(table);
     }
+    #endregion
+
+    #region Nhóm 1 - Sự kiện, tìm kiếm và cập nhật danh sách
     private void ConnectEvents()
     {
         ClientSizeChanged += (_, _) => { SurfaceTransition.CancelAll(); if (ready) LayoutScreen(); };
         body.Scroll += (_, _) => SurfaceTransition.CancelAll();
         grid.Scroll += (_, _) => SurfaceTransition.CancelAll();
+        // Tìm kiếm giảng viên
         search.TextChanged += (_, _) => { debounce.Stop(); debounce.Start(); };
         debounce.Tick += (_, _) => { debounce.Stop(); RefreshResults(); };
+        // Lọc theo khoa
         faculty.SelectedIndexChanged += (_, _) => { if (ready) RefreshResults(); };
+        // Lọc theo trạng thái
         status.SelectedIndexChanged += (_, _) => { if (ready) RefreshResults(); };
         view.SelectIndexChanged += (_, _) => {
             view.AccessibleDescription = view.SelectIndex == 0 ? "Đang xem dạng thẻ" : "Đang xem dạng bảng";
@@ -268,6 +276,7 @@ public sealed partial class MainForm : Window
             SurfaceTransition.CancelAll(); LayoutScreen();
             SurfaceTransition.Reveal(view.SelectIndex == 0 ? grid : tableCard, 160);
         };
+        // Thêm giảng viên
         hero.AddRequested += () => Edit(null);
         stats.ActionRequested += index => {
             ShowDashboardList(assigned: index == 2);
@@ -276,6 +285,7 @@ public sealed partial class MainForm : Window
         faculties.FacultyRequested += name => ShowDashboardList(name);
         clear.Click += (_, _) => ResetFilters();
         grid.Selected += SelectLecturer;
+        // Sửa giảng viên
         grid.EditRequested += value => Edit(value);
         grid.MenuRequested += OpenMenu;
         profile.EditRequested += value => Edit(value);
@@ -291,6 +301,7 @@ public sealed partial class MainForm : Window
             }
         };
     }
+    // Cập nhật danh sách giảng viên
     private void RefreshResults(bool animate = true)
     {
         SurfaceTransition.CancelAll();
@@ -308,6 +319,9 @@ public sealed partial class MainForm : Window
         LayoutScreen();
         if (animate && tableCard.Visible) SurfaceTransition.Reveal(tableCard, 160);
     }
+    #endregion
+
+    #region Nhóm 1 - Bố cục và hiệu ứng hiển thị
     internal void StartPageEntrance()
     {
         if (IsDisposed || !Visible) return;
@@ -409,6 +423,10 @@ public sealed partial class MainForm : Window
         emptyDescription.SetBounds(pad, y + AppTheme.S(62), width, AppTheme.S(28));
         clear.SetBounds((listCard.Width - AppTheme.S(176)) / 2, y + AppTheme.S(110), AppTheme.S(176), AppTheme.S(42));
     }
+    #endregion
+
+    #region Nhóm 1 - Xem hồ sơ, mở form nhóm 2 và yêu cầu lưu/xóa qua nhóm 3
+    // Xem hồ sơ giảng viên
     private void SelectLecturer(Lecturer item)
     {
         item = store.Items.FirstOrDefault(value => value.Id == item.Id) ?? item;
@@ -446,6 +464,7 @@ public sealed partial class MainForm : Window
         delete.ForeColor = AppTheme.Danger;
         menu.Show(owner, new Point(Math.Max(0, owner.Width - AppTheme.S(170)), AppTheme.S(44)));
     }
+    // Thêm hoặc sửa giảng viên
     private void Edit(Lecturer? item)
     {
         if (profileDrawer is { IsDisposed: false })
@@ -475,6 +494,7 @@ public sealed partial class MainForm : Window
         }
         CurrentEditor = null;
     }
+    // Xóa giảng viên
     private void Delete(Lecturer item)
     {
         var assignmentError = SchedulingLecturerGuard.DeleteError(scheduleStore, item.Id);
@@ -491,6 +511,7 @@ public sealed partial class MainForm : Window
         RefreshResults();
         AntdUI.Message.success(this, "Đã xóa hồ sơ giảng viên.");
     }
+    // Đặt lại bộ lọc
     private void ResetFilters()
     {
         assignedOnly = false;
@@ -513,6 +534,8 @@ public sealed partial class MainForm : Window
         body.ScrollControlIntoView(toolbar);
         search.Focus();
     }
+    #endregion
+
     protected override void OnDpiChanged(DpiChangedEventArgs e)
     {
         SurfaceTransition.CancelAll();

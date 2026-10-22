@@ -17,6 +17,7 @@ public sealed class LecturerStore(IEnumerable<Lecturer> initial, ILecturerPersis
             ActiveClasses = active.Count(c => Same(c.LecturerId, item.Id)) }).ToArray());
     }
 
+    // Tạo mã giảng viên
     public string NextId()
     {
         var maximum = items.Select(item => Regex.Match(item.Id, @"^GV([0-9]{4})$", RegexOptions.IgnoreCase))
@@ -26,6 +27,7 @@ public sealed class LecturerStore(IEnumerable<Lecturer> initial, ILecturerPersis
         return $"GV{maximum + 1:0000}";
     }
 
+    // Thêm hoặc cập nhật giảng viên
     public bool TrySave(Lecturer value, bool isNew, out IReadOnlyDictionary<string, string> errors)
     {
         ArgumentNullException.ThrowIfNull(value);
@@ -45,6 +47,7 @@ public sealed class LecturerStore(IEnumerable<Lecturer> initial, ILecturerPersis
         return true;
     }
 
+    // Xóa giảng viên
     public bool TryDelete(string id, out string? error)
     {
         var existing = items.FirstOrDefault(item => Same(item.Id, id));
@@ -58,6 +61,7 @@ public sealed class LecturerStore(IEnumerable<Lecturer> initial, ILecturerPersis
         return true;
     }
 
+    // Kiểm tra thông tin giảng viên
     private IReadOnlyDictionary<string, string> Validate(Lecturer value, bool isNew)
     {
         var existing = items.FirstOrDefault(item => Same(item.Id, value.Id));

@@ -51,6 +51,7 @@ internal sealed partial class SchedulingPage : UserControl
     internal DateOnly WeekForCheck => monday;
     internal int CalendarCountForCheck => calendar.OccurrenceCount;
 
+    // Khởi tạo trang quản lý lớp và phòng học
     internal SchedulingPage(MainForm owner, ScheduleStore store, TimetableDirectory? directory = null,
         Func<CancellationToken, Task<TimetableDirectory>>? directoryLoader = null, Func<Task>? reloadTimetable = null)
     {
@@ -74,6 +75,8 @@ internal sealed partial class SchedulingPage : UserControl
         ready = true; RefreshData(false); LayoutPage();
     }
 
+    #region Nhóm 1 - Dựng giao diện lớp học phần và phòng học
+    // Tạo thanh tiêu đề và nút chức năng
     private void BuildChrome()
     {
         breadcrumb.TextMultiLine = pageTitle.TextMultiLine = weeklyTitle.TextMultiLine = listTitle.TextMultiLine = false;
@@ -99,6 +102,7 @@ internal sealed partial class SchedulingPage : UserControl
         Controls.AddRange([navigation, content]);
     }
 
+    // Tạo danh sách lớp, phòng và lịch tuần
     private void BuildWorkspace()
     {
         tabs.SelectIndex = 0;
@@ -136,17 +140,26 @@ internal sealed partial class SchedulingPage : UserControl
         select.ForeColor = SchedulingTheme.Ink; select.DropDownRadius = 12; select.ListAutoWidth = true;
     }
 
+    #endregion
+
+    #region Nhóm 1 - Nối nút bấm với thao tác trong TrangQuanLyLopPhongHoc.ThaoTac.cs
+    // Gắn sự kiện cho các chức năng
     private void Connect()
     {
         Resize += (_, _) => { SurfaceTransition.CancelAll(); LayoutPage(); };
         content.Scroll += (_, _) => SurfaceTransition.CancelAll();
         teachers.Click += (_, _) => owner.ShowLecturers();
+        // Chuyển tab lớp, phòng và lịch tuần
         tabs.SelectIndexChanged += (_, _) => { if (!ready) return; ChangeTab(); };
+        // Tìm kiếm lớp hoặc phòng học
         search.TextChanged += (_, _) => { if (!ready) return; debounce.Stop(); debounce.Start(); };
         debounce.Tick += (_, _) => { debounce.Stop(); RefreshData(); };
+        // Lọc danh sách lớp hoặc phòng
         filter.SelectedIndexChanged += (_, _) => { if (ready) RefreshData(); };
+        // Chọn học kỳ
         semester.SelectedIndexChanged += (_, _) => { if (!ready) return; ResetWeek(); RefreshData(); };
         reset.Click += (_, _) => ResetFilters();
+        // Thêm lớp hoặc phòng học
         add.Click += (_, _) => { if (tabs.SelectIndex == 1) EditRoom(null); else EditClass(null); };
         previousWeek.Click += (_, _) => MoveWeek(-7); nextWeek.Click += (_, _) => MoveWeek(7); currentWeek.Click += (_, _) => { ResetWeek(); RefreshData(); };
         detail.EditClass += EditClass; detail.EditRoom += EditRoom; detail.RoomSelected += SelectRoom;
@@ -163,6 +176,8 @@ internal sealed partial class SchedulingPage : UserControl
         };
         VisibleChanged += (_, _) => { if (!Visible) { debounce.Stop(); SurfaceTransition.CancelAll(); } };
     }
+
+    #endregion
 
     private void CollectFonts(Control root)
     {

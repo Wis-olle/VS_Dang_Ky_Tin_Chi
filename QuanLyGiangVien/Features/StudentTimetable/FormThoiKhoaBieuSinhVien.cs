@@ -7,7 +7,7 @@ using static QuanLyGiangVien.Features.StudentTimetable.TimetableStyle;
 
 namespace QuanLyGiangVien.Features.StudentTimetable;
 
-/// <summary>Student-only timetable preview. The data source is replaced at team integration.</summary>
+/// <summary>Hiển thị lịch sinh viên từ dữ liệu được cấp quyền; không sửa lớp hoặc buổi học.</summary>
 internal sealed partial class StudentTimetableForm : AntdUI.Window
 {
     private readonly ScheduleStore store;
@@ -42,6 +42,7 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
     internal int ScrollOffset => scroll.AutoScrollPosition.Y;
     internal void ScrollPage(int y) { scroll.AutoScrollPosition = new(0, S(y)); }
 
+    // Khởi tạo trang thời khóa biểu sinh viên
     internal StudentTimetableForm(DatabaseSnapshot? database = null, bool embedded = false, StudentTimetableData? readModel = null)
     {
         this.embedded = embedded;
@@ -85,6 +86,8 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
         VisibleChanged += (_, _) => { if (!Visible) SurfaceTransition.Cancel(calendarShell); };
         StudentTimetableUiCheck.Attach(this);
     }
+    #region Nhóm 1 - Dựng trang và các nút thao tác xem lịch
+    // Tạo giao diện thời khóa biểu
     private void Build()
     {
         building = true;
@@ -96,6 +99,7 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
         BuildIntro(); BuildSidebar(); BuildCalendar();
         building = false; ResumeLayout(); LayoutPage(); RefreshWeek(false);
     }
+    // Tạo thanh tiêu đề
     private void BuildHeader()
     {
         top = Card(); top.Radius = 0; top.Back = Canvas;
@@ -125,6 +129,7 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
         top.Controls.Add(user); Controls.Add(top);
         top.Visible = !embedded;
     }
+    // Tạo khung chào và lịch học sắp tới
     private void BuildIntro()
     {
         greeting = Label("Thời khóa biểu của bạn", 21, true);
@@ -141,6 +146,7 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
         Put(nextCard, nextTitle, 20, 47, 300, 27); Put(nextCard, nextDescription, 20, 79, 320, 43);
         scroll.Controls.AddRange([intro, nextCard]);
     }
+    // Tạo lịch tuần và nút điều hướng
     private void BuildCalendar()
     {
         calendarShell = Card(); scroll.Controls.Add(calendarShell);
@@ -151,6 +157,7 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
         OwnFont(semester, 9);
         semester.Items.AddRange(store.Catalog.Semesters.Select(s => s.Name).Cast<object>().ToArray());
         semester.SelectedIndex = store.Catalog.Semesters.ToList().FindIndex(s => s.Id == semesterId);
+        // Chọn học kỳ
         semester.SelectedIndexChanged += (_, _) => {
             if (building || semester.SelectedIndex < 0) return;
             semesterId = store.Catalog.Semesters[semester.SelectedIndex].Id;
@@ -160,18 +167,26 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
         SoftInputSurface.Enhance(semester);
         previous = Button("", "chevron-left"); previous.AccessibleName = "Tuần trước";
         next = Button("", "chevron-right"); next.AccessibleName = "Tuần sau";
+        // Về tuần hiện tại
         today = Button("Tuần hiện tại"); today.Click += (_, _) => { selectedDate = DateOnly.FromDateTime(DateTime.Today); RefreshWeek(); };
+        // Xem tuần trước hoặc tuần sau
         previous.Click += (_, _) => ChangeWeek(-1); next.Click += (_, _) => ChangeWeek(1);
         calendarShell.Controls.AddRange([previous, today, next]);
         calendar = new StudentWeekCalendar(); calendar.SessionSelected += ShowDetails;
         calendarShell.Controls.Add(calendar);
     }
+    #endregion
+
+    #region Nhóm 2 - Chuyển tuần, cập nhật lịch và xem chi tiết (không ghi SQL)
+    // Chuyển tuần
     internal void ChangeWeek(int direction)
     {
         if ((direction < 0 && !snapshot.CanGoPrevious) || (direction > 0 && !snapshot.CanGoNext)) return;
         selectedDate = snapshot.WeekStart.AddDays(direction < 0 ? -7 : 7); RefreshWeek();
     }
+    // Chọn ngày xem lịch
     internal void SelectDate(DateOnly date) { selectedDate = date; RefreshWeek(); }
+    // Cập nhật thời khóa biểu
     internal void RefreshWeek(bool animate = true)
     {
         var before = animate ? SurfaceTransition.Capture(calendar) : null;
@@ -180,8 +195,10 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
         calendar.SetWeek(store, snapshot.WeekStart, snapshot.Occurrences);
         weekLabel.Text = $"{snapshot.WeekStart:dd/MM} – {snapshot.WeekEnd:dd/MM/yyyy}  ·  {snapshot.Occurrences.Length} buổi học";
         previous.Enabled = snapshot.CanGoPrevious; next.Enabled = snapshot.CanGoNext;
+        // Thống kê học phần và tín chỉ
         summaryText.Text = $"{snapshot.CourseCount:00}  học phần\n\n{snapshot.TotalCredits:00}  tín chỉ\n\n{snapshot.Occurrences.Length:00}  buổi học trong tuần";
         var current = DateOnly.FromDateTime(DateTime.Today);
+        // Tìm buổi học sắp tới
         var upcoming = Domain.StudentTimetable.Create(store, registrations,
             studentId, semesterId, current);
         var candidate = SchedulingQuery.Occurrences(store, current < snapshot.Semester.StartDate ? snapshot.Semester.StartDate : current,
@@ -192,6 +209,7 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
         else { detailTitle.Text = "Chưa có buổi học"; detailBody.Text = "Chọn học kỳ hoặc chuyển tuần để xem lịch học của bạn."; }
         if (animate) SurfaceTransition.Crossfade(calendar, before, 200);
     }
+    // Xem chi tiết buổi học
     private void ShowDetails(ScheduledOccurrence occurrence)
     {
         var course = store.Catalog.Courses.First(c => c.Id == occurrence.Class.CourseId);
@@ -199,6 +217,8 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
         detailTitle.Text = course.Name;
         detailBody.Text = $"{occurrence.Class.Id} · {course.Credits} tín chỉ\n\n{occurrence.Date:dd/MM/yyyy}\nTiết {occurrence.Meeting.StartPeriod} – {occurrence.Meeting.EndPeriod}\n\nPhòng {occurrence.RoomId}\n\n{lecturer?.Name ?? occurrence.LecturerId}";
     }
+    #endregion
+
     protected override void OnDpiChanged(DpiChangedEventArgs e)
     {
         base.OnDpiChanged(e);

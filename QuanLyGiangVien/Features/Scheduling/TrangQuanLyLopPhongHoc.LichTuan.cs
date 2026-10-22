@@ -23,6 +23,7 @@ internal sealed partial class SchedulingPage
 
     private bool UsesStudentDirectory => scopeKind is TimetableScopeKind.Student or TimetableScopeKind.StudentClass;
 
+    // Tạo bộ chọn thời khóa biểu
     private void BuildTimetableSelectors()
     {
         ConfigureSelect(timetableScope, ScopeNames);
@@ -31,6 +32,7 @@ internal sealed partial class SchedulingPage
         reloadTimetableSubjects.AccessibleName = "Tải lại dữ liệu và thời khóa biểu";
         timetableSubject.PlaceholderText = "Chọn giảng viên…";
         ConfigureTimetableSubjects();
+        // Chọn loại đối tượng xem lịch
         timetableScope.SelectedIndexChanged += async (_, _) => {
             if (!ready) return;
             scopeKind = (TimetableScopeKind)Math.Max(0, timetableScope.SelectedIndex);
@@ -38,11 +40,13 @@ internal sealed partial class SchedulingPage
             ConfigureTimetableSubjects(); RefreshData(false);
             if (UsesStudentDirectory) await EnsureTimetableDirectoryAsync();
         };
+        // Chọn đối tượng xem lịch
         timetableSubject.SelectedIndexChanged += (_, _) => {
             if (!ready) return;
             timetableSubjectId = timetableSubjects.GetValueOrDefault(timetableSubject.SelectedValue?.ToString() ?? "");
             RefreshData(false);
         };
+        // Tải lại thời khóa biểu
         reloadTimetableSubjects.Click += async (_, _) => {
             if (reloadTimetableSnapshot != null) { await reloadTimetableSnapshot(); return; }
             if (UsesStudentDirectory)
@@ -54,6 +58,7 @@ internal sealed partial class SchedulingPage
         };
     }
 
+    // Cập nhật danh sách đối tượng xem lịch
     private void ConfigureTimetableSubjects()
     {
         IEnumerable<KeyValuePair<string, string>> values = scopeKind switch {
@@ -86,6 +91,7 @@ internal sealed partial class SchedulingPage
         ready = wasReady;
     }
 
+    // Kiểm tra dữ liệu danh mục sinh viên
     private Task EnsureTimetableDirectoryAsync()
     {
         if (timetableDirectoryReady || loadTimetableDirectory == null || IsDisposed) return Task.CompletedTask;
@@ -94,6 +100,7 @@ internal sealed partial class SchedulingPage
         return directoryLoadTask;
     }
 
+    // Tải danh mục sinh viên để xem lịch
     private async Task LoadTimetableDirectoryCoreAsync()
     {
         timetableDirectoryError = null;
@@ -122,6 +129,7 @@ internal sealed partial class SchedulingPage
         }
     }
 
+    // Hiển thị tiêu đề và trạng thái lịch
     private string TimetableCaption()
     {
         if (UsesStudentDirectory && !timetableDirectoryReady)
@@ -138,6 +146,7 @@ internal sealed partial class SchedulingPage
         return $"{ScopeNames[(int)scopeKind]} · {label}";
     }
 
+    // Xem lịch theo đối tượng đã chọn
     private async Task SelectTimetableAsync(TimetableScopeKind kind, string? subjectId)
     {
         bool wasReady = ready;

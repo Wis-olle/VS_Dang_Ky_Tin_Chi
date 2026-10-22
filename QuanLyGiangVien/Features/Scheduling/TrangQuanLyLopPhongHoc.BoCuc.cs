@@ -5,6 +5,7 @@ namespace QuanLyGiangVien.Features.Scheduling;
 
 internal sealed partial class SchedulingPage
 {
+    // Sắp xếp giao diện quản lý lớp và phòng
     private void LayoutPage()
     {
         if (Width < 1 || Height < 1) return;
@@ -52,6 +53,7 @@ internal sealed partial class SchedulingPage
         content.ResumeLayout(true); ResumeLayout(false);
     }
 
+    // Sắp xếp danh sách và khung chi tiết
     private void LayoutWorkspace()
     {
         int s(int n) => AppTheme.S(n);
@@ -94,6 +96,7 @@ internal sealed partial class SchedulingPage
         table.LoadLayout();
     }
 
+    // Tạo cột bảng lớp hoặc phòng học
     private void ConfigureTable()
     {
         table.Columns = tabs.SelectIndex == 1 ? new ColumnCollection {

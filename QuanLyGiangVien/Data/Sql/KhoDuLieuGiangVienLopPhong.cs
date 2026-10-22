@@ -37,12 +37,17 @@ public sealed class SqlMinhRepository : ILecturerPersistence, ISchedulePersisten
         catch (InvalidOperationException) { throw new PersistenceException("Không thể mở kết nối SQL. Kiểm tra cấu hình và dịch vụ SQL Server."); }
     }
 
+    // Lưu giảng viên vào database
     public Lecturer SaveLecturer(Lecturer value, bool isNew) => value with { Version = Execute(SqlMinhCommands.SaveLecturer(value, isNew), ReadVersion) };
     public Task<System.Collections.Immutable.ImmutableArray<TimetableStudent>> LoadTimetableStudentsAsync(CancellationToken token = default)
         => new TimetableDirectoryRepository(connectionString).LoadStudentsAsync(token);
+    // Xóa giảng viên trong database
     public void DeleteLecturer(string id, string version = "") => Execute(SqlMinhCommands.DeleteLecturer(id, version));
+    // Lưu phòng học vào database
     public Room SaveRoom(Room value, bool isNew) => value with { Version = Execute(SqlMinhCommands.SaveRoom(value, isNew), ReadVersion) };
+    // Xóa phòng học trong database
     public void DeleteRoom(string id, string version = "") => Execute(SqlMinhCommands.DeleteRoom(id, version));
+    // Lưu lớp học phần vào database
     public CourseClass SaveClass(CourseClass value, bool isNew) => Execute(SqlMinhCommands.SaveClass(value, isNew), command =>
     {
         using var reader = command.ExecuteReader();
@@ -55,6 +60,7 @@ public sealed class SqlMinhRepository : ILecturerPersistence, ISchedulePersisten
             ActualMeetings = HasColumn(reader,"actual_meetings_json")
                 ? LifecycleRules.ReadActualCalendar(Convert.ToString(reader["actual_meetings_json"])) : value.ActualMeetings };
     });
+    // Xóa lớp học phần trong database
     public void DeleteClass(string id, string version = "") => Execute(SqlMinhCommands.DeleteClass(id, version));
 
     private static bool HasColumn(System.Data.Common.DbDataReader reader,string name) =>

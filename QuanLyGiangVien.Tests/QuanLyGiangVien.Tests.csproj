@@ -26,8 +26,8 @@
     <Compile Include="..\QuanLyGiangVien\Domain\Registration\*.cs" Link="Domain\Registration\%(Filename)%(Extension)" />
     <Compile Include="..\QuanLyGiangVien\Domain\Shell\*.cs" Link="Domain\Shell\%(Filename)%(Extension)" />
     <Compile Include="..\QuanLyGiangVien\Domain\Operations\*.cs" Link="Domain\Operations\%(Filename)%(Extension)" />
-    <Compile Include="..\QuanLyGiangVien\Data\DemoData.cs" Link="Data\DemoData.cs" />
-    <Compile Include="..\QuanLyGiangVien\Data\SchedulingDemo.cs" Link="Data\SchedulingDemo.cs" />
+    <Compile Include="..\QuanLyGiangVien\Data\DuLieuMauGiangVien.cs" Link="Data\DuLieuMauGiangVien.cs" />
+    <Compile Include="..\QuanLyGiangVien\Data\DuLieuMauLopPhongHoc.cs" Link="Data\DuLieuMauLopPhongHoc.cs" />
     <Compile Include="..\QuanLyGiangVien\Data\DatabaseLaunch.cs" Link="Data\DatabaseLaunch.cs" />
     <Compile Include="..\QuanLyGiangVien\Data\SelectedShowcaseLaunch.cs" Link="Data\SelectedShowcaseLaunch.cs" />
     <Compile Include="..\QuanLyGiangVien\Data\Sql\**\*.cs" Link="Data\Sql\%(RecursiveDir)%(Filename)%(Extension)" />

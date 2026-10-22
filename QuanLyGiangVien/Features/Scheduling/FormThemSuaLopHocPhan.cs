@@ -24,6 +24,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
     public CourseClass? Result { get; private set; }
     public IReadOnlyList<ClassMeeting> Meetings => meetings;
 
+    // Mở form thêm hoặc sửa lớp học phần
     public CourseClassEditor(ScheduleStore store, CourseClass? original = null)
         : base(original is null ? "Mở lớp học phần" : "Chỉnh sửa lớp học phần",
             original is { HasRegistrationHistory: true } or { Enrolled: > 0 }
@@ -106,6 +107,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         Shown += (_, _) => { if (original is null) id.Focus(); else capacity.Focus(); };
     }
 
+    // Nạp danh sách học phần, học kỳ và giảng viên
     private void ConfigureReferences()
     {
         foreach (var item in store.Catalog.Courses) courseIds[$"{item.Id} · {item.Name}"] = item.Id;
@@ -117,6 +119,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         ConfigureSelect(lecturer, lecturerIds.Keys, "Chọn giảng viên");
     }
 
+    // Điền thông tin lớp học phần
     public void FillForCheck(CourseClass value)
     {
         id.Text = value.Id;
@@ -146,6 +149,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
     private Semester? CurrentSemester() => store.Catalog.Semesters.FirstOrDefault(item =>
         item.Id.Equals(semesterIds.GetValueOrDefault(Selected(semester)), StringComparison.OrdinalIgnoreCase));
 
+    // Hiển thị thời gian học kỳ
     private void UpdateSemesterInfo()
     {
         if (semesterInfo is null) return;
@@ -154,6 +158,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
             $"Thời gian học kỳ: {selected.StartDate:dd/MM/yyyy} – {selected.EndDate:dd/MM/yyyy}";
     }
 
+    // Lưu lớp học phần
     public override bool TrySave()
     {
         ClearErrors();
@@ -168,6 +173,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         return true;
     }
 
+    // Kiểm tra điều kiện chỉnh lịch học
     private bool CanEditMeetings(out Semester? selected, out int seats)
     {
         ClearErrors();
@@ -180,6 +186,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         return validation.Count == 0 || ShowErrors(validation);
     }
 
+    // Thêm buổi học
     private void AddMeeting()
     {
         if (!CanEditMeetings(out var selected, out int seats)) return;
@@ -189,6 +196,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         RefreshMeetings(meetings.Length - 1);
     }
 
+    // Sửa buổi học
     private void EditMeeting()
     {
         int index = meetingList.SelectedIndex;
@@ -199,6 +207,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         RefreshMeetings(index);
     }
 
+    // Xóa buổi học
     private void RemoveMeeting()
     {
         int index = meetingList.SelectedIndex;
@@ -208,6 +217,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         RefreshMeetings(Math.Min(index, meetings.Length - 1));
     }
 
+    // Cập nhật danh sách buổi học
     private void RefreshMeetings(int selectedIndex = -1)
     {
         meetingList.BeginUpdate();
@@ -219,6 +229,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         UpdateMeetingActions();
     }
 
+    // Bật hoặc tắt nút sửa và xóa buổi học
     private void UpdateMeetingActions()
     {
         editMeeting.Enabled = removeMeeting.Enabled = meetingList.SelectedIndex >= 0

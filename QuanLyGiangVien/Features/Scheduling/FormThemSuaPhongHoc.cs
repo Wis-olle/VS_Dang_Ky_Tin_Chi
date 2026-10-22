@@ -13,6 +13,7 @@ public sealed class RoomEditor : SchedulingEditorBase
     private readonly Select type = new(), status = new();
     public Room? Result { get; private set; }
 
+    // Mở form thêm hoặc sửa phòng học
     public RoomEditor(ScheduleStore store, Room? original = null)
         : base(original is null ? "Thêm phòng học" : "Chỉnh sửa phòng học",
             "Thông tin phòng dùng chung cho các lớp học phần.", "PHÒNG HỌC", 600, 520,
@@ -45,6 +46,7 @@ public sealed class RoomEditor : SchedulingEditorBase
         Shown += (_, _) => { if (original is null) id.Focus(); else building.Focus(); };
     }
 
+    // Điền thông tin phòng học
     public void FillForCheck(Room value)
     {
         id.Text = value.Id;
@@ -54,6 +56,7 @@ public sealed class RoomEditor : SchedulingEditorBase
         SelectKnown(status, value.Status);
     }
 
+    // Lưu phòng học
     public override bool TrySave()
     {
         ClearErrors();

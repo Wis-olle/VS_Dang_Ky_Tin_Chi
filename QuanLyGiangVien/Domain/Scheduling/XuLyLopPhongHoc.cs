@@ -36,6 +36,7 @@ public sealed class ScheduleStore
     public string NextRoomId() => ScheduleRules.NextId(Rooms.Select(item => item.Id), "P");
     public string NextClassId() => ScheduleRules.NextId(Classes.Select(item => item.Id), "LHP");
 
+    // Thêm hoặc cập nhật phòng học
     public bool TrySaveRoom(Room value, bool isNew, out IReadOnlyDictionary<string, string> errors)
     {
         ArgumentNullException.ThrowIfNull(value);
@@ -49,6 +50,7 @@ public sealed class ScheduleStore
         return true;
     }
 
+    // Thêm hoặc cập nhật lớp học phần
     public bool TrySaveClass(CourseClass value, bool isNew, out IReadOnlyDictionary<string, string> errors)
     {
         ArgumentNullException.ThrowIfNull(value);
@@ -73,6 +75,7 @@ public sealed class ScheduleStore
         return true;
     }
 
+    // Xóa phòng học
     public bool TryDeleteRoom(string id, out string? error)
     {
         var existing = Rooms.FirstOrDefault(item => ScheduleRules.Same(item.Id, id));
@@ -86,6 +89,7 @@ public sealed class ScheduleStore
         return true;
     }
 
+    // Xóa lớp học phần
     public bool TryDeleteClass(string id, out string? error)
     {
         var existing = Classes.FirstOrDefault(item => ScheduleRules.Same(item.Id, id));
@@ -98,6 +102,7 @@ public sealed class ScheduleStore
         return true;
     }
 
+    // Kiểm tra thông tin phòng học
     private IReadOnlyDictionary<string, string> ValidateRoom(Room value, bool isNew)
     {
         var existing = Rooms.FirstOrDefault(item => ScheduleRules.Same(item.Id, value.Id));
@@ -124,6 +129,7 @@ public sealed class ScheduleStore
         System.Collections.Immutable.ImmutableDictionary<string, string>.Empty.Add(
             exception.Kind == PersistenceFailure.SessionExpired ? "_session" : "_global", exception.Message);
 
+    // Kiểm tra thông tin và lịch lớp học phần
     private IReadOnlyDictionary<string, string> ValidateClass(CourseClass value, bool isNew, bool allowSeedEnrollment)
     {
         var existing = Classes.FirstOrDefault(item => ScheduleRules.Same(item.Id, value.Id));

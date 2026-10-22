@@ -9,6 +9,7 @@ internal sealed partial class SchedulingPage
     private string SemesterId => Store.Catalog.Semesters[Math.Clamp(semester.SelectedIndex, 0, Store.Catalog.Semesters.Count - 1)].Id;
     private IReadOnlyList<ScheduledOccurrence> WeekSessions => SchedulingQuery.Occurrences(Store, monday, monday.AddDays(6)).Where(s => s.Class.SemesterId == SemesterId).ToArray();
 
+    // Cập nhật danh sách và thống kê
     internal void RefreshData(bool animate = true)
     {
         if (!ready) return;
@@ -48,6 +49,7 @@ internal sealed partial class SchedulingPage
         LayoutPage();
     }
 
+    // Tìm kiếm và hiển thị lớp học phần
     private void RefreshClasses(bool animate)
     {
         var values = SchedulingQuery.FilterClasses(Store, search.Text, SemesterId, filter.SelectedIndex <= 0 ? "" : filter.SelectedValue?.ToString() ?? "");
@@ -56,6 +58,7 @@ internal sealed partial class SchedulingPage
         table.DataSource = values.Select(c => new CourseClassRow(c, Store, visuals)).ToArray();
         detail.ShowClass(Store.Classes.FirstOrDefault(c => c.Id == selectedClassId), Store, animate);
     }
+    // Tìm kiếm và hiển thị phòng học
     private void RefreshRooms(bool animate)
     {
         var values = SchedulingQuery.FilterRooms(Store, search.Text, filter.SelectedIndex <= 0 ? "" : filter.SelectedValue?.ToString() ?? "", "", "");
@@ -64,6 +67,7 @@ internal sealed partial class SchedulingPage
         table.DataSource = values.Select(r => new RoomRow(r, visuals)).ToArray();
         detail.ShowRoom(Store.Rooms.FirstOrDefault(r => r.Id == selectedRoomId), Store, animate);
     }
+    // Hiển thị lịch tuần
     private void RefreshCalendar(IReadOnlyList<ScheduledOccurrence> sessions)
     {
         var filtered = UsesStudentDirectory && !timetableDirectoryReady ? []
@@ -76,6 +80,7 @@ internal sealed partial class SchedulingPage
         nextWeek.Enabled = monday < SchedulingQuery.WeekStart(term.EndDate);
     }
 
+    // Chuyển tab
     private void ChangeTab()
     {
         ready = false; debounce.Stop(); search.Text = "";
@@ -87,22 +92,26 @@ internal sealed partial class SchedulingPage
         ConfigureTable(); ready = true; RefreshData(false);
         SurfaceTransition.Reveal(tabs.SelectIndex == 2 ? calendar : ResultCount > 0 ? table : emptyArtwork, 180);
     }
+    // Chọn tab lớp, phòng hoặc lịch tuần
     internal void SwitchTab(int index)
     {
         if (index == tabs.SelectIndex) return;
         tabs.SelectIndex = index;
     }
+    // Đặt lại bộ lọc
     private void ResetFilters()
     {
         ready = false; search.Text = ""; filter.SelectedIndex = 0; timetableSubjectId = null;
         ready = true; debounce.Stop(); RefreshData();
     }
+    // Về tuần hiện tại trong học kỳ
     private void ResetWeek()
     {
         var term = Store.Catalog.Semesters.First(s => s.Id == SemesterId);
         var today = DateOnly.FromDateTime(DateTime.Today);
         monday = SchedulingQuery.WeekStart(today >= term.StartDate && today <= term.EndDate ? today : term.StartDate);
     }
+    // Chuyển tuần
     internal void MoveWeek(int days)
     {
         var term = Store.Catalog.Semesters.First(s => s.Id == SemesterId);
@@ -110,23 +119,28 @@ internal sealed partial class SchedulingPage
         if (next < SchedulingQuery.WeekStart(term.StartDate) || next > SchedulingQuery.WeekStart(term.EndDate)) return;
         monday = next; RefreshData();
     }
+    // Xem chi tiết lớp học phần
     private void SelectClass(CourseClass item)
     {
         if (tabs.SelectIndex != 0) SwitchTab(0);
         selectedClassId = item.Id; detail.ShowClass(item, Store, true);
     }
+    // Chọn phòng học
     private void SelectRoom(string id) => SelectRoom(id, true);
+    // Xem chi tiết phòng học
     private void SelectRoom(string id, bool switchTab)
     {
         selectedRoomId = id;
         if (switchTab && tabs.SelectIndex != 1) SwitchTab(1);
         detail.ShowRoom(Store.Rooms.FirstOrDefault(r => r.Id == id), Store, true);
     }
+    // Xem lịch sử dụng phòng
     private void ShowRoomSchedule(string id)
     {
         SwitchTab(2);
         _ = SelectTimetableAsync(TimetableScopeKind.Room, id);
     }
+    // Thêm hoặc sửa lớp học phần
     private void EditClass(CourseClass? item)
     {
         using var editor = new CourseClassEditor(Store, item);
@@ -136,6 +150,7 @@ internal sealed partial class SchedulingPage
         RefreshData();
         AntdUI.Message.success(owner, "Đã lưu lớp học phần.");
     }
+    // Thêm hoặc sửa phòng học
     private void EditRoom(Room? room)
     {
         using var editor = new RoomEditor(Store, room);
@@ -143,8 +158,10 @@ internal sealed partial class SchedulingPage
         selectedRoomId = editor.Result?.Id;
         RefreshRoomChoices(); RefreshData(); AntdUI.Message.success(owner, "Đã lưu phòng học.");
     }
+    // Xác nhận xóa
     private bool ConfirmDelete(string title, string message)
         => Modal.open(new Modal.Config(owner, title, message, TType.Warn) { OkText = "Xóa", CancelText = "Hủy", OkType = TTypeMini.Error, MaskClosable = false }) == DialogResult.OK;
+    // Xóa lớp học phần
     private void DeleteClass(CourseClass item)
     {
         if (item.Enrolled > 0) { AntdUI.Message.warn(owner, "Lớp đã có sinh viên đăng ký. Không thể xóa lớp."); return; }
@@ -152,12 +169,14 @@ internal sealed partial class SchedulingPage
         if (!Store.TryDeleteClass(item.Id, out var error)) { AntdUI.Message.error(owner, error!); return; }
         RefreshRoomChoices(); RefreshData();
     }
+    // Chọn học kỳ của lớp vừa lưu
     internal void SelectSavedSemester(string id)
     {
         bool changed = SemesterId != id;
         ready = false; semester.SelectedIndex = Store.Catalog.Semesters.ToList().FindIndex(s => s.Id == id); ready = true;
         if (changed) ResetWeek();
     }
+    // Cập nhật bộ chọn phòng và tòa nhà
     internal void RefreshRoomChoices()
     {
         var selectedBuilding = filter.SelectedValue?.ToString();
@@ -170,10 +189,12 @@ internal sealed partial class SchedulingPage
         }
         ready = true;
     }
+    // Ghi nhớ trạng thái trang lớp và phòng
     internal SchedulingViewState CaptureView() => new(tabs.SelectIndex, semester.SelectedIndex, search.Text,
         filter.SelectedValue?.ToString(), scopeKind == TimetableScopeKind.Room ? timetableSubjectId : null,
         monday, selectedClassId, selectedRoomId, new Point(-content.AutoScrollPosition.X, -content.AutoScrollPosition.Y),
         scopeKind == TimetableScopeKind.Lecturer ? timetableSubjectId : null, scopeKind, timetableSubjectId);
+    // Khôi phục trạng thái trang lớp và phòng
     internal void RestoreView(SchedulingViewState state)
     {
         SwitchTab(state.Tab);
@@ -187,6 +208,7 @@ internal sealed partial class SchedulingPage
         if (UsesStudentDirectory) _ = EnsureTimetableDirectoryAsync();
     }
     internal bool RoomChoiceExistsForCheck(string id) => Store.Rooms.Any(r => ScheduleRules.Same(r.Id, id));
+    // Xóa phòng học
     private void DeleteRoom(Room room)
     {
         if (!ConfirmDelete("Xóa phòng học?", $"Xóa phòng {room.Id} khỏi danh sách?")) return;

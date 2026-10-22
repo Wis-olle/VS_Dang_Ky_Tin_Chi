@@ -6,6 +6,7 @@ namespace QuanLyGiangVien.Features.StudentTimetable;
 
 internal sealed partial class StudentTimetableForm
 {
+    // Tải ảnh minh họa
     private PictureBox Picture(string file)
     {
         Bitmap bitmap;
@@ -26,6 +27,7 @@ internal sealed partial class StudentTimetableForm
         images.Add(bitmap);
         return new PictureBox { Image = bitmap, SizeMode = PictureBoxSizeMode.Zoom, BackColor = Color.Transparent, TabStop = false };
     }
+    // Tạo khung thông tin sinh viên và chi tiết lịch
     private void BuildSidebar()
     {
         profile = Card(); summary = Card(); detail = Card();
@@ -51,6 +53,7 @@ internal sealed partial class StudentTimetableForm
         Put(detail, detailBody, 22, 110, 216, 205);
         scroll.Controls.AddRange([profile, summary, detail]);
     }
+    // Sắp xếp giao diện thời khóa biểu
     private void LayoutPage()
     {
         if (building || scroll == null) return;
