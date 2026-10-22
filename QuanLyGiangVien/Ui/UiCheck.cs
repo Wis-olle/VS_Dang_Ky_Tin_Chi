@@ -99,6 +99,8 @@ public static class UiCheck
         }
         if (Environment.GetEnvironmentVariable("LECTURER_SELECT_CHECK_ONLY") == "1")
         {
+            form.StartPosition = FormStartPosition.Manual;
+            form.Location = new(SystemInformation.VirtualScreen.Right + 60, 0);
             await Task.Delay(900);
             await SelectUiCheck.Run(form, folder, Expect);
             return;

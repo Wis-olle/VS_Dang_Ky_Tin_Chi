@@ -18,12 +18,32 @@ internal static class Program
         {
             var args = Environment.GetCommandLineArgs();
             bool HasEnvironment(string key) => !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable(key));
+            var configuredConnection = Environment.GetEnvironmentVariable("MINH_DB_CONNECTION");
+            if (args.Contains("--showcase"))
+            {
+                try
+                {
+                    SelectedShowcaseLaunch.EnsureCompatible(args,
+                        Environment.GetEnvironmentVariables().Keys.Cast<string>().Where(HasEnvironment));
+                    var selected = SelectedShowcaseLaunch.Load(AppContext.BaseDirectory);
+                    configuredConnection = selected.ConnectionString;
+                    Environment.SetEnvironmentVariable("CAMPUS_QUICK_LOGIN_FILE", selected.QuickLoginFile);
+                    Environment.SetEnvironmentVariable("CAMPUS_SHOWCASE_DEMO", "1");
+                }
+                catch (InvalidOperationException error)
+                {
+                    MessageBox.Show(error.Message, "Campus · Dữ liệu test", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
             bool harness = HasEnvironment("LECTURER_UI_CHECK") || HasEnvironment("SCHEDULING_UI_CHECK")
                 || HasEnvironment("STUDENT_TIMETABLE_UI_CHECK") || HasEnvironment("WEEKLY_TIMETABLE_UI_CHECK")
                 || HasEnvironment("SCOPED_TIMETABLE_UI_CHECK");
-            var mode = DatabaseLaunch.Parse(args, Environment.GetEnvironmentVariable("MINH_DB_CONNECTION"), harness);
+            var mode = DatabaseLaunch.Parse(args, configuredConnection, harness);
             bool legacyCheck = HasEnvironment("STUDENT_PORTAL_UI_CHECK") || HasEnvironment("UNIFIED_UI_CHECK");
-            bool loginCheck = HasEnvironment("PASSWORD_LOGIN_UI_CHECK") || HasEnvironment("CAMPUS_PHASE1_UI_CHECK") || HasEnvironment("CAMPUS_PHASE2_UI_CHECK") || HasEnvironment("CAMPUS_PHASE3_UI_CHECK") || HasEnvironment("CAMPUS_PHASE4_UI_CHECK") || HasEnvironment("CAMPUS_AUDIT_FIX_UI_CHECK") || HasEnvironment("CAMPUS_SHOWCASE_UI_CHECK") || HasEnvironment("CAMPUS_QUICK_LOGIN_UI_CHECK");
+            bool loginCheck = HasEnvironment("PASSWORD_LOGIN_UI_CHECK") || HasEnvironment("CAMPUS_PHASE1_UI_CHECK") || HasEnvironment("CAMPUS_PHASE2_UI_CHECK") || HasEnvironment("CAMPUS_PHASE3_UI_CHECK") || HasEnvironment("CAMPUS_PHASE4_UI_CHECK") || HasEnvironment("CAMPUS_AUDIT_FIX_UI_CHECK") || HasEnvironment("CAMPUS_SHOWCASE_UI_CHECK") || HasEnvironment("CAMPUS_QUICK_LOGIN_UI_CHECK") || HasEnvironment("CAMPUS_STARTUP_UI_CHECK") || HasEnvironment("CAMPUS_FULL_DEMO_UI_CHECK");
+            loginCheck |= HasEnvironment("CAMPUS_UNIFIED_SELECT_UI_CHECK");
+            loginCheck |= HasEnvironment("CAMPUS_ORGANIZATION_UI_CHECK");
             if (mode.UseDatabase && (legacyCheck || harness || loginCheck)
                 && !new SqlConnectionStringBuilder(mode.ConnectionString).InitialCatalog.StartsWith("DangKyTinChi_Minh_Test_", StringComparison.Ordinal))
                 throw new InvalidOperationException("Kiểm chứng Windows identity chỉ được chạy trên database kiểm thử riêng.");

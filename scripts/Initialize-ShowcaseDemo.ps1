@@ -3,7 +3,7 @@
 param(
  [ValidatePattern('^(localhost|\.|\(local\))$')][string]$Server='.',
  [ValidatePattern('^DangKyTinChi_Minh_Test_Showcase_[a-f0-9]{32}$')][string]$DatabaseName=('DangKyTinChi_Minh_Test_Showcase_'+[Guid]::NewGuid().ToString('N')),
- [switch]$PlanOnly,[switch]$VerifyNative,[switch]$Ephemeral,[switch]$NoSelect
+ [switch]$PlanOnly,[switch]$VerifyNative,[switch]$Ephemeral,[switch]$NoSelect,[switch]$FullData
 )
 $ErrorActionPreference='Stop'
 Set-StrictMode -Version Latest
@@ -11,7 +11,7 @@ if($Ephemeral -and -not $VerifyNative){throw 'Ephemeral requires VerifyNative.'}
 $repo=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $run=$DatabaseName.Substring('DangKyTinChi_Minh_Test_Showcase_'.Length)
 $output=Join-Path $repo ".tmp/showcase-20/$run"
-if($PlanOnly){@{database=$DatabaseName;output=$output;keepDatabase=(-not $Ephemeral)}|ConvertTo-Json;return}
+if($PlanOnly){@{database=$DatabaseName;output=$output;keepDatabase=(-not $Ephemeral);fullData=[bool]$FullData}|ConvertTo-Json;return}
 if(-not $IsWindows){throw 'Showcase requires Windows and local SQL Server.'}
 foreach($tool in @('dotnet','sqlcmd')){if(-not(Get-Command $tool -ErrorAction SilentlyContinue)){throw "Required command: $tool"}}
 if(Test-Path -LiteralPath $output){throw 'Showcase output already exists; no changes.'}
@@ -21,6 +21,7 @@ if($LASTEXITCODE-ne 0 -or ($exists|Out-String).Trim()-ne '0'){throw 'Database al
 $manifestPath=Join-Path $output 'manifest.json'
 $manifest=[ordered]@{database=$DatabaseName;server=$Server;synthetic=$true;purpose='Dedicated showcase only; all academic evidence is synthetic.';createdUtc=[DateTime]::UtcNow.ToString('o');passed=$false;cleaned=$false;keepDatabase=(-not $Ephemeral);output=$output;credentialFile=(Join-Path $output 'accounts.private.txt');quickLoginFile=(Join-Path $output 'quick-login.dat');executable=(Join-Path $output 'artifacts/bin/QuanLyGiangVien/release/QuanLyGiangVien.exe');term='HK1-2627';source='SYNTHETIC DEMO - Campus showcase; not official student records';error=$null}
 $owned=$false
+$manifest.fullData=[bool]$FullData
 function Save-Manifest {$manifest|ConvertTo-Json -Depth 5|Set-Content -LiteralPath $manifestPath -Encoding utf8}
 function Assert-Owned {
  if(-not $owned -or $DatabaseName -cnotmatch '^DangKyTinChi_Minh_Test_Showcase_[a-f0-9]{32}$' -or $manifest.database -cne $DatabaseName){throw 'Refusing mutation outside exact owned showcase database.'}
@@ -115,6 +116,15 @@ EXEC dbo.usp_Campus_KiemTraSchema;
 COMMIT;
 END TRY BEGIN CATCH IF XACT_STATE()<>0 ROLLBACK;THROW;END CATCH;
 '@ 'showcase-seed'
+ if($FullData){
+  Sql ([IO.File]::ReadAllText((Join-Path $PSScriptRoot 'demo/24-organization-data.sql')).Replace('__SHOWCASE_DATABASE__',$DatabaseName)) 'full-organizations'
+  foreach($name in @('21-catalog-data','22-academic-data')){
+   Sql ([IO.File]::ReadAllText((Join-Path $PSScriptRoot "demo/$name.sql")).Replace('__SHOWCASE_DATABASE__',$DatabaseName)) $name
+  }
+  & (Join-Path $PSScriptRoot 'demo/New-FullDemoAccounts.ps1') -Server $Server -DatabaseName $DatabaseName -OutputDirectory $output *> (Join-Path $output 'full-accounts.log')
+  Sql ([IO.File]::ReadAllText((Join-Path $PSScriptRoot 'demo/23-registration-data.sql')).Replace('__SHOWCASE_DATABASE__',$DatabaseName)) '23-registration-data'
+  Sql ([IO.File]::ReadAllText((Join-Path $PSScriptRoot 'demo/Assert-FullDemo.sql')).Replace('__SHOWCASE_DATABASE__',$DatabaseName)) 'full-data-assertions'
+ }
  & (Join-Path $PSScriptRoot 'Enable-QuickLogin.ps1') -CredentialFile $manifest.credentialFile -OutputFile $manifest.quickLoginFile *> (Join-Path $output 'quick-login.log')
  &dotnet build (Join-Path $repo 'QuanLyGiangVien/QuanLyGiangVien.csproj') -c Release --artifacts-path (Join-Path $output 'artifacts') *> (Join-Path $output 'build.log')
  if($LASTEXITCODE-ne 0 -or -not(Test-Path -LiteralPath $manifest.executable)){throw 'Showcase build failed; see build.log.'}

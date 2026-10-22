@@ -1,5 +1,6 @@
 using System.Drawing.Drawing2D;
 using QuanLyGiangVien.Domain.Scheduling;
+using QuanLyGiangVien.Features.Scheduling;
 using QuanLyGiangVien.Ui;
 using static QuanLyGiangVien.Features.StudentTimetable.TimetableStyle;
 
@@ -8,6 +9,7 @@ namespace QuanLyGiangVien.Features.StudentTimetable;
 internal sealed class StudentWeekCalendar : Control
 {
     private readonly List<SessionCard> cards = [];
+    private readonly SchedulingVisualCatalog visuals = new();
     private readonly Font dayFont = AppTheme.Font(9, true), smallFont = AppTheme.Font(8);
     private DateOnly monday;
     internal event Action<ScheduledOccurrence>? SessionSelected;
@@ -28,7 +30,8 @@ internal sealed class StudentWeekCalendar : Control
         {
             var course = store.Catalog.Courses.First(c => c.Id == occurrence.Class.CourseId);
             var lecturer = store.Catalog.Lecturers.FirstOrDefault(l => l.Id == occurrence.LecturerId)?.Name ?? occurrence.LecturerId;
-            var card = new SessionCard(occurrence, course.Name, lecturer);
+            var artwork = visuals.GetCourse(course);
+            var card = new SessionCard(occurrence, course.Name, lecturer, artwork.Image, artwork.Key);
             card.Click += (_, _) => SelectSession(card);
             cards.Add(card); Controls.Add(card);
         }
@@ -110,6 +113,7 @@ internal sealed class StudentWeekCalendar : Control
     {
         if (disposing) { dayFont.Dispose(); smallFont.Dispose(); }
         base.Dispose(disposing);
+        if (disposing) visuals.Dispose();
     }
 
     internal sealed class SessionCard : Button
@@ -118,6 +122,19 @@ internal sealed class StudentWeekCalendar : Control
         [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         internal bool Selected { get; set; }
         private readonly string course, lecturer;
+        private readonly Bitmap? artwork;
+        internal string? ArtworkKey { get; }
+        internal Bitmap? ArtworkImage => artwork;
+        internal bool HasArtwork => artwork != null;
+        internal Rectangle ArtworkBounds
+        {
+            get
+            {
+                if (artwork == null || Width < S(64) || Height < S(28)) return Rectangle.Empty;
+                if (Height < S(60)) return Width < S(88) ? Rectangle.Empty : new(S(6), (Height - S(18)) / 2, S(18), S(18));
+                return new(Width - S(30), S(7), S(22), S(22));
+            }
+        }
         private readonly Font title = AppTheme.Font(9, true), small = AppTheme.Font(7.5f);
         private readonly Motion hover = new();
         private readonly ToolTip tooltip = new() { InitialDelay = 350, AutoPopDelay = 10000 };
@@ -128,9 +145,10 @@ internal sealed class StudentWeekCalendar : Control
         {
             OnKeyDown(new KeyEventArgs(Keys.Space)); OnKeyUp(new KeyEventArgs(Keys.Space));
         }
-        internal SessionCard(ScheduledOccurrence occurrence, string course, string lecturer)
+        internal SessionCard(ScheduledOccurrence occurrence, string course, string lecturer, Bitmap? artwork = null, string? artworkKey = null)
         {
             Occurrence = occurrence; this.course = course; this.lecturer = lecturer;
+            this.artwork = artwork; ArtworkKey = artworkKey;
             DoubleBuffered = true; FlatStyle = FlatStyle.Flat; FlatAppearance.BorderSize = 0;
             BackColor = Color.White; Cursor = Cursors.Hand; TabStop = true;
             AccessibleName = $"{course}, {occurrence.Date:dd/MM/yyyy}, tiết {occurrence.Meeting.StartPeriod} đến {occurrence.Meeting.EndPeriod}, phòng {occurrence.RoomId}, {lecturer}";
@@ -161,16 +179,22 @@ internal sealed class StudentWeekCalendar : Control
             if (Width < S(28)) return; // Dense conflicts remain selectable and expose full metadata via accessibility/tooltip.
             if (Height < S(60))
             {
-                TextRenderer.DrawText(g, course, small, new Rectangle(S(6), 0, Width - S(12), Height), color,
+                var icon = ArtworkBounds;
+                DrawArtwork(g, icon);
+                int textLeft = icon.IsEmpty ? S(6) : icon.Right + S(6);
+                TextRenderer.DrawText(g, course, small, new Rectangle(textLeft, 0, Math.Max(1, Width - textLeft - S(6)), Height), color,
                     flags | TextFormatFlags.SingleLine | TextFormatFlags.VerticalCenter);
                 if (Focused) ControlPaint.DrawFocusRectangle(g, Rectangle.Inflate(ClientRectangle, -S(3), -S(3)), color, background);
                 return;
             }
-            using var pill = AppTheme.Round(new RectangleF(S(8), S(8), Math.Min(S(52), Width - S(16)), S(20)), S(8));
+            var artBounds = ArtworkBounds;
+            int pillWidth = Math.Min(S(52), Width - S(16) - (artBounds.IsEmpty ? 0 : S(28)));
+            using var pill = AppTheme.Round(new RectangleF(S(8), S(8), pillWidth, S(20)), S(8));
             using var pillFill = new SolidBrush(Selected ? Color.White : SelectedFill);
             g.FillPath(pillFill, pill);
-            TextRenderer.DrawText(g, Occurrence.RoomId, small, new Rectangle(S(9), S(8), Math.Min(S(50), Width - S(18)), S(20)),
+            TextRenderer.DrawText(g, Occurrence.RoomId, small, new Rectangle(S(9), S(8), Math.Max(1, pillWidth - S(2)), S(20)),
                 Selected ? SessionInk : Color.White, flags | TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+            DrawArtwork(g, artBounds);
             if (Height >= S(75))
             {
                 TextRenderer.DrawText(g, course, title, new Rectangle(S(10), S(32), Width - S(20), Math.Min(S(46), Height - S(55))),
@@ -180,6 +204,17 @@ internal sealed class StudentWeekCalendar : Control
             }
             else TextRenderer.DrawText(g, course, small, new Rectangle(S(10), S(29), Width - S(20), S(20)), color, flags);
             if (Focused) ControlPaint.DrawFocusRectangle(g, Rectangle.Inflate(ClientRectangle, -S(4), -S(4)), color, background);
+        }
+        private void DrawArtwork(Graphics graphics, Rectangle bounds)
+        {
+            if (artwork == null || bounds.IsEmpty) return;
+            float scale = Math.Min(bounds.Width / (float)artwork.Width, bounds.Height / (float)artwork.Height);
+            var target = new RectangleF(bounds.X + (bounds.Width - artwork.Width * scale) / 2,
+                bounds.Y + (bounds.Height - artwork.Height * scale) / 2, artwork.Width * scale, artwork.Height * scale);
+            var state = graphics.Save();
+            graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            graphics.DrawImage(artwork, target);
+            graphics.Restore(state);
         }
         protected override void Dispose(bool disposing)
         {

@@ -1,0 +1,21 @@
+{
+  "passed": false,
+  "checks": [],
+  "errors": [
+    "plain retains the original ComboBox and has exactly one AnimatedSelect facade.",
+    "plain retains the original ComboBox and has exactly one AnimatedSelect facade.",
+    "bound retains the original ComboBox and has exactly one AnimatedSelect facade.",
+    "formatted retains the original ComboBox and has exactly one AnimatedSelect facade.",
+    "empty retains the original ComboBox and has exactly one AnimatedSelect facade.",
+    "mutable retains the original ComboBox and has exactly one AnimatedSelect facade.",
+    "plain retains the original ComboBox and has exactly one AnimatedSelect facade.",
+    "cascadeParent retains the original ComboBox and has exactly one AnimatedSelect facade.",
+    "cascadeChild retains the original ComboBox and has exactly one AnimatedSelect facade.",
+    "plain retains the original ComboBox and has exactly one AnimatedSelect facade."
+  ],
+  "screenshots": [
+    "01-native-before.png",
+    "02-unified-idle.png"
+  ],
+  "scope": "Owned native component form with original ComboBox models; no SQL calls or authentication. Offscreen 96-DPI renders and native control event/key dispatch, not physical input or all-DPI certification. Popup composite uses anchor-relative placement for visual review."
+}

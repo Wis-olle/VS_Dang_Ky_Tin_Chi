@@ -17,6 +17,7 @@ internal static class SelectUiCheck
         form.SetFiltersForCheck("");
         await Task.Delay(400);
         var bounds = controls.Select(c => c.Bounds).ToArray();
+        var originalClient = form.ClientSize;
         int events = 0;
         void Count(object? sender, EventArgs e) => events++;
         faculty.SelectedIndexChanged += Count;
@@ -96,7 +97,7 @@ internal static class SelectUiCheck
             faculty.OpenDropDown();
             form.ClientSize = new(form.ClientSize.Width - 1, form.ClientSize.Height);
             expect(!faculty.HasPopup, "Window resize closes the popup before its anchor can become stale");
-            form.ClientSize = new(form.ClientSize.Width + 1, form.ClientSize.Height);
+            form.ClientSize = originalClient;
             form.SetFiltersForCheck("", "Công nghệ thông tin");
             await Task.Delay(360);
             faculty.OpenDropDown();
@@ -113,6 +114,7 @@ internal static class SelectUiCheck
             clock.SetReducedMotion(false);
             form.SetFiltersForCheck("");
             await Task.Delay(400);
+            File.WriteAllText(Path.Combine(folder, "select-bounds.json"), JsonSerializer.Serialize(new { originalClient, currentClient = form.ClientSize, before = bounds, after = controls.Select(c => c.Bounds).ToArray() }));
             expect(controls.Select(c => c.Bounds).SequenceEqual(bounds), "Filter selection preserves both original trigger bounds");
             using (var disposable = new AnimatedSelect { Font = faculty.Font, Bounds = new(20, 40, 180, 42) })
             {

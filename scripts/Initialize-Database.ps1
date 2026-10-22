@@ -22,7 +22,7 @@ if ($BaseOnly -and $DatabaseName -notmatch '^DangKyTinChi_Minh_Test_') {
 if (-not (Get-Command sqlcmd -ErrorAction SilentlyContinue)) { throw 'Cần cài sqlcmd trước khi khởi tạo.' }
 $migrations = @('01_Minh.sql', '02_Resources.sql', '03_Classes.sql', '03_Read.sql', '06_Catalogs.sql',
     '07_RegistrationIntegration.sql', '08_PasswordLogin.sql', '09_Students.sql', '10_StudentTimetable.sql', '11_SchemaVersion.sql',
-    '12_AcademicSchema.sql', '13_AcademicCommands.sql', '14_AcademicEligibility.sql', '15_AccountAdministration.sql', '16_PhaseTwoVersion.sql', '17_PhaseThreeFoundation.sql', '18_RegistrationWorkflow.sql', '19_Lifecycle.sql', '20_Exceptions.sql', '21_PhaseThreeVersion.sql', '22_SeatAllocation.sql', '23_AcademicPlanning.sql', '24_SchedulePlanner.sql', '25_DataImport.sql', '26_Operations.sql', '27_PhaseFourVersion.sql')
+    '12_AcademicSchema.sql', '13_AcademicCommands.sql', '14_AcademicEligibility.sql', '15_AccountAdministration.sql', '16_PhaseTwoVersion.sql', '17_PhaseThreeFoundation.sql', '18_RegistrationWorkflow.sql', '19_Lifecycle.sql', '20_Exceptions.sql', '21_PhaseThreeVersion.sql', '22_SeatAllocation.sql', '23_AcademicPlanning.sql', '24_SchedulePlanner.sql', '25_DataImport.sql', '26_Operations.sql', '27_PhaseFourVersion.sql', '28_OrganizationCatalogs.sql')
 if (-not $BaseOnly) {
     foreach ($name in $migrations) {
         if (-not (Test-Path -LiteralPath (Join-Path $sqlRoot $name))) { throw "Thiếu migration $name; chưa thay đổi database." }

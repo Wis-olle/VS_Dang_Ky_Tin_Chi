@@ -13,6 +13,8 @@ internal sealed class AnimatedSelect : Control
     private int selectedIndex = -1;
     private float labelPosition, caretProgress, hover;
     private bool opened;
+    private string searchPrefix = "";
+    private long lastSearchTick;
     private SelectPopup? popup;
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     internal int Radius { get; set; } = 10;
@@ -49,6 +51,19 @@ internal sealed class AnimatedSelect : Control
         selectedIndex = -1;
         SelectedIndex = 0;
         ClearLabels();
+    }
+    // Binding adapters mirror a native source without selecting its first item or firing user events.
+    internal void SetSnapshot(IReadOnlyList<string> values, int selection)
+    {
+        ArgumentNullException.ThrowIfNull(values);
+        if (selection < -1 || selection >= values.Count) throw new ArgumentOutOfRangeException(nameof(selection));
+        if (selectedIndex == selection && items.SequenceEqual(values)) return;
+        CloseDropDown(true);
+        labelMotion.Cancel(false);
+        items = values.ToArray(); selectedIndex = selection;
+        Text = selection < 0 ? "" : items[selection]; labelPosition = Math.Max(0, selection);
+        ClearLabels(); Invalidate();
+        AccessibilityNotifyClients(AccessibleEvents.ValueChange, -1);
     }
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     internal int SelectedIndex
@@ -133,6 +148,7 @@ internal sealed class AnimatedSelect : Control
         if (!Enabled || items.Length == 0) return false;
         if (key == Keys.Tab) { CloseDropDown(true); return false; }
         if (key == Keys.Escape && opened) { CloseDropDown(); return true; }
+        if (key == Keys.F4) { if (opened) CloseDropDown(); else OpenDropDown(); return true; }
         if (key is Keys.Enter or Keys.Space)
         {
             if (opened) popup?.CommitHighlighted(); else OpenDropDown();
@@ -149,6 +165,23 @@ internal sealed class AnimatedSelect : Control
         return true;
     }
     protected override void OnMouseEnter(EventArgs e) { base.OnMouseEnter(e); SetHover(1); }
+    protected override void OnKeyPress(KeyPressEventArgs e)
+    {
+        base.OnKeyPress(e);
+        if (!Enabled || items.Length == 0 || char.IsControl(e.KeyChar) || e.KeyChar == ' ') return;
+        long now = Environment.TickCount64;
+        bool continuing = now - lastSearchTick <= 900 && searchPrefix.Length > 0;
+        searchPrefix = continuing ? searchPrefix + e.KeyChar : e.KeyChar.ToString();
+        lastSearchTick = now;
+        int start = opened ? popup?.HighlightedIndex ?? selectedIndex : selectedIndex;
+        int Find(string prefix, bool includeCurrent) => Enumerable.Range(0, items.Length)
+            .Select(n => ((includeCurrent && start >= 0 ? start : start + 1) + n) % items.Length)
+            .FirstOrDefault(i => items[i].StartsWith(prefix, StringComparison.CurrentCultureIgnoreCase), -1);
+        int found = Find(searchPrefix, continuing);
+        if (found < 0) { searchPrefix = e.KeyChar.ToString(); found = Find(searchPrefix, false); }
+        if (found >= 0) { if (opened) popup?.Highlight(found); else SelectedIndex = found; }
+        e.Handled = true;
+    }
     protected override void OnMouseLeave(EventArgs e) { base.OnMouseLeave(e); SetHover(0); }
     private void SetHover(float target)
     {
@@ -187,7 +220,7 @@ internal sealed class AnimatedSelect : Control
             g.FillPath(tint, path);
         }
         using (var path = AppTheme.Round(face, Radius * AppTheme.K))
-        using (var fill = new SolidBrush(Color.White))
+        using (var fill = new SolidBrush(Enabled ? Color.White : AppTheme.SubtleLilac))
         using (var tint = new SolidBrush(Color.FromArgb((int)(hover * 95), AppTheme.Canvas)))
         using (var border = new Pen(opened || Focused ? AppTheme.HoverLine : BorderColor, AppTheme.K))
         { g.FillPath(fill, path); g.FillPath(tint, path); g.DrawPath(border, path); }
@@ -202,6 +235,7 @@ internal sealed class AnimatedSelect : Control
     }
     private void PaintLabels(Graphics g)
     {
+        if (selectedIndex < 0) return;
         var area = TextBounds;
         if (labels.Length != items.Length) BuildLabels(g, area.Size);
         var state = g.Save();

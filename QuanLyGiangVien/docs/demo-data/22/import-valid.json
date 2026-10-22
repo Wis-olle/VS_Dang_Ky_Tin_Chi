@@ -1,0 +1,9 @@
+{
+  "batchId": "9d36c781-a848-4c35-9a7f-59bcb4846284",
+  "source": "SYNTHETIC DEMO - tệp hợp lệ để thử xem trước và nhập nguyên tử",
+  "rows": [
+    { "kind": "PROGRAM", "id": "TEST_IMPORT_CTT", "payload": { "name": "CTĐT thử nhập nguồn", "major": "CNTT", "cohort": 2024, "requiredCredits": 3 } },
+    { "kind": "GROUP", "id": "IMP_NEN_TANG", "payload": { "program": "TEST_IMPORT_CTT", "name": "Nhóm nền tảng", "requiredCredits": 3 } },
+    { "kind": "COURSE", "id": "IMP_IT201", "payload": { "program": "TEST_IMPORT_CTT", "course": "IT201", "group": "IMP_NEN_TANG", "required": true } }
+  ]
+}

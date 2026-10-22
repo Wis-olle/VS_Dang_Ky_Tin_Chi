@@ -39,7 +39,11 @@ $start.ArgumentList.Add('--database');$start.ArgumentList.Add('--student-portal'
 if($Verify){
  $native=Join-Path $data.output 'native';[IO.Directory]::CreateDirectory($native)|Out-Null
  Reset-VerificationOutput $native
- $start.Environment['CAMPUS_SHOWCASE_UI_CHECK']=$native
+ if($data.PSObject.Properties.Name -contains 'fullData' -and $data.fullData){
+  $start.Environment['CAMPUS_FULL_DEMO_UI_CHECK']=$native
+  $start.Environment['CAMPUS_FULL_DEMO_DATABASE']=$data.database
+  $start.Environment['CAMPUS_FULL_DEMO_IMPORT_ROOT']=Join-Path $repo 'QuanLyGiangVien/docs/demo-data/22'
+ }else{$start.Environment['CAMPUS_SHOWCASE_UI_CHECK']=$native}
  $lines=[IO.File]::ReadAllLines($data.credentialFile)
  foreach($pair in @(@('sv2024001','DEMO_STUDENT_PASSWORD'),@('daotao','DEMO_TRAINING_PASSWORD'))){
   $account=@($lines|Where-Object{($_ -split '\|',3)[0].Trim()-ceq $pair[0]})

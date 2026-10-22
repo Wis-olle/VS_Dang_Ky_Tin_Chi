@@ -157,6 +157,7 @@ internal sealed partial class StudentTimetableForm : AntdUI.Window
             selectedDate = DateOnly.FromDateTime(DateTime.Today); RefreshWeek();
         };
         calendarShell.Controls.Add(semester);
+        SoftInputSurface.Enhance(semester);
         previous = Button("", "chevron-left"); previous.AccessibleName = "Tuần trước";
         next = Button("", "chevron-right"); next.AccessibleName = "Tuần sau";
         today = Button("Tuần hiện tại"); today.Click += (_, _) => { selectedDate = DateOnly.FromDateTime(DateTime.Today); RefreshWeek(); };

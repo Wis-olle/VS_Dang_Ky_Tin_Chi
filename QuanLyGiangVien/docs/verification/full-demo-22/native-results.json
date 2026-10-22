@@ -1,0 +1,701 @@
+{
+  "passed": true,
+  "checks": [
+    "Startup remains at the login page before any sample button is pressed.",
+    "Real SQL quick-login authenticates training role.",
+    "The sample training button opens Lecturers first.",
+    "Training module Lecturers opens with current data.",
+    "Training module Scheduling opens with current data.",
+    "Training module Catalogs opens with current data.",
+    "Training module Students opens with current data.",
+    "Training module Academics opens with current data.",
+    "Academic entity PROGRAM has visible records.",
+    "Academic entity GROUP has visible records.",
+    "Academic entity COURSE has visible records.",
+    "Academic entity REQUIREMENT has visible records.",
+    "Academic entity POLICY has visible records.",
+    "Academic entity OVERRIDE has visible records.",
+    "Academic entity ASSIGNMENT has visible records.",
+    "Academic entity STANDING has visible records.",
+    "Academic entity HOLD has visible records.",
+    "Academic entity RESULT has visible records.",
+    "Browsing academic seed records does not create unsaved edits.",
+    "Training module Reports opens with current data.",
+    "PDT SeatsAndWaitlistPage loads populated SQL data.",
+    "PDT KetQuaPage loads populated SQL data.",
+    "PDT AcademicPlanningPage loads populated SQL data.",
+    "PDT ThongKePage loads populated SQL data.",
+    "PDT ExceptionRequestsPage loads populated SQL data.",
+    "PDT ClassOperationsPage loads populated SQL data.",
+    "The supplied valid import file previews all three dependent rows without committing them.",
+    "The supplied invalid import file identifies its bad row and prevents commit.",
+    "PDT OperationsDashboardPage loads populated SQL data.",
+    "PDT NotificationsPage loads populated SQL data.",
+    "PDT OperationsAuditPage loads populated SQL data.",
+    "Real SQL quick-login authenticates student role.",
+    "SV TraCuuPage loads populated SQL data.",
+    "The seeded two-class student cart passes real eligibility, capacity and timetable checks.",
+    "SV RegistrationCartPage loads populated SQL data.",
+    "Student planner generates a real dated option from the seeded classes.",
+    "SV SchedulePlannerPage loads populated SQL data.",
+    "SV SeatsAndWaitlistPage loads populated SQL data.",
+    "SV KetQuaPage loads populated SQL data.",
+    "SV StudentAcademicPage loads populated SQL data.",
+    "SV AcademicPlanningPage loads populated SQL data.",
+    "SV ExceptionRequestsPage loads populated SQL data.",
+    "SV NotificationsPage loads populated SQL data.",
+    "Student personal timetable opens after registration pages.",
+    "The separate warning/hold scenario account authenticates with its own private credential.",
+    "The student with an active registration hold is blocked by the actual academic evaluator.",
+    "Logout returns to login."
+  ],
+  "pages": [
+    {
+      "name": "login",
+      "grids": []
+    },
+    {
+      "name": "module-Lecturers",
+      "grids": []
+    },
+    {
+      "name": "module-Scheduling",
+      "grids": []
+    },
+    {
+      "name": "module-Catalogs",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 20
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 2
+        }
+      ]
+    },
+    {
+      "name": "module-Students",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 25
+        }
+      ]
+    },
+    {
+      "name": "academic-PROGRAM",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Phi\u00EAn b\u1EA3n",
+          "rows": 3
+        }
+      ]
+    },
+    {
+      "name": "academic-GROUP",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Nh\u00F3m t\u1EF1 ch\u1ECDn",
+          "rows": 6
+        }
+      ]
+    },
+    {
+      "name": "academic-COURSE",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch H\u1ECDc ph\u1EA7n \u0026 t\u01B0\u01A1ng \u0111\u01B0\u01A1ng",
+          "rows": 16
+        }
+      ]
+    },
+    {
+      "name": "academic-REQUIREMENT",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch \u0110i\u1EC1u ki\u1EC7n m\u00F4n h\u1ECDc",
+          "rows": 3
+        }
+      ]
+    },
+    {
+      "name": "academic-POLICY",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Quy ch\u1EBF t\u00EDn ch\u1EC9",
+          "rows": 4
+        }
+      ]
+    },
+    {
+      "name": "academic-OVERRIDE",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Duy\u1EC7t h\u1ECDc v\u01B0\u1EE3t",
+          "rows": 2
+        }
+      ]
+    },
+    {
+      "name": "academic-ASSIGNMENT",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch G\u1EAFn ch\u01B0\u01A1ng tr\u00ECnh",
+          "rows": 24
+        }
+      ]
+    },
+    {
+      "name": "academic-STANDING",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch T\u00ECnh tr\u1EA1ng h\u1ECDc v\u1EE5",
+          "rows": 24
+        }
+      ]
+    },
+    {
+      "name": "academic-HOLD",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Kh\u00F3a / g\u1EE1 kh\u00F3a",
+          "rows": 4
+        }
+      ]
+    },
+    {
+      "name": "academic-RESULT",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Nh\u1EADp \u0026 s\u1EEDa k\u1EBFt qu\u1EA3",
+          "rows": 50
+        }
+      ]
+    },
+    {
+      "name": "training-SeatsAndWaitlistPage",
+      "grids": [
+        {
+          "Name": "dgvSeatWaitlist",
+          "AccessibleName": null,
+          "rows": 6
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        }
+      ]
+    },
+    {
+      "name": "training-KetQuaPage",
+      "grids": [
+        {
+          "Name": "dgvKetQua",
+          "AccessibleName": null,
+          "rows": 2
+        }
+      ]
+    },
+    {
+      "name": "training-AcademicPlanningPage",
+      "grids": [
+        {
+          "Name": "dgvDegreeAudit",
+          "AccessibleName": null,
+          "rows": 8
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 7
+        },
+        {
+          "Name": "dgvAcademicPlan",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "dgvAcademicPlanIssues",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 1
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 8
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        }
+      ]
+    },
+    {
+      "name": "training-ThongKePage",
+      "grids": [
+        {
+          "Name": "dgvThongKeLop",
+          "AccessibleName": null,
+          "rows": 29
+        },
+        {
+          "Name": "dgvSinhVien",
+          "AccessibleName": null,
+          "rows": 0
+        }
+      ]
+    },
+    {
+      "name": "training-ExceptionRequestsPage",
+      "grids": [
+        {
+          "Name": "dgvExceptions",
+          "AccessibleName": null,
+          "rows": 4
+        }
+      ]
+    },
+    {
+      "name": "training-ClassOperationsPage",
+      "grids": [
+        {
+          "Name": "dgvLifecycleClasses",
+          "AccessibleName": null,
+          "rows": 29
+        },
+        {
+          "Name": "dgvLifecycleTerms",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "dgvActualCalendar",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 1
+        },
+        {
+          "Name": "dgvLifecycleHistory",
+          "AccessibleName": null,
+          "rows": 4
+        }
+      ]
+    },
+    {
+      "name": "training-import-valid",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        }
+      ]
+    },
+    {
+      "name": "training-DataImportPage",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 2
+        }
+      ]
+    },
+    {
+      "name": "training-OperationsDashboardPage",
+      "grids": [
+        {
+          "Name": "dgvOperationsOverview",
+          "AccessibleName": null,
+          "rows": 29
+        }
+      ]
+    },
+    {
+      "name": "training-NotificationsPage",
+      "grids": [
+        {
+          "Name": "dgvNotifications",
+          "AccessibleName": null,
+          "rows": 36
+        }
+      ]
+    },
+    {
+      "name": "training-OperationsAuditPage",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 124
+        }
+      ]
+    },
+    {
+      "name": "student-TraCuuPage",
+      "grids": [
+        {
+          "Name": "dgvLopMo",
+          "AccessibleName": null,
+          "rows": 27
+        }
+      ]
+    },
+    {
+      "name": "student-RegistrationCartPage",
+      "grids": [
+        {
+          "Name": "dgvCart",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "dgvSwapOld",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "dgvCombinations",
+          "AccessibleName": null,
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "name": "student-SchedulePlannerPage",
+      "grids": [
+        {
+          "Name": "dgvPlannerOfferings",
+          "AccessibleName": null,
+          "rows": 29
+        },
+        {
+          "Name": "dgvPlannerBusy",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvPlannerOptions",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "dgvPlannerMeetings",
+          "AccessibleName": null,
+          "rows": 52
+        }
+      ]
+    },
+    {
+      "name": "student-SeatsAndWaitlistPage",
+      "grids": [
+        {
+          "Name": "dgvSeatWaitlist",
+          "AccessibleName": null,
+          "rows": 1
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 1
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        }
+      ]
+    },
+    {
+      "name": "student-KetQuaPage",
+      "grids": [
+        {
+          "Name": "dgvKetQua",
+          "AccessibleName": null,
+          "rows": 2
+        }
+      ]
+    },
+    {
+      "name": "student-StudentAcademicPage",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 1
+        }
+      ]
+    },
+    {
+      "name": "student-AcademicPlanningPage",
+      "grids": [
+        {
+          "Name": "dgvDegreeAudit",
+          "AccessibleName": null,
+          "rows": 8
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 7
+        },
+        {
+          "Name": "dgvAcademicPlan",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "dgvAcademicPlanIssues",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 1
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 8
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        }
+      ]
+    },
+    {
+      "name": "student-ExceptionRequestsPage",
+      "grids": [
+        {
+          "Name": "dgvExceptions",
+          "AccessibleName": null,
+          "rows": 4
+        }
+      ]
+    },
+    {
+      "name": "student-NotificationsPage",
+      "grids": [
+        {
+          "Name": "dgvNotifications",
+          "AccessibleName": null,
+          "rows": 19
+        }
+      ]
+    },
+    {
+      "name": "student-timetable",
+      "grids": []
+    },
+    {
+      "name": "student-hold-scenario",
+      "grids": [
+        {
+          "Name": "dgvLopMo",
+          "AccessibleName": null,
+          "rows": 27
+        },
+        {
+          "Name": "dgvCart",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvSwapOld",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvCombinations",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvPlannerOfferings",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvPlannerBusy",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvPlannerOptions",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvPlannerMeetings",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvSeatWaitlist",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvKetQua",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvDegreeAudit",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvAcademicPlan",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvAcademicPlanIssues",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvExceptions",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvNotifications",
+          "AccessibleName": null,
+          "rows": 0
+        }
+      ]
+    }
+  ],
+  "scope": "Native offscreen WinForms at the current DPI; SQL password authentication and bound row counts. No physical-input or all-DPI claim; notifications may deliver their SQL outbox during reads."
+}

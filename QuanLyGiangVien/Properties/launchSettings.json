@@ -2,6 +2,10 @@
   "profiles": {
     "QuanLyGiangVien": {
       "commandName": "Project",
+      "commandLineArgs": "--database --showcase"
+    },
+    "CampusDuLieuLamViec": {
+      "commandName": "Project",
       "commandLineArgs": "--database",
       "environmentVariables": {
         "MINH_DB_CONNECTION": "Server=.;Database=DangKyTinChi_Minh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5"

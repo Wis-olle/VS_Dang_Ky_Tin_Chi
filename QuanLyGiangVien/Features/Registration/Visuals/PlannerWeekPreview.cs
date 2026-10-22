@@ -22,7 +22,7 @@ internal sealed class PlannerWeekPreview : UserControl
     public PlannerWeekPreview()
     {
         Name = "PlannerWeekPreview"; Dock = DockStyle.Fill; BackColor = Color.White;
-        var toolbar = Ui.Toolbar(); toolbar.Padding = new(AppTheme.S(3)); toolbar.AutoSize = false; toolbar.Height = AppTheme.S(42); toolbar.WrapContents = false; toolbar.AutoScroll = true;
+        var toolbar = Ui.Toolbar(); toolbar.Padding = new(AppTheme.S(3)); toolbar.AutoSize = false; toolbar.Height = AppTheme.S(52); toolbar.WrapContents = false; toolbar.AutoScroll = true;
         choice.AccessibleName = "So sánh phương án"; week.AccessibleName = "Tuần xem trước";
         previous.Name = "btnPlannerPreviousWeek"; next.Name = "btnPlannerNextWeek";
         foreach (var button in new[] { previous, next }) { button.MinimumSize = new(AppTheme.S(100), AppTheme.S(32)); button.Height = AppTheme.S(32); button.Margin = new(AppTheme.S(2)); }

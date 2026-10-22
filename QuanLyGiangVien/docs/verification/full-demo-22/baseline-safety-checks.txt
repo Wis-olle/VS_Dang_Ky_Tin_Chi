@@ -1,0 +1,18 @@
+PASS: Showcase has a dedicated provisioning entry point.
+PASS: Unsafe or pre-existing target name rejected: DangKyTinChi_Minh
+PASS: Unsafe or pre-existing target name rejected: DangKyTinChi_Minh_Test_StudentPreview
+PASS: Unsafe or pre-existing target name rejected: DangKyTinChi_Minh_Test_Showcase_abc
+PASS: Unsafe or pre-existing target name rejected: DangKyTinChi_Minh_Test_Showcase_';DROP
+PASS: Remote server rejected before SQL.
+PASS: Ephemeral database requires verification.
+PASS: Default database is a fresh UUID in the showcase namespace.
+PASS: Default demo is retained with private local evidence.
+PASS: Launcher resets previous native results before a verification launch.
+PASS: Verification removes stale outcome files and preserves other evidence.
+PASS: Cleanup failure is reported.
+PASS: Failed cleanup keeps the manifest available for recovery.
+PASS: Successful cleanup marks the manifest as cleaned and no longer retained.
+PASS: Launcher refuses a cleaned fixture.
+PASS: Launcher refuses a path outside the exact fixture folder before starting a process.
+PASS: Cleanup rejects the main database before SQL.
+PASS: Cleanup rejects a manifest outside the exact fixture folder.

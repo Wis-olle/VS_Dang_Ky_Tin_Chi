@@ -52,12 +52,12 @@ internal sealed class SelectPopup : Form, IMessageFilter
         var topLeft = anchor.PointToScreen(new((int)face.Left, (int)face.Top));
         var work = Screen.FromControl(anchor).WorkingArea;
         int width = Math.Min((int)face.Width, work.Width);
-        int desiredHeight = (int)Math.Ceiling(anchor.Items.Count * RowHeight + Inset * 2 + Slide);
+        int desiredHeight = (int)Math.Ceiling(Math.Min(9, anchor.Items.Count) * RowHeight + Inset * 2 + Slide);
         int below = work.Bottom - topLeft.Y - (int)face.Height - AppTheme.S(8);
         int above = topLeft.Y - work.Top - AppTheme.S(8);
         bool useBelow = below >= desiredHeight || below >= above;
         int available = Math.Max(1, useBelow ? below : above);
-        visibleRows = Math.Clamp((int)((available - Inset * 2 - Slide) / RowHeight), 1, anchor.Items.Count);
+        visibleRows = Math.Clamp((int)((available - Inset * 2 - Slide) / RowHeight), 1, Math.Min(9, anchor.Items.Count));
         int height = Math.Min(available, (int)Math.Ceiling(visibleRows * RowHeight + Inset * 2 + Slide));
         int y = useBelow ? topLeft.Y + (int)face.Height + AppTheme.S(8) - (int)Slide : topLeft.Y - AppTheme.S(8) - height;
         Bounds = new(Math.Clamp(topLeft.X, work.Left, work.Right - width), Math.Clamp(y, work.Top, work.Bottom - height), width, height);
@@ -147,12 +147,19 @@ internal sealed class SelectPopup : Form, IMessageFilter
         EnsureHighlightedVisible(); SetHover(1); Invalidate();
         AccessibilityNotifyClients(AccessibleEvents.Focus, highlighted);
     }
+    internal void Highlight(int index)
+    {
+        if (index < 0 || index >= anchor.Items.Count) return;
+        highlighted = index; EnsureHighlightedVisible(); SetHover(1); Invalidate();
+        AccessibilityNotifyClients(AccessibleEvents.Focus, highlighted);
+    }
     private void EnsureHighlightedVisible() => firstVisible = Math.Clamp(
         highlighted < firstVisible ? highlighted : highlighted >= firstVisible + visibleRows ? highlighted - visibleRows + 1 : firstVisible,
         0, Math.Max(0, anchor.Items.Count - visibleRows));
     internal void CommitHighlighted()
     {
-        if (dismissing || highlighted < 0 || highlighted >= anchor.Items.Count) return;
+        if (dismissing) return;
+        if (highlighted < 0 || highlighted >= anchor.Items.Count) { anchor.CloseDropDown(); return; }
         int chosen = highlighted;
         anchor.CloseDropDown();
         anchor.SelectedIndex = chosen;

@@ -1,0 +1,9 @@
+  Determining projects to restore...
+  Restored WORKSPACE\QuanLyGiangVien\QuanLyGiangVien.csproj (in 405 ms).
+  QuanLyGiangVien -> WORKSPACE\.tmp\showcase-20\5621d27ecc2a4c23be7b3117315b99e8\artifacts\bin\QuanLyGiangVien\release\QuanLyGiangVien.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.39

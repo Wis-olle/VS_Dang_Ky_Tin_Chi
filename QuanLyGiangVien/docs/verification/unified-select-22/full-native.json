@@ -1,0 +1,3321 @@
+{
+  "passed": true,
+  "checks": [
+    "Startup remains at the login page before any sample button is pressed.",
+    "Real SQL quick-login authenticates training role.",
+    "The sample training button opens Lecturers first.",
+    "Training module Lecturers opens with current data.",
+    "Training module Scheduling opens with current data.",
+    "Training module Catalogs opens with current data.",
+    "Training module Students opens with current data.",
+    "Training module Academics opens with current data.",
+    "Academic entity PROGRAM has visible records.",
+    "Academic entity GROUP has visible records.",
+    "Academic entity COURSE has visible records.",
+    "Academic entity REQUIREMENT has visible records.",
+    "Academic entity POLICY has visible records.",
+    "Academic entity OVERRIDE has visible records.",
+    "Academic entity ASSIGNMENT has visible records.",
+    "Academic entity STANDING has visible records.",
+    "Academic entity HOLD has visible records.",
+    "Academic entity RESULT has visible records.",
+    "Browsing academic seed records does not create unsaved edits.",
+    "Training module Reports opens with current data.",
+    "PDT SeatsAndWaitlistPage loads populated SQL data.",
+    "PDT KetQuaPage loads populated SQL data.",
+    "PDT AcademicPlanningPage loads populated SQL data.",
+    "PDT ThongKePage loads populated SQL data.",
+    "PDT ExceptionRequestsPage loads populated SQL data.",
+    "PDT ClassOperationsPage loads populated SQL data.",
+    "The supplied valid import file previews all three dependent rows without committing them.",
+    "The supplied invalid import file identifies its bad row and prevents commit.",
+    "PDT OperationsDashboardPage loads populated SQL data.",
+    "PDT NotificationsPage loads populated SQL data.",
+    "PDT OperationsAuditPage loads populated SQL data.",
+    "Real SQL quick-login authenticates student role.",
+    "SV TraCuuPage loads populated SQL data.",
+    "The seeded two-class student cart passes real eligibility, capacity and timetable checks.",
+    "SV RegistrationCartPage loads populated SQL data.",
+    "Student planner generates a real dated option from the seeded classes.",
+    "SV SchedulePlannerPage loads populated SQL data.",
+    "SV SeatsAndWaitlistPage loads populated SQL data.",
+    "SV KetQuaPage loads populated SQL data.",
+    "SV StudentAcademicPage loads populated SQL data.",
+    "SV AcademicPlanningPage loads populated SQL data.",
+    "SV ExceptionRequestsPage loads populated SQL data.",
+    "SV NotificationsPage loads populated SQL data.",
+    "Student personal timetable opens after registration pages.",
+    "The separate warning/hold scenario account authenticates with its own private credential.",
+    "The student with an active registration hold is blocked by the actual academic evaluator.",
+    "Logout returns to login."
+  ],
+  "selectChecks": [
+    "module-Catalogs: / #1 retains its native model inside SoftInputSurface.",
+    "module-Catalogs: / #1 has exactly one animated select facade.",
+    "module-Catalogs: / #1 mirrors every formatted native item and its selection.",
+    "module-Catalogs: / #1 mirrors the current caption, enabled state and visibility.",
+    "module-Catalogs: / #1 keeps native HWND bounds outside the complete animated facade.",
+    "module-Catalogs: / #2 retains its native model inside SoftInputSurface.",
+    "module-Catalogs: / #2 has exactly one animated select facade.",
+    "module-Catalogs: / #2 mirrors every formatted native item and its selection.",
+    "module-Catalogs: / #2 mirrors the current caption, enabled state and visibility.",
+    "module-Catalogs: / #2 keeps native HWND bounds outside the complete animated facade.",
+    "module-Catalogs: / #3 retains its native model inside SoftInputSurface.",
+    "module-Catalogs: / #3 has exactly one animated select facade.",
+    "module-Catalogs: / #3 mirrors every formatted native item and its selection.",
+    "module-Catalogs: / #3 mirrors the current caption, enabled state and visibility.",
+    "module-Catalogs: / #3 keeps native HWND bounds outside the complete animated facade.",
+    "module-Catalogs: / #4 retains its native model inside SoftInputSurface.",
+    "module-Catalogs: / #4 has exactly one animated select facade.",
+    "module-Catalogs: / #4 mirrors every formatted native item and its selection.",
+    "module-Catalogs: / #4 mirrors the current caption, enabled state and visibility.",
+    "module-Catalogs: / #4 keeps native HWND bounds outside the complete animated facade.",
+    "module-Catalogs-selects-1: / #1 retains its native model inside SoftInputSurface.",
+    "module-Catalogs-selects-1: / #1 has exactly one animated select facade.",
+    "module-Catalogs-selects-1: / #1 mirrors every formatted native item and its selection.",
+    "module-Catalogs-selects-1: / #1 mirrors the current caption, enabled state and visibility.",
+    "module-Catalogs-selects-1: / #1 keeps native HWND bounds outside the complete animated facade.",
+    "module-Catalogs-selects-1: / #2 retains its native model inside SoftInputSurface.",
+    "module-Catalogs-selects-1: / #2 has exactly one animated select facade.",
+    "module-Catalogs-selects-1: / #2 mirrors every formatted native item and its selection.",
+    "module-Catalogs-selects-1: / #2 mirrors the current caption, enabled state and visibility.",
+    "module-Catalogs-selects-1: / #2 keeps native HWND bounds outside the complete animated facade.",
+    "module-Catalogs-selects-1: / #3 retains its native model inside SoftInputSurface.",
+    "module-Catalogs-selects-1: / #3 has exactly one animated select facade.",
+    "module-Catalogs-selects-1: / #3 mirrors every formatted native item and its selection.",
+    "module-Catalogs-selects-1: / #3 mirrors the current caption, enabled state and visibility.",
+    "module-Catalogs-selects-1: / #3 keeps native HWND bounds outside the complete animated facade.",
+    "module-Catalogs-selects-1: / #4 retains its native model inside SoftInputSurface.",
+    "module-Catalogs-selects-1: / #4 has exactly one animated select facade.",
+    "module-Catalogs-selects-1: / #4 mirrors every formatted native item and its selection.",
+    "module-Catalogs-selects-1: / #4 mirrors the current caption, enabled state and visibility.",
+    "module-Catalogs-selects-1: / #4 keeps native HWND bounds outside the complete animated facade.",
+    "module-Catalogs-selects-2: / #1 retains its native model inside SoftInputSurface.",
+    "module-Catalogs-selects-2: / #1 has exactly one animated select facade.",
+    "module-Catalogs-selects-2: / #1 mirrors every formatted native item and its selection.",
+    "module-Catalogs-selects-2: / #1 mirrors the current caption, enabled state and visibility.",
+    "module-Catalogs-selects-2: / #1 keeps native HWND bounds outside the complete animated facade.",
+    "module-Students: / #1 retains its native model inside SoftInputSurface.",
+    "module-Students: / #1 has exactly one animated select facade.",
+    "module-Students: / #1 mirrors every formatted native item and its selection.",
+    "module-Students: / #1 mirrors the current caption, enabled state and visibility.",
+    "module-Students: / #1 keeps native HWND bounds outside the complete animated facade.",
+    "module-Students: / #2 retains its native model inside SoftInputSurface.",
+    "module-Students: / #2 has exactly one animated select facade.",
+    "module-Students: / #2 mirrors every formatted native item and its selection.",
+    "module-Students: / #2 mirrors the current caption, enabled state and visibility.",
+    "module-Students: / #2 keeps native HWND bounds outside the complete animated facade.",
+    "module-Students: / #3 retains its native model inside SoftInputSurface.",
+    "module-Students: / #3 has exactly one animated select facade.",
+    "module-Students: / #3 mirrors every formatted native item and its selection.",
+    "module-Students: / #3 mirrors the current caption, enabled state and visibility.",
+    "module-Students: / #3 keeps native HWND bounds outside the complete animated facade.",
+    "module-Students: / #4 retains its native model inside SoftInputSurface.",
+    "module-Students: / #4 has exactly one animated select facade.",
+    "module-Students: / #4 mirrors every formatted native item and its selection.",
+    "module-Students: / #4 mirrors the current caption, enabled state and visibility.",
+    "module-Students: / #4 keeps native HWND bounds outside the complete animated facade.",
+    "SKIPPED optional student cascade interaction: the loaded directory does not expose three populated dependent lists and two faculty choices; scene parity is still checked.",
+    "academic-PROGRAM: major/Ng\u00E0nh #1 retains its native model inside SoftInputSurface.",
+    "academic-PROGRAM: major/Ng\u00E0nh #1 has exactly one animated select facade.",
+    "academic-PROGRAM: major/Ng\u00E0nh #1 mirrors every formatted native item and its selection.",
+    "academic-PROGRAM: major/Ng\u00E0nh #1 mirrors the current caption, enabled state and visibility.",
+    "academic-PROGRAM: major/Ng\u00E0nh #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-PROGRAM-selected: major/Ng\u00E0nh #1 retains its native model inside SoftInputSurface.",
+    "academic-PROGRAM-selected: major/Ng\u00E0nh #1 has exactly one animated select facade.",
+    "academic-PROGRAM-selected: major/Ng\u00E0nh #1 mirrors every formatted native item and its selection.",
+    "academic-PROGRAM-selected: major/Ng\u00E0nh #1 mirrors the current caption, enabled state and visibility.",
+    "academic-PROGRAM-selected: major/Ng\u00E0nh #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-GROUP: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 retains its native model inside SoftInputSurface.",
+    "academic-GROUP: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 has exactly one animated select facade.",
+    "academic-GROUP: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors every formatted native item and its selection.",
+    "academic-GROUP: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors the current caption, enabled state and visibility.",
+    "academic-GROUP: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-GROUP-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 retains its native model inside SoftInputSurface.",
+    "academic-GROUP-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 has exactly one animated select facade.",
+    "academic-GROUP-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors every formatted native item and its selection.",
+    "academic-GROUP-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors the current caption, enabled state and visibility.",
+    "academic-GROUP-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-COURSE: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 retains its native model inside SoftInputSurface.",
+    "academic-COURSE: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 has exactly one animated select facade.",
+    "academic-COURSE: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors every formatted native item and its selection.",
+    "academic-COURSE: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors the current caption, enabled state and visibility.",
+    "academic-COURSE: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-COURSE: course/H\u1ECDc ph\u1EA7n #2 retains its native model inside SoftInputSurface.",
+    "academic-COURSE: course/H\u1ECDc ph\u1EA7n #2 has exactly one animated select facade.",
+    "academic-COURSE: course/H\u1ECDc ph\u1EA7n #2 mirrors every formatted native item and its selection.",
+    "academic-COURSE: course/H\u1ECDc ph\u1EA7n #2 mirrors the current caption, enabled state and visibility.",
+    "academic-COURSE: course/H\u1ECDc ph\u1EA7n #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-COURSE: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 retains its native model inside SoftInputSurface.",
+    "academic-COURSE: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 has exactly one animated select facade.",
+    "academic-COURSE: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 mirrors every formatted native item and its selection.",
+    "academic-COURSE: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 mirrors the current caption, enabled state and visibility.",
+    "academic-COURSE: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-COURSE-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 retains its native model inside SoftInputSurface.",
+    "academic-COURSE-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 has exactly one animated select facade.",
+    "academic-COURSE-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors every formatted native item and its selection.",
+    "academic-COURSE-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors the current caption, enabled state and visibility.",
+    "academic-COURSE-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-COURSE-selected: course/H\u1ECDc ph\u1EA7n #2 retains its native model inside SoftInputSurface.",
+    "academic-COURSE-selected: course/H\u1ECDc ph\u1EA7n #2 has exactly one animated select facade.",
+    "academic-COURSE-selected: course/H\u1ECDc ph\u1EA7n #2 mirrors every formatted native item and its selection.",
+    "academic-COURSE-selected: course/H\u1ECDc ph\u1EA7n #2 mirrors the current caption, enabled state and visibility.",
+    "academic-COURSE-selected: course/H\u1ECDc ph\u1EA7n #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-COURSE-selected: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 retains its native model inside SoftInputSurface.",
+    "academic-COURSE-selected: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 has exactly one animated select facade.",
+    "academic-COURSE-selected: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 mirrors every formatted native item and its selection.",
+    "academic-COURSE-selected: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 mirrors the current caption, enabled state and visibility.",
+    "academic-COURSE-selected: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-REQUIREMENT: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 retains its native model inside SoftInputSurface.",
+    "academic-REQUIREMENT: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 has exactly one animated select facade.",
+    "academic-REQUIREMENT: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors every formatted native item and its selection.",
+    "academic-REQUIREMENT: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors the current caption, enabled state and visibility.",
+    "academic-REQUIREMENT: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-REQUIREMENT: course/H\u1ECDc ph\u1EA7n #2 retains its native model inside SoftInputSurface.",
+    "academic-REQUIREMENT: course/H\u1ECDc ph\u1EA7n #2 has exactly one animated select facade.",
+    "academic-REQUIREMENT: course/H\u1ECDc ph\u1EA7n #2 mirrors every formatted native item and its selection.",
+    "academic-REQUIREMENT: course/H\u1ECDc ph\u1EA7n #2 mirrors the current caption, enabled state and visibility.",
+    "academic-REQUIREMENT: course/H\u1ECDc ph\u1EA7n #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-REQUIREMENT: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 retains its native model inside SoftInputSurface.",
+    "academic-REQUIREMENT: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 has exactly one animated select facade.",
+    "academic-REQUIREMENT: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 mirrors every formatted native item and its selection.",
+    "academic-REQUIREMENT: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 mirrors the current caption, enabled state and visibility.",
+    "academic-REQUIREMENT: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-REQUIREMENT: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 retains its native model inside SoftInputSurface.",
+    "academic-REQUIREMENT: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 has exactly one animated select facade.",
+    "academic-REQUIREMENT: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 mirrors every formatted native item and its selection.",
+    "academic-REQUIREMENT: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 mirrors the current caption, enabled state and visibility.",
+    "academic-REQUIREMENT: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 keeps native HWND bounds outside the complete animated facade.",
+    "academic-REQUIREMENT-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 retains its native model inside SoftInputSurface.",
+    "academic-REQUIREMENT-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 has exactly one animated select facade.",
+    "academic-REQUIREMENT-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors every formatted native item and its selection.",
+    "academic-REQUIREMENT-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors the current caption, enabled state and visibility.",
+    "academic-REQUIREMENT-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-REQUIREMENT-selected: course/H\u1ECDc ph\u1EA7n #2 retains its native model inside SoftInputSurface.",
+    "academic-REQUIREMENT-selected: course/H\u1ECDc ph\u1EA7n #2 has exactly one animated select facade.",
+    "academic-REQUIREMENT-selected: course/H\u1ECDc ph\u1EA7n #2 mirrors every formatted native item and its selection.",
+    "academic-REQUIREMENT-selected: course/H\u1ECDc ph\u1EA7n #2 mirrors the current caption, enabled state and visibility.",
+    "academic-REQUIREMENT-selected: course/H\u1ECDc ph\u1EA7n #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-REQUIREMENT-selected: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 retains its native model inside SoftInputSurface.",
+    "academic-REQUIREMENT-selected: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 has exactly one animated select facade.",
+    "academic-REQUIREMENT-selected: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 mirrors every formatted native item and its selection.",
+    "academic-REQUIREMENT-selected: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 mirrors the current caption, enabled state and visibility.",
+    "academic-REQUIREMENT-selected: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-REQUIREMENT-selected: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 retains its native model inside SoftInputSurface.",
+    "academic-REQUIREMENT-selected: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 has exactly one animated select facade.",
+    "academic-REQUIREMENT-selected: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 mirrors every formatted native item and its selection.",
+    "academic-REQUIREMENT-selected: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 mirrors the current caption, enabled state and visibility.",
+    "academic-REQUIREMENT-selected: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 keeps native HWND bounds outside the complete animated facade.",
+    "academic-POLICY: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 retains its native model inside SoftInputSurface.",
+    "academic-POLICY: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 has exactly one animated select facade.",
+    "academic-POLICY: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 mirrors every formatted native item and its selection.",
+    "academic-POLICY: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 mirrors the current caption, enabled state and visibility.",
+    "academic-POLICY: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-POLICY: term/H\u1ECDc k\u1EF3 #2 retains its native model inside SoftInputSurface.",
+    "academic-POLICY: term/H\u1ECDc k\u1EF3 #2 has exactly one animated select facade.",
+    "academic-POLICY: term/H\u1ECDc k\u1EF3 #2 mirrors every formatted native item and its selection.",
+    "academic-POLICY: term/H\u1ECDc k\u1EF3 #2 mirrors the current caption, enabled state and visibility.",
+    "academic-POLICY: term/H\u1ECDc k\u1EF3 #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-POLICY-selected: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 retains its native model inside SoftInputSurface.",
+    "academic-POLICY-selected: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 has exactly one animated select facade.",
+    "academic-POLICY-selected: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 mirrors every formatted native item and its selection.",
+    "academic-POLICY-selected: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 mirrors the current caption, enabled state and visibility.",
+    "academic-POLICY-selected: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-POLICY-selected: term/H\u1ECDc k\u1EF3 #2 retains its native model inside SoftInputSurface.",
+    "academic-POLICY-selected: term/H\u1ECDc k\u1EF3 #2 has exactly one animated select facade.",
+    "academic-POLICY-selected: term/H\u1ECDc k\u1EF3 #2 mirrors every formatted native item and its selection.",
+    "academic-POLICY-selected: term/H\u1ECDc k\u1EF3 #2 mirrors the current caption, enabled state and visibility.",
+    "academic-POLICY-selected: term/H\u1ECDc k\u1EF3 #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-OVERRIDE: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-OVERRIDE: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-OVERRIDE: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-OVERRIDE: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-OVERRIDE: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-OVERRIDE: term/H\u1ECDc k\u1EF3 #2 retains its native model inside SoftInputSurface.",
+    "academic-OVERRIDE: term/H\u1ECDc k\u1EF3 #2 has exactly one animated select facade.",
+    "academic-OVERRIDE: term/H\u1ECDc k\u1EF3 #2 mirrors every formatted native item and its selection.",
+    "academic-OVERRIDE: term/H\u1ECDc k\u1EF3 #2 mirrors the current caption, enabled state and visibility.",
+    "academic-OVERRIDE: term/H\u1ECDc k\u1EF3 #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-OVERRIDE-selected: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-OVERRIDE-selected: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-OVERRIDE-selected: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-OVERRIDE-selected: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-OVERRIDE-selected: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-OVERRIDE-selected: term/H\u1ECDc k\u1EF3 #2 retains its native model inside SoftInputSurface.",
+    "academic-OVERRIDE-selected: term/H\u1ECDc k\u1EF3 #2 has exactly one animated select facade.",
+    "academic-OVERRIDE-selected: term/H\u1ECDc k\u1EF3 #2 mirrors every formatted native item and its selection.",
+    "academic-OVERRIDE-selected: term/H\u1ECDc k\u1EF3 #2 mirrors the current caption, enabled state and visibility.",
+    "academic-OVERRIDE-selected: term/H\u1ECDc k\u1EF3 #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-ASSIGNMENT: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-ASSIGNMENT: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-ASSIGNMENT: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-ASSIGNMENT: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-ASSIGNMENT: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-ASSIGNMENT: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 retains its native model inside SoftInputSurface.",
+    "academic-ASSIGNMENT: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 has exactly one animated select facade.",
+    "academic-ASSIGNMENT: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 mirrors every formatted native item and its selection.",
+    "academic-ASSIGNMENT: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 mirrors the current caption, enabled state and visibility.",
+    "academic-ASSIGNMENT: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-ASSIGNMENT-selected: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-ASSIGNMENT-selected: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-ASSIGNMENT-selected: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-ASSIGNMENT-selected: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-ASSIGNMENT-selected: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-ASSIGNMENT-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 retains its native model inside SoftInputSurface.",
+    "academic-ASSIGNMENT-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 has exactly one animated select facade.",
+    "academic-ASSIGNMENT-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 mirrors every formatted native item and its selection.",
+    "academic-ASSIGNMENT-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 mirrors the current caption, enabled state and visibility.",
+    "academic-ASSIGNMENT-selected: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-STANDING: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-STANDING: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-STANDING: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-STANDING: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-STANDING: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-STANDING: term/H\u1ECDc k\u1EF3 #2 retains its native model inside SoftInputSurface.",
+    "academic-STANDING: term/H\u1ECDc k\u1EF3 #2 has exactly one animated select facade.",
+    "academic-STANDING: term/H\u1ECDc k\u1EF3 #2 mirrors every formatted native item and its selection.",
+    "academic-STANDING: term/H\u1ECDc k\u1EF3 #2 mirrors the current caption, enabled state and visibility.",
+    "academic-STANDING: term/H\u1ECDc k\u1EF3 #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-STANDING: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 retains its native model inside SoftInputSurface.",
+    "academic-STANDING: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 has exactly one animated select facade.",
+    "academic-STANDING: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 mirrors every formatted native item and its selection.",
+    "academic-STANDING: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 mirrors the current caption, enabled state and visibility.",
+    "academic-STANDING: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-STANDING-selected: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-STANDING-selected: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-STANDING-selected: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-STANDING-selected: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-STANDING-selected: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-STANDING-selected: term/H\u1ECDc k\u1EF3 #2 retains its native model inside SoftInputSurface.",
+    "academic-STANDING-selected: term/H\u1ECDc k\u1EF3 #2 has exactly one animated select facade.",
+    "academic-STANDING-selected: term/H\u1ECDc k\u1EF3 #2 mirrors every formatted native item and its selection.",
+    "academic-STANDING-selected: term/H\u1ECDc k\u1EF3 #2 mirrors the current caption, enabled state and visibility.",
+    "academic-STANDING-selected: term/H\u1ECDc k\u1EF3 #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-STANDING-selected: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 retains its native model inside SoftInputSurface.",
+    "academic-STANDING-selected: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 has exactly one animated select facade.",
+    "academic-STANDING-selected: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 mirrors every formatted native item and its selection.",
+    "academic-STANDING-selected: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 mirrors the current caption, enabled state and visibility.",
+    "academic-STANDING-selected: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-HOLD: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-HOLD: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-HOLD: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-HOLD: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-HOLD: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-HOLD: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 retains its native model inside SoftInputSurface.",
+    "academic-HOLD: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 has exactly one animated select facade.",
+    "academic-HOLD: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 mirrors every formatted native item and its selection.",
+    "academic-HOLD: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 mirrors the current caption, enabled state and visibility.",
+    "academic-HOLD: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-HOLD-selected: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-HOLD-selected: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-HOLD-selected: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-HOLD-selected: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-HOLD-selected: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-HOLD-selected: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 retains its native model inside SoftInputSurface.",
+    "academic-HOLD-selected: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 has exactly one animated select facade.",
+    "academic-HOLD-selected: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 mirrors every formatted native item and its selection.",
+    "academic-HOLD-selected: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 mirrors the current caption, enabled state and visibility.",
+    "academic-HOLD-selected: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-RESULT: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-RESULT: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-RESULT: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-RESULT: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-RESULT: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-RESULT: course/H\u1ECDc ph\u1EA7n #2 retains its native model inside SoftInputSurface.",
+    "academic-RESULT: course/H\u1ECDc ph\u1EA7n #2 has exactly one animated select facade.",
+    "academic-RESULT: course/H\u1ECDc ph\u1EA7n #2 mirrors every formatted native item and its selection.",
+    "academic-RESULT: course/H\u1ECDc ph\u1EA7n #2 mirrors the current caption, enabled state and visibility.",
+    "academic-RESULT: course/H\u1ECDc ph\u1EA7n #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-RESULT: term/H\u1ECDc k\u1EF3 #3 retains its native model inside SoftInputSurface.",
+    "academic-RESULT: term/H\u1ECDc k\u1EF3 #3 has exactly one animated select facade.",
+    "academic-RESULT: term/H\u1ECDc k\u1EF3 #3 mirrors every formatted native item and its selection.",
+    "academic-RESULT: term/H\u1ECDc k\u1EF3 #3 mirrors the current caption, enabled state and visibility.",
+    "academic-RESULT: term/H\u1ECDc k\u1EF3 #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-RESULT: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 retains its native model inside SoftInputSurface.",
+    "academic-RESULT: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 has exactly one animated select facade.",
+    "academic-RESULT: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 mirrors every formatted native item and its selection.",
+    "academic-RESULT: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 mirrors the current caption, enabled state and visibility.",
+    "academic-RESULT: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 keeps native HWND bounds outside the complete animated facade.",
+    "academic-RESULT-selected: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-RESULT-selected: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-RESULT-selected: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-RESULT-selected: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-RESULT-selected: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-RESULT-selected: course/H\u1ECDc ph\u1EA7n #2 retains its native model inside SoftInputSurface.",
+    "academic-RESULT-selected: course/H\u1ECDc ph\u1EA7n #2 has exactly one animated select facade.",
+    "academic-RESULT-selected: course/H\u1ECDc ph\u1EA7n #2 mirrors every formatted native item and its selection.",
+    "academic-RESULT-selected: course/H\u1ECDc ph\u1EA7n #2 mirrors the current caption, enabled state and visibility.",
+    "academic-RESULT-selected: course/H\u1ECDc ph\u1EA7n #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-RESULT-selected: term/H\u1ECDc k\u1EF3 #3 retains its native model inside SoftInputSurface.",
+    "academic-RESULT-selected: term/H\u1ECDc k\u1EF3 #3 has exactly one animated select facade.",
+    "academic-RESULT-selected: term/H\u1ECDc k\u1EF3 #3 mirrors every formatted native item and its selection.",
+    "academic-RESULT-selected: term/H\u1ECDc k\u1EF3 #3 mirrors the current caption, enabled state and visibility.",
+    "academic-RESULT-selected: term/H\u1ECDc k\u1EF3 #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-RESULT-selected: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 retains its native model inside SoftInputSurface.",
+    "academic-RESULT-selected: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 has exactly one animated select facade.",
+    "academic-RESULT-selected: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 mirrors every formatted native item and its selection.",
+    "academic-RESULT-selected: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 mirrors the current caption, enabled state and visibility.",
+    "academic-RESULT-selected: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-1: major/Ng\u00E0nh #1 retains its native model inside SoftInputSurface.",
+    "academic-selects-1: major/Ng\u00E0nh #1 has exactly one animated select facade.",
+    "academic-selects-1: major/Ng\u00E0nh #1 mirrors every formatted native item and its selection.",
+    "academic-selects-1: major/Ng\u00E0nh #1 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-1: major/Ng\u00E0nh #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-2: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 retains its native model inside SoftInputSurface.",
+    "academic-selects-2: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 has exactly one animated select facade.",
+    "academic-selects-2: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors every formatted native item and its selection.",
+    "academic-selects-2: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-2: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-3: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 retains its native model inside SoftInputSurface.",
+    "academic-selects-3: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 has exactly one animated select facade.",
+    "academic-selects-3: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors every formatted native item and its selection.",
+    "academic-selects-3: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-3: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-3: course/H\u1ECDc ph\u1EA7n #2 retains its native model inside SoftInputSurface.",
+    "academic-selects-3: course/H\u1ECDc ph\u1EA7n #2 has exactly one animated select facade.",
+    "academic-selects-3: course/H\u1ECDc ph\u1EA7n #2 mirrors every formatted native item and its selection.",
+    "academic-selects-3: course/H\u1ECDc ph\u1EA7n #2 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-3: course/H\u1ECDc ph\u1EA7n #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-3: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 retains its native model inside SoftInputSurface.",
+    "academic-selects-3: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 has exactly one animated select facade.",
+    "academic-selects-3: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 mirrors every formatted native item and its selection.",
+    "academic-selects-3: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-3: group/Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3) #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-4: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 retains its native model inside SoftInputSurface.",
+    "academic-selects-4: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 has exactly one animated select facade.",
+    "academic-selects-4: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors every formatted native item and its selection.",
+    "academic-selects-4: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-4: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-4: course/H\u1ECDc ph\u1EA7n #2 retains its native model inside SoftInputSurface.",
+    "academic-selects-4: course/H\u1ECDc ph\u1EA7n #2 has exactly one animated select facade.",
+    "academic-selects-4: course/H\u1ECDc ph\u1EA7n #2 mirrors every formatted native item and its selection.",
+    "academic-selects-4: course/H\u1ECDc ph\u1EA7n #2 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-4: course/H\u1ECDc ph\u1EA7n #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-4: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 retains its native model inside SoftInputSurface.",
+    "academic-selects-4: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 has exactly one animated select facade.",
+    "academic-selects-4: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 mirrors every formatted native item and its selection.",
+    "academic-selects-4: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-4: requiredCourse/H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-4: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 retains its native model inside SoftInputSurface.",
+    "academic-selects-4: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 has exactly one animated select facade.",
+    "academic-selects-4: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 mirrors every formatted native item and its selection.",
+    "academic-selects-4: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-4: kind/Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n #4 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-5: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 retains its native model inside SoftInputSurface.",
+    "academic-selects-5: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 has exactly one animated select facade.",
+    "academic-selects-5: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 mirrors every formatted native item and its selection.",
+    "academic-selects-5: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-5: /B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-5: term/H\u1ECDc k\u1EF3 #2 retains its native model inside SoftInputSurface.",
+    "academic-selects-5: term/H\u1ECDc k\u1EF3 #2 has exactly one animated select facade.",
+    "academic-selects-5: term/H\u1ECDc k\u1EF3 #2 mirrors every formatted native item and its selection.",
+    "academic-selects-5: term/H\u1ECDc k\u1EF3 #2 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-5: term/H\u1ECDc k\u1EF3 #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-6: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-selects-6: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-selects-6: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-selects-6: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-6: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-6: term/H\u1ECDc k\u1EF3 #2 retains its native model inside SoftInputSurface.",
+    "academic-selects-6: term/H\u1ECDc k\u1EF3 #2 has exactly one animated select facade.",
+    "academic-selects-6: term/H\u1ECDc k\u1EF3 #2 mirrors every formatted native item and its selection.",
+    "academic-selects-6: term/H\u1ECDc k\u1EF3 #2 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-6: term/H\u1ECDc k\u1EF3 #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-7: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-selects-7: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-selects-7: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-selects-7: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-7: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-7: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 retains its native model inside SoftInputSurface.",
+    "academic-selects-7: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 has exactly one animated select facade.",
+    "academic-selects-7: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 mirrors every formatted native item and its selection.",
+    "academic-selects-7: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-7: program/Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-8: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-selects-8: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-selects-8: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-selects-8: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-8: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-8: term/H\u1ECDc k\u1EF3 #2 retains its native model inside SoftInputSurface.",
+    "academic-selects-8: term/H\u1ECDc k\u1EF3 #2 has exactly one animated select facade.",
+    "academic-selects-8: term/H\u1ECDc k\u1EF3 #2 mirrors every formatted native item and its selection.",
+    "academic-selects-8: term/H\u1ECDc k\u1EF3 #2 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-8: term/H\u1ECDc k\u1EF3 #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-8: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 retains its native model inside SoftInputSurface.",
+    "academic-selects-8: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 has exactly one animated select facade.",
+    "academic-selects-8: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 mirrors every formatted native item and its selection.",
+    "academic-selects-8: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-8: status/Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5 #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-9: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-selects-9: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-selects-9: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-selects-9: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-9: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-9: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 retains its native model inside SoftInputSurface.",
+    "academic-selects-9: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 has exactly one animated select facade.",
+    "academic-selects-9: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 mirrors every formatted native item and its selection.",
+    "academic-selects-9: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-9: scope/Thao t\u00E1c b\u1ECB kh\u00F3a #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-10: student/Sinh vi\u00EAn #1 retains its native model inside SoftInputSurface.",
+    "academic-selects-10: student/Sinh vi\u00EAn #1 has exactly one animated select facade.",
+    "academic-selects-10: student/Sinh vi\u00EAn #1 mirrors every formatted native item and its selection.",
+    "academic-selects-10: student/Sinh vi\u00EAn #1 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-10: student/Sinh vi\u00EAn #1 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-10: course/H\u1ECDc ph\u1EA7n #2 retains its native model inside SoftInputSurface.",
+    "academic-selects-10: course/H\u1ECDc ph\u1EA7n #2 has exactly one animated select facade.",
+    "academic-selects-10: course/H\u1ECDc ph\u1EA7n #2 mirrors every formatted native item and its selection.",
+    "academic-selects-10: course/H\u1ECDc ph\u1EA7n #2 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-10: course/H\u1ECDc ph\u1EA7n #2 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-10: term/H\u1ECDc k\u1EF3 #3 retains its native model inside SoftInputSurface.",
+    "academic-selects-10: term/H\u1ECDc k\u1EF3 #3 has exactly one animated select facade.",
+    "academic-selects-10: term/H\u1ECDc k\u1EF3 #3 mirrors every formatted native item and its selection.",
+    "academic-selects-10: term/H\u1ECDc k\u1EF3 #3 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-10: term/H\u1ECDc k\u1EF3 #3 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-10: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 retains its native model inside SoftInputSurface.",
+    "academic-selects-10: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 has exactly one animated select facade.",
+    "academic-selects-10: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 mirrors every formatted native item and its selection.",
+    "academic-selects-10: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-10: recognition/H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn #4 keeps native HWND bounds outside the complete animated facade.",
+    "academic-selects-11: /Vai tr\u00F2 * #1 retains its native model inside SoftInputSurface.",
+    "academic-selects-11: /Vai tr\u00F2 * #1 has exactly one animated select facade.",
+    "academic-selects-11: /Vai tr\u00F2 * #1 mirrors every formatted native item and its selection.",
+    "academic-selects-11: /Vai tr\u00F2 * #1 mirrors the current caption, enabled state and visibility.",
+    "academic-selects-11: /Vai tr\u00F2 * #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-SeatsAndWaitlistPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "training-SeatsAndWaitlistPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "training-SeatsAndWaitlistPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "training-SeatsAndWaitlistPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "training-SeatsAndWaitlistPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-SeatsAndWaitlistPage-selects-1: / #1 retains its native model inside SoftInputSurface.",
+    "training-SeatsAndWaitlistPage-selects-1: / #1 has exactly one animated select facade.",
+    "training-SeatsAndWaitlistPage-selects-1: / #1 mirrors every formatted native item and its selection.",
+    "training-SeatsAndWaitlistPage-selects-1: / #1 mirrors the current caption, enabled state and visibility.",
+    "training-SeatsAndWaitlistPage-selects-1: / #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-SeatsAndWaitlistPage-selects-1: cboHocKy/ #2 retains its native model inside SoftInputSurface.",
+    "training-SeatsAndWaitlistPage-selects-1: cboHocKy/ #2 has exactly one animated select facade.",
+    "training-SeatsAndWaitlistPage-selects-1: cboHocKy/ #2 mirrors every formatted native item and its selection.",
+    "training-SeatsAndWaitlistPage-selects-1: cboHocKy/ #2 mirrors the current caption, enabled state and visibility.",
+    "training-SeatsAndWaitlistPage-selects-1: cboHocKy/ #2 keeps native HWND bounds outside the complete animated facade.",
+    "training-KetQuaPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "training-KetQuaPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "training-KetQuaPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "training-KetQuaPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "training-KetQuaPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #1 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #1 has exactly one animated select facade.",
+    "training-AcademicPlanningPage: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #1 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #1 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage: cboHocKy/ #2 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage: cboHocKy/ #2 has exactly one animated select facade.",
+    "training-AcademicPlanningPage: cboHocKy/ #2 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage: cboHocKy/ #2 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage: cboHocKy/ #2 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-1: cboAcademicWhatIfProgram/CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng #1 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-1: cboAcademicWhatIfProgram/CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng #1 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-1: cboAcademicWhatIfProgram/CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng #1 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-1: cboAcademicWhatIfProgram/CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng #1 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-1: cboAcademicWhatIfProgram/CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-1: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #2 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-1: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #2 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-1: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #2 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-1: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #2 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-1: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #2 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-1: cboHocKy/ #3 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-1: cboHocKy/ #3 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-1: cboHocKy/ #3 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-1: cboHocKy/ #3 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-1: cboHocKy/ #3 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanCourse/M\u00F4n h\u1ECDc #1 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanCourse/M\u00F4n h\u1ECDc #1 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanCourse/M\u00F4n h\u1ECDc #1 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanCourse/M\u00F4n h\u1ECDc #1 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanCourse/M\u00F4n h\u1ECDc #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanTerm/H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn #2 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanTerm/H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn #2 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanTerm/H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn #2 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanTerm/H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn #2 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanTerm/H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn #2 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #3 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #3 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #3 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #3 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-2: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #3 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-2: cboHocKy/ #4 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-2: cboHocKy/ #4 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-2: cboHocKy/ #4 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-2: cboHocKy/ #4 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-2: cboHocKy/ #4 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-3: cboAcademicAdviceAction/Thao t\u00E1c #1 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-3: cboAcademicAdviceAction/Thao t\u00E1c #1 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-3: cboAcademicAdviceAction/Thao t\u00E1c #1 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-3: cboAcademicAdviceAction/Thao t\u00E1c #1 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-3: cboAcademicAdviceAction/Thao t\u00E1c #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-3: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #2 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-3: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #2 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-3: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #2 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-3: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #2 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-3: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #2 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-3: cboHocKy/ #3 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-3: cboHocKy/ #3 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-3: cboHocKy/ #3 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-3: cboHocKy/ #3 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-3: cboHocKy/ #3 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-4: /M\u00F4n d\u1EF1 ki\u1EBFn m\u1EDF #1 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-4: /M\u00F4n d\u1EF1 ki\u1EBFn m\u1EDF #1 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-4: /M\u00F4n d\u1EF1 ki\u1EBFn m\u1EDF #1 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-4: /M\u00F4n d\u1EF1 ki\u1EBFn m\u1EDF #1 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-4: /M\u00F4n d\u1EF1 ki\u1EBFn m\u1EDF #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-4: /K\u1EF3 d\u1EF1 ki\u1EBFn #2 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-4: /K\u1EF3 d\u1EF1 ki\u1EBFn #2 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-4: /K\u1EF3 d\u1EF1 ki\u1EBFn #2 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-4: /K\u1EF3 d\u1EF1 ki\u1EBFn #2 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-4: /K\u1EF3 d\u1EF1 ki\u1EBFn #2 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-4: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #3 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-4: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #3 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-4: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #3 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-4: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #3 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-4: cboAcademicPlanStudent/Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng #3 keeps native HWND bounds outside the complete animated facade.",
+    "training-AcademicPlanningPage-selects-4: cboHocKy/ #4 retains its native model inside SoftInputSurface.",
+    "training-AcademicPlanningPage-selects-4: cboHocKy/ #4 has exactly one animated select facade.",
+    "training-AcademicPlanningPage-selects-4: cboHocKy/ #4 mirrors every formatted native item and its selection.",
+    "training-AcademicPlanningPage-selects-4: cboHocKy/ #4 mirrors the current caption, enabled state and visibility.",
+    "training-AcademicPlanningPage-selects-4: cboHocKy/ #4 keeps native HWND bounds outside the complete animated facade.",
+    "training-ThongKePage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "training-ThongKePage: cboHocKy/ #1 has exactly one animated select facade.",
+    "training-ThongKePage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "training-ThongKePage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "training-ThongKePage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-ExceptionRequestsPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "training-ExceptionRequestsPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "training-ExceptionRequestsPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "training-ExceptionRequestsPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "training-ExceptionRequestsPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-ClassOperationsPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "training-ClassOperationsPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "training-ClassOperationsPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "training-ClassOperationsPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "training-ClassOperationsPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-ClassOperationsPage-selects-1: /Chuy\u1EC3n sang #1 retains its native model inside SoftInputSurface.",
+    "training-ClassOperationsPage-selects-1: /Chuy\u1EC3n sang #1 has exactly one animated select facade.",
+    "training-ClassOperationsPage-selects-1: /Chuy\u1EC3n sang #1 mirrors every formatted native item and its selection.",
+    "training-ClassOperationsPage-selects-1: /Chuy\u1EC3n sang #1 mirrors the current caption, enabled state and visibility.",
+    "training-ClassOperationsPage-selects-1: /Chuy\u1EC3n sang #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-ClassOperationsPage-selects-1: cboHocKy/ #2 retains its native model inside SoftInputSurface.",
+    "training-ClassOperationsPage-selects-1: cboHocKy/ #2 has exactly one animated select facade.",
+    "training-ClassOperationsPage-selects-1: cboHocKy/ #2 mirrors every formatted native item and its selection.",
+    "training-ClassOperationsPage-selects-1: cboHocKy/ #2 mirrors the current caption, enabled state and visibility.",
+    "training-ClassOperationsPage-selects-1: cboHocKy/ #2 keeps native HWND bounds outside the complete animated facade.",
+    "training-ClassOperationsPage-selects-2: /Thao t\u00E1c #1 retains its native model inside SoftInputSurface.",
+    "training-ClassOperationsPage-selects-2: /Thao t\u00E1c #1 has exactly one animated select facade.",
+    "training-ClassOperationsPage-selects-2: /Thao t\u00E1c #1 mirrors every formatted native item and its selection.",
+    "training-ClassOperationsPage-selects-2: /Thao t\u00E1c #1 mirrors the current caption, enabled state and visibility.",
+    "training-ClassOperationsPage-selects-2: /Thao t\u00E1c #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-ClassOperationsPage-selects-2: /L\u1EDBp #2 retains its native model inside SoftInputSurface.",
+    "training-ClassOperationsPage-selects-2: /L\u1EDBp #2 has exactly one animated select facade.",
+    "training-ClassOperationsPage-selects-2: /L\u1EDBp #2 mirrors every formatted native item and its selection.",
+    "training-ClassOperationsPage-selects-2: /L\u1EDBp #2 mirrors the current caption, enabled state and visibility.",
+    "training-ClassOperationsPage-selects-2: /L\u1EDBp #2 keeps native HWND bounds outside the complete animated facade.",
+    "training-ClassOperationsPage-selects-2: cboHocKy/ #3 retains its native model inside SoftInputSurface.",
+    "training-ClassOperationsPage-selects-2: cboHocKy/ #3 has exactly one animated select facade.",
+    "training-ClassOperationsPage-selects-2: cboHocKy/ #3 mirrors every formatted native item and its selection.",
+    "training-ClassOperationsPage-selects-2: cboHocKy/ #3 mirrors the current caption, enabled state and visibility.",
+    "training-ClassOperationsPage-selects-2: cboHocKy/ #3 keeps native HWND bounds outside the complete animated facade.",
+    "training-import-valid: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "training-import-valid: cboHocKy/ #1 has exactly one animated select facade.",
+    "training-import-valid: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "training-import-valid: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "training-import-valid: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-DataImportPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "training-DataImportPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "training-DataImportPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "training-DataImportPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "training-DataImportPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-DataImportPage-selects-1: / #1 retains its native model inside SoftInputSurface.",
+    "training-DataImportPage-selects-1: / #1 has exactly one animated select facade.",
+    "training-DataImportPage-selects-1: / #1 mirrors every formatted native item and its selection.",
+    "training-DataImportPage-selects-1: / #1 mirrors the current caption, enabled state and visibility.",
+    "training-DataImportPage-selects-1: / #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-DataImportPage-selects-1: cboHocKy/ #2 retains its native model inside SoftInputSurface.",
+    "training-DataImportPage-selects-1: cboHocKy/ #2 has exactly one animated select facade.",
+    "training-DataImportPage-selects-1: cboHocKy/ #2 mirrors every formatted native item and its selection.",
+    "training-DataImportPage-selects-1: cboHocKy/ #2 mirrors the current caption, enabled state and visibility.",
+    "training-DataImportPage-selects-1: cboHocKy/ #2 keeps native HWND bounds outside the complete animated facade.",
+    "training-OperationsDashboardPage: / #1 retains its native model inside SoftInputSurface.",
+    "training-OperationsDashboardPage: / #1 has exactly one animated select facade.",
+    "training-OperationsDashboardPage: / #1 mirrors every formatted native item and its selection.",
+    "training-OperationsDashboardPage: / #1 mirrors the current caption, enabled state and visibility.",
+    "training-OperationsDashboardPage: / #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-OperationsDashboardPage: cboHocKy/ #2 retains its native model inside SoftInputSurface.",
+    "training-OperationsDashboardPage: cboHocKy/ #2 has exactly one animated select facade.",
+    "training-OperationsDashboardPage: cboHocKy/ #2 mirrors every formatted native item and its selection.",
+    "training-OperationsDashboardPage: cboHocKy/ #2 mirrors the current caption, enabled state and visibility.",
+    "training-OperationsDashboardPage: cboHocKy/ #2 keeps native HWND bounds outside the complete animated facade.",
+    "training-NotificationsPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "training-NotificationsPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "training-NotificationsPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "training-NotificationsPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "training-NotificationsPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "training-OperationsAuditPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "training-OperationsAuditPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "training-OperationsAuditPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "training-OperationsAuditPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "training-OperationsAuditPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-TraCuuPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "student-TraCuuPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "student-TraCuuPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "student-TraCuuPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "student-TraCuuPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-RegistrationCartPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "student-RegistrationCartPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "student-RegistrationCartPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "student-RegistrationCartPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "student-RegistrationCartPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-SchedulePlannerPage: cboPlannerPreviewOption/So s\u00E1nh ph\u01B0\u01A1ng \u00E1n #1 retains its native model inside SoftInputSurface.",
+    "student-SchedulePlannerPage: cboPlannerPreviewOption/So s\u00E1nh ph\u01B0\u01A1ng \u00E1n #1 has exactly one animated select facade.",
+    "student-SchedulePlannerPage: cboPlannerPreviewOption/So s\u00E1nh ph\u01B0\u01A1ng \u00E1n #1 mirrors every formatted native item and its selection.",
+    "student-SchedulePlannerPage: cboPlannerPreviewOption/So s\u00E1nh ph\u01B0\u01A1ng \u00E1n #1 mirrors the current caption, enabled state and visibility.",
+    "student-SchedulePlannerPage: cboPlannerPreviewOption/So s\u00E1nh ph\u01B0\u01A1ng \u00E1n #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-SchedulePlannerPage: cboPlannerPreviewWeek/Tu\u1EA7n xem tr\u01B0\u1EDBc #2 retains its native model inside SoftInputSurface.",
+    "student-SchedulePlannerPage: cboPlannerPreviewWeek/Tu\u1EA7n xem tr\u01B0\u1EDBc #2 has exactly one animated select facade.",
+    "student-SchedulePlannerPage: cboPlannerPreviewWeek/Tu\u1EA7n xem tr\u01B0\u1EDBc #2 mirrors every formatted native item and its selection.",
+    "student-SchedulePlannerPage: cboPlannerPreviewWeek/Tu\u1EA7n xem tr\u01B0\u1EDBc #2 mirrors the current caption, enabled state and visibility.",
+    "student-SchedulePlannerPage: cboPlannerPreviewWeek/Tu\u1EA7n xem tr\u01B0\u1EDBc #2 keeps native HWND bounds outside the complete animated facade.",
+    "student-SchedulePlannerPage: cboHocKy/ #3 retains its native model inside SoftInputSurface.",
+    "student-SchedulePlannerPage: cboHocKy/ #3 has exactly one animated select facade.",
+    "student-SchedulePlannerPage: cboHocKy/ #3 mirrors every formatted native item and its selection.",
+    "student-SchedulePlannerPage: cboHocKy/ #3 mirrors the current caption, enabled state and visibility.",
+    "student-SchedulePlannerPage: cboHocKy/ #3 keeps native HWND bounds outside the complete animated facade.",
+    "student-SchedulePlannerPage-selects-1: /Gi\u1EDD h\u1ECDc #1 retains its native model inside SoftInputSurface.",
+    "student-SchedulePlannerPage-selects-1: /Gi\u1EDD h\u1ECDc #1 has exactly one animated select facade.",
+    "student-SchedulePlannerPage-selects-1: /Gi\u1EDD h\u1ECDc #1 mirrors every formatted native item and its selection.",
+    "student-SchedulePlannerPage-selects-1: /Gi\u1EDD h\u1ECDc #1 mirrors the current caption, enabled state and visibility.",
+    "student-SchedulePlannerPage-selects-1: /Gi\u1EDD h\u1ECDc #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-SchedulePlannerPage-selects-1: cboHocKy/ #2 retains its native model inside SoftInputSurface.",
+    "student-SchedulePlannerPage-selects-1: cboHocKy/ #2 has exactly one animated select facade.",
+    "student-SchedulePlannerPage-selects-1: cboHocKy/ #2 mirrors every formatted native item and its selection.",
+    "student-SchedulePlannerPage-selects-1: cboHocKy/ #2 mirrors the current caption, enabled state and visibility.",
+    "student-SchedulePlannerPage-selects-1: cboHocKy/ #2 keeps native HWND bounds outside the complete animated facade.",
+    "student-SchedulePlannerPage-selects-2: /Th\u1EE9 #1 retains its native model inside SoftInputSurface.",
+    "student-SchedulePlannerPage-selects-2: /Th\u1EE9 #1 has exactly one animated select facade.",
+    "student-SchedulePlannerPage-selects-2: /Th\u1EE9 #1 mirrors every formatted native item and its selection.",
+    "student-SchedulePlannerPage-selects-2: /Th\u1EE9 #1 mirrors the current caption, enabled state and visibility.",
+    "student-SchedulePlannerPage-selects-2: /Th\u1EE9 #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-SchedulePlannerPage-selects-2: cboHocKy/ #2 retains its native model inside SoftInputSurface.",
+    "student-SchedulePlannerPage-selects-2: cboHocKy/ #2 has exactly one animated select facade.",
+    "student-SchedulePlannerPage-selects-2: cboHocKy/ #2 mirrors every formatted native item and its selection.",
+    "student-SchedulePlannerPage-selects-2: cboHocKy/ #2 mirrors the current caption, enabled state and visibility.",
+    "student-SchedulePlannerPage-selects-2: cboHocKy/ #2 keeps native HWND bounds outside the complete animated facade.",
+    "student-SchedulePlannerPage-selects-3: cboPlannerPreviewOption/So s\u00E1nh ph\u01B0\u01A1ng \u00E1n #1 retains its native model inside SoftInputSurface.",
+    "student-SchedulePlannerPage-selects-3: cboPlannerPreviewOption/So s\u00E1nh ph\u01B0\u01A1ng \u00E1n #1 has exactly one animated select facade.",
+    "student-SchedulePlannerPage-selects-3: cboPlannerPreviewOption/So s\u00E1nh ph\u01B0\u01A1ng \u00E1n #1 mirrors every formatted native item and its selection.",
+    "student-SchedulePlannerPage-selects-3: cboPlannerPreviewOption/So s\u00E1nh ph\u01B0\u01A1ng \u00E1n #1 mirrors the current caption, enabled state and visibility.",
+    "student-SchedulePlannerPage-selects-3: cboPlannerPreviewOption/So s\u00E1nh ph\u01B0\u01A1ng \u00E1n #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-SchedulePlannerPage-selects-3: cboPlannerPreviewWeek/Tu\u1EA7n xem tr\u01B0\u1EDBc #2 retains its native model inside SoftInputSurface.",
+    "student-SchedulePlannerPage-selects-3: cboPlannerPreviewWeek/Tu\u1EA7n xem tr\u01B0\u1EDBc #2 has exactly one animated select facade.",
+    "student-SchedulePlannerPage-selects-3: cboPlannerPreviewWeek/Tu\u1EA7n xem tr\u01B0\u1EDBc #2 mirrors every formatted native item and its selection.",
+    "student-SchedulePlannerPage-selects-3: cboPlannerPreviewWeek/Tu\u1EA7n xem tr\u01B0\u1EDBc #2 mirrors the current caption, enabled state and visibility.",
+    "student-SchedulePlannerPage-selects-3: cboPlannerPreviewWeek/Tu\u1EA7n xem tr\u01B0\u1EDBc #2 keeps native HWND bounds outside the complete animated facade.",
+    "student-SchedulePlannerPage-selects-3: cboHocKy/ #3 retains its native model inside SoftInputSurface.",
+    "student-SchedulePlannerPage-selects-3: cboHocKy/ #3 has exactly one animated select facade.",
+    "student-SchedulePlannerPage-selects-3: cboHocKy/ #3 mirrors every formatted native item and its selection.",
+    "student-SchedulePlannerPage-selects-3: cboHocKy/ #3 mirrors the current caption, enabled state and visibility.",
+    "student-SchedulePlannerPage-selects-3: cboHocKy/ #3 keeps native HWND bounds outside the complete animated facade.",
+    "student-SeatsAndWaitlistPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "student-SeatsAndWaitlistPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "student-SeatsAndWaitlistPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "student-SeatsAndWaitlistPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "student-SeatsAndWaitlistPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-KetQuaPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "student-KetQuaPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "student-KetQuaPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "student-KetQuaPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "student-KetQuaPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-StudentAcademicPage: / #1 retains its native model inside SoftInputSurface.",
+    "student-StudentAcademicPage: / #1 has exactly one animated select facade.",
+    "student-StudentAcademicPage: / #1 mirrors every formatted native item and its selection.",
+    "student-StudentAcademicPage: / #1 mirrors the current caption, enabled state and visibility.",
+    "student-StudentAcademicPage: / #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-StudentAcademicPage: cboHocKy/ #2 retains its native model inside SoftInputSurface.",
+    "student-StudentAcademicPage: cboHocKy/ #2 has exactly one animated select facade.",
+    "student-StudentAcademicPage: cboHocKy/ #2 mirrors every formatted native item and its selection.",
+    "student-StudentAcademicPage: cboHocKy/ #2 mirrors the current caption, enabled state and visibility.",
+    "student-StudentAcademicPage: cboHocKy/ #2 keeps native HWND bounds outside the complete animated facade.",
+    "student-AcademicPlanningPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "student-AcademicPlanningPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "student-AcademicPlanningPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "student-AcademicPlanningPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "student-AcademicPlanningPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-AcademicPlanningPage-selects-1: cboAcademicWhatIfProgram/CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng #1 retains its native model inside SoftInputSurface.",
+    "student-AcademicPlanningPage-selects-1: cboAcademicWhatIfProgram/CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng #1 has exactly one animated select facade.",
+    "student-AcademicPlanningPage-selects-1: cboAcademicWhatIfProgram/CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng #1 mirrors every formatted native item and its selection.",
+    "student-AcademicPlanningPage-selects-1: cboAcademicWhatIfProgram/CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng #1 mirrors the current caption, enabled state and visibility.",
+    "student-AcademicPlanningPage-selects-1: cboAcademicWhatIfProgram/CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-AcademicPlanningPage-selects-1: cboHocKy/ #2 retains its native model inside SoftInputSurface.",
+    "student-AcademicPlanningPage-selects-1: cboHocKy/ #2 has exactly one animated select facade.",
+    "student-AcademicPlanningPage-selects-1: cboHocKy/ #2 mirrors every formatted native item and its selection.",
+    "student-AcademicPlanningPage-selects-1: cboHocKy/ #2 mirrors the current caption, enabled state and visibility.",
+    "student-AcademicPlanningPage-selects-1: cboHocKy/ #2 keeps native HWND bounds outside the complete animated facade.",
+    "student-AcademicPlanningPage-selects-2: cboAcademicPlanCourse/M\u00F4n h\u1ECDc #1 retains its native model inside SoftInputSurface.",
+    "student-AcademicPlanningPage-selects-2: cboAcademicPlanCourse/M\u00F4n h\u1ECDc #1 has exactly one animated select facade.",
+    "student-AcademicPlanningPage-selects-2: cboAcademicPlanCourse/M\u00F4n h\u1ECDc #1 mirrors every formatted native item and its selection.",
+    "student-AcademicPlanningPage-selects-2: cboAcademicPlanCourse/M\u00F4n h\u1ECDc #1 mirrors the current caption, enabled state and visibility.",
+    "student-AcademicPlanningPage-selects-2: cboAcademicPlanCourse/M\u00F4n h\u1ECDc #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-AcademicPlanningPage-selects-2: cboAcademicPlanTerm/H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn #2 retains its native model inside SoftInputSurface.",
+    "student-AcademicPlanningPage-selects-2: cboAcademicPlanTerm/H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn #2 has exactly one animated select facade.",
+    "student-AcademicPlanningPage-selects-2: cboAcademicPlanTerm/H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn #2 mirrors every formatted native item and its selection.",
+    "student-AcademicPlanningPage-selects-2: cboAcademicPlanTerm/H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn #2 mirrors the current caption, enabled state and visibility.",
+    "student-AcademicPlanningPage-selects-2: cboAcademicPlanTerm/H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn #2 keeps native HWND bounds outside the complete animated facade.",
+    "student-AcademicPlanningPage-selects-2: cboHocKy/ #3 retains its native model inside SoftInputSurface.",
+    "student-AcademicPlanningPage-selects-2: cboHocKy/ #3 has exactly one animated select facade.",
+    "student-AcademicPlanningPage-selects-2: cboHocKy/ #3 mirrors every formatted native item and its selection.",
+    "student-AcademicPlanningPage-selects-2: cboHocKy/ #3 mirrors the current caption, enabled state and visibility.",
+    "student-AcademicPlanningPage-selects-2: cboHocKy/ #3 keeps native HWND bounds outside the complete animated facade.",
+    "student-ExceptionRequestsPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "student-ExceptionRequestsPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "student-ExceptionRequestsPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "student-ExceptionRequestsPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "student-ExceptionRequestsPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-ExceptionRequestsPage-selects-1: /Lo\u1EA1i \u0111\u01A1n #1 retains its native model inside SoftInputSurface.",
+    "student-ExceptionRequestsPage-selects-1: /Lo\u1EA1i \u0111\u01A1n #1 has exactly one animated select facade.",
+    "student-ExceptionRequestsPage-selects-1: /Lo\u1EA1i \u0111\u01A1n #1 mirrors every formatted native item and its selection.",
+    "student-ExceptionRequestsPage-selects-1: /Lo\u1EA1i \u0111\u01A1n #1 mirrors the current caption, enabled state and visibility.",
+    "student-ExceptionRequestsPage-selects-1: /Lo\u1EA1i \u0111\u01A1n #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-ExceptionRequestsPage-selects-1: cboHocKy/ #2 retains its native model inside SoftInputSurface.",
+    "student-ExceptionRequestsPage-selects-1: cboHocKy/ #2 has exactly one animated select facade.",
+    "student-ExceptionRequestsPage-selects-1: cboHocKy/ #2 mirrors every formatted native item and its selection.",
+    "student-ExceptionRequestsPage-selects-1: cboHocKy/ #2 mirrors the current caption, enabled state and visibility.",
+    "student-ExceptionRequestsPage-selects-1: cboHocKy/ #2 keeps native HWND bounds outside the complete animated facade.",
+    "student-NotificationsPage: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "student-NotificationsPage: cboHocKy/ #1 has exactly one animated select facade.",
+    "student-NotificationsPage: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "student-NotificationsPage: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "student-NotificationsPage: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-timetable: /Ch\u1ECDn h\u1ECDc k\u1EF3 #1 retains its native model inside SoftInputSurface.",
+    "student-timetable: /Ch\u1ECDn h\u1ECDc k\u1EF3 #1 has exactly one animated select facade.",
+    "student-timetable: /Ch\u1ECDn h\u1ECDc k\u1EF3 #1 mirrors every formatted native item and its selection.",
+    "student-timetable: /Ch\u1ECDn h\u1ECDc k\u1EF3 #1 mirrors the current caption, enabled state and visibility.",
+    "student-timetable: /Ch\u1ECDn h\u1ECDc k\u1EF3 #1 keeps native HWND bounds outside the complete animated facade.",
+    "student-hold-scenario: cboHocKy/ #1 retains its native model inside SoftInputSurface.",
+    "student-hold-scenario: cboHocKy/ #1 has exactly one animated select facade.",
+    "student-hold-scenario: cboHocKy/ #1 mirrors every formatted native item and its selection.",
+    "student-hold-scenario: cboHocKy/ #1 mirrors the current caption, enabled state and visibility.",
+    "student-hold-scenario: cboHocKy/ #1 keeps native HWND bounds outside the complete animated facade."
+  ],
+  "pages": [
+    {
+      "name": "login",
+      "grids": [],
+      "selectCount": 0,
+      "selects": []
+    },
+    {
+      "name": "module-Lecturers",
+      "grids": [],
+      "selectCount": 0,
+      "selects": []
+    },
+    {
+      "name": "module-Scheduling",
+      "grids": [],
+      "selectCount": 0,
+      "selects": []
+    },
+    {
+      "name": "module-Catalogs",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 20
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 2
+        }
+      ],
+      "selectCount": 4,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "T\u1EA5t c\u1EA3 lo\u1EA1i",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "T\u1EA5t c\u1EA3 tr\u1EA1ng th\u00E1i",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "B\u1EAFt bu\u1ED9c",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 5,
+          "selectedIndex": 0,
+          "selectedCaption": "Ch\u01B0a ph\u00E2n khoa",
+          "enabled": true,
+          "facade": "Select"
+        }
+      ]
+    },
+    {
+      "name": "module-Catalogs-selects-1",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 20
+        }
+      ],
+      "selectCount": 4,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "T\u1EA5t c\u1EA3 lo\u1EA1i",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "T\u1EA5t c\u1EA3 tr\u1EA1ng th\u00E1i",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "B\u1EAFt bu\u1ED9c",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 5,
+          "selectedIndex": 0,
+          "selectedCaption": "Ch\u01B0a ph\u00E2n khoa",
+          "enabled": true,
+          "facade": "Select"
+        }
+      ]
+    },
+    {
+      "name": "module-Catalogs-selects-2",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 2
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 3,
+          "selectedIndex": 1,
+          "selectedCaption": "H\u1ECDc k\u1EF3 2",
+          "enabled": true,
+          "facade": "Select"
+        }
+      ]
+    },
+    {
+      "name": "module-Students",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 25
+        }
+      ],
+      "selectCount": 4,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 4,
+          "selectedIndex": 0,
+          "selectedCaption": "Ch\u01B0a c\u1EADp nh\u1EADt",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 1,
+          "selectedIndex": 0,
+          "selectedCaption": "C\u00F4ng ngh\u1EC7 th\u00F4ng tin",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 1,
+          "selectedIndex": 0,
+          "selectedCaption": "C\u00F4ng ngh\u1EC7 th\u00F4ng tin",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "C\u00F4ng ngh\u1EC7 th\u00F4ng tin 24A",
+          "enabled": true,
+          "facade": "Select"
+        }
+      ]
+    },
+    {
+      "name": "academic-PROGRAM",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Phi\u00EAn b\u1EA3n",
+          "rows": 3
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "major",
+          "AccessibleName": "Ng\u00E0nh",
+          "items": 1,
+          "selectedIndex": -1,
+          "selectedCaption": "",
+          "enabled": true,
+          "facade": "majorSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-PROGRAM-selected",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Phi\u00EAn b\u1EA3n",
+          "rows": 3
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "major",
+          "AccessibleName": "Ng\u00E0nh",
+          "items": 1,
+          "selectedIndex": 0,
+          "selectedCaption": "CNTT \u00B7 C\u00F4ng ngh\u1EC7 th\u00F4ng tin",
+          "enabled": false,
+          "facade": "majorSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-GROUP",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Nh\u00F3m t\u1EF1 ch\u1ECDn",
+          "rows": 6
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "CNTT_2024 \u00B7 C\u00F4ng ngh\u1EC7 th\u00F4ng tin \u00B7 Kh\u00F3a 2024",
+          "enabled": false,
+          "facade": "programSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-GROUP-selected",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Nh\u00F3m t\u1EF1 ch\u1ECDn",
+          "rows": 6
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "CNTT_2024 \u00B7 C\u00F4ng ngh\u1EC7 th\u00F4ng tin \u00B7 Kh\u00F3a 2024",
+          "enabled": false,
+          "facade": "programSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-COURSE",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch H\u1ECDc ph\u1EA7n \u0026 t\u01B0\u01A1ng \u0111\u01B0\u01A1ng",
+          "rows": 16
+        }
+      ],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "CNTT_2024 \u00B7 C\u00F4ng ngh\u1EC7 th\u00F4ng tin \u00B7 Kh\u00F3a 2024",
+          "enabled": false,
+          "facade": "programSelect"
+        },
+        {
+          "Name": "course",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n",
+          "items": 20,
+          "selectedIndex": 0,
+          "selectedCaption": "EC101 \u00B7 Kinh t\u1EBF vi m\u00F4",
+          "enabled": false,
+          "facade": "courseSelect"
+        },
+        {
+          "Name": "group",
+          "AccessibleName": "Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3)",
+          "items": 4,
+          "selectedIndex": 0,
+          "selectedCaption": "\u2014 Kh\u00F4ng ch\u1ECDn \u2014",
+          "enabled": false,
+          "facade": "groupSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-COURSE-selected",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch H\u1ECDc ph\u1EA7n \u0026 t\u01B0\u01A1ng \u0111\u01B0\u01A1ng",
+          "rows": 16
+        }
+      ],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "CNTT_2024 \u00B7 C\u00F4ng ngh\u1EC7 th\u00F4ng tin \u00B7 Kh\u00F3a 2024",
+          "enabled": false,
+          "facade": "programSelect"
+        },
+        {
+          "Name": "course",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n",
+          "items": 20,
+          "selectedIndex": 0,
+          "selectedCaption": "EC101 \u00B7 Kinh t\u1EBF vi m\u00F4",
+          "enabled": false,
+          "facade": "courseSelect"
+        },
+        {
+          "Name": "group",
+          "AccessibleName": "Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3)",
+          "items": 4,
+          "selectedIndex": 0,
+          "selectedCaption": "\u2014 Kh\u00F4ng ch\u1ECDn \u2014",
+          "enabled": false,
+          "facade": "groupSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-REQUIREMENT",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch \u0110i\u1EC1u ki\u1EC7n m\u00F4n h\u1ECDc",
+          "rows": 3
+        }
+      ],
+      "selectCount": 4,
+      "selects": [
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 3,
+          "selectedIndex": 1,
+          "selectedCaption": "CNTT24_V2 \u00B7 CNTT 2024 \u00B7 Phi\u00EAn b\u1EA3n th\u1EF1c h\u00E0nh",
+          "enabled": false,
+          "facade": "programSelect"
+        },
+        {
+          "Name": "course",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n",
+          "items": 8,
+          "selectedIndex": -1,
+          "selectedCaption": "",
+          "enabled": false,
+          "facade": "courseSelect"
+        },
+        {
+          "Name": "requiredCourse",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n",
+          "items": 8,
+          "selectedIndex": -1,
+          "selectedCaption": "",
+          "enabled": false,
+          "facade": "requiredCourseSelect"
+        },
+        {
+          "Name": "kind",
+          "AccessibleName": "Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n",
+          "items": 3,
+          "selectedIndex": 2,
+          "selectedCaption": "Song h\u00E0nh \u00B7 \u0111\u00E3 \u0111\u1EA1t ho\u1EB7c c\u00F9ng h\u1ECDc",
+          "enabled": false,
+          "facade": "kindSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-REQUIREMENT-selected",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch \u0110i\u1EC1u ki\u1EC7n m\u00F4n h\u1ECDc",
+          "rows": 3
+        }
+      ],
+      "selectCount": 4,
+      "selects": [
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 3,
+          "selectedIndex": 1,
+          "selectedCaption": "CNTT24_V2 \u00B7 CNTT 2024 \u00B7 Phi\u00EAn b\u1EA3n th\u1EF1c h\u00E0nh",
+          "enabled": false,
+          "facade": "programSelect"
+        },
+        {
+          "Name": "course",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n",
+          "items": 8,
+          "selectedIndex": -1,
+          "selectedCaption": "",
+          "enabled": false,
+          "facade": "courseSelect"
+        },
+        {
+          "Name": "requiredCourse",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n",
+          "items": 8,
+          "selectedIndex": -1,
+          "selectedCaption": "",
+          "enabled": false,
+          "facade": "requiredCourseSelect"
+        },
+        {
+          "Name": "kind",
+          "AccessibleName": "Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n",
+          "items": 3,
+          "selectedIndex": 2,
+          "selectedCaption": "Song h\u00E0nh \u00B7 \u0111\u00E3 \u0111\u1EA1t ho\u1EB7c c\u00F9ng h\u1ECDc",
+          "enabled": false,
+          "facade": "kindSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-POLICY",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Quy ch\u1EBF t\u00EDn ch\u1EC9",
+          "rows": 4
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": "B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "K\u1EF3 ch\u00EDnh \u00B7 14\u201324 TC; \u0110TBC \u22658 \u0111\u01B0\u1EE3c 30",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": false,
+          "facade": "termSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-POLICY-selected",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Quy ch\u1EBF t\u00EDn ch\u1EC9",
+          "rows": 4
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": "B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "K\u1EF3 ch\u00EDnh \u00B7 14\u201324 TC; \u0110TBC \u22658 \u0111\u01B0\u1EE3c 30",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": false,
+          "facade": "termSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-OVERRIDE",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Duy\u1EC7t h\u1ECDc v\u01B0\u1EE3t",
+          "rows": 2
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 7,
+          "selectedCaption": "SV2024008 \u00B7 B\u00F9i Tu\u1EA5n Ki\u1EC7t",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": true,
+          "facade": "termSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-OVERRIDE-selected",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Duy\u1EC7t h\u1ECDc v\u01B0\u1EE3t",
+          "rows": 2
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 7,
+          "selectedCaption": "SV2024008 \u00B7 B\u00F9i Tu\u1EA5n Ki\u1EC7t",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": true,
+          "facade": "termSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-ASSIGNMENT",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch G\u1EAFn ch\u01B0\u01A1ng tr\u00ECnh",
+          "rows": 24
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 9,
+          "selectedCaption": "SV2024010 \u00B7 Ho\u00E0ng Anh D\u0169ng",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 2,
+          "selectedIndex": 1,
+          "selectedCaption": "CNTT24_V2 \u00B7 CNTT 2024 \u00B7 Phi\u00EAn b\u1EA3n th\u1EF1c h\u00E0nh",
+          "enabled": true,
+          "facade": "programSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-ASSIGNMENT-selected",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch G\u1EAFn ch\u01B0\u01A1ng tr\u00ECnh",
+          "rows": 24
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 9,
+          "selectedCaption": "SV2024010 \u00B7 Ho\u00E0ng Anh D\u0169ng",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 2,
+          "selectedIndex": 1,
+          "selectedCaption": "CNTT24_V2 \u00B7 CNTT 2024 \u00B7 Phi\u00EAn b\u1EA3n th\u1EF1c h\u00E0nh",
+          "enabled": true,
+          "facade": "programSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-STANDING",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch T\u00ECnh tr\u1EA1ng h\u1ECDc v\u1EE5",
+          "rows": 24
+        }
+      ],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 0,
+          "selectedCaption": "SV2024001 \u00B7 B\u00F9i Quang Minh",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": true,
+          "facade": "termSelect"
+        },
+        {
+          "Name": "status",
+          "AccessibleName": "Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "\u0110ang h\u1ECDc",
+          "enabled": true,
+          "facade": "statusSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-STANDING-selected",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch T\u00ECnh tr\u1EA1ng h\u1ECDc v\u1EE5",
+          "rows": 24
+        }
+      ],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 0,
+          "selectedCaption": "SV2024001 \u00B7 B\u00F9i Quang Minh",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": true,
+          "facade": "termSelect"
+        },
+        {
+          "Name": "status",
+          "AccessibleName": "Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "\u0110ang h\u1ECDc",
+          "enabled": true,
+          "facade": "statusSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-HOLD",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Kh\u00F3a / g\u1EE1 kh\u00F3a",
+          "rows": 4
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 4,
+          "selectedCaption": "SV2024005 \u00B7 Ph\u1EA1m Th\u00F9y Linh",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "scope",
+          "AccessibleName": "Thao t\u00E1c b\u1ECB kh\u00F3a",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "\u0110\u0103ng k\u00FD h\u1ECDc",
+          "enabled": true,
+          "facade": "scopeSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-HOLD-selected",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Kh\u00F3a / g\u1EE1 kh\u00F3a",
+          "rows": 4
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 4,
+          "selectedCaption": "SV2024005 \u00B7 Ph\u1EA1m Th\u00F9y Linh",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "scope",
+          "AccessibleName": "Thao t\u00E1c b\u1ECB kh\u00F3a",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "\u0110\u0103ng k\u00FD h\u1ECDc",
+          "enabled": true,
+          "facade": "scopeSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-RESULT",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Nh\u1EADp \u0026 s\u1EEDa k\u1EBFt qu\u1EA3",
+          "rows": 50
+        }
+      ],
+      "selectCount": 4,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 22,
+          "selectedCaption": "SV2024023 \u00B7 \u0110\u1EB7ng Minh Th\u01B0",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "course",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n",
+          "items": 20,
+          "selectedIndex": 6,
+          "selectedCaption": "ET101 \u00B7 K\u1EF9 thu\u1EADt \u0111i\u1EC7n",
+          "enabled": true,
+          "facade": "courseSelect"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": true,
+          "facade": "termSelect"
+        },
+        {
+          "Name": "recognition",
+          "AccessibleName": "H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn",
+          "items": 3,
+          "selectedIndex": 1,
+          "selectedCaption": "Chuy\u1EC3n / c\u00F4ng nh\u1EADn t\u00EDn ch\u1EC9",
+          "enabled": true,
+          "facade": "recognitionSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-RESULT-selected",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Nh\u1EADp \u0026 s\u1EEDa k\u1EBFt qu\u1EA3",
+          "rows": 50
+        }
+      ],
+      "selectCount": 4,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 22,
+          "selectedCaption": "SV2024023 \u00B7 \u0110\u1EB7ng Minh Th\u01B0",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "course",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n",
+          "items": 20,
+          "selectedIndex": 6,
+          "selectedCaption": "ET101 \u00B7 K\u1EF9 thu\u1EADt \u0111i\u1EC7n",
+          "enabled": true,
+          "facade": "courseSelect"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": true,
+          "facade": "termSelect"
+        },
+        {
+          "Name": "recognition",
+          "AccessibleName": "H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn",
+          "items": 3,
+          "selectedIndex": 1,
+          "selectedCaption": "Chuy\u1EC3n / c\u00F4ng nh\u1EADn t\u00EDn ch\u1EC9",
+          "enabled": true,
+          "facade": "recognitionSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-selects-1",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Phi\u00EAn b\u1EA3n",
+          "rows": 3
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "major",
+          "AccessibleName": "Ng\u00E0nh",
+          "items": 1,
+          "selectedIndex": 0,
+          "selectedCaption": "CNTT \u00B7 C\u00F4ng ngh\u1EC7 th\u00F4ng tin",
+          "enabled": false,
+          "facade": "majorSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-selects-2",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Nh\u00F3m t\u1EF1 ch\u1ECDn",
+          "rows": 6
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "CNTT_2024 \u00B7 C\u00F4ng ngh\u1EC7 th\u00F4ng tin \u00B7 Kh\u00F3a 2024",
+          "enabled": false,
+          "facade": "programSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-selects-3",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch H\u1ECDc ph\u1EA7n \u0026 t\u01B0\u01A1ng \u0111\u01B0\u01A1ng",
+          "rows": 16
+        }
+      ],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "CNTT_2024 \u00B7 C\u00F4ng ngh\u1EC7 th\u00F4ng tin \u00B7 Kh\u00F3a 2024",
+          "enabled": false,
+          "facade": "programSelect"
+        },
+        {
+          "Name": "course",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n",
+          "items": 20,
+          "selectedIndex": 0,
+          "selectedCaption": "EC101 \u00B7 Kinh t\u1EBF vi m\u00F4",
+          "enabled": false,
+          "facade": "courseSelect"
+        },
+        {
+          "Name": "group",
+          "AccessibleName": "Nh\u00F3m t\u1EF1 ch\u1ECDn (n\u1EBFu c\u00F3)",
+          "items": 4,
+          "selectedIndex": 0,
+          "selectedCaption": "\u2014 Kh\u00F4ng ch\u1ECDn \u2014",
+          "enabled": false,
+          "facade": "groupSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-selects-4",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch \u0110i\u1EC1u ki\u1EC7n m\u00F4n h\u1ECDc",
+          "rows": 3
+        }
+      ],
+      "selectCount": 4,
+      "selects": [
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 3,
+          "selectedIndex": 1,
+          "selectedCaption": "CNTT24_V2 \u00B7 CNTT 2024 \u00B7 Phi\u00EAn b\u1EA3n th\u1EF1c h\u00E0nh",
+          "enabled": false,
+          "facade": "programSelect"
+        },
+        {
+          "Name": "course",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n",
+          "items": 8,
+          "selectedIndex": -1,
+          "selectedCaption": "",
+          "enabled": false,
+          "facade": "courseSelect"
+        },
+        {
+          "Name": "requiredCourse",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n \u0111i\u1EC1u ki\u1EC7n",
+          "items": 8,
+          "selectedIndex": -1,
+          "selectedCaption": "",
+          "enabled": false,
+          "facade": "requiredCourseSelect"
+        },
+        {
+          "Name": "kind",
+          "AccessibleName": "Lo\u1EA1i \u0111i\u1EC1u ki\u1EC7n",
+          "items": 3,
+          "selectedIndex": 2,
+          "selectedCaption": "Song h\u00E0nh \u00B7 \u0111\u00E3 \u0111\u1EA1t ho\u1EB7c c\u00F9ng h\u1ECDc",
+          "enabled": false,
+          "facade": "kindSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-selects-5",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Quy ch\u1EBF t\u00EDn ch\u1EC9",
+          "rows": 4
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": "B\u1ED9 m\u1EABu quy ch\u1EBF tham kh\u1EA3o UIT",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "K\u1EF3 ch\u00EDnh \u00B7 14\u201324 TC; \u0110TBC \u22658 \u0111\u01B0\u1EE3c 30",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": false,
+          "facade": "termSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-selects-6",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Duy\u1EC7t h\u1ECDc v\u01B0\u1EE3t",
+          "rows": 2
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 7,
+          "selectedCaption": "SV2024008 \u00B7 B\u00F9i Tu\u1EA5n Ki\u1EC7t",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": true,
+          "facade": "termSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-selects-7",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch G\u1EAFn ch\u01B0\u01A1ng tr\u00ECnh",
+          "rows": 24
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 9,
+          "selectedCaption": "SV2024010 \u00B7 Ho\u00E0ng Anh D\u0169ng",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "program",
+          "AccessibleName": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "items": 2,
+          "selectedIndex": 1,
+          "selectedCaption": "CNTT24_V2 \u00B7 CNTT 2024 \u00B7 Phi\u00EAn b\u1EA3n th\u1EF1c h\u00E0nh",
+          "enabled": true,
+          "facade": "programSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-selects-8",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch T\u00ECnh tr\u1EA1ng h\u1ECDc v\u1EE5",
+          "rows": 24
+        }
+      ],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 0,
+          "selectedCaption": "SV2024001 \u00B7 B\u00F9i Quang Minh",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": true,
+          "facade": "termSelect"
+        },
+        {
+          "Name": "status",
+          "AccessibleName": "Tr\u1EA1ng th\u00E1i h\u1ECDc v\u1EE5",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "\u0110ang h\u1ECDc",
+          "enabled": true,
+          "facade": "statusSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-selects-9",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Kh\u00F3a / g\u1EE1 kh\u00F3a",
+          "rows": 4
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 4,
+          "selectedCaption": "SV2024005 \u00B7 Ph\u1EA1m Th\u00F9y Linh",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "scope",
+          "AccessibleName": "Thao t\u00E1c b\u1ECB kh\u00F3a",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "\u0110\u0103ng k\u00FD h\u1ECDc",
+          "enabled": true,
+          "facade": "scopeSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-selects-10",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": "Danh s\u00E1ch Nh\u1EADp \u0026 s\u1EEDa k\u1EBFt qu\u1EA3",
+          "rows": 50
+        }
+      ],
+      "selectCount": 4,
+      "selects": [
+        {
+          "Name": "student",
+          "AccessibleName": "Sinh vi\u00EAn",
+          "items": 25,
+          "selectedIndex": 22,
+          "selectedCaption": "SV2024023 \u00B7 \u0110\u1EB7ng Minh Th\u01B0",
+          "enabled": true,
+          "facade": "studentSelect"
+        },
+        {
+          "Name": "course",
+          "AccessibleName": "H\u1ECDc ph\u1EA7n",
+          "items": 20,
+          "selectedIndex": 6,
+          "selectedCaption": "ET101 \u00B7 K\u1EF9 thu\u1EADt \u0111i\u1EC7n",
+          "enabled": true,
+          "facade": "courseSelect"
+        },
+        {
+          "Name": "term",
+          "AccessibleName": "H\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u00B7 2026-2027 \u2022 1",
+          "enabled": true,
+          "facade": "termSelect"
+        },
+        {
+          "Name": "recognition",
+          "AccessibleName": "H\u00ECnh th\u1EE9c c\u00F4ng nh\u1EADn",
+          "items": 3,
+          "selectedIndex": 1,
+          "selectedCaption": "Chuy\u1EC3n / c\u00F4ng nh\u1EADn t\u00EDn ch\u1EC9",
+          "enabled": true,
+          "facade": "recognitionSelect"
+        }
+      ]
+    },
+    {
+      "name": "academic-selects-11",
+      "grids": [
+        {
+          "Name": "accountGrid",
+          "AccessibleName": null,
+          "rows": 10
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": "Vai tr\u00F2 *",
+          "items": 2,
+          "selectedIndex": 1,
+          "selectedCaption": "DAO_TAO",
+          "enabled": false,
+          "facade": "Select"
+        }
+      ]
+    },
+    {
+      "name": "training-SeatsAndWaitlistPage",
+      "grids": [
+        {
+          "Name": "dgvSeatWaitlist",
+          "AccessibleName": null,
+          "rows": 6
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-SeatsAndWaitlistPage-selects-1",
+      "grids": [],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "T\u00EDnh theo ph\u00FAt th\u1EF1c",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-KetQuaPage",
+      "grids": [
+        {
+          "Name": "dgvKetQua",
+          "AccessibleName": null,
+          "rows": 2
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-AcademicPlanningPage",
+      "grids": [
+        {
+          "Name": "dgvDegreeAudit",
+          "AccessibleName": null,
+          "rows": 8
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 7
+        },
+        {
+          "Name": "dgvAcademicPlan",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "dgvAcademicPlanIssues",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 1
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 8
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "cboAcademicPlanStudent",
+          "AccessibleName": "Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng",
+          "items": 4,
+          "selectedIndex": 0,
+          "selectedCaption": "SV2024001 \u2022 B\u00F9i Quang Minh",
+          "enabled": true,
+          "facade": "cboAcademicPlanStudentSelect"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-AcademicPlanningPage-selects-1",
+      "grids": [],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "cboAcademicWhatIfProgram",
+          "AccessibleName": "CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "CNTT24_V2 \u2022 CNTT 2024 \u00B7 Phi\u00EAn b\u1EA3n th\u1EF1c h\u00E0nh",
+          "enabled": true,
+          "facade": "cboAcademicWhatIfProgramSelect"
+        },
+        {
+          "Name": "cboAcademicPlanStudent",
+          "AccessibleName": "Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng",
+          "items": 4,
+          "selectedIndex": 0,
+          "selectedCaption": "SV2024001 \u2022 B\u00F9i Quang Minh",
+          "enabled": true,
+          "facade": "cboAcademicPlanStudentSelect"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-AcademicPlanningPage-selects-2",
+      "grids": [],
+      "selectCount": 4,
+      "selects": [
+        {
+          "Name": "cboAcademicPlanCourse",
+          "AccessibleName": "M\u00F4n h\u1ECDc",
+          "items": 20,
+          "selectedIndex": 0,
+          "selectedCaption": "EC101 \u2022 Kinh t\u1EBF vi m\u00F4",
+          "enabled": true,
+          "facade": "cboAcademicPlanCourseSelect"
+        },
+        {
+          "Name": "cboAcademicPlanTerm",
+          "AccessibleName": "H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u2022 2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboAcademicPlanTermSelect"
+        },
+        {
+          "Name": "cboAcademicPlanStudent",
+          "AccessibleName": "Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng",
+          "items": 4,
+          "selectedIndex": 0,
+          "selectedCaption": "SV2024001 \u2022 B\u00F9i Quang Minh",
+          "enabled": true,
+          "facade": "cboAcademicPlanStudentSelect"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-AcademicPlanningPage-selects-3",
+      "grids": [],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "cboAcademicAdviceAction",
+          "AccessibleName": "Thao t\u00E1c",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "G\u00F3p \u00FD",
+          "enabled": true,
+          "facade": "cboAcademicAdviceActionSelect"
+        },
+        {
+          "Name": "cboAcademicPlanStudent",
+          "AccessibleName": "Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng",
+          "items": 4,
+          "selectedIndex": 0,
+          "selectedCaption": "SV2024001 \u2022 B\u00F9i Quang Minh",
+          "enabled": true,
+          "facade": "cboAcademicPlanStudentSelect"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-AcademicPlanningPage-selects-4",
+      "grids": [],
+      "selectCount": 4,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": "M\u00F4n d\u1EF1 ki\u1EBFn m\u1EDF",
+          "items": 20,
+          "selectedIndex": 0,
+          "selectedCaption": "EC101 \u2022 Kinh t\u1EBF vi m\u00F4",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "",
+          "AccessibleName": "K\u1EF3 d\u1EF1 ki\u1EBFn",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u2022 2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "cboAcademicPlanStudent",
+          "AccessibleName": "Sinh vi\u00EAn \u0111\u01B0\u1EE3c ph\u00E2n c\u00F4ng",
+          "items": 4,
+          "selectedIndex": 0,
+          "selectedCaption": "SV2024001 \u2022 B\u00F9i Quang Minh",
+          "enabled": true,
+          "facade": "cboAcademicPlanStudentSelect"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-ThongKePage",
+      "grids": [
+        {
+          "Name": "dgvThongKeLop",
+          "AccessibleName": null,
+          "rows": 29
+        },
+        {
+          "Name": "dgvSinhVien",
+          "AccessibleName": null,
+          "rows": 0
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-ExceptionRequestsPage",
+      "grids": [
+        {
+          "Name": "dgvExceptions",
+          "AccessibleName": null,
+          "rows": 4
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-ClassOperationsPage",
+      "grids": [
+        {
+          "Name": "dgvLifecycleClasses",
+          "AccessibleName": null,
+          "rows": 29
+        },
+        {
+          "Name": "dgvLifecycleTerms",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "dgvActualCalendar",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 1
+        },
+        {
+          "Name": "dgvLifecycleHistory",
+          "AccessibleName": null,
+          "rows": 4
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-ClassOperationsPage-selects-1",
+      "grids": [],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": "Chuy\u1EC3n sang",
+          "items": 6,
+          "selectedIndex": 0,
+          "selectedCaption": "M\u1EDF \u0111\u0103ng k\u00FD",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-ClassOperationsPage-selects-2",
+      "grids": [],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": "Thao t\u00E1c",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "Thay bu\u1ED5i h\u1ECDc",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "",
+          "AccessibleName": "L\u1EDBp",
+          "items": 29,
+          "selectedIndex": 0,
+          "selectedCaption": "LHP0001",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-import-valid",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-DataImportPage",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 2
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-DataImportPage-selects-1",
+      "grids": [],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 8,
+          "selectedIndex": 0,
+          "selectedCaption": "Ch\u01B0\u01A1ng tr\u00ECnh \u0111\u00E0o t\u1EA1o",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-OperationsDashboardPage",
+      "grids": [
+        {
+          "Name": "dgvOperationsOverview",
+          "AccessibleName": null,
+          "rows": 29
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 7,
+          "selectedIndex": 0,
+          "selectedCaption": "Nhu c\u1EA7u \u0026 ch\u1ED7",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-NotificationsPage",
+      "grids": [
+        {
+          "Name": "dgvNotifications",
+          "AccessibleName": null,
+          "rows": 36
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "training-OperationsAuditPage",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 124
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-TraCuuPage",
+      "grids": [
+        {
+          "Name": "dgvLopMo",
+          "AccessibleName": null,
+          "rows": 27
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-RegistrationCartPage",
+      "grids": [
+        {
+          "Name": "dgvCart",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "dgvSwapOld",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "dgvCombinations",
+          "AccessibleName": null,
+          "rows": 1
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-SchedulePlannerPage",
+      "grids": [
+        {
+          "Name": "dgvPlannerOfferings",
+          "AccessibleName": null,
+          "rows": 29
+        },
+        {
+          "Name": "dgvPlannerBusy",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvPlannerOptions",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "dgvPlannerMeetings",
+          "AccessibleName": null,
+          "rows": 52
+        }
+      ],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "cboPlannerPreviewOption",
+          "AccessibleName": "So s\u00E1nh ph\u01B0\u01A1ng \u00E1n",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "Ph\u01B0\u01A1ng \u00E1n 1 \u00B7 9 TC \u00B7 3 ng\u00E0y/tu\u1EA7n",
+          "enabled": true,
+          "facade": "cboPlannerPreviewOptionSelect"
+        },
+        {
+          "Name": "cboPlannerPreviewWeek",
+          "AccessibleName": "Tu\u1EA7n xem tr\u01B0\u1EDBc",
+          "items": 14,
+          "selectedIndex": 1,
+          "selectedCaption": "19/10 \u2013 25/10/2026",
+          "enabled": true,
+          "facade": "cboPlannerPreviewWeekSelect"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-SchedulePlannerPage-selects-1",
+      "grids": [
+        {
+          "Name": "dgvPlannerOfferings",
+          "AccessibleName": null,
+          "rows": 29
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": "Gi\u1EDD h\u1ECDc",
+          "items": 3,
+          "selectedIndex": 0,
+          "selectedCaption": "Kh\u00F4ng \u01B0u ti\u00EAn gi\u1EDD",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-SchedulePlannerPage-selects-2",
+      "grids": [
+        {
+          "Name": "dgvPlannerBusy",
+          "AccessibleName": null,
+          "rows": 0
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": "Th\u1EE9",
+          "items": 7,
+          "selectedIndex": 0,
+          "selectedCaption": "Th\u1EE9 hai",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-SchedulePlannerPage-selects-3",
+      "grids": [],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "cboPlannerPreviewOption",
+          "AccessibleName": "So s\u00E1nh ph\u01B0\u01A1ng \u00E1n",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "Ph\u01B0\u01A1ng \u00E1n 1 \u00B7 9 TC \u00B7 3 ng\u00E0y/tu\u1EA7n",
+          "enabled": true,
+          "facade": "cboPlannerPreviewOptionSelect"
+        },
+        {
+          "Name": "cboPlannerPreviewWeek",
+          "AccessibleName": "Tu\u1EA7n xem tr\u01B0\u1EDBc",
+          "items": 14,
+          "selectedIndex": 1,
+          "selectedCaption": "19/10 \u2013 25/10/2026",
+          "enabled": true,
+          "facade": "cboPlannerPreviewWeekSelect"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-SeatsAndWaitlistPage",
+      "grids": [
+        {
+          "Name": "dgvSeatWaitlist",
+          "AccessibleName": null,
+          "rows": 1
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 2
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 1
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-KetQuaPage",
+      "grids": [
+        {
+          "Name": "dgvKetQua",
+          "AccessibleName": null,
+          "rows": 2
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-StudentAcademicPage",
+      "grids": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 1
+        }
+      ],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "items": 9,
+          "selectedIndex": 0,
+          "selectedCaption": "T\u00EDn ch\u1EC9 \u0111\u00E3 t\u00EDch l\u0169y",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-AcademicPlanningPage",
+      "grids": [
+        {
+          "Name": "dgvDegreeAudit",
+          "AccessibleName": null,
+          "rows": 8
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 7
+        },
+        {
+          "Name": "dgvAcademicPlan",
+          "AccessibleName": null,
+          "rows": 3
+        },
+        {
+          "Name": "dgvAcademicPlanIssues",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 1
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 8
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-AcademicPlanningPage-selects-1",
+      "grids": [],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "cboAcademicWhatIfProgram",
+          "AccessibleName": "CT\u0110T mu\u1ED1n m\u00F4 ph\u1ECFng",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "CNTT24_V2 \u2022 CNTT 2024 \u00B7 Phi\u00EAn b\u1EA3n th\u1EF1c h\u00E0nh",
+          "enabled": true,
+          "facade": "cboAcademicWhatIfProgramSelect"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-AcademicPlanningPage-selects-2",
+      "grids": [],
+      "selectCount": 3,
+      "selects": [
+        {
+          "Name": "cboAcademicPlanCourse",
+          "AccessibleName": "M\u00F4n h\u1ECDc",
+          "items": 20,
+          "selectedIndex": 0,
+          "selectedCaption": "EC101 \u2022 Kinh t\u1EBF vi m\u00F4",
+          "enabled": true,
+          "facade": "cboAcademicPlanCourseSelect"
+        },
+        {
+          "Name": "cboAcademicPlanTerm",
+          "AccessibleName": "H\u1ECDc k\u1EF3 d\u1EF1 ki\u1EBFn",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "HK1-2627 \u2022 2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboAcademicPlanTermSelect"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-ExceptionRequestsPage",
+      "grids": [
+        {
+          "Name": "dgvExceptions",
+          "AccessibleName": null,
+          "rows": 4
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-ExceptionRequestsPage-selects-1",
+      "grids": [],
+      "selectCount": 2,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": "Lo\u1EA1i \u0111\u01A1n",
+          "items": 4,
+          "selectedIndex": 0,
+          "selectedCaption": "Xin v\u01B0\u1EE3t t\u00EDn ch\u1EC9",
+          "enabled": true,
+          "facade": "Select"
+        },
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-NotificationsPage",
+      "grids": [
+        {
+          "Name": "dgvNotifications",
+          "AccessibleName": null,
+          "rows": 19
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    },
+    {
+      "name": "student-timetable",
+      "grids": [],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "",
+          "AccessibleName": "Ch\u1ECDn h\u1ECDc k\u1EF3",
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "Select"
+        }
+      ]
+    },
+    {
+      "name": "student-hold-scenario",
+      "grids": [
+        {
+          "Name": "dgvLopMo",
+          "AccessibleName": null,
+          "rows": 27
+        },
+        {
+          "Name": "dgvCart",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvSwapOld",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvCombinations",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvPlannerOfferings",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvPlannerBusy",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvPlannerOptions",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvPlannerMeetings",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvSeatWaitlist",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvKetQua",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvDegreeAudit",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvAcademicPlan",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvAcademicPlanIssues",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvExceptions",
+          "AccessibleName": null,
+          "rows": 0
+        },
+        {
+          "Name": "dgvNotifications",
+          "AccessibleName": null,
+          "rows": 0
+        }
+      ],
+      "selectCount": 1,
+      "selects": [
+        {
+          "Name": "cboHocKy",
+          "AccessibleName": null,
+          "items": 2,
+          "selectedIndex": 0,
+          "selectedCaption": "2026-2027 \u2022 H\u1ECDc k\u1EF3 1",
+          "enabled": true,
+          "facade": "cboHocKySelect"
+        }
+      ]
+    }
+  ],
+  "scope": "Native offscreen WinForms at the current DPI; SQL password authentication, bound row counts and animated/native select parity by scene. No physical-input or all-DPI claim; notifications may deliver their SQL outbox during reads."
+}

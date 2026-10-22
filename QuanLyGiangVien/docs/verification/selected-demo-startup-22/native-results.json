@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "Start/F5 opens the login screen without automatically authenticating.",
+    "Startup never leaves a sample password in the password field.",
+    "The configured training sample button is available on the login screen.",
+    "Clicking the training sample button authenticates through SQL.",
+    "Training sample login opens the actual lecturer management page first.",
+    "Successful sample login clears the password field.",
+    "Selected demo loads at least 3 visible PROGRAM rows.",
+    "Selected demo loads at least 6 visible GROUP rows.",
+    "Selected demo loads at least 50 visible RESULT rows.",
+    "Inspecting the populated academic page does not create unsaved edits.",
+    "Logout stays on the login screen without automatically signing in again.",
+    "The student sample button still opens student registration.",
+    "Manual training login retains its original default page without leaking the sample button\u0027s destination."
+  ],
+  "scope": "Actual Program startup, DPAPI and SQL authentication on a synthetic fixture; offscreen 96-DPI controls, no physical-input claim."
+}

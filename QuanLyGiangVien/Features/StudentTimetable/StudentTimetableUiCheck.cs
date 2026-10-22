@@ -1,4 +1,7 @@
 using System.Text.Json;
+using System.Reflection;
+using QuanLyGiangVien.Domain.Scheduling;
+using QuanLyGiangVien.Features.Scheduling;
 using QuanLyGiangVien.Ui;
 
 namespace QuanLyGiangVien.Features.StudentTimetable;
@@ -40,6 +43,7 @@ internal static class StudentTimetableUiCheck
                 Expect(!form.HasHorizontalScroll, "Wide form has no horizontal page scroll");
                 Expect(form.Calendar.Cards.All(c => !string.IsNullOrWhiteSpace(c.AccessibleName) && c.TabStop), "Every session has native keyboard focus and accessible details");
                 Expect(form.Calendar.Cards.All(c => form.Calendar.ClientRectangle.Contains(c.Bounds)), "All session bounds inside the calendar");
+                CheckCourseArtwork(form, Expect);
                 var original = form.Snapshot.Occurrences[0];
                 var single = original with { Meeting = original.Meeting with { EndPeriod = original.Meeting.StartPeriod } };
                 using (var shortA = new StudentWeekCalendar.SessionCard(single, "Môn A", "Giảng viên"))
@@ -130,6 +134,97 @@ internal static class StudentTimetableUiCheck
             }
             finally { form.Close(); }
         };
+    }
+
+    private static void CheckCourseArtwork(StudentTimetableForm form, Action<bool, string> expect)
+    {
+        static T? Property<T>(object card, string name) => (T?)card.GetType()
+            .GetProperty(name, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public)?.GetValue(card);
+        static bool SamePixels(Bitmap a, Bitmap b)
+        {
+            if (a.Size != b.Size) return false;
+            for (int y = 0; y < a.Height; y += Math.Max(1, a.Height / 23))
+                for (int x = 0; x < a.Width; x += Math.Max(1, a.Width / 23))
+                    if (a.GetPixel(x, y) != b.GetPixel(x, y)) return false;
+            return true;
+        }
+        static Bitmap Paint(Control card)
+        { var result = new Bitmap(card.Width, card.Height); card.DrawToBitmap(result, card.ClientRectangle); return result; }
+        static bool Disposed(Bitmap image)
+        {
+            try { _ = image.GetPixel(0, 0); return false; }
+            catch (Exception error) when (error is ArgumentException or ObjectDisposedException or System.Runtime.InteropServices.ExternalException) { return true; }
+        }
+        var origin = form.Snapshot.Occurrences[0];
+        var start = form.Snapshot.WeekStart;
+        string[] faculties = ["Công nghệ thông tin", "Kinh tế", "Ngoại ngữ", "Kỹ thuật"];
+        string[] keys = ["coding", "finance", "language", "engineering"];
+        var courses = faculties.Select((faculty, i) => new Course("ART" + i, "Học phần " + i, 3, faculty)).ToArray();
+        var catalog = TeachingCatalog.ForTimetable(courses, [new Semester("ART_TERM", "Học kỳ kiểm chứng", start, start.AddDays(30))], []);
+        var store = new ScheduleStore(catalog, [], []);
+        var occurrences = courses.Select((course, i) => origin with
+        {
+            Date = start.AddDays(i),
+            Class = origin.Class with { CourseId = course.Id },
+            Meeting = origin.Meeting with { StartPeriod = 1, EndPeriod = 3 }
+        }).ToArray();
+        using var expected = new SchedulingVisualCatalog();
+        using var calendar = new StudentWeekCalendar { Size = new(AppTheme.S(1500), AppTheme.S(820)) };
+        calendar.SetWeek(store, start, occurrences);
+        var borrowed = new List<Bitmap>();
+        for (int i = 0; i < courses.Length; i++)
+        {
+            var card = calendar.Cards[i];
+            var visual = expected.GetCourse(courses[i]);
+            var artwork = Property<Bitmap>(card, "ArtworkImage");
+            expect(Property<string>(card, "ArtworkKey") == keys[i] && Property<bool>(card, "HasArtwork") && artwork != null,
+                $"Student {faculties[i]} session uses the same {keys[i]} artwork key as the training calendar");
+            expect(visual.Image != null && artwork != null && SamePixels(artwork, visual.Image),
+                $"Student {keys[i]} artwork pixels match the original scheduling asset");
+            borrowed.Add(artwork!);
+            foreach (bool selected in new[] { false, true })
+            {
+                card.Selected = selected;
+                var bounds = Property<Rectangle>(card, "ArtworkBounds");
+                expect(!bounds.IsEmpty && card.ClientRectangle.Contains(bounds), $"{keys[i]} icon stays inside its {(selected ? "selected" : "normal")} session card");
+                using var without = new StudentWeekCalendar.SessionCard(card.Occurrence, courses[i].Name, origin.LecturerId)
+                    { Size = card.Size, Selected = selected };
+                using var actual = Paint(card); using var plain = Paint(without);
+                int changed = 0;
+                for (int y = bounds.Top; y < bounds.Bottom; y++) for (int x = bounds.Left; x < bounds.Right; x++)
+                    if (actual.GetPixel(x, y) != plain.GetPixel(x, y)) changed++;
+                expect(changed > AppTheme.S(8), $"{keys[i]} icon contributes visible pixels in the {(selected ? "selected" : "normal")} render");
+            }
+        }
+        var shortCard = calendar.Cards[0]; shortCard.Size = new(AppTheme.S(180), AppTheme.S(30));
+        var shortBounds = Property<Rectangle>(shortCard, "ArtworkBounds");
+        expect(!shortBounds.IsEmpty && shortCard.ClientRectangle.Contains(shortBounds) && shortBounds.Height <= AppTheme.S(18),
+            "A single-period session uses a contained compact course icon");
+        using (var plainShort = new StudentWeekCalendar.SessionCard(shortCard.Occurrence, courses[0].Name, origin.LecturerId)
+            { Size = shortCard.Size, Selected = shortCard.Selected })
+        using (var image = Paint(shortCard))
+        using (var plain = Paint(plainShort))
+        {
+            int changed = 0;
+            for (int y = shortBounds.Top; y < shortBounds.Bottom; y++) for (int x = shortBounds.Left; x < shortBounds.Right; x++)
+                if (image.GetPixel(x, y) != plain.GetPixel(x, y)) changed++;
+            expect(changed > AppTheme.S(8), "A short session visibly renders its compact artwork");
+        }
+        shortCard.Size = new(AppTheme.S(10), AppTheme.S(100));
+        expect(Property<Rectangle>(shortCard, "ArtworkBounds").IsEmpty && shortCard.AccessibleName!.Contains(courses[0].Name)
+            && shortCard.AccessibleName.Contains(shortCard.Occurrence.RoomId) && shortCard.TabStop,
+            "Dense conflict cards hide artwork while preserving accessible course, room and keyboard metadata");
+        var oldCards = calendar.Cards.ToArray();
+        calendar.SetWeek(store, start.AddDays(7), occurrences.Select(o => o with { Date = o.Date.AddDays(7) }).ToArray());
+        expect(oldCards.All(c => c.IsDisposed), "Changing weeks disposes old session controls");
+        expect(calendar.Cards.Select((card, i) => ReferenceEquals(Property<Bitmap>(card, "ArtworkImage"), borrowed[i])).All(same => same)
+            && borrowed.All(image => !Disposed(image)), "Week changes reuse live borrowed course bitmaps from the calendar cache");
+        calendar.Dispose();
+        expect(borrowed.All(Disposed), "Disposing the calendar releases every cached course artwork bitmap");
+        expect(expected.GetCourse(courses[0]).Image is { } independent && !Disposed(independent),
+            "Disposing a student calendar leaves an independent scheduling catalog intact");
+        expect(form.Calendar.Cards.All(c => Property<bool>(c, "HasArtwork") && Property<Bitmap>(c, "ArtworkImage") != null),
+            "Every real demo timetable session receives its course artwork");
     }
 
     private static void WriteLayout(Control root, string path)

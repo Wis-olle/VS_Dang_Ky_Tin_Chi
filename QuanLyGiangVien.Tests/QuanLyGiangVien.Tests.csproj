@@ -7,6 +7,7 @@
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="..\QuanLyGiangVien\Properties\launchSettings.json" Link="launchSettings.json" CopyToOutputDirectory="PreserveNewest" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.21" />
@@ -28,6 +29,7 @@
     <Compile Include="..\QuanLyGiangVien\Data\DemoData.cs" Link="Data\DemoData.cs" />
     <Compile Include="..\QuanLyGiangVien\Data\SchedulingDemo.cs" Link="Data\SchedulingDemo.cs" />
     <Compile Include="..\QuanLyGiangVien\Data\DatabaseLaunch.cs" Link="Data\DatabaseLaunch.cs" />
+    <Compile Include="..\QuanLyGiangVien\Data\SelectedShowcaseLaunch.cs" Link="Data\SelectedShowcaseLaunch.cs" />
     <Compile Include="..\QuanLyGiangVien\Data\Sql\**\*.cs" Link="Data\Sql\%(RecursiveDir)%(Filename)%(Extension)" />
     <Compile Include="..\QuanLyGiangVien\Ui\IconPlayback.cs" Link="Ui\IconPlayback.cs" />
     <Compile Include="..\QuanLyGiangVien\Ui\MotionMath.cs" Link="Ui\MotionMath.cs" />

@@ -81,7 +81,11 @@ internal sealed partial class CampusForm : Window
         PhaseFourUiCheck.Attach(this, connectionString);
         AuditFixUiCheck.Attach(this, connectionString);
         ShowcaseUiCheck.Attach(this, connectionString);
+        FullDemoUiCheck.Attach(this, connectionString);
+        UnifiedSelectUiCheck.Attach(this, connectionString);
         QuickLoginUiCheck.Attach(this, connectionString);
+        StartupUiCheck.Attach(this, connectionString);
+        OrganizationUiCheck.Attach(this, connectionString);
         if (studentPortal && !passwordLogin)
         {
             studentOnly = true;
@@ -163,7 +167,11 @@ internal sealed partial class CampusForm : Window
                 currentPage = reports; canLeave = reports.CanLeave; reload = reports.ReloadAsync;
                 break;
             case CampusModule.Students:
-                var students = new StudentsPage(connectionString, DataChanged);
+                var students = new StudentsPage(connectionString, DataChanged, async () =>
+                {
+                    await OpenModuleAsync(CampusModule.Catalogs);
+                    if (currentPage is CatalogsPage page) page.OpenOrganizations();
+                });
                 currentPage = students; canLeave = students.CanLeave; reload = students.ReloadAsync;
                 break;
             case CampusModule.Academics:

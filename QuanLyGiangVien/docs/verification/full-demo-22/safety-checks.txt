@@ -1,0 +1,16 @@
+PASS: FullData plan retains an isolated UUID demo.
+PASS: Existing baseline demo behavior remains opt-in compatible.
+PASS: FullData cannot provision over the main database.
+PASS: Additional-account setup rejects a handoff outside its owned demo folder.
+PASS: PowerShell parses: scripts/Initialize-ShowcaseDemo.ps1
+PASS: PowerShell parses: scripts/Run-ShowcaseDemo.ps1
+PASS: PowerShell parses: scripts/demo/New-FullDemoAccounts.ps1
+PASS: Raw seed fails closed before UUID substitution: 21-catalog-data
+PASS: SQL guard rejects the unbound seed in master: 21-catalog-data
+PASS: Raw seed fails closed before UUID substitution: 22-academic-data
+PASS: SQL guard rejects the unbound seed in master: 22-academic-data
+PASS: Raw seed fails closed before UUID substitution: 23-registration-data
+PASS: SQL guard rejects the unbound seed in master: 23-registration-data
+PASS: Raw seed fails closed before UUID substitution: Assert-FullDemo
+PASS: SQL guard rejects the unbound seed in master: Assert-FullDemo
+Full demo safety checks passed: 15.

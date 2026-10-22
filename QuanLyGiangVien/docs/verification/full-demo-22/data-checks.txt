@@ -1,0 +1,44 @@
+name                                                                                                                                                   actual      minimum     passed
+------------------------------------------------------------------------------------------------------------------------------------------------------ ----------- ----------- ------
+CTĐT đã công bố                                                                                                                                                  2           2      1
+Dự kiến mở môn                                                                                                                                                   8           8      1
+Đăng ký có hiệu lực                                                                                                                                             94          70      1
+Đăng ký đã hủy                                                                                                                                                   3           3      1
+Điều kiện học phần                                                                                                                                               3           3      1
+Đợt đăng ký                                                                                                                                                      3           3      1
+Đủ mười loại tài liệu học vụ                                                                                                                                    10          10      1
+Góp ý cố vấn                                                                                                                                                     4           3      1
+Giảng viên                                                                                                                                                      24          24      1
+Hạn ngạch                                                                                                                                                        3           3      1
+Học phần                                                                                                                                                        20          20      1
+Kế hoạch đã đối soát nguồn hiện tại                                                                                                                              4           4      1
+Kết quả học tập                                                                                                                                                 50          25      1
+Lịch hẹn                                                                                                                                                         3           3      1
+Lịch sử chỉnh sửa kết quả                                                                                                                                        1           1      1
+Lịch sử nhập nguồn                                                                                                                                               1           1      1
+Lịch sử vận hành                                                                                                                                                 1           1      1
+Lịch thay đổi                                                                                                                                                    2           2      1
+Lớp HK1                                                                                                                                                         29          24      1
+Ngày nghỉ                                                                                                                                                        2           2      1
+Nhóm ưu tiên                                                                                                                                                     2           2      1
+Phòng học                                                                                                                                                       16          16      1
+Sinh viên có hồ sơ                                                                                                                                              25          25      1
+SV mẫu có đơn ngoại lệ                                                                                                                                           4           4      1
+SV mẫu có giỏ nháp                                                                                                                                               2           2      1
+SV mẫu có hàng chờ                                                                                                                                               1           1      1
+SV mẫu có thời khóa biểu                                                                                                                                         2           2      1
+Tài khoản có mật khẩu dùng được                                                                                                                                 12          10      1
+Tổ hợp lớp                                                                                                                                                       1           1      1
+Thành viên ưu tiên tường minh                                                                                                                                    3           3      1
+Thay thế học phần một chiều                                                                                                                                      1           1      1
+Thông báo SV mẫu                                                                                                                                                19           3      1
+Trạng thái đơn ngoại lệ                                                                                                                                          4           4      1
+Trạng thái hàng chờ                                                                                                                                              6           6      1
+Trạng thái kế hoạch học tập                                                                                                                                      4           4      1
+
+-----------
+          4
+DBCC execution completed. If DBCC printed error messages, contact your system administrator.
+result
+----------------------------------------------------------------------------------------------------------------------
+PASS: 35 coverage checks, enrollment/seat conservation, active registration window, schema, timetable and constraints.

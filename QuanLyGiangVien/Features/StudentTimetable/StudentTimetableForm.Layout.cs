@@ -76,7 +76,8 @@ internal sealed partial class StudentTimetableForm
         nextTitle.Width = nextDescription.Width = nextCard.Width - S(40);
         Place(calendarShell, 28, 260, main, 648);
         calendar.SetBounds(S(14), S(100), calendarShell.Width - S(28), S(530));
-        semester.SetBounds(calendarShell.Width - S(278), S(18), S(256), S(28));
+        (semester.Parent is SoftInputSurface surface ? surface : (Control)semester)
+            .SetBounds(calendarShell.Width - S(278), S(10), S(256), S(40));
         previous.SetBounds(calendarShell.Width - S(218), S(55), S(36), S(32));
         today.SetBounds(calendarShell.Width - S(174), S(55), S(108), S(32));
         next.SetBounds(calendarShell.Width - S(58), S(55), S(36), S(32));

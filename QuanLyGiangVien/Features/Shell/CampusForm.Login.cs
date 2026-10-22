@@ -20,7 +20,9 @@ internal sealed partial class CampusForm
         connectCard.Radius = 20; connectCard.BorderWidth = 1; connectCard.BorderColor = AppTheme.Line;
         loginHeading = TextLabel("", 22, true);
         loginHeading.SetBounds(s(32), s(24), s(576), s(48));
-        var description = TextLabel("Chọn cổng hoặc dùng tài khoản mẫu bên dưới.", 10, false, AppTheme.Muted);
+        var description = TextLabel(Environment.GetEnvironmentVariable("CAMPUS_SHOWCASE_DEMO") == "1"
+            ? "Dữ liệu test đầy đủ · Chọn cổng hoặc dùng tài khoản mẫu."
+            : "Chọn cổng hoặc dùng tài khoản mẫu bên dưới.", 10, false, AppTheme.Muted);
         description.SetBounds(s(32), s(80), s(576), s(32));
         studentLogin = ActionButton("Sinh viên"); trainingLogin = ActionButton("Phòng đào tạo");
         studentLogin.AccessibleName = "Cổng Sinh viên"; trainingLogin.AccessibleName = "Cổng Phòng đào tạo";
@@ -59,9 +61,10 @@ internal sealed partial class CampusForm
         ApplySelected(studentLogin, portal == LoginPortal.Student); ApplySelected(trainingLogin, portal == LoginPortal.Training);
         loginHeading.Text = portal == LoginPortal.Student ? "Đăng nhập Sinh viên" : "Đăng nhập Phòng đào tạo";
         Text = portal == LoginPortal.Student ? "Campus · Đăng nhập Sinh viên" : "Campus · Đăng nhập Phòng đào tạo";
+        if (Environment.GetEnvironmentVariable("CAMPUS_SHOWCASE_DEMO") == "1") Text += " · Dữ liệu mô phỏng";
     }
 
-    internal async Task AuthenticateAsync()
+    internal async Task AuthenticateAsync(CampusModule? preferredModule = null)
     {
         if (!passwordLogin || busy || identity != null) return;
         SetBusy(true); SetLoginEnabled(false); errorText.Text = "";
@@ -75,7 +78,7 @@ internal sealed partial class CampusForm
             if (IsDisposed) return;
             if (!PasswordLogin.Allows(loginPortal, user.Role)) throw new PersistenceException("Tài khoản không thuộc cổng đã chọn.");
             ConfigureIdentity(user);
-            var first = initialModule is { } requested && CampusNavigation.CanOpen(user.Role, requested)
+            var first = (preferredModule ?? initialModule) is { } requested && CampusNavigation.CanOpen(user.Role, requested)
                 ? requested : user.Role == "SINH_VIEN" ? CampusModule.Registration : CampusModule.Catalogs;
             await LoadModuleAsync(first, user);
         }

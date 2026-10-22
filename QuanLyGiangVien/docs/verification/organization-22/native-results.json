@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "checks": [
+    "The isolated run starts on login without automatic authentication.",
+    "The disposable database has its own readable DPAPI sample configuration.",
+    "The actual sample training button authenticates through SQL and opens Lecturers.",
+    "The Students heading button routes to the organization catalogs.",
+    "Faculty action btnOrganizationNew is available.",
+    "Faculty action btnOrganizationSave is available.",
+    "Fresh SQL read preserves Faculty UI22_FAC, name, status and parent.",
+    "Saved Faculty is selected with an immutable code and a clean editor.",
+    "A new faculty with no children appears in Students and leaves its two child dropdowns empty and disabled.",
+    "Restoring the initial student dropdown choice leaves no unsaved student edit.",
+    "Major action btnOrganizationNew is available.",
+    "Major action btnOrganizationSave is available.",
+    "Fresh SQL read preserves Major UI22_MAJOR, name, status and parent.",
+    "Saved Major is selected with an immutable code and a clean editor.",
+    "Class action btnOrganizationNew is available.",
+    "Class action btnOrganizationSave is available.",
+    "Fresh SQL read preserves Class UI22_CLASS, name, status and parent.",
+    "Saved Class is selected with an immutable code and a clean editor.",
+    "Class action btnOrganizationSave is available.",
+    "Fresh SQL read preserves Class UI22_CLASS, name, status and parent.",
+    "Class action btnOrganizationStatus is available.",
+    "Fresh SQL read preserves Class UI22_CLASS, name, status and parent.",
+    "Stopping Class reloads its stored inactive state without a dirty draft.",
+    "Class action btnOrganizationStatus is available.",
+    "Fresh SQL read preserves Class UI22_CLASS, name, status and parent.",
+    "Major action btnOrganizationSave is available.",
+    "Fresh SQL read preserves Major UI22_MAJOR, name, status and parent.",
+    "Major action btnOrganizationStatus is available.",
+    "Fresh SQL read preserves Major UI22_MAJOR, name, status and parent.",
+    "Stopping Major reloads its stored inactive state without a dirty draft.",
+    "Major action btnOrganizationStatus is available.",
+    "Fresh SQL read preserves Major UI22_MAJOR, name, status and parent.",
+    "Faculty action btnOrganizationSave is available.",
+    "Fresh SQL read preserves Faculty UI22_FAC, name, status and parent.",
+    "Faculty action btnOrganizationStatus is available.",
+    "Fresh SQL read preserves Faculty UI22_FAC, name, status and parent.",
+    "Stopping Faculty reloads its stored inactive state without a dirty draft.",
+    "Faculty action btnOrganizationStatus is available.",
+    "Fresh SQL read preserves Faculty UI22_FAC, name, status and parent.",
+    "The independent faculty list includes all four baseline faculties and the newly created faculty.",
+    "Faculty btnOrganizationSave stays fully visible with an uncut caption at width 1600.",
+    "Faculty btnOrganizationNew stays fully visible with an uncut caption at width 1600.",
+    "Faculty btnOrganizationStatus stays fully visible with an uncut caption at width 1600.",
+    "Faculty btnOrganizationSave stays fully visible with an uncut caption at width 1100.",
+    "Faculty btnOrganizationNew stays fully visible with an uncut caption at width 1100.",
+    "Faculty btnOrganizationStatus stays fully visible with an uncut caption at width 1100.",
+    "The class editor reloads its saved cohort and academic years.",
+    "Class btnOrganizationSave stays fully visible with an uncut caption at width 1100.",
+    "Class btnOrganizationNew stays fully visible with an uncut caption at width 1100.",
+    "Class btnOrganizationStatus stays fully visible with an uncut caption at width 1100.",
+    "Student native dropdown events cascade through the newly saved faculty, major and class.",
+    "Restoring the initial student dropdown choice leaves no unsaved student edit.",
+    "Logout returns only this checked form to its login screen."
+  ],
+  "screenshots": [
+    {
+      "file": "01-faculty-without-children.png",
+      "width": 1100,
+      "height": 720,
+      "dpi": 96
+    },
+    {
+      "file": "02-organizations-faculty-wide.png",
+      "width": 1600,
+      "height": 920,
+      "dpi": 96
+    },
+    {
+      "file": "03-organizations-faculty-compact.png",
+      "width": 1100,
+      "height": 720,
+      "dpi": 96
+    },
+    {
+      "file": "04-organizations-class-compact.png",
+      "width": 1100,
+      "height": 720,
+      "dpi": 96
+    },
+    {
+      "file": "05-student-cascade-wide.png",
+      "width": 1600,
+      "height": 920,
+      "dpi": 96
+    },
+    {
+      "file": "06-student-cascade-compact.png",
+      "width": 1100,
+      "height": 720,
+      "dpi": 96
+    }
+  ],
+  "error": null,
+  "scope": "Original native button/popup events and SQL persistence on an explicitly named disposable Showcase UUID; offscreen current-DPI captures, no physical-input or all-DPI claim. Fixture entities are retained for the caller to drop with its owned database."
+}

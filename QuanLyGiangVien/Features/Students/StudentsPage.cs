@@ -26,13 +26,19 @@ public sealed class StudentsPage : UserControl
 
     private int S(int value) => AppTheme.S(value);
     private Font OwnFont(float size = 9, bool bold = false) { var font = AppTheme.Font(size, bold); fonts.Add(font); return font; }
-    public StudentsPage(string connectionString, Action changed)
+    public StudentsPage(string connectionString, Action changed, Action? openOrganizations = null)
     {
         repository = new(connectionString); this.changed = changed;
         Dock = DockStyle.Fill; BackColor = AppTheme.Canvas; Font = OwnFont(); Padding = new(S(20), S(8), S(20), S(16));
         var root = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 3, Margin = Padding.Empty };
         root.RowStyles.Add(new(SizeType.Absolute, S(58))); root.RowStyles.Add(new(SizeType.Absolute, S(76))); root.RowStyles.Add(new(SizeType.Percent, 100));
-        var heading = Label("Quản lý sinh viên", 21, true); heading.Dock = DockStyle.Fill; root.Controls.Add(heading, 0, 0);
+        var headingRow = new Panel { Dock = DockStyle.Fill };
+        var heading = Label("Quản lý sinh viên", 21, true); heading.Dock = DockStyle.Fill; headingRow.Controls.Add(heading); root.Controls.Add(headingRow, 0, 0);
+        if (openOrganizations != null)
+        {
+            var manage = Button("Khoa · Ngành · Lớp"); manage.Name = "btnManageOrganizations"; manage.Dock = DockStyle.Right; manage.Width = S(190);
+            manage.Click += (_, _) => openOrganizations(); headingRow.Controls.Add(manage); manage.BringToFront();
+        }
         var toolbar = new FlowLayoutPanel { Dock = DockStyle.Fill, WrapContents = true, AutoScroll = true, Margin = Padding.Empty };
         search.Width = S(240); search.MaxLength = 200; search.PlaceholderText = "Mã sinh viên, họ tên hoặc email";
         foreach (var input in new[] { search, code, name, email, phone, address }) input.Font = Font;
@@ -108,10 +114,15 @@ public sealed class StudentsPage : UserControl
     private void PopulateFaculties(string? selected = null) => Bind(faculty, ChoiceRows.Select(row => new Choice(row.Field<string>("ma_khoa")!, row.Field<string>("ten_khoa")!)).Distinct(), selected);
     private void PopulateMajors(string? selected = null)
     {
-        Bind(major, ChoiceRows.Where(row => row.Field<string>("ma_khoa") == Selected(faculty)).Select(row => new Choice(row.Field<string>("ma_nganh")!, row.Field<string>("ten_nganh")!)).Distinct(), selected);
+        Bind(major, ChoiceRows.Where(row => !row.IsNull("ma_nganh") && row.Field<string>("ma_khoa") == Selected(faculty)).Select(row => new Choice(row.Field<string>("ma_nganh")!, row.Field<string>("ten_nganh")!)).Distinct(), selected);
+        major.Enabled = major.Items.Count > 0;
         PopulateClasses();
     }
-    private void PopulateClasses(string? selected = null) => Bind(studentClass, ChoiceRows.Where(row => row.Field<string>("ma_nganh") == Selected(major)).Select(row => new Choice(row.Field<string>("ma_lop")!, row.Field<string>("ten_lop")!)).Distinct(), selected);
+    private void PopulateClasses(string? selected = null)
+    {
+        Bind(studentClass, ChoiceRows.Where(row => !row.IsNull("ma_lop") && row.Field<string>("ma_nganh") == Selected(major)).Select(row => new Choice(row.Field<string>("ma_lop")!, row.Field<string>("ten_lop")!)).Distinct(), selected);
+        studentClass.Enabled = studentClass.Items.Count > 0;
+    }
     private static string? Optional(string value) => string.IsNullOrWhiteSpace(value) ? null : value.Trim();
     private StudentRecord ReadEditor() => new(code.Text.Trim(), name.Text.Trim(), birthday.Checked ? birthday.Value.Date : null,
         gender.SelectedIndex <= 0 ? null : gender.Text, Optional(email.Text), Optional(phone.Text), Optional(address.Text), Selected(major) ?? "", Selected(studentClass) ?? "", active.Checked,

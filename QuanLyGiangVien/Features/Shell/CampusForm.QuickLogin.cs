@@ -66,6 +66,6 @@ internal sealed partial class CampusForm
         }
         SelectLoginPortal(portal);
         username.Text = account.Username; password.Text = account.Password;
-        await AuthenticateAsync();
+        await AuthenticateAsync(portal == LoginPortal.Training ? QuanLyGiangVien.Domain.Shell.CampusModule.Lecturers : null);
     }
 }

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "Start/F5 opens the login screen without automatically authenticating.",
+    "Startup never leaves a sample password in the password field.",
+    "The sample button is disabled only when its local configuration is unavailable.",
+    "Missing or rejected sample credentials fall back to usable manual login.",
+    "Unavailable or rejected sample login leaves no password in the field.",
+    "Manual training login retains its original default page without leaking the sample button\u0027s destination."
+  ],
+  "scope": "Actual Program startup, DPAPI and SQL authentication on a synthetic fixture; offscreen 96-DPI controls, no physical-input claim."
+}

@@ -1,0 +1,8 @@
+{
+  "batchId": "e4ba6054-4be2-4334-956f-a23f68ac155a",
+  "source": "SYNTHETIC DEMO - tệp có lỗi ở dòng hai để thử từ chối toàn bộ đợt",
+  "rows": [
+    { "kind": "PROGRAM", "id": "TEST_ATOMIC_OK", "payload": { "name": "Dòng đầu hợp lệ nhưng phải rollback cùng đợt lỗi", "major": "CNTT", "cohort": 2024, "requiredCredits": 3 } },
+    { "kind": "PROGRAM", "id": "TEST_ATOMIC_BAD", "payload": { "name": "Ngành không tồn tại", "major": "KHONG_TON_TAI", "cohort": 2024, "requiredCredits": 3 } }
+  ]
+}

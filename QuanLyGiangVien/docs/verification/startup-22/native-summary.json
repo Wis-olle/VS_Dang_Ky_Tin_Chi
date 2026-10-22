@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "checks": 9,
+      "passed": true,
+      "scenario": "success"
+    },
+    {
+      "checks": 6,
+      "passed": true,
+      "scenario": "missing"
+    },
+    {
+      "checks": 6,
+      "passed": true,
+      "scenario": "rejected"
+    }
+  ],
+  "cleaned": true,
+  "error": null
+}
