@@ -6,6 +6,7 @@ namespace QuanLyGiangVien.Features.Scheduling;
 
 internal sealed partial class SchedulingPage
 {
+    // Lấy mã kỳ từ bộ chọn; các buổi trong tuần được giới hạn trong đúng kỳ đang xem.
     private string SemesterId => Store.Catalog.Semesters[Math.Clamp(semester.SelectedIndex, 0, Store.Catalog.Semesters.Count - 1)].Id;
     private IReadOnlyList<ScheduledOccurrence> WeekSessions => SchedulingQuery.Occurrences(Store, monday, monday.AddDays(6)).Where(s => s.Class.SemesterId == SemesterId).ToArray();
 
@@ -15,6 +16,7 @@ internal sealed partial class SchedulingPage
         if (!ready) return;
         ConfigureTimetableSubjects();
         SurfaceTransition.CancelAll();
+        // Tính số lớp, phòng, mức lấp đầy từ Store; tỷ lệ được bảo vệ trước tổng bằng 0.
         var summary = SchedulingQuery.Summary(Store, SemesterId);
         int activeClasses = Store.Classes.Count(c => c.SemesterId == SemesterId && c.Status != SchedulingLabels.Canceled);
         int scheduledClasses = activeClasses - summary.UnscheduledClasses;
@@ -27,10 +29,12 @@ internal sealed partial class SchedulingPage
         stats[2].SetRatio(Fraction(scheduledClasses, activeClasses), animate);
         stats[3].SetValue(summary.FillPercent, $"{summary.Enrolled} / {summary.Capacity} chỗ", true, animate);
         stats[3].SetRatio(Fraction(summary.Enrolled, summary.Capacity), animate);
+        // Một nguồn buổi học tuần được dùng cho biểu đồ, phần xem trước và lịch bên dưới.
         var sessions = WeekSessions;
         analytics.SetData(sessions, monday, animate);
         weekCaption.Text = $"{monday:dd/MM} – {monday.AddDays(6):dd/MM/yyyy}";
         var previewItems = sessions.GroupBy(s => s.Class.Id).Select(g => g.First()).Take(3).ToArray();
+        // Mỗi lớp chỉ xuất hiện một lần trong tối đa ba dòng xem trước, dù có nhiều buổi học.
         for (int i = 0; i < 3; i++)
         {
             var item = previewItems.ElementAtOrDefault(i);
@@ -39,6 +43,7 @@ internal sealed partial class SchedulingPage
         }
         if (previewItems.Length == 0) { previews[0].Text = "Tuần này chưa có lịch học."; previews[0].Visible = true; previews[0].Enabled = false; }
         else previews[0].Enabled = true;
+        // Nạp đúng nguồn của tab đang chọn rồi đồng bộ trạng thái có/không có kết quả.
         if (tabs.SelectIndex == 1) RefreshRooms(animate);
         else if (tabs.SelectIndex == 2) RefreshCalendar(sessions);
         else RefreshClasses(animate);
@@ -54,6 +59,7 @@ internal sealed partial class SchedulingPage
     {
         var values = SchedulingQuery.FilterClasses(Store, search.Text, SemesterId, filter.SelectedIndex <= 0 ? "" : filter.SelectedValue?.ToString() ?? "");
         ResultCount = values.Count;
+        // Giữ lớp đang chọn nếu vẫn còn trong kết quả; nếu đã bị lọc mất thì chọn lớp đầu tiên.
         selectedClassId = values.FirstOrDefault(c => c.Id == selectedClassId)?.Id ?? values.FirstOrDefault()?.Id;
         table.DataSource = values.Select(c => new CourseClassRow(c, Store, visuals)).ToArray();
         detail.ShowClass(Store.Classes.FirstOrDefault(c => c.Id == selectedClassId), Store, animate);
@@ -63,6 +69,7 @@ internal sealed partial class SchedulingPage
     {
         var values = SchedulingQuery.FilterRooms(Store, search.Text, filter.SelectedIndex <= 0 ? "" : filter.SelectedValue?.ToString() ?? "", "", "");
         ResultCount = values.Count;
+        // Đồng bộ phòng được chọn, dòng bảng và bảng chi tiết theo cùng tập kết quả đã lọc.
         selectedRoomId = values.FirstOrDefault(r => r.Id == selectedRoomId)?.Id ?? values.FirstOrDefault()?.Id;
         table.DataSource = values.Select(r => new RoomRow(r, visuals)).ToArray();
         detail.ShowRoom(Store.Rooms.FirstOrDefault(r => r.Id == selectedRoomId), Store, animate);
@@ -70,11 +77,13 @@ internal sealed partial class SchedulingPage
     // Hiển thị lịch tuần
     private void RefreshCalendar(IReadOnlyList<ScheduledOccurrence> sessions)
     {
+        // Khi chưa tải danh mục sinh viên, để lịch rỗng thay vì hiển thị nhầm lịch của người khác.
         var filtered = UsesStudentDirectory && !timetableDirectoryReady ? []
             : TimetableScope.Select(Store, sessions, timetableDirectory, scopeKind, timetableSubjectId);
         ResultCount = filtered.Count;
         calendar.SetData(Store, filtered, monday, SchedulingQuery.Occurrences(Store, monday, monday.AddDays(6)),
             personalSchedule: scopeKind == TimetableScopeKind.Student, caption: TimetableCaption());
+        // Khóa nút trước/sau ở biên học kỳ, kể cả tuần chỉ có một phần ngày nằm trong kỳ.
         var term = Store.Catalog.Semesters.First(s => s.Id == SemesterId);
         previousWeek.Enabled = monday > SchedulingQuery.WeekStart(term.StartDate);
         nextWeek.Enabled = monday < SchedulingQuery.WeekStart(term.EndDate);
@@ -83,6 +92,7 @@ internal sealed partial class SchedulingPage
     // Chuyển tab
     private void ChangeTab()
     {
+        // Tạm chặn sự kiện trong lúc thay bộ lọc, tiêu đề và cột bảng cho tab mới.
         ready = false; debounce.Stop(); search.Text = "";
         ConfigureSelect(filter, tabs.SelectIndex == 1 ? new[] { "Tất cả tòa nhà" }.Concat(Store.Rooms.Select(r => r.Building).Distinct())
             : new[] { "Tất cả trạng thái", SchedulingLabels.Open, SchedulingLabels.Closed, SchedulingLabels.Canceled });
@@ -143,6 +153,7 @@ internal sealed partial class SchedulingPage
     // Thêm hoặc sửa lớp học phần
     private void EditClass(CourseClass? item)
     {
+        // Form con tự kiểm tra và lưu qua Store; trang cha chỉ cập nhật khi người dùng xác nhận OK.
         using var editor = new CourseClassEditor(Store, item);
         if (editor.ShowDialog(owner) != DialogResult.OK) return;
         selectedClassId = editor.Result?.Id;
@@ -153,6 +164,7 @@ internal sealed partial class SchedulingPage
     // Thêm hoặc sửa phòng học
     private void EditRoom(Room? room)
     {
+        // Chỉ nạp lại danh sách và lựa chọn phòng sau khi form thêm/sửa lưu thành công.
         using var editor = new RoomEditor(Store, room);
         if (editor.ShowDialog(owner) != DialogResult.OK) return;
         selectedRoomId = editor.Result?.Id;
@@ -164,6 +176,7 @@ internal sealed partial class SchedulingPage
     // Xóa lớp học phần
     private void DeleteClass(CourseClass item)
     {
+        // Chặn sớm lớp đang có sinh viên; Store tiếp tục kiểm tra các ràng buộc khi xóa thật.
         if (item.Enrolled > 0) { AntdUI.Message.warn(owner, "Lớp đã có sinh viên đăng ký. Không thể xóa lớp."); return; }
         if (!ConfirmDelete("Xóa lớp học phần?", $"Xóa lớp {item.Id} và lịch học của lớp?")) return;
         if (!Store.TryDeleteClass(item.Id, out var error)) { AntdUI.Message.error(owner, error!); return; }
@@ -179,6 +192,7 @@ internal sealed partial class SchedulingPage
     // Cập nhật bộ chọn phòng và tòa nhà
     internal void RefreshRoomChoices()
     {
+        // Ghi nhớ tòa nhà đang lọc; sau khi sửa phòng sẽ tìm lại lựa chọn đó nếu còn tồn tại.
         var selectedBuilding = filter.SelectedValue?.ToString();
         ready = false;
         ConfigureTimetableSubjects();
@@ -198,6 +212,7 @@ internal sealed partial class SchedulingPage
     internal void RestoreView(SchedulingViewState state)
     {
         SwitchTab(state.Tab);
+        // Phục hồi toàn bộ bộ lọc trước khi nạp lại một lần, tránh chuỗi sự kiện nạp trung gian.
         ready = false;
         semester.SelectedIndex = state.Semester; search.Text = state.Query;
         filter.SelectedIndex = Math.Max(0, filter.Items.ToList().FindIndex(x => x.ToString() == state.Filter));
@@ -207,6 +222,7 @@ internal sealed partial class SchedulingPage
         ready = true; RefreshData(false); content.AutoScrollPosition = state.Scroll;
         if (UsesStudentDirectory) _ = EnsureTimetableDirectoryAsync();
     }
+    // Điểm đọc trạng thái phục vụ kiểm chứng, không tạo thêm lựa chọn phòng trên giao diện.
     internal bool RoomChoiceExistsForCheck(string id) => Store.Rooms.Any(r => ScheduleRules.Same(r.Id, id));
     // Xóa phòng học
     private void DeleteRoom(Room room)
@@ -215,6 +231,7 @@ internal sealed partial class SchedulingPage
         if (!Store.TryDeleteRoom(room.Id, out var error)) { AntdUI.Message.warn(owner, error!); return; }
         RefreshRoomChoices(); RefreshData();
     }
+    // Các điểm kiểm chứng bên dưới thao tác trực tiếp bộ lọc và đọc bố cục để kiểm tra form tự động.
     internal void SetSearchForCheck(string query) { search.Text = query; debounce.Stop(); RefreshData(false); }
     internal void SetRoomFilterForCheck(string id) => _ = SetScopeForCheckAsync(TimetableScopeKind.Room, string.IsNullOrWhiteSpace(id) ? null : id);
     internal void SetLecturerFilterForCheck(string id) => _ = SetScopeForCheckAsync(TimetableScopeKind.Lecturer, string.IsNullOrWhiteSpace(id) ? null : id);
@@ -264,6 +281,7 @@ internal sealed partial class SchedulingPage
     };
 }
 
+// Ảnh chụp trạng thái hiển thị, dùng khôi phục tab, bộ lọc, dòng chọn và vị trí cuộn khi nạp lại trang.
 internal sealed record SchedulingViewState(int Tab, int Semester, string Query, string? Filter, string? RoomFilter,
     DateOnly Week, string? ClassId, string? RoomId, Point Scroll, string? LecturerFilter = null,
     TimetableScopeKind Scope = TimetableScopeKind.Lecturer, string? SubjectId = null);

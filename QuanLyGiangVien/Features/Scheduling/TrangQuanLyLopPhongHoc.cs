@@ -9,9 +9,12 @@ namespace QuanLyGiangVien.Features.Scheduling;
 
 internal sealed partial class SchedulingPage : UserControl
 {
+    // Giữ form cha để mở hộp thoại; Store là nguồn dữ liệu lớp, phòng và danh mục của trang.
     private readonly MainForm owner;
     internal ScheduleStore Store { get; }
+    // Khi được nhúng trong khung chính, dùng điều hướng chung thay cho nút quay lại riêng.
     internal void UseShellNavigation() { breadcrumb.Visible = teachers.Visible = false; }
+    // Các control được tạo một lần và tái sử dụng khi đổi tab, bộ lọc hoặc học kỳ.
     private readonly SchedulingVisualCatalog visuals = new();
     private readonly Panel navigation = new() { Radius = 0, Back = SchedulingTheme.Canvas, BackColor = SchedulingTheme.Canvas };
     private readonly System.Windows.Forms.Panel content = new() { AutoScroll = true, BackColor = SchedulingTheme.Canvas };
@@ -40,6 +43,7 @@ internal sealed partial class SchedulingPage : UserControl
     private readonly AntdUI.Label empty = SchedulingTheme.Label("Không có kết quả phù hợp.\nThử từ khóa khác hoặc đặt lại bộ lọc.", 11, color: SchedulingTheme.Muted);
     private readonly SchedulingArtwork emptyArtwork = new("books-pastel.png");
     private readonly AntdUI.Button reset = SchedulingTheme.Button("Đặt lại bộ lọc", "ReloadOutlined");
+    // Chờ người dùng ngừng gõ rồi mới lọc; ready chặn sự kiện phát sinh lúc nạp control.
     private readonly System.Windows.Forms.Timer debounce = new() { Interval = 180 };
     private readonly ToolTip tooltips = new();
     private readonly List<Font> ownedFonts = [];
@@ -63,15 +67,18 @@ internal sealed partial class SchedulingPage : UserControl
         reloadTimetableSnapshot = reloadTimetable;
         BackColor = SchedulingTheme.Canvas; AutoScaleMode = AutoScaleMode.None;
         SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+        // Ưu tiên học kỳ chứa ngày hiện tại; nếu không có thì lấy học kỳ đầu và tuần bắt đầu kỳ.
         var today = DateOnly.FromDateTime(DateTime.Today);
         var initial = Store.Catalog.Semesters.FirstOrDefault(s => s.StartDate <= today && s.EndDate >= today) ?? Store.Catalog.Semesters[0];
         monday = SchedulingQuery.WeekStart(today >= initial.StartDate && today <= initial.EndDate ? today : initial.StartDate);
         detail.Visuals = visuals; calendar.Visuals = visuals;
+        // Dựng control trước khi gắn lựa chọn ban đầu để sự kiện chưa chạy trên giao diện dở dang.
         BuildChrome(); BuildWorkspace(); Connect();
         semester.SelectedIndex = Store.Catalog.Semesters.ToList().IndexOf(initial);
         selectedClassId = Store.Classes.FirstOrDefault(c => c.SemesterId == initial.Id)?.Id;
         selectedRoomId = Store.Rooms.FirstOrDefault()?.Id;
         CollectFonts(this);
+        // Hoàn tất khởi tạo rồi mới nạp bảng, thống kê và kích thước thực tế của trang.
         ready = true; RefreshData(false); LayoutPage();
     }
 
@@ -94,6 +101,7 @@ internal sealed partial class SchedulingPage : UserControl
         navigation.Controls.AddRange([breadcrumb, pageTitle, teachers, semester, add]);
         content.Controls.AddRange([statsCard, analyticsCard, weeklyCard, listCard, detail]);
         statsCard.Controls.AddRange(stats);
+        // Mỗi thẻ thống kê là lối tắt đến danh sách hoặc lịch liên quan.
         stats[0].SetAction("Xem lớp", () => SwitchTab(0));
         stats[1].SetAction("Xem phòng", () => SwitchTab(1));
         stats[2].SetAction("Xem lịch", () => SwitchTab(2));
@@ -113,6 +121,7 @@ internal sealed partial class SchedulingPage : UserControl
         ConfigureSelect(filter, ["Tất cả trạng thái", SchedulingLabels.Open, SchedulingLabels.Closed, SchedulingLabels.Canceled]);
         BuildTimetableSelectors();
         filter.AccessibleName = "Lọc theo trạng thái hoặc tòa nhà";
+        // Áp dụng cùng kiểu bảng cho cả lớp và phòng; cấu hình cột phụ thuộc tab ở ConfigureTable.
         table.BackColor = Color.White; table.ForeColor = SchedulingTheme.Ink; table.Font = AppTheme.Font(9);
         table.ColumnFont = AppTheme.Font(8.5f); ownedFonts.Add(table.ColumnFont);
         table.ColumnBack = Color.White; table.ColumnFore = AppTheme.Muted;
@@ -126,11 +135,13 @@ internal sealed partial class SchedulingPage : UserControl
         ConfigureTable();
     }
 
+    // Nạp lại lựa chọn, chọn mục đầu nếu có và áp dụng kiểu hiển thị thống nhất cho bộ chọn.
     private static void ConfigureSelect(Select select, IEnumerable<string> values)
     {
         select.SelectedIndex = -1;
         select.Items.Clear(); select.Items.AddRange(values.Cast<object>().ToArray());
         select.SelectedIndex = select.Items.Count == 0 ? -1 : 0;
+        // Chỉ cấp font một lần; những lần nạp lại danh mục dùng lại font đã có.
         if (select.Tag is not System.Drawing.Font)
         {
             select.Font = AppTheme.Font(9); select.Tag = select.Font;
@@ -165,11 +176,13 @@ internal sealed partial class SchedulingPage : UserControl
         detail.EditClass += EditClass; detail.EditRoom += EditRoom; detail.RoomSelected += SelectRoom;
         detail.RoomScheduleRequested += ShowRoomSchedule; calendar.ClassSelected += SelectClass;
         foreach (var b in previews) b.Click += (_, _) => { if (b.Tag is CourseClass item) { SwitchTab(0); SelectClass(item); } };
+        // Bấm dòng để xem chi tiết; cột nút được xử lý riêng để không kích hoạt chọn dòng hai lần.
         table.CellClick += (_, e) => {
             if (e.Column?.Key == "Actions") return;
             if (e.Record is CourseClassRow row) SelectClass(row.Model);
             else if (e.Record is RoomRow room) SelectRoom(room.Model.Id, false);
         };
+        // Dùng kiểu dữ liệu của dòng để gọi đúng thao tác sửa hoặc xóa lớp/phòng.
         table.CellButtonClick += (_, e) => {
             if (e.Record is CourseClassRow row) { if (e.Btn.Id == "edit") EditClass(row.Model); else DeleteClass(row.Model); }
             else if (e.Record is RoomRow room) { if (e.Btn.Id == "edit") EditRoom(room.Model); else DeleteRoom(room.Model); }
@@ -179,6 +192,7 @@ internal sealed partial class SchedulingPage : UserControl
 
     #endregion
 
+    // Thu thập font của control thông thường; các control tự quản lý tài nguyên được bỏ qua.
     private void CollectFonts(Control root)
     {
         if (root is not SchedulingStat and not ScheduleAnalytics and not SchedulingDetail and not WeeklySchedule and not SchedulingPreview and not SchedulingTabs)
@@ -188,17 +202,19 @@ internal sealed partial class SchedulingPage : UserControl
         }
     }
 
+    // Làm mới dữ liệu và chạy hiệu ứng xuất hiện khi người dùng mở lại trang.
     internal void Reveal()
     {
         RefreshData(false);
         foreach (var stat in stats)
         {
-            // Live count-up must remain visible; a snapshot would freeze its first value.
+            // Giữ thẻ số chạy trực tiếp; ảnh chụp chuyển cảnh sẽ làm số đếm đứng ở giá trị đầu.
             stat.RevealValue();
         }
         SurfaceTransition.Reveal(analyticsCard, 360, 120); SurfaceTransition.Reveal(weeklyCard, 360, 160);
         SurfaceTransition.Reveal(listCard, 360, 200); SurfaceTransition.Reveal(detail, 360, 240);
     }
+    // Hủy tải nền và hiệu ứng trước; sau khi hủy control con mới giải phóng ảnh và font dùng chung.
     protected override void Dispose(bool disposing)
     {
         if (disposing && !IsDisposed) { timetableLifetime.Cancel(); timetableLifetime.Dispose(); debounce.Dispose(); tooltips.Dispose(); SurfaceTransition.CancelAll(); }

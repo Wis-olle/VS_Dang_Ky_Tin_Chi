@@ -11,6 +11,7 @@ internal sealed partial class SchedulingPage
         if (Width < 1 || Height < 1) return;
         int s(int n) => AppTheme.S(n);
         SuspendLayout(); content.SuspendLayout();
+        // Quy đổi kích thước theo DPI; thanh tiêu đề giữ học kỳ và nút thao tác ở bên phải.
         int pageWidth = Math.Max(s(800), Width - s(56));
         navigation.SetBounds(s(28), s(8), pageWidth, s(70));
         breadcrumb.SetBounds(0, 0, Math.Max(1, pageWidth - s(550)), s(18));
@@ -19,11 +20,12 @@ internal sealed partial class SchedulingPage
         semester.SetBounds(pageWidth - s(378), s(24), s(220), s(38));
         add.SetBounds(pageWidth - s(146), s(24), s(146), s(38));
         content.SetBounds(s(28), s(84), pageWidth, Math.Max(1, Height - s(108)));
-        // Reserve the scrollbar gutter before child bounds change; this avoids
-        // horizontal overflow while native AutoScroll settles after a resize.
+        // Chừa trước bề rộng thanh cuộn dọc để thay đổi kích thước không tạo cuộn ngang ngoài ý muốn.
         int width = content.Width - SystemInformation.GetVerticalScrollBarWidthForDpi(DeviceDpi) - s(4);
         int gap = s(18), side = width >= s(1200) ? s(320) : s(300), left = width - side - gap;
         bool inline = width >= s(900);
+        // Màn hình rộng đặt chi tiết bên cạnh bảng; màn hình hẹp đưa chi tiết xuống dưới.
+        // Tab lịch ẩn chi tiết và phần xem trước để dành toàn bộ chiều ngang cho thời khóa biểu.
         int listY = s(202), listHeight = Math.Max(s(480), content.Height - listY);
         bool showDetail = tabs.SelectIndex != 2;
         int analyticsY = inline && showDetail ? listY : listY + listHeight + gap;
@@ -32,10 +34,12 @@ internal sealed partial class SchedulingPage
         int total = showDetail ? Math.Max(listY + listHeight, weeklyY + s(202)) : inline ? analyticsY + s(124) : listY + listHeight;
         content.AutoScrollMinSize = new(0, total);
         var scroll = content.AutoScrollPosition;
+        // Tọa độ control con luôn cộng vị trí cuộn hiện tại để bố cục không bị nhảy khi cuộn trang.
         void Place(Control c, int x, int y, int w, int h) => c.SetBounds(scroll.X + x, scroll.Y + y, w, h);
         int statsWidth = width;
         Place(statsCard, 0, 0, statsWidth, s(188));
         int statGap = s(12), statWidth = (statsWidth - statGap * 3) / 4;
+        // Chia đều bốn thẻ thống kê; thẻ cuối nhận phần lẻ còn lại để không hở mép phải.
         for (int i = 0; i < 4; i++) stats[i].SetBounds(i * (statWidth + statGap), s(4),
             i == 3 ? statsWidth - i * (statWidth + statGap) : statWidth, s(180));
         analyticsCard.Visible = inline;
@@ -62,6 +66,7 @@ internal sealed partial class SchedulingPage
         int tabsWidth = Math.Min(s(380), width - s(190));
         listTitle.SetBounds(pad, s(12), width - tabsWidth - s(14), s(34));
         tabs.SetBounds(listCard.Width - pad - tabsWidth, s(8), tabsWidth, s(42));
+        // Danh sách dùng tìm kiếm/bộ lọc; tab lịch thay bằng chọn đối tượng và điều hướng tuần.
         search.Visible = filter.Visible = !schedule;
         timetableScope.Visible = timetableSubject.Visible = reloadTimetableSubjects.Visible = schedule;
         previousWeek.Visible = nextWeek.Visible = currentWeek.Visible = weekLabel.Visible = schedule;
@@ -81,11 +86,13 @@ internal sealed partial class SchedulingPage
             filter.SetBounds(listCard.Width - pad - s(184), s(60), s(184), s(38));
         }
         int resultsY = s(schedule ? 156 : 114), resultsHeight = Math.Max(s(180), listCard.Height - resultsY - s(20));
+        // Bảng, lịch và trạng thái không có kết quả dùng chung vùng nội dung bên dưới công cụ.
         table.SetBounds(pad, resultsY, width, resultsHeight);
         calendar.SetBounds(pad, resultsY, width, resultsHeight);
         emptyArtwork.SetBounds((listCard.Width - s(112)) / 2, resultsY + s(24), s(112), s(76));
         empty.SetBounds(pad, resultsY + s(114), width, s(64));
         reset.SetBounds((listCard.Width - s(170)) / 2, resultsY + s(190), s(170), s(38));
+        // Ẩn cột phụ khi thiếu chỗ; cột học phần hoặc tòa nhà giãn lấp phần ngang còn lại.
         if (tabs.SelectIndex == 0 && table.Columns.Count >= 8)
         {
             table.Columns[3].Visible = width >= s(770);

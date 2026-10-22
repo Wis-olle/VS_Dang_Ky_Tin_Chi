@@ -9,6 +9,7 @@ namespace QuanLyGiangVien.Features.Scheduling;
 
 public sealed class CourseClassEditor : SchedulingEditorBase
 {
+    // original phân biệt thêm mới/sửa; các bảng ánh xạ giữ mã thật tách khỏi nhãn hiển thị.
     private readonly ScheduleStore store;
     private readonly CourseClass? original;
     private readonly Input id = new(), capacity = new(), enrolled = new();
@@ -20,6 +21,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
     private readonly AntdUI.Label semesterInfo;
     private readonly AntdUI.Label emptyMeetings;
     private readonly AntdUI.Button editMeeting, removeMeeting;
+    // Danh sách buổi học là bản nháp bất biến; chỉ được lưu vào Store khi lưu cả lớp thành công.
     private ImmutableArray<ClassMeeting> meetings = [];
     public CourseClass? Result { get; private set; }
     public IReadOnlyList<ClassMeeting> Meetings => meetings;
@@ -34,6 +36,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
     {
         this.store = store;
         this.original = original;
+        // Khóa tên trường dùng nameof phải khớp khóa lỗi mà Store trả về để báo lỗi đúng ô nhập.
         AddGridField(nameof(CourseClass.Id), "Mã lớp học phần *", id, 0);
         AddGridField(nameof(CourseClass.SemesterId), "Học kỳ *", semester, 1);
         AddGridField(nameof(CourseClass.CourseId), "Học phần *", course, 2);
@@ -48,6 +51,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         enrolled.BackColor = SchedulingTheme.Canvas;
         capacity.PlaceholderText = "Ví dụ: 40";
         ConfigureReferences();
+        // Lớp có lịch sử đăng ký giữ nguyên kỳ, môn và phân công để bảo toàn dữ liệu đăng ký cũ.
         course.Enabled = semester.Enabled = original is not { HasRegistrationHistory: true } and not { Enrolled: > 0 };
         lecturer.Enabled = original is not { Enrolled: > 0 } and not { HasRegistrationHistory: true };
         ConfigureSelect(status, SchedulingLabels.ClassStatuses, "Chọn trạng thái");
@@ -61,6 +65,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
             Location = new Point(MarginX, top + AppTheme.S(62)), Size = new Size(ContentWidth, AppTheme.S(154))
         };
         Body.Controls.Add(meetingList);
+        // Trạng thái rỗng và danh sách buổi dùng cùng vùng; nhấp lời nhắc cũng mở form thêm buổi.
         emptyMeetings = AddLabel("Chưa xếp lịch. Bạn có thể lưu lớp và thêm buổi học sau.",
             MarginX + AppTheme.S(14), top + AppTheme.S(94), ContentWidth - AppTheme.S(28), AppTheme.S(42),
             9, color: SchedulingTheme.Muted);
@@ -77,6 +82,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         editMeeting.SetBounds(MarginX + AppTheme.S(140), buttonTop, AppTheme.S(94), AppTheme.S(36));
         removeMeeting.SetBounds(MarginX + AppTheme.S(246), buttonTop, AppTheme.S(112), AppTheme.S(36));
         add.TabIndex = 8;
+        // Các nút sửa/xóa còn phụ thuộc dòng đang chọn; quyền đổi lịch được kiểm tra lại khi thao tác.
         add.Enabled = original is not { Enrolled: > 0 } and not { HasRegistrationHistory: true };
         editMeeting.TabIndex = 9;
         removeMeeting.TabIndex = 10;
@@ -94,6 +100,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         meetingList.SelectedIndexChanged += (_, _) => UpdateMeetingActions();
         meetingList.DoubleClick += (_, _) => EditMeeting();
         semester.SelectedIndexChanged += (_, _) => UpdateSemesterInfo();
+        // Sửa thì nạp dữ liệu gốc; thêm mới thì sinh mã và điền mặc định, chưa ghi vào nguồn dữ liệu.
         if (original is not null) FillForCheck(original);
         else {
             InitializeNewId(id, store.NextClassId, "Nhập mã lớp còn trống, gồm 1–20 chữ cái ASCII, chữ số, gạch ngang hoặc gạch dưới.");
@@ -135,6 +142,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         UpdateSemesterInfo();
     }
 
+    // Giữ được mã tham chiếu cũ khi danh mục đã thay đổi, thay vì tự chọn sang một đối tượng khác.
     private static void ChooseReference(Select select, Dictionary<string, string> choices, string id)
     {
         string? text = choices.FirstOrDefault(item => item.Value.Equals(id, StringComparison.OrdinalIgnoreCase)).Key;
@@ -146,6 +154,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         select.SelectedValue = text;
     }
 
+    // Đổi nhãn học kỳ đang chọn thành bản ghi để lấy khoảng ngày hợp lệ cho các buổi học.
     private Semester? CurrentSemester() => store.Catalog.Semesters.FirstOrDefault(item =>
         item.Id.Equals(semesterIds.GetValueOrDefault(Selected(semester)), StringComparison.OrdinalIgnoreCase));
 
@@ -164,10 +173,12 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         ClearErrors();
         var parseErrors = new Dictionary<string, string>();
         if (!TryInteger(capacity, nameof(CourseClass.Capacity), parseErrors, out int seats)) return ShowErrors(parseErrors);
+        // Tạo bản ghi mới từ bản nháp; giữ số đăng ký, phiên bản và lịch thực tế của bản gốc.
         var value = new CourseClass(id.Text, courseIds.GetValueOrDefault(Selected(course)) ?? "",
             semesterIds.GetValueOrDefault(Selected(semester)) ?? "", lecturerIds.GetValueOrDefault(Selected(lecturer)) ?? "",
             seats, original?.Enrolled ?? 0, Selected(status), meetings, original?.Version ?? "", original?.HasRegistrationHistory ?? false,
             original?.Lifecycle ?? "REGISTRATION", original?.ActualMeetings ?? default);
+        // Store kiểm tra nghiệp vụ/xung đột và lưu; chỉ lấy Result từ nguồn đã lưu khi không còn lỗi.
         if (!store.TrySaveClass(value, original is null, out var validation)) return ShowErrors(validation);
         Result = store.Classes.First(item => item.Id.Equals(value.Id.Trim(), StringComparison.OrdinalIgnoreCase));
         return true;
@@ -179,6 +190,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         ClearErrors();
         var validation = new Dictionary<string, string>();
         selected = CurrentSemester();
+        // Cần kỳ hợp lệ, sĩ số hợp lệ và lớp chưa có lịch sử đăng ký trước khi mở form buổi học.
         if (original is { Enrolled: > 0 } or { HasRegistrationHistory: true }) validation[nameof(CourseClass.Meetings)] = "Lớp có lịch sử đăng ký; không thể đổi buổi học.";
         if (selected is null) validation[nameof(CourseClass.SemesterId)] = "Chọn học kỳ trước khi thêm buổi học.";
         TryInteger(capacity, nameof(CourseClass.Capacity), validation, out seats);
@@ -192,6 +204,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         if (!CanEditMeetings(out var selected, out int seats)) return;
         using var editor = new MeetingEditor(store, selected!, seats);
         if (editor.ShowDialog(this) != DialogResult.OK || editor.Result is null) return;
+        // Thêm vào bản nháp, chọn dòng mới; thay đổi chưa tác động dữ liệu lớp cho tới khi bấm Lưu lớp.
         meetings = meetings.Add(editor.Result);
         RefreshMeetings(meetings.Length - 1);
     }
@@ -203,6 +216,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         if (index < 0 || !CanEditMeetings(out var selected, out int seats)) return;
         using var editor = new MeetingEditor(store, selected!, seats, meetings[index]);
         if (editor.ShowDialog(this) != DialogResult.OK || editor.Result is null) return;
+        // Thay đúng phần tử đang sửa bằng một mảng mới, giữ thứ tự các buổi học còn lại.
         meetings = meetings.SetItem(index, editor.Result);
         RefreshMeetings(index);
     }
@@ -236,6 +250,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
             && original is not { Enrolled: > 0 } and not { HasRegistrationHistory: true };
     }
 
+    // Tự vẽ mỗi dòng buổi học thành hai hàng: thứ/phòng/tiết và khoảng ngày, có nền khi được chọn.
     private void DrawMeeting(System.Windows.Forms.DrawItemEventArgs args, Font titleFont, Font detailFont)
     {
         args.DrawBackground();
@@ -255,6 +270,7 @@ public sealed class CourseClassEditor : SchedulingEditorBase
         args.DrawFocusRectangle();
     }
 
+    // Trong danh sách buổi, Enter mở sửa và Delete bỏ buổi; ngoài danh sách dùng phím của form cơ sở.
     protected override bool ProcessCmdKey(ref System.Windows.Forms.Message message, Keys keyData)
     {
         if (meetingList is not null && meetingList.ContainsFocus) {

@@ -5,7 +5,7 @@ using Input = AntdUI.Input;
 
 namespace QuanLyGiangVien.Features.Scheduling;
 
-/// <summary>Edits one weekly meeting; saving the parent class performs conflict validation.</summary>
+/// <summary>Nhập một buổi học lặp theo tuần; việc lưu lớp cha sẽ kiểm tra xung đột lịch tổng thể.</summary>
 public sealed class MeetingEditor : SchedulingEditorBase
 {
     private readonly ScheduleStore store;
@@ -31,6 +31,7 @@ public sealed class MeetingEditor : SchedulingEditorBase
         this.store = store;
         this.semester = semester;
         this.capacity = capacity;
+        // Mỗi trường gắn với tên thuộc tính ClassMeeting để lỗi được đưa về đúng ô nhập.
         AddGridField(nameof(ClassMeeting.RoomId), "Phòng học *", room, 0);
         AddGridField(nameof(ClassMeeting.Day), "Ngày trong tuần *", day, 1);
         AddGridField(nameof(ClassMeeting.StartPeriod), "Tiết bắt đầu *", startPeriod, 2);
@@ -48,6 +49,7 @@ public sealed class MeetingEditor : SchedulingEditorBase
             MarginX, noteTop, ContentWidth, AppTheme.S(58), 8, color: SchedulingTheme.Muted);
         note.TextMultiLine = true;
         SetContentHeight(noteTop + AppTheme.S(62));
+        // Buổi mới dùng khoảng ngày toàn kỳ; buổi đang sửa giữ lựa chọn cũ để kiểm tra lại khi lưu.
         if (original is not null) FillForCheck(original);
         else {
             day.SelectedIndex = 0;
@@ -62,6 +64,7 @@ public sealed class MeetingEditor : SchedulingEditorBase
     // Nạp danh sách phòng phù hợp
     private void PopulateRooms(string? originalId)
     {
+        // Chỉ đề xuất phòng sẵn sàng và đủ chỗ; vẫn giữ phòng cũ để người dùng nhận ra dữ liệu lỗi.
         var choices = store.Rooms.Where(item => item.Status == SchedulingLabels.Ready && item.Capacity >= capacity)
             .OrderBy(item => item.Id).Select(item => RoomText(item)).ToList();
         foreach (var available in store.Rooms.Where(item => item.Status == SchedulingLabels.Ready && item.Capacity >= capacity))
@@ -70,7 +73,9 @@ public sealed class MeetingEditor : SchedulingEditorBase
         ConfigureSelect(room, choices, choices.Count == 0 ? "Chưa có phòng đủ sức chứa" : "Chọn phòng học");
     }
 
+    // Tạo nhãn phòng có mã, sức chứa và loại; roomIds ánh xạ nhãn này về mã khi lưu.
     private static string RoomText(Room value) => $"{value.Id} · {value.Capacity} chỗ · {value.Type}";
+    // Đưa phòng đang dùng nhưng đã bảo trì/thiếu chỗ/mất khỏi danh mục vào lựa chọn kèm cảnh báo.
     private void PreserveRoom(string id, List<string>? choices = null)
     {
         if (roomIds.Values.Any(value => value.Equals(id, StringComparison.OrdinalIgnoreCase))) return;
@@ -100,6 +105,7 @@ public sealed class MeetingEditor : SchedulingEditorBase
         var validation = new Dictionary<string, string>();
         TryInteger(startPeriod, nameof(ClassMeeting.StartPeriod), validation, out int first);
         TryInteger(endPeriod, nameof(ClassMeeting.EndPeriod), validation, out int last);
+        // Kiểm tra lại nguồn phòng tại lúc lưu, kể cả khi danh sách ban đầu đã lọc phòng hợp lệ.
         var selectedRoom = store.Rooms.FirstOrDefault(item => item.Id.Equals(roomIds.GetValueOrDefault(Selected(room)), StringComparison.OrdinalIgnoreCase));
         if (selectedRoom is null) validation[nameof(ClassMeeting.RoomId)] = "Chọn một phòng học trong danh sách.";
         else if (selectedRoom.Status != SchedulingLabels.Ready) validation[nameof(ClassMeeting.RoomId)] = "Phòng đang bảo trì, hãy chọn phòng khác.";
@@ -111,6 +117,7 @@ public sealed class MeetingEditor : SchedulingEditorBase
             validation[nameof(ClassMeeting.EndPeriod)] = "Tiết học nằm trong khoảng 1–12.";
         if (last < first) validation[nameof(ClassMeeting.EndPeriod)] = "Tiết kết thúc phải từ tiết bắt đầu trở đi.";
         ValidateDates(validation);
+        // Chỉ trả bản nháp buổi học; lớp cha sẽ nhận và kiểm tra trùng phòng/giảng viên khi lưu cả lớp.
         if (validation.Count > 0) return ShowErrors(validation);
         Result = new ClassMeeting(selectedRoom!.Id, Days.First(item => item.Text == Selected(day)).Day,
             first, last, DateOnly.FromDateTime(start.Value!.Value), DateOnly.FromDateTime(end.Value!.Value));
@@ -120,6 +127,7 @@ public sealed class MeetingEditor : SchedulingEditorBase
     // Kiểm tra ngày học
     private void ValidateDates(Dictionary<string, string> validation)
     {
+        // Hai ngày đều bắt buộc, nằm trong kỳ đã chọn và ngày kết thúc không được trước bắt đầu.
         if (start.Value is null) validation[nameof(ClassMeeting.StartDate)] = "Chọn ngày bắt đầu.";
         else {
             var date = DateOnly.FromDateTime(start.Value.Value);

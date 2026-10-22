@@ -6,12 +6,13 @@ namespace QuanLyGiangVien.Features.StudentTimetable;
 
 internal sealed partial class StudentTimetableForm
 {
-    // Tải ảnh minh họa
+    // Tạo PictureBox với bản bitmap do form sở hữu, để có thể giải phóng đồng bộ khi đổi DPI hoặc đóng trang.
     private PictureBox Picture(string file)
     {
         Bitmap bitmap;
         if (file == "graduation-cap.png")
         {
+            // Biểu tượng sinh viên được dựng từ SVG và dùng màu chủ đạo thay vì đọc ảnh có sẵn.
             var color = AppTheme.Primary;
             var svg = Icon("graduation-cap").Replace("currentColor", $"#{color.R:X2}{color.G:X2}{color.B:X2}", StringComparison.Ordinal);
             bitmap = AntdUI.SvgExtend.SvgToBmp(svg, 64, 64, null)
@@ -19,6 +20,7 @@ internal sealed partial class StudentTimetableForm
         }
         else
         {
+            // Ảnh lập trình dùng chung nguồn với phần lớp/phòng; sao chép bitmap để không giữ khóa tệp ảnh gốc.
             var path = file == "programming.png"
                 ? Path.Combine(AppContext.BaseDirectory, "Assets", "scheduling", "resource-visuals", "coding.png") : Asset(file);
             using var original = Image.FromFile(path);
@@ -27,11 +29,12 @@ internal sealed partial class StudentTimetableForm
         images.Add(bitmap);
         return new PictureBox { Image = bitmap, SizeMode = PictureBoxSizeMode.Zoom, BackColor = Color.Transparent, TabStop = false };
     }
-    // Tạo khung thông tin sinh viên và chi tiết lịch
+    // Dựng ba thẻ bên phải: hồ sơ sinh viên, tổng quan học kỳ và chi tiết buổi học đang chọn.
     private void BuildSidebar()
     {
         profile = Card(); summary = Card(); detail = Card();
         summary.Back = AppTheme.Lilac;
+        // Hiển thị ảnh đại diện và thông tin định danh từ nguồn dữ liệu đã chọn khi khởi tạo form.
         var portrait = new AntdUI.Avatar { Image = Portraits.Get("portrait-04"), Round = true, ImageFit = AntdUI.TFit.Cover,
             BackColor = Color.White };
         Put(profile, portrait, 96, 18, 68, 68);
@@ -43,6 +46,7 @@ internal sealed partial class StudentTimetableForm
         Put(profile, Label(studentMajor, 10, true), 22, 190, 216, 25);
         Put(profile, Label(studentClass, 9, false, Muted), 22, 219, 216, 23);
         Put(profile, Label("Đang theo học", 9, true, Teal), 22, 251, 216, 25);
+        // Các nhãn tổng quan và chi tiết được giữ lại để RefreshWeek/ShowDetails cập nhật nội dung sau này.
         Put(summary, Label("Học kỳ của bạn", 12, true), 22, 18, 216, 30);
         summaryText = Label("", 10, false); summaryText.TextAlign = ContentAlignment.TopLeft;
         Put(summary, summaryText, 22, 59, 216, 120);
@@ -53,30 +57,33 @@ internal sealed partial class StudentTimetableForm
         Put(detail, detailBody, 22, 110, 216, 205);
         scroll.Controls.AddRange([profile, summary, detail]);
     }
-    // Sắp xếp giao diện thời khóa biểu
+    // Tính lại vị trí các vùng theo bề rộng thực tế và tỉ lệ DPI, giữ nội dung cuộn đúng vị trí hiện tại.
     private void LayoutPage()
     {
         if (building || scroll == null) return;
+        // Dừng chuyển cảnh trước khi đổi kích thước bề mặt để ảnh chụp cũ không che bố cục mới.
         SurfaceTransition.Cancel(calendar); SurfaceTransition.Cancel(calendarShell); SurfaceTransition.Cancel(intro);
         top.SetBounds(0, 0, ClientSize.Width, S(84));
         top.Controls["headerUser"]?.SetBounds(ClientSize.Width - S(260), S(39), S(230), S(34));
         int headerHeight = embedded ? 0 : S(84);
         scroll.SetBounds(0, headerHeight, ClientSize.Width, ClientSize.Height - headerHeight);
         scroll.SuspendLayout();
-        // A fixed logical content height keeps periods legible; small windows scroll vertically.
+        // Giữ kích thước nội dung tối thiểu để tên môn và tiết học dễ đọc; cửa sổ thấp dùng thanh cuộn dọc.
         int width = Math.Max(950, (int)(scroll.ClientSize.Width / AppTheme.K) - 18);
         int main = width - 56 - 260 - 20;
         var offset = scroll.AutoScrollPosition;
+        // Mọi vị trí nội dung cùng cộng độ lệch cuộn, tránh bị nhảy khi sắp xếp lại lúc đang xem phía dưới.
         void Place(Control c, int x, int y, int w, int h) => c.SetBounds(S(x) + offset.X, S(y) + offset.Y, S(w), S(h));
         Place(greeting, 28, 19, main, 38); Place(introCaption, 28, 61, main, 24);
         int introWidth = (int)(main * .56);
         Place(intro, 28, 104, introWidth, 136); Place(nextCard, 28 + introWidth + 18, 104, main - introWidth - 18, 136);
         intro.Controls["introArt"]?.SetBounds(S(introWidth - 150), S(20), S(132), S(96));
-        // Keep the illustration separate from text even in the compact layout.
+        // Thu chiều rộng lời chào và rút gọn câu ở bố cục hẹp để chữ không chồng lên ảnh minh họa.
         intro.Controls[1].Width = S(Math.Max(180, introWidth - 175));
         intro.Controls[1].Text = introWidth < 460 ? $"Chào {FirstName}!" : $"Chào {FirstName}, học tốt nhé!";
         intro.Controls[2].Width = S(Math.Max(180, introWidth - 175));
         nextTitle.Width = nextDescription.Width = nextCard.Width - S(40);
+        // Lưới lịch có chiều cao cố định theo đơn vị bố cục; bộ chọn học kỳ và các nút tuần bám mép phải.
         Place(calendarShell, 28, 260, main, 648);
         calendar.SetBounds(S(14), S(100), calendarShell.Width - S(28), S(530));
         (semester.Parent is SoftInputSurface surface ? surface : (Control)semester)
@@ -84,6 +91,7 @@ internal sealed partial class StudentTimetableForm
         previous.SetBounds(calendarShell.Width - S(218), S(55), S(36), S(32));
         today.SetBounds(calendarShell.Width - S(174), S(55), S(108), S(32));
         next.SetBounds(calendarShell.Width - S(58), S(55), S(36), S(32));
+        // Cột hồ sơ, thống kê và chi tiết xếp dọc; đặt chiều cao vùng cuộn để người dùng xem hết các thẻ.
         Place(profile, 28 + main + 20, 104, 260, 294);
         Place(summary, 28 + main + 20, 416, 260, 184);
         Place(detail, 28 + main + 20, 618, 260, 326);

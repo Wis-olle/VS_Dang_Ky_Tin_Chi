@@ -7,6 +7,7 @@ namespace QuanLyGiangVien.Features.Scheduling;
 
 public sealed class RoomEditor : SchedulingEditorBase
 {
+    // Giữ nguồn lưu và bản gốc để phân biệt thêm mới với cập nhật có kiểm tra phiên bản.
     private readonly ScheduleStore store;
     private readonly Room? original;
     private readonly Input id = new(), building = new(), capacity = new();
@@ -21,6 +22,7 @@ public sealed class RoomEditor : SchedulingEditorBase
     {
         this.store = store;
         this.original = original;
+        // Dựng trường nhập cùng tên khóa lỗi; mã phòng được khóa khi sửa một bản ghi đã tồn tại.
         AddGridField(nameof(Room.Id), "Mã phòng *", id, 0);
         AddGridField(nameof(Room.Building), "Tòa nhà *", building, 1);
         AddGridField(nameof(Room.Capacity), "Sức chứa *", capacity, 2);
@@ -37,6 +39,7 @@ public sealed class RoomEditor : SchedulingEditorBase
             MarginX, noteTop, ContentWidth, AppTheme.S(38), 8, color: SchedulingTheme.Muted);
         note.TextMultiLine = true;
         SetContentHeight(noteTop + AppTheme.S(42));
+        // Nạp dữ liệu gốc khi sửa; thêm mới dùng mã tự sinh và loại/trạng thái mặc định.
         if (original is not null) FillForCheck(original);
         else {
             InitializeNewId(id, store.NextRoomId, "Nhập mã phòng chưa dùng, gồm 1–20 chữ cái ASCII, chữ số, gạch ngang hoặc gạch dưới.");
@@ -62,12 +65,14 @@ public sealed class RoomEditor : SchedulingEditorBase
         ClearErrors();
         var parseErrors = new Dictionary<string, string>();
         if (!TryInteger(capacity, nameof(Room.Capacity), parseErrors, out int seats)) return ShowErrors(parseErrors);
+        // Lưu bản ghi mới qua Store để kiểm tra sức chứa, trạng thái và các lớp đang dùng phòng.
         var value = new Room(id.Text, building.Text, seats, Selected(type), Selected(status), original?.Version ?? "");
         if (!store.TrySaveRoom(value, original is null, out var validation)) return ShowErrors(validation);
         Result = store.Rooms.First(room => room.Id.Equals(value.Id.Trim(), StringComparison.OrdinalIgnoreCase));
         return true;
     }
 
+    // Bổ sung giá trị cũ nếu không còn trong danh mục hiện tại để không làm mất dữ liệu khi mở sửa.
     private static void SelectKnown(Select select, string value)
     {
         if (!select.Items.Cast<object>().Any(item => item.ToString() == value)) select.Items.Add(value);

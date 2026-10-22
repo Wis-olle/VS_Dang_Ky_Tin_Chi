@@ -4,7 +4,7 @@ using Input = AntdUI.Input;
 
 namespace QuanLyGiangVien.Features.Scheduling;
 
-/// <summary>Shared code-built chrome, keyboard handling and resource ownership for schedule editors.</summary>
+/// <summary>Khung form dùng chung cho nhập lớp/phòng/buổi học: bố cục, bàn phím, báo lỗi và giải phóng tài nguyên.</summary>
 public abstract class SchedulingEditorBase : AntdUI.Window
 {
     private readonly List<Font> ownedFonts = [];
@@ -13,6 +13,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
     private readonly System.Windows.Forms.Label summary;
     private readonly ToolTip errors = new();
     private readonly AntdUI.Button saveButton;
+    // Các form con dùng cùng lưới nhập; cửa sổ hẹp tự chuyển từ hai cột sang một cột.
     protected System.Windows.Forms.Panel Body { get; }
     protected int GridTop => AppTheme.S(102);
     protected int RowHeight => AppTheme.S(80);
@@ -23,6 +24,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
     public IReadOnlyDictionary<string, string> FieldErrors { get; private set; } = new Dictionary<string, string>();
     public string ValidationSummary => summary.Text;
 
+    // Dựng tiêu đề, vùng nhập có cuộn và chân form chứa tóm tắt lỗi cùng hai nút Hủy/Lưu.
     protected SchedulingEditorBase(string title, string subtitle, string section, int width, int height, string saveText)
     {
         AutoHandDpi = false;
@@ -35,6 +37,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         MinimizeBox = false;
         ShowInTaskbar = false;
         KeyPreview = true;
+        // Giới hạn cửa sổ trong vùng làm việc của màn hình đang đặt con trỏ.
         var workArea = Screen.FromPoint(Cursor.Position).WorkingArea;
         ClientSize = new Size(Math.Min(AppTheme.S(width), workArea.Width - AppTheme.S(32)),
             Math.Min(AppTheme.S(height), workArea.Height - AppTheme.S(32)));
@@ -60,6 +63,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
             Size = new Size(ClientSize.Width - AppTheme.S(52), AppTheme.S(36)), BackColor = Color.Transparent
         };
         footer.Controls.Add(summary);
+        // Nút lưu gọi TrySave của form con; chỉ đóng khi phần kiểm tra và lưu đã thành công.
         var cancel = OwnButton("Hủy");
         saveButton = OwnButton(saveText, "CheckOutlined", true);
         cancel.SetBounds(ClientSize.Width - AppTheme.S(294), AppTheme.S(49), AppTheme.S(102), AppTheme.S(42));
@@ -72,12 +76,14 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         VisibleChanged += (_, _) => { if (!Visible) appearance.Cancel(); };
     }
 
+    // Đặt độ trong suốt ban đầu theo cấu hình hiệu ứng trước khi form xuất hiện.
     protected override void OnLoad(EventArgs e)
     {
         base.OnLoad(e);
         Opacity = Config.Animation ? 0 : 1;
     }
 
+    // Tạo font và ghi nhận quyền sở hữu để giải phóng cùng form, tránh rò tài nguyên GDI.
     protected Font OwnFont(float size = 10, bool bold = false)
     {
         var font = AppTheme.Font(size, bold);
@@ -85,6 +91,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         return font;
     }
 
+    // Tạo nút theo giao diện chung và đưa font của nút vào danh sách tài nguyên cần hủy.
     protected AntdUI.Button OwnButton(string text, string? icon = null, bool primary = false)
     {
         var button = SchedulingTheme.Button(text, icon, primary);
@@ -92,6 +99,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         return button;
     }
 
+    // Tạo nhãn trong vùng nhập với tọa độ và font do form quản lý.
     protected AntdUI.Label AddLabel(string text, int x, int y, int width, int height, float size = 9,
         bool bold = false, Color? color = null)
     {
@@ -102,8 +110,10 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         return label;
     }
 
+    // Tính đáy lưới sau số trường đã có để form con đặt các phần mở rộng bên dưới.
     protected int GridBottom(int count) => GridTop + ((count + (TwoColumns ? 1 : 0)) / (TwoColumns ? 2 : 1)) * RowHeight;
 
+    // Chuyển thứ tự trường thành hàng/cột rồi giao cho AddField dựng control và nhãn lỗi.
     protected void AddGridField(string key, string caption, Control control, int index)
     {
         int column = TwoColumns ? index % 2 : 0;
@@ -112,6 +122,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
             GridTop + row * RowHeight, FieldWidth, index);
     }
 
+    // Gắn tên trường với ô nhập và nhãn lỗi để kết quả kiểm tra tìm đúng vị trí trên form.
     protected void AddField(string key, string caption, Control control, int x, int y, int width, int tabIndex)
     {
         AddLabel(caption, x, y, width, AppTheme.S(20), bold: true);
@@ -130,9 +141,12 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         fields.Add(key, (control, error));
     }
 
+    // Đăng ký trường đặc biệt do form con tự dựng, chẳng hạn danh sách buổi học.
     protected void RegisterErrorField(string key, Control control, AntdUI.Label label) => fields.Add(key, (control, label));
+    // Đặt chiều cao cuộn tối thiểu để vẫn đi tới các trường cuối trên màn hình thấp.
     protected void SetContentHeight(int height) => Body.AutoScrollMinSize = new Size(0, height + AppTheme.S(16));
 
+    // Lấy mã tự sinh; nếu hết dải mã, giữ form dùng được và hướng dẫn nhập mã còn trống.
     protected void InitializeNewId(Input input, Func<string> nextId, string instruction)
     {
         try { input.Text = nextId(); }
@@ -145,6 +159,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         }
     }
 
+    // Xóa lỗi của lần lưu trước trên nhãn, tooltip và trạng thái ô nhập trước khi kiểm tra lại.
     protected void ClearErrors()
     {
         FieldErrors = new Dictionary<string, string>();
@@ -157,6 +172,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         }
     }
 
+    // Phân phối lỗi về từng trường, cuộn tới lỗi đầu tiên và trả false cho luồng TrySave.
     protected bool ShowErrors(IReadOnlyDictionary<string, string> validation)
     {
         FieldErrors = new Dictionary<string, string>(validation);
@@ -172,6 +188,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         return false;
     }
 
+    // Sau khi đăng nhập lại, bỏ lỗi phiên nhưng giữ nguyên dữ liệu nháp để người dùng chủ động lưu.
     internal void SessionRecovered()
     {
         if (!FieldErrors.ContainsKey("_session")) return;
@@ -180,6 +197,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         summary.ForeColor = SchedulingTheme.Muted;
     }
 
+    // Nạp danh mục và cấu hình hộp xổ xuống cho các bộ chọn của form con.
     protected static void ConfigureSelect(AntdUI.Select select, IEnumerable<string> choices, string placeholder)
     {
         select.Items.AddRange(choices.Cast<object>().ToArray());
@@ -188,7 +206,9 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         select.ListAutoWidth = true;
     }
 
+    // Đọc lựa chọn thành chuỗi rỗng nếu chưa chọn để các hàm kiểm tra xử lý thống nhất.
     protected static string Selected(AntdUI.Select select) => select.SelectedValue?.ToString() ?? "";
+    // Đổi ô nhập thành số nguyên; nếu sai định dạng thì gắn lỗi với đúng tên trường.
     protected static bool TryInteger(Input input, string key, Dictionary<string, string> validation, out int value)
     {
         if (int.TryParse(input.Text, out value)) return true;
@@ -196,6 +216,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         return false;
     }
 
+    // Escape hủy form, Enter lưu; các control đang xử lý xổ xuống hoặc chọn ngày giữ hành vi riêng.
     protected override bool ProcessCmdKey(ref System.Windows.Forms.Message message, Keys keyData)
     {
         if (keyData == Keys.Escape) {
@@ -211,6 +232,7 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         return base.ProcessCmdKey(ref message, keyData);
     }
 
+    // Tìm sâu trong cây control để biết ô nhập thực sự đang giữ focus, kể cả control có lớp bọc.
     private Control? FocusedInput()
     {
         Control? Find(Control parent) {
@@ -224,16 +246,21 @@ public abstract class SchedulingEditorBase : AntdUI.Window
         return Find(this);
     }
 
+    // Trả OK về trang cha chỉ sau khi form con xác nhận lưu thành công.
     private void SaveAndClose()
     {
         if (!TrySave()) return;
         DialogResult = DialogResult.OK;
         Close();
     }
+    // Trả Cancel để trang cha biết không cần cập nhật dữ liệu từ bản nháp.
     private void CancelAndClose() { DialogResult = DialogResult.Cancel; Close(); }
+    // Mỗi form con tự kiểm tra và lưu loại dữ liệu của mình qua phương thức này.
     public abstract bool TrySave();
+    // Danh sách chỉ đọc dành cho kiểm chứng quyền sở hữu font của form.
     internal IReadOnlyList<Font> OwnedFontResourcesForCheck => ownedFonts.ToArray();
 
+    // Dừng hiệu ứng và tooltip trước khi hủy control; sau đó hủy từng font duy nhất đã sở hữu.
     protected override void Dispose(bool disposing)
     {
         if (disposing) { appearance.Dispose(); errors.Dispose(); }
